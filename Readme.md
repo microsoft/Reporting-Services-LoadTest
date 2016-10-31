@@ -8,19 +8,19 @@ This project contains a [Visual Studio Load Test](https://www.visualstudio.com/e
 ## Buid and Test
 In a Visual Studio Tools Command Prompt
 ```
-c:\repos\LoadTest>build.cmd
+c:\repos\Reporting-Services-LoadTest>build.cmd
 ```
 Integration tests that requires a configured SQL Server Reporting Services 2016
 ```
-c:\repos\LoadTest>Test.cmd
+c:\repos\Reporting-Services-LoadTest>Test.cmd
 ```
 Integration tests that requires a configured SQL Server Reporting Services 2016 and the Data sources
 ```
-c:\repos\LoadTest>TestContent.cmd
+c:\repos\Reporting-Services-LoadTest>TestContent.cmd
 ```
 Included integration tests that requires a configured SQL Server Reporting Services Technical Preview with the Data sources
 ```
-c:\repos\LoadTest>TestContentWithPBI.cmd
+c:\repos\Reporting-Services-LoadTest>TestContentWithPBI.cmd
 ```
 ## Code of Conduct
 
@@ -83,13 +83,13 @@ In case you need to store a large number of test results is recommended to use a
 
 # Create a SSRS Load Environment in Azure 
 * Install Azure Powershell (https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/)
-* Edit the \LoadTest\ArmTemplate\SSRS-MultiMachine\azuredeploy.parameters.json
+* Edit the \Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\azuredeploy.parameters.json
     * Provide a unique ssrsDNSPrefix
     * Provide the passwords (this user and passwords need to be used on RSTest.Common.ReportServer.dll.Config)
     * Edit other parameter of the template such as VM Size
 * Replace 'YOUR_RESOURCE_GROUP_NAME' to a unique resource group name and then run the deployment using the following command:
 ```powershell
-PS C:\repos\LoadTest\ArmTemplate\SSRS-MultiMachine\> .\Deploy-AzureResourceGroup.ps1 -ResourceGroupName 'YOUR_RESOURCE_GROUP_NAME' -ResourceGroupLocation 'westus2' -TemplateFile azuredeploy.json -TemplateParametersFile azuredeploy.parameters.json
+PS C:\repos\Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\> .\Deploy-AzureResourceGroup.ps1 -ResourceGroupName 'YOUR_RESOURCE_GROUP_NAME' -ResourceGroupLocation 'westus2' -TemplateFile azuredeploy.json -TemplateParametersFile azuredeploy.parameters.json
 ```            
 * Remote desktop into the Azure RS machine named SSRS-RS (using username and password specified in azuredeploy.parameters.json)
 * Configure SQL Server Reporting Services and ensure is running
@@ -106,7 +106,7 @@ The deployment will take around 45 minutes. It sets up a Domain Controller, a RS
 ### Reports and LoadTest (.loadtest)
 The LoadTest files contains a set of scenarios that will drive the load in the system, those are standard Visual Studio Load Test files and the details of the different settings can be found on [Editing Load Test Using the Load Test Editor](https://msdn.microsoft.com/en-us/library/ff406975(v=vs.140).aspx)
 
-However the SSRS Load tests also deploy a set of Reports, Data sources, Mobile Reports and KPIs during the initialization, those resources are stored under LoadTest\src\RSLoad\ContentManager\RuntimeResources
+However the SSRS Load tests also deploy a set of Reports, Data sources, Mobile Reports and KPIs during the initialization, those resources are stored under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources
 The deployment is based on the name of the scenario , for example in MixedLoad.loadtest there are the following scenarios
 
 |Scenario|Files to Deploy to the Server|
@@ -118,10 +118,10 @@ The deployment is based on the name of the scenario , for example in MixedLoad.l
 
 The load test will create a folder in the SSRS Server with the scenario name and will deploy the SSRS items that are required by the tests.
 Each scenario requires a folder with the SSRS items to deploy.
-In every folder a set of shared datasources will be created (defined in LoadTest\src\RSLoad\ContentManager\DataSources.xml)
+In every folder a set of shared datasources will be created (defined in Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
 
 ### Configuration Files
-* DataSources.xml : Define the datasources that will be created in the SSRS Server during the test initialization (Located on LoadTest\src\RSLoad\ContentManager\DataSources.xml)
+* DataSources.xml : Define the datasources that will be created in the SSRS Server during the test initialization (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
 * Paginated Reports Only 
-  * ScaleReportsWeight.xml: Specifies how often a report will be used during the test execution (Located on LoadTest\src\RSLoad\ContentManager\Paginated\ScaleReportsWeight.xml)
-  * BadCombinations.xml:  Specifies what combinatios of tests and reports shouldn't be used (Located on LoadTest\src\RSLoad\ContentManager\Paginated\BadCombinations.xml)
+  * ScaleReportsWeight.xml: Specifies how often a report will be used during the test execution (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\ScaleReportsWeight.xml)
+  * BadCombinations.xml:  Specifies what combinatios of tests and reports shouldn't be used (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\BadCombinations.xml)
