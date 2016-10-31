@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="HomeAdvisor">
+      <DataSourceReference>HomeAdvisor</DataSourceReference>
+      <rd:DataSourceID>b3a4c15f-a54b-4391-83fc-7b48ed6e9be8</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="OfficeID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>byst_D89901</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OfficeID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <ReportItems>
+          <Line Name="line1">
+            <Left>0.125in</Left>
+            <Top>1.125in</Top>
+            <ZIndex>4</ZIndex>
+            <Width>2.125in</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0in</Height>
+          </Line>
+          <Textbox Name="textbox3">
+            <Top>0.75in</Top>
+            <rd:DefaultName>textbox3</rd:DefaultName>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!PhoneNumber1.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Top>0.5in</Top>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!City.Value &amp; ", " &amp; Fields!State.Value &amp; " " &amp; Fields!ZipCode.Value</Value>
+          </Textbox>
+          <Textbox Name="Address1">
+            <Top>0.25in</Top>
+            <rd:DefaultName>Address1</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!Address1.Value</Value>
+          </Textbox>
+          <Textbox Name="DisplayName">
+            <rd:DefaultName>DisplayName</rd:DefaultName>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!DisplayName.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>Offices</DataSetName>
+        <Top>0.25in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>2.375in</Width>
+        <Height>1.25in</Height>
+      </List>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>2.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>="OfficeID: " &amp; Fields!OfficeID.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.625in</Height>
+  </Body>
+  <rd:ReportID>6949da0d-8232-41d0-a262-93030eb41b76</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="Offices">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select 
+	DataSourceCode,
+	OfficeID,
+	DisplayName,
+	Address1,
+	City,
+	State,
+	ZipCode,
+	PhoneNumber1
+from dbo.ListOffice
+where OfficeID = @OfficeID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="OfficeID">
+            <Value>=Parameters!OfficeID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>HomeAdvisor</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="DataSourceCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DataSourceCode</DataField>
+        </Field>
+        <Field Name="OfficeID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OfficeID</DataField>
+        </Field>
+        <Field Name="DisplayName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DisplayName</DataField>
+        </Field>
+        <Field Name="Address1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Address1</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="State">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State</DataField>
+        </Field>
+        <Field Name="ZipCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ZipCode</DataField>
+        </Field>
+        <Field Name="PhoneNumber1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PhoneNumber1</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>2.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

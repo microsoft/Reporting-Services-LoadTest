@@ -1,0 +1,1208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2009/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DS_SalesDataDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SqlMaps">
+      <DataSourceReference>DS_SqlMaps</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SalesDatDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_Antartica">
+      <DataSourceReference>DS_Antartica</DataSourceReference>
+    </DataSource>
+<DataSource Name="DS_SqlSpatial">
+      <DataSourceReference>DS_SqlSpatial</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="USASpatial">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpatialData">
+          <DataField>SpatialData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="AREA">
+          <DataField>AREA</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="STATE_FIPS">
+          <DataField>STATE_FIPS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.Name
+  ,USA.SpatialData
+  ,USA.AREA
+  ,USA.STATE_FIPS
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="SpatialData" /><ColumnExpression ColumnOwner="USA" ColumnName="AREA" /><ColumnExpression ColumnOwner="USA" ColumnName="STATE_FIPS" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="USAAnalytical">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POP1997">
+          <DataField>POP1997</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_65_UP">
+          <DataField>AGE_65_UP</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.Name
+  ,USA.POP1997
+  ,USA.AGE_65_UP
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="POP1997" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_65_UP" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="CountySpatial">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_NAME">
+          <DataField>STATE_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_FIPS">
+          <DataField>STATE_FIPS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="geom">
+          <DataField>geom</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlSpatial</DataSourceName>
+        <CommandText>SELECT
+  counties.ID
+  ,counties.NAME
+  ,counties.STATE_NAME
+  ,counties.STATE_FIPS
+  ,counties.geom
+FROM
+  counties</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="counties" ColumnName="ID" /><ColumnExpression ColumnOwner="counties" ColumnName="NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="STATE_NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="STATE_FIPS" /><ColumnExpression ColumnOwner="counties" ColumnName="geom" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="CountyAnalytical">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_NAME">
+          <DataField>STATE_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POP2001">
+          <DataField>POP2001</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="AGE_65_UP">
+          <DataField>AGE_65_UP</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlSpatial</DataSourceName>
+        <CommandText>SELECT
+  counties.ID
+  ,counties.NAME
+  ,counties.STATE_NAME
+  ,counties.POP2001
+  ,counties.AGE_65_UP
+FROM
+  counties</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="counties" ColumnName="ID" /><ColumnExpression ColumnOwner="counties" ColumnName="NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="STATE_NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="POP2001" /><ColumnExpression ColumnOwner="counties" ColumnName="AGE_65_UP" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="SqlSales">
+      <Fields>
+        <Field Name="CountryName">
+          <DataField>CountryName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CountryShortName">
+          <DataField>CountryShortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SalesDatDemo</DataSourceName>
+        <CommandText>SELECT
+  SQLSales2008.CountryName
+  ,SQLSales2008.Sales
+  ,SQLSales2008.CountryShortName
+FROM
+  SQLSales2008</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="CountryName" /><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="Sales" /><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="CountryShortName" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="WorldShape">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShapeData">
+          <DataField>ShapeData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="Layer">
+          <DataField>Layer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CNTRY_NAME2">
+          <DataField>CNTRY_NAME2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  GlobalNetworkShapes.id
+  ,GlobalNetworkShapes.Name
+  ,GlobalNetworkShapes.ShapeData
+  ,GlobalNetworkShapes.Layer
+  ,GlobalNetworkShapes.CNTRY_NAME2
+FROM
+  GlobalNetworkShapes</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="GlobalNetworkShapes" ColumnName="id" /><ColumnExpression ColumnOwner="GlobalNetworkShapes" ColumnName="Name" /><ColumnExpression ColumnOwner="GlobalNetworkShapes" ColumnName="ShapeData" /><ColumnExpression ColumnOwner="GlobalNetworkShapes" ColumnName="Layer" /><ColumnExpression ColumnOwner="GlobalNetworkShapes" ColumnName="CNTRY_NAME2" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="NetworkPaths">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PathData">
+          <DataField>PathData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="ToolTip">
+          <DataField>ToolTip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  GlobalNetworkPaths.id
+  ,GlobalNetworkPaths.Name
+  ,GlobalNetworkPaths.PathData
+  ,GlobalNetworkPaths.ToolTip
+FROM
+  GlobalNetworkPaths</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="id" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Name" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="PathData" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="ToolTip" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Map Name="Map1">
+            <MapViewport>
+              <MapCoordinateSystem>Geographic</MapCoordinateSystem>
+              <MapProjection>Mercator</MapProjection>
+              <ProjectionCenterX>0</ProjectionCenterX>
+              <ProjectionCenterY>0</ProjectionCenterY>
+              <MapLimits>
+                <MinimumX>NaN</MinimumX>
+                <MinimumY>NaN</MinimumY>
+                <MaximumX>NaN</MaximumX>
+                <MaximumY>NaN</MaximumY>
+              </MapLimits>
+              <SimplificationResolution>0.01</SimplificationResolution>
+              <MapElementView>
+                <LayerName>PolygonLayer1</LayerName>
+                <Zoom>56.3676605224609</Zoom>
+              </MapElementView>
+              <MapMeridians>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <FontSize>8pt</FontSize>
+                  <Format>#°E;#°W;0°</Format>
+                  <Color>#c08080ff</Color>
+                </Style>
+                <Hidden>true</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapMeridians>
+              <MapParallels>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <FontSize>8pt</FontSize>
+                  <Format>#°N;#°S;0°</Format>
+                  <Color>#c08080ff</Color>
+                </Style>
+                <Hidden>true</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapParallels>
+              <GridUnderContent>true</GridUnderContent>
+              <Style>
+                <Border>
+                  <Color>LightBlue</Color>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+                <BackgroundColor>Khaki</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                <BackgroundHatchType>DarkDownwardDiagonal</BackgroundHatchType>
+                <ShadowOffset>2pt</ShadowOffset>
+              </Style>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapViewport>
+            <MapDataRegions>
+              <MapDataRegion Name="Map1_LineLayer1_DataRegion">
+                <DataSetName>SqlSales</DataSetName>
+                <MapMember>
+                  <Group Name="Map1_LineLayer1_Group">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!CountryName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </MapMember>
+              </MapDataRegion>
+              <MapDataRegion Name="Map1_PolygonLayer3_DataRegion">
+                <DataSetName>CountyAnalytical</DataSetName>
+                <MapMember>
+                  <Group Name="Map1_PolygonLayer3_Group">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ID.Value</GroupExpression>
+                      <GroupExpression>=Fields!NAME.Value</GroupExpression>
+                      <GroupExpression>=Fields!STATE_NAME.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </MapMember>
+              </MapDataRegion>
+              <MapDataRegion Name="Map1_PolygonLayer2_DataRegion">
+                <DataSetName>USAAnalytical</DataSetName>
+                <MapMember>
+                  <Group Name="Map1_PolygonLayer2_Group">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!id.Value</GroupExpression>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </MapMember>
+              </MapDataRegion>
+            </MapDataRegions>
+            <MapLayers>
+              <MapLineLayer Name="LineLayer1">
+                <MapLineTemplate>
+                  <Style>
+                    <Border>
+                      <Color>Lime</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>Pink</BackgroundColor>
+                    <BackgroundGradientType>Center</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <BackgroundHatchType>DashedDownwardDiagonal</BackgroundHatchType>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <BookmarkLink>=First(Fields!AREA.Value, "USASpatial")</BookmarkLink>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label>#NAME</Label>
+                  <ToolTip>SQLSalesPath</ToolTip>
+                  <DataElementLabel />
+                </MapLineTemplate>
+                <MapLineRules>
+                  <MapSizeRule>
+                    <StartSize>1pt</StartSize>
+                    <EndSize>10pt</EndSize>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapSizeRule>
+                  <MapCustomColorRule>
+                    <MapCustomColors>
+                      <MapCustomColor>Purple</MapCustomColor>
+                      <MapCustomColor>Plum</MapCustomColor>
+                      <MapCustomColor>SlateBlue</MapCustomColor>
+                    </MapCustomColors>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <DistributionType>EqualDistribution</DistributionType>
+                    <StartValue>45</StartValue>
+                    <EndValue>98</EndValue>
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapCustomColorRule>
+                </MapLineRules>
+                <MapDataRegionName>Map1_LineLayer1_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>Name</FieldName>
+                    <BindingExpression>=Fields!CountryName.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <MapSpatialDataSet>
+                  <DataSetName>NetworkPaths</DataSetName>
+                  <SpatialField>PathData</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>id</MapFieldName>
+                    <MapFieldName>Name</MapFieldName>
+                    <MapFieldName>ToolTip</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>30</Transparency>
+              </MapLineLayer>
+              <MapPolygonLayer Name="PolygonLayer3">
+                <MapPolygonTemplate>
+                  <CenterPointOffsetX>0</CenterPointOffsetX>
+                  <CenterPointOffsetY>0</CenterPointOffsetY>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>White</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip />
+                  <DataElementLabel />
+                </MapPolygonTemplate>
+                <MapPolygonRules>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!AGE_65_UP.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapColorRangeRule>
+                </MapPolygonRules>
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Circle</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>#e0ffffff</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                  <Hidden>true</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip />
+                  <DataElementLabel />
+                </MapMarkerTemplate>
+                <MapCenterPointRules />
+                <MapDataRegionName>Map1_PolygonLayer3_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>ID</FieldName>
+                    <BindingExpression>=Fields!ID.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                  <MapBindingFieldPair>
+                    <FieldName>NAME</FieldName>
+                    <BindingExpression>=Fields!NAME.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                  <MapBindingFieldPair>
+                    <FieldName>STATE_NAME</FieldName>
+                    <BindingExpression>=Fields!STATE_NAME.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <MapSpatialDataSet>
+                  <DataSetName>CountySpatial</DataSetName>
+                  <SpatialField>geom</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>ID</MapFieldName>
+                    <MapFieldName>NAME</MapFieldName>
+                    <MapFieldName>STATE_NAME</MapFieldName>
+                    <MapFieldName>STATE_FIPS</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>20</Transparency>
+              </MapPolygonLayer>
+              <MapPolygonLayer Name="PolygonLayer2">
+                <MapPolygonTemplate>
+                  <ScaleFactor>3</ScaleFactor>
+                  <CenterPointOffsetX>4</CenterPointOffsetX>
+                  <CenterPointOffsetY>5</CenterPointOffsetY>
+                  <LabelPlacement>MiddleLeft</LabelPlacement>
+                  <Style>
+                    <Border>
+                      <Color>LightBlue</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>Red</BackgroundColor>
+                    <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                    <BackgroundGradientEndColor>Tomato</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <Color>Lime</Color>
+                    <BackgroundHatchType>DashedDownwardDiagonal</BackgroundHatchType>
+                    <ShadowOffset>1.5pt</ShadowOffset>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <Hyperlink>http://msn.com</Hyperlink>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label>#NAME</Label>
+                  <ToolTip>USAMap</ToolTip>
+                  <DataElementLabel />
+                </MapPolygonTemplate>
+                <MapPolygonRules>
+                  <MapColorPaletteRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!AGE_65_UP.Value)</DataValue>
+                    <StartValue>5</StartValue>
+                    <EndValue>9</EndValue>
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapColorPaletteRule>
+                </MapPolygonRules>
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Circle</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Purple</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>#e0ffffff</BackgroundColor>
+                    <BackgroundGradientType>Center</BackgroundGradientType>
+                    <BackgroundGradientEndColor>Aqua</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <BackgroundHatchType>DarkHorizontal</BackgroundHatchType>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <Hyperlink>http://microsoft.com</Hyperlink>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip />
+                  <DataElementLabel />
+                </MapMarkerTemplate>
+                <MapCenterPointRules>
+                  <MapSizeRule>
+                    <StartSize>1pt</StartSize>
+                    <EndSize>30pt</EndSize>
+                    <DataValue>=Sum(Fields!POP1997.Value)</DataValue>
+                    <BucketCount>4</BucketCount>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapSizeRule>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!POP1997.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapColorRangeRule>
+                  <MapMarkerRule>
+                    <MapMarkers>
+                      <MapMarker>
+                        <MapMarkerStyle>Circle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Diamond</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Pentagon</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>PushPin</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Rectangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Star</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Triangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Trapezoid</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Wedge</MapMarkerStyle>
+                      </MapMarker>
+                    </MapMarkers>
+                    <DataValue>=Sum(Fields!AGE_65_UP.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapMarkerRule>
+                </MapCenterPointRules>
+                <MapDataRegionName>Map1_PolygonLayer2_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>id</FieldName>
+                    <BindingExpression>=Fields!id.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                  <MapBindingFieldPair>
+                    <FieldName>Name</FieldName>
+                    <BindingExpression>=Fields!Name.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <MapSpatialDataSet>
+                  <DataSetName>USASpatial</DataSetName>
+                  <SpatialField>SpatialData</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>id</MapFieldName>
+                    <MapFieldName>Name</MapFieldName>
+                    <MapFieldName>AREA</MapFieldName>
+                    <MapFieldName>STATE_FIPS</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>10</Transparency>
+              </MapPolygonLayer>
+              <MapPolygonLayer Name="PolygonLayer1">
+                <MapPolygonTemplate>
+                  <CenterPointOffsetX>2</CenterPointOffsetX>
+                  <CenterPointOffsetY>3</CenterPointOffsetY>
+                  <Style>
+                    <Border>
+                      <Color>Gold</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>CornflowerBlue</BackgroundColor>
+                    <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                    <BackgroundGradientEndColor>DarkViolet</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <BackgroundHatchType>BackwardDiagonal</BackgroundHatchType>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <BookmarkLink>=First(Fields!STATE_NAME.Value, "CountySpatial")</BookmarkLink>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label>#NAME</Label>
+                  <ToolTip />
+                  <DataElementLabel />
+                </MapPolygonTemplate>
+                <MapPolygonRules>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <DistributionType>EqualInterval</DistributionType>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName>Legend1</LegendName>
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapColorRangeRule>
+                </MapPolygonRules>
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Rectangle</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Purple</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>SlateBlue</BackgroundColor>
+                    <BackgroundGradientType>TopBottom</BackgroundGradientType>
+                    <BackgroundGradientEndColor>SeaGreen</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <BackgroundHatchType>DarkUpwardDiagonal</BackgroundHatchType>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>/MapAllElements</ReportName>
+                        </Drillthrough>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>true</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label>#NAME</Label>
+                  <ToolTip>CenterPoint</ToolTip>
+                  <DataElementLabel />
+                </MapMarkerTemplate>
+                <MapCenterPointRules>
+                  <MapSizeRule>
+                    <StartSize>1pt</StartSize>
+                    <EndSize>30pt</EndSize>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <StartValue>5</StartValue>
+                    <EndValue>7</EndValue>
+                    <LegendName>Legend1</LegendName>
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapSizeRule>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <StartValue>2</StartValue>
+                    <EndValue>9</EndValue>
+                    <LegendName>Legend1</LegendName>
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapColorRangeRule>
+                  <MapMarkerRule>
+                    <MapMarkers>
+                      <MapMarker>
+                        <MapMarkerStyle>Circle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Diamond</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Pentagon</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>PushPin</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Rectangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Star</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Triangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Trapezoid</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Wedge</MapMarkerStyle>
+                      </MapMarker>
+                    </MapMarkers>
+                    <DataValue>=Sum(Fields!Sales.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName>Legend1</LegendName>
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapMarkerRule>
+                </MapCenterPointRules>
+                <MapDataRegionName>Map1_LineLayer1_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>Name</FieldName>
+                    <BindingExpression>=Fields!CountryName.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <MapSpatialDataSet>
+                  <DataSetName>WorldShape</DataSetName>
+                  <SpatialField>ShapeData</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>id</MapFieldName>
+                    <MapFieldName>Name</MapFieldName>
+                    <MapFieldName>Layer</MapFieldName>
+                    <MapFieldName>CNTRY_NAME2</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>0</Transparency>
+              </MapPolygonLayer>
+              <MapTileLayer Name="TileLayer1">
+                <TileStyle>Road</TileStyle>
+                <Transparency>30</Transparency>
+              </MapTileLayer>
+              <MapPointLayer Name="PointLayer1">
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Diamond</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Turquoise</Color>
+                      <Style>Solid</Style>
+                      <Width>7pt</Width>
+                    </Border>
+                    <BackgroundColor>Brown</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                    <ShadowOffset>2.5pt</ShadowOffset>
+                  </Style>
+                  <ActionInfo>
+                    <Actions>
+                      <Action>
+                        <Hyperlink>http://microsoft.com</Hyperlink>
+                      </Action>
+                    </Actions>
+                  </ActionInfo>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip>Point on Russia</ToolTip>
+                  <DataElementLabel />
+                </MapMarkerTemplate>
+                <MapPointRules>
+                  <MapSizeRule>
+                    <StartSize>1pt</StartSize>
+                    <EndSize>30pt</EndSize>
+                    <DataValue>=20</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapSizeRule>
+                  <MapMarkerRule>
+                    <MapMarkers>
+                      <MapMarker>
+                        <MapMarkerStyle>Circle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Diamond</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Pentagon</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>PushPin</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Rectangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Star</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Triangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Trapezoid</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Wedge</MapMarkerStyle>
+                      </MapMarker>
+                    </MapMarkers>
+                    <DataValue>=30</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE - #TOVALUE</LegendText>
+                  </MapMarkerRule>
+                </MapPointRules>
+                <MapPoints>
+                  <MapPoint>
+                    <UseCustomPointTemplate>false</UseCustomPointTemplate>
+                    <MapMarkerTemplate>
+                      <MapMarker>
+                        <MapMarkerStyle>Circle</MapMarkerStyle>
+                      </MapMarker>
+                      <Style>
+                        <Border>
+                          <Color>Gray</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundGradientType>None</BackgroundGradientType>
+                        <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                      <Hidden>false</Hidden>
+                      <OffsetX>0</OffsetX>
+                      <OffsetY>0</OffsetY>
+                      <Label />
+                      <ToolTip />
+                      <DataElementLabel />
+                    </MapMarkerTemplate>
+                    <VectorData>AQEAAAA0MzPzqWNYQMnPYfMg605A</VectorData>
+                  </MapPoint>
+                </MapPoints>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <Transparency>10</Transparency>
+              </MapPointLayer>
+            </MapLayers>
+            <MapLegends>
+              <MapLegend Name="Legend1">
+                <Layout>TallTable</Layout>
+                <MapLegendTitle>
+                  <Style>
+                    <BackgroundColor>#00ffffff</BackgroundColor>
+                    <FontSize>8pt</FontSize>
+                    <Color>Aqua</Color>
+                  </Style>
+                  <Caption>Legend</Caption>
+                  <TitleSeparator>ThickLine</TitleSeparator>
+                </MapLegendTitle>
+                <AutoFitTextDisabled>false</AutoFitTextDisabled>
+                <InterlacedRows>false</InterlacedRows>
+                <EquallySpacedItems>true</EquallySpacedItems>
+                <ActionInfo>
+                  <Actions>
+                    <Action>
+                      <Hyperlink>http://msn.com</Hyperlink>
+                    </Action>
+                  </Actions>
+                </ActionInfo>
+                <Position>TopLeft</Position>
+                <DockOutsideViewport>false</DockOutsideViewport>
+                <Hidden>false</Hidden>
+                <ToolTip>This is Legend</ToolTip>
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                    <Width>2pt</Width>
+                  </Border>
+                  <BackgroundColor>Brown</BackgroundColor>
+                  <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                  <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                  <FontSize>8pt</FontSize>
+                  <ShadowOffset>1pt</ShadowOffset>
+                </Style>
+                <LeftMargin>2pt</LeftMargin>
+                <RightMargin>2pt</RightMargin>
+                <TopMargin>2pt</TopMargin>
+                <BottomMargin>2pt</BottomMargin>
+              </MapLegend>
+            </MapLegends>
+            <MapTitles>
+              <MapTitle Name="Title1">
+                <Text>Map(World, USA,State,County,Path)</Text>
+                <Angle>NaN</Angle>
+                <TextShadowOffset>0pt</TextShadowOffset>
+                <DockOutsideViewport>true</DockOutsideViewport>
+                <Hidden>false</Hidden>
+                <ToolTip>Map Title</ToolTip>
+                <Style>
+                  <Border>
+                    <Color>Gold</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>Tomato</BackgroundColor>
+                  <BackgroundGradientType>DiagonalRight</BackgroundGradientType>
+                  <BackgroundGradientEndColor>Orange</BackgroundGradientEndColor>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>Center</TextAlign>
+                  <Color>Gold</Color>
+                  <BackgroundHatchType>BackwardDiagonal</BackgroundHatchType>
+                  <ShadowOffset>0pt</ShadowOffset>
+                </Style>
+                <LeftMargin>2pt</LeftMargin>
+                <RightMargin>2pt</RightMargin>
+                <TopMargin>2pt</TopMargin>
+                <BottomMargin>2pt</BottomMargin>
+              </MapTitle>
+            </MapTitles>
+            <MapDistanceScale>
+              <ScaleColor>LightSteelBlue</ScaleColor>
+              <ScaleBorderColor>CornflowerBlue</ScaleBorderColor>
+              <ActionInfo>
+                <Actions>
+                  <Action>
+                    <Hyperlink>http://msn.com</Hyperlink>
+                  </Action>
+                </Actions>
+              </ActionInfo>
+              <Position>RightCenter</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>false</Hidden>
+              <ToolTip>Distance Scale</ToolTip>
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+                <BackgroundColor>Indigo</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                <FontStyle>Italic</FontStyle>
+                <FontSize>8pt</FontSize>
+                <FontWeight>ExtraLight</FontWeight>
+                <TextDecoration>Underline</TextDecoration>
+                <Color>Silver</Color>
+                <ShadowOffset>2pt</ShadowOffset>
+              </Style>
+              <MapSize>
+                <Width>80</Width>
+                <Height>40</Height>
+                <Unit>Point</Unit>
+              </MapSize>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapDistanceScale>
+            <MapColorScale>
+              <MapColorScaleTitle>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Caption />
+              </MapColorScaleTitle>
+              <ColorBarBorderColor>Gray</ColorBarBorderColor>
+              <LabelFormat>#,##0.##</LabelFormat>
+              <HideEndLabels>false</HideEndLabels>
+              <RangeGapColor>Orange</RangeGapColor>
+              <NoDataText>No data</NoDataText>
+              <Position>RightBottom</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>false</Hidden>
+              <ToolTip>ColorScale</ToolTip>
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+                <BackgroundColor>Tomato</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>Gainsboro</BackgroundGradientEndColor>
+                <FontSize>8pt</FontSize>
+                <TextDecoration>Underline</TextDecoration>
+                <ShadowOffset>1pt</ShadowOffset>
+              </Style>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapColorScale>
+            <MapBorderSkin>
+              <Style>
+                <Border />
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                <Color>White</Color>
+              </Style>
+            </MapBorderSkin> 
+            <Top>0.58611in</Top>
+            <Left>2.27083in</Left>
+            <Height>4.78125in</Height>
+            <Width>6.61458in</Width>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Map>
+          <Textbox Name="ReportTitle">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Map All Elements</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>20pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <Height>0.4in</Height>
+            <Width>5.5in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>6.72153in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>11.34375in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <rd:ReportID>f4c8eb35-2780-49e2-b3c5-7d2bdb6d0873</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

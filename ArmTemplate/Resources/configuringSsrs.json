@@ -1,0 +1,59 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "ssrsVMName": {
+      "type": "string"
+    },
+    "sqlAuthadminUsername": {
+      "type": "string"
+    },
+    "sqlAuthadminPassword": {
+      "type": "securestring"
+    },
+    "ssrsConfgureModulesURL": {
+      "type": "string"
+    },
+    "ssrsConfigurationFunction": {
+      "type": "string"
+    },
+    "catalogVMName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('ssrsVMName'),'/CreateSQLServer')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publisher": "Microsoft.Powershell",
+        "type": "DSC",
+        "typeHandlerVersion": "2.17",
+        "autoUpgradeMinorVersion": false,
+        "settings": {
+          "ModulesUrl": "[parameters('ssrsConfgureModulesURL')]",
+          "wmfVersion": "5.0",
+          "ConfigurationFunction": "[parameters('ssrsConfigurationFunction')]",
+          "Properties": {
+            "CatalogMachine": "[parameters('catalogVMName')]",
+            "SQLAuthAdmincreds": {
+              "UserName": "[parameters('sqlAuthadminUserName')]",
+              "Password": "PrivateSettingsRef:AdminPassword"
+            }
+          }
+        },
+        "protectedSettings": {
+          "Items": {
+            "AdminPassword": "[parameters('sqlAuthadminPassword')]"
+          }
+        }
+      }
+    }
+  ],
+  "outputs": { }
+}

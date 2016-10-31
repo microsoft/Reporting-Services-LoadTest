@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Order Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Unit Price Discount</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OrderQty">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <rd:DefaultName>OrderQty</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!OrderQty.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="UnitPriceDiscount">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <rd:DefaultName>UnitPriceDiscount</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!UnitPriceDiscount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>DataSet1</DataSetName>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>0.5in</Height>
+    <Columns>5</Columns>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>812cfb8d-b14d-4d7a-beca-a6a6accd016c</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>1.5in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CarrierTrackingNumber">
+          <DataField>CarrierTrackingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceDiscount">
+          <DataField>UnitPriceDiscount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     TOP 10000 OrderQty, UnitPrice, ModifiedDate, CarrierTrackingNumber, UnitPriceDiscount
+FROM         SalesOrderDetail</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <PageWidth>80in</PageWidth>
+  <rd:ReportID>4683527c-78b5-4b46-987b-860b294f320a</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

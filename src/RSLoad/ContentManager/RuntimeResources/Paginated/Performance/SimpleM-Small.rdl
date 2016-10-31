@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DWScale">
+      <DataSourceReference>DWScale</DataSourceReference>
+      <rd:DataSourceID>976bce84-75b5-4bc1-858a-d0303dced536</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <BackgroundColor>DarkGray</BackgroundColor>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Inventory by Distribution Center</Value>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>0.5in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Calendar_Year_ID">
+                  <rd:DefaultName>Calendar_Year_ID</rd:DefaultName>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>Silver</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Calendar_Year_ID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Calendar_Year_ID">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Calendar_Year_ID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.5in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Calendar_Week_ID">
+                  <rd:DefaultName>Calendar_Week_ID</rd:DefaultName>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                      <Right>Solid</Right>
+                    </BorderStyle>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BorderWidth>
+                      <Right>1pt</Right>
+                    </BorderWidth>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BorderColor>
+                      <Right>Black</Right>
+                    </BorderColor>
+                    <BackgroundColor>Gainsboro</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Calendar_Week_ID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Calendar_Week_ID">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Calendar_Week_ID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Distribution_Center">
+                  <rd:DefaultName>Distribution_Center</rd:DefaultName>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Distribution_Center.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Distribution_Center">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Distribution_Center.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.375in</Top>
+        <Corner>
+          <ReportItems>
+            <Rectangle Name="rectangle1">
+              <ReportItems>
+                <Textbox Name="textbox2">
+                  <Left>0.5in</Left>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>Gainsboro</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>Week</Value>
+                </Textbox>
+                <Textbox Name="textbox1">
+                  <rd:DefaultName>textbox1</rd:DefaultName>
+                  <Width>0.5in</Width>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>Silver</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>Year</Value>
+                </Textbox>
+              </ReportItems>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Bottom>Solid</Bottom>
+                  <Right>Solid</Right>
+                </BorderStyle>
+                <BorderWidth>
+                  <Bottom>1pt</Bottom>
+                  <Right>1pt</Right>
+                </BorderWidth>
+                <BorderColor>
+                  <Bottom>Black</Bottom>
+                  <Right>Black</Right>
+                </BorderColor>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </Rectangle>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Qty">
+                    <rd:DefaultName>Qty</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!Qty.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>0.875in</Height>
+  </Body>
+  <rd:ReportID>dbfff30e-2121-482d-b1bf-887090dc539e</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     Tbl_Dim_Date.Calendar_Year_ID, Tbl_Dim_Distribution_Center.Distribution_Center, Tbl_Dim_Date.Calendar_Week_ID, 
+                      SUM(Tbl_Fact_DC_Inventory.Available_Qty) AS Qty
+FROM         Tbl_Dim_Date INNER JOIN
+                      Tbl_Fact_DC_Inventory ON Tbl_Dim_Date.SK_Date_ID = Tbl_Fact_DC_Inventory.SK_Date_ID INNER JOIN
+                      Tbl_Dim_Distribution_Center ON Tbl_Fact_DC_Inventory.SK_Distribution_Center_ID = Tbl_Dim_Distribution_Center.SK_Distribution_Center_ID
+GROUP BY Tbl_Dim_Date.Calendar_Year_ID, Tbl_Dim_Distribution_Center.Distribution_Center, Tbl_Dim_Date.Calendar_Week_ID</CommandText>
+        <DataSourceName>DWScale</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year_ID">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>Calendar_Year_ID</DataField>
+        </Field>
+        <Field Name="Distribution_Center">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Distribution_Center</DataField>
+        </Field>
+        <Field Name="Calendar_Week_ID">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>Calendar_Week_ID</DataField>
+        </Field>
+        <Field Name="Qty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Qty</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>2in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

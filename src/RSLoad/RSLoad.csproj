@@ -1,0 +1,1039 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RSLoad</RootNamespace>
+    <AssemblyName>RSLoad</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TestProjectType>WebTest</TestProjectType>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.OData.Client, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Client.6.14.0\lib\net40\Microsoft.OData.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Core.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Spatial.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.LoadTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Mobile\MobileActions.cs" />
+    <Compile Include="Actions\Professional\ContentValidator.cs" />
+    <Compile Include="Client\MobileClient.cs" />
+    <Compile Include="Actions\Mobile\Smoke.cs" />
+    <Compile Include="Actions\Portal\PortalActions.cs" />
+    <Compile Include="Actions\PowerBI\PowerBIActions.cs" />
+    <Compile Include="Client\PowerBIClient.cs" />
+    <Compile Include="Actions\Professional\ExportLive.cs" />
+    <Compile Include="Actions\Professional\ExportWithSession.cs" />
+    <Compile Include="Actions\Professional\ExportWithSnapshot.cs" />
+    <Compile Include="Actions\Professional\ProfessionalActions.cs" />
+    <Compile Include="Actions\Professional\Rendering.cs" />
+    <Compile Include="Actions\Professional\Smoke.cs" />
+    <Compile Include="Actions\Professional\SOAPAPI.cs" />
+    <Compile Include="Actions\Professional\ViewerControl.cs" />
+    <Compile Include="Actions\PSSActionBase.cs" />
+    <Compile Include="ContentManager\CollectionSelector.cs" />
+    <Compile Include="ContentManager\Config\BadCombination.cs" />
+    <Compile Include="ContentManager\ContentManagerBase.cs" />
+    <Compile Include="ContentManager\ContentManagerFactory.cs" />
+    <Compile Include="ContentManager\IContentManager.cs" />
+    <Compile Include="ContentManager\PortalContentManager.cs" />
+    <Compile Include="ContentManager\RandomContentManager.cs" />
+    <Compile Include="ContentManager\Config\ReportWeight.cs" />
+    <Compile Include="ContentManager\SessionManager.cs" />
+    <Compile Include="Plugins\InitContentPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\RSTestException.cs" />
+    <Compile Include="ContentManager\Config\SharedConstants.cs" />
+    <Compile Include="Utilities\Logging.cs" />
+    <Compile Include="Utilities\CollectionUtilities.cs" />
+    <Compile Include="Shared\ReportServerInformation.cs" />
+    <Compile Include="Utilities\Session.cs" />
+    <Compile Include="Utilities\TestContextUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentManager\RuntimeResources\Paginated\BadCombinations.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\DataSources.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\ScaleReportsWeight.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\KPI_1000.kpi">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_1000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_1000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\MR_50000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\SalesOrderDetail_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\SalesOrderDetail_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\TransactionHistory_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\WorkOrderRouting_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\WorkOrderRouting_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\WorkOrder_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\MobileTest\WorkOrder_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NoDatasource\imageOnly.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Aggregates of Expressions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Aggregates of Fields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\BriefingBook.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Calculated Fields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Chart with Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Chart with Sorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Chart with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Chart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Colormap.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Complex Expressions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Conditional Formatting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\CustomUnitPerformanceAnalysis.Xrdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DeepM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DeepM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DeepT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DeepT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DV_MapPolygonLayer_Marker.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\DV_USAStatesDrillthrough.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Election.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Embedded Images.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\FilterDatasetCmplxExp.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\FilterDatasetSmplFldRef.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\FilterGroupAggExprssns.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\FilterGroupAggFields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Gauge Multi Gauge panel.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Gauge With Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Gauge with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Gauge.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\HomeAdvisor_Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\HomeAdvisor_OfficeDetails.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\HomeAdvisor_PropertiesByOffice_NoSubs.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\imageOnly.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\KPI_1000.kpi">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Large Aggregation Small Output.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\List.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MapAllElements.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MapinTablix_State.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MapinTablix_State_Bookmark.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MatrixNestedAggs.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MatrixSorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MatrixSubRpt.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000_1000_1000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_1000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_1000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\MR_50000_50000_50000.rsmobile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Multi-column with 5 Columns.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Multiple Queries Transactions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Multiple Queries.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Nested Aggregates.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Parameters Query and Hierarchical.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\pdfrenderissue.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\pdfrenderissueNoPHExpr.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Polygon_Point_LineMap.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Product Catalog.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Product Line Sales.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Recursive Drilldown.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\RecursiveT.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\RichText_Consolidated.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\RichText_LargeHorzList.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\RichText_MultipleTextBox.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\RoughElectionMapFilteredAtDS.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Running Value.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SalesOrderDetail_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SalesOrderDetail_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Show Hide.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleL-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleL-Subreports-Sub1.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleL-Subreports-Sub2.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleL-Subreports.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleM-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleT-Large-Pagination.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleT-Massive.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\SimpleT-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Sub-Report for Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\Sub-Report with Parameter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\TransactionHistory_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\WorkOrderRouting_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\WorkOrderRouting_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\WorkOrder_Top1000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Portal\WorkOrder_Top50000.rsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorks_Sales.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\Inventory.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\DeepM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\DeepT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\Product Catalog.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\SimpleM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\SimpleT-Large-Pagination.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Large\SimpleT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\BriefingBook.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\Chart with Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\Chart with Sorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\Chart with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\Chart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\DeepM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\DeepT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\Product Line Sales.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\RecursiveT.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\SimpleL-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\SimpleM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\SimpleM-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\SimpleT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Small\SimpleT-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\1000charts.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\1000gauges.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\AdventureWorks.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\AdventureWorks2000.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\BriefingBook.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Chart with Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Chart with Sorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Chart with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Chart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\DeepM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\DeepM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\DeepT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\DeepT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\DWScale.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\EmployeeCategorySalesChart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\HomeAdvisor.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\HomeAdvisor_Generates5MBDataset.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\HomeAdvisor_RowsParameter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\hugedatapoints.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\List.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\MultipleReports.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Northwind.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\NorthwindArabic.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Product Catalog.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\Product Line Sales.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\RecursiveT.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleL-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleL-Subreports-Sub1.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleL-Subreports-Sub2.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleL-Subreports.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleM-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\SimpleT-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\TestRpt0609.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\toomanygauges.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\UserSortSimpleTable.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\UserSort_Detail.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\UserSort_Group.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\UserSort_Group_SubGroup.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\General\UserSort_SubReportDetail.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\016ShowHideMatrixStaticRowCol.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\3RowsReport.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\AdventureWorks2000.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewMatrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewMatrixComplex.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewMatrixComplexStatics.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewMatrixNestedList.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewMatrixNestedMatrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewNestedLists.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewNestedTableAndList.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewNestedTables.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewTableDetails.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewTableGroupImages.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewTableGroups.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewTableMergedCells.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\NewTextbox.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\Northwind.rds">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\NewReports\Pie.Percentage.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Aggregates of Expressions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Aggregates of Fields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\BriefingBook.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Calculated Fields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Chart with Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Chart with Sorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Chart with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Chart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Colormap.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Complex Expressions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Conditional Formatting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DeepM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DeepM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DeepT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DeepT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DV_MapPolygonLayer_Marker.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\DV_USAStatesDrillthrough.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Election.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Embedded Images.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\FilterDatasetCmplxExp.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\FilterDatasetSmplFldRef.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\FilterGroupAggExprssns.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\FilterGroupAggFields.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Gauge Multi Gauge panel.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Gauge With Filter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Gauge with Sub-Report.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Gauge.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Large Aggregation Small Output.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\List.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MapAllElements.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MapinTablix_State.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MapinTablix_State_Bookmark.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MatrixNestedAggs.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MatrixSorting.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\MatrixSubRpt.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Multi-column with 5 Columns.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Multiple Queries Transactions.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Multiple Queries.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Nested Aggregates.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Parameters Query and Hierarchical.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Polygon_Point_LineMap.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Product Catalog.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Product Line Sales.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Recursive Drilldown.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\RecursiveT.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\RichText_Consolidated.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\RichText_LargeHorzList.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\RichText_MultipleTextBox.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\RoughElectionMapFilteredAtDS.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Running Value.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\Show Hide.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleL-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleL-Subreports.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleM-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\Performance\SimpleT-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\BriefingBook.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\Chart.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\DeepM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\DeepM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\DeepT-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\DeepT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\Gauge.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\Product Catalog.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\Product Line Sales.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\RecursiveT.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\RichText_Consolidated.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleL-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleM-Large.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleM-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleM-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleT-Medium.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SimpleT-Small.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\PGQL\SparklinesAndIndicators.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\SubReports\SimpleL-Subreports-Sub1.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\SubReports\SimpleL-Subreports-Sub2.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\SubReports\Sub-Report for Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\SubReports\Sub-Report with Parameter.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\HomeAdvisor_Matrix.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\HomeAdvisor_OfficeDetails.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\HomeAdvisor_PropertiesByOffice_NoSubs.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\SimpleT-Massive.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="MixedLoadWithPBI.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="MixedLoad.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="RSTest.Common.ReportServer.dll.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PaginatedLoad.loadtest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSAccessor\RSAccessor.csproj">
+      <Project>{b75d6817-6b90-4d2b-9da2-de6c42057787}</Project>
+      <Name>RSAccessor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

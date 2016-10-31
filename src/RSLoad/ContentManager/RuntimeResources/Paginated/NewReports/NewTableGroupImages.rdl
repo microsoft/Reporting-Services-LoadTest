@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Northwind">
+      <DataSourceReference>Northwind</DataSourceReference>
+      <rd:DataSourceID>5fda8710-6cb2-4013-bf0e-e8aadd63e007</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table2">
+        <Filters>
+          <Filter>
+            <Operator>TopN</Operator>
+            <FilterValues>
+              <FilterValue>=15</FilterValue>
+            </FilterValues>
+            <FilterExpression>=Fields!CategoryID.Value</FilterExpression>
+          </Filter>
+        </Filters>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.125in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="CategoryID">
+                          <rd:DefaultName>CategoryID</rd:DefaultName>
+                          <ZIndex>11</ZIndex>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!CategoryID.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox5">
+                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox17">
+                          <rd:DefaultName>textbox17</rd:DefaultName>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table2_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!CategoryID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox12">
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="ReorderLevel_1">
+                          <rd:DefaultName>ReorderLevel_1</rd:DefaultName>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!ReorderLevel.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox14">
+                          <rd:DefaultName>textbox14</rd:DefaultName>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!ReorderLevel.Value</SortExpression>
+                <Direction>Descending</Direction>
+              </SortBy>
+            </Sorting>
+            <Grouping Name="table2_Group2">
+              <GroupExpressions>
+                <GroupExpression>=Fields!ReorderLevel.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ProductName">
+                      <rd:DefaultName>ProductName</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ProductName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Image Name="image1">
+                      <Sizing>Fit</Sizing>
+                      <Source>Embedded</Source>
+                      <Style>
+                        <PaddingBottom>4pt</PaddingBottom>
+                        <PaddingRight>=(1.0 - Fields!UnitsInStock.Value / Max(Fields!UnitsInStock.Value, "DataSet1")) * 72 &amp; "pt"</PaddingRight>
+                      </Style>
+                      <Value>gradient</Value>
+                    </Image>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Category ID</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Reorder Level</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Product Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Units In Stock</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.375in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.375in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1in</Height>
+      </Table>
+    </ReportItems>
+    <Height>1.25in</Height>
+  </Body>
+  <rd:ReportID>ab05eb76-fb3c-4ca3-8892-e2cd67a2d98d</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <EmbeddedImages>
+    <EmbeddedImage Name="gradient">
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAAFwAAAAECAIAAACMUM+VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMBJREFUOE/t0ldOgzEUROGT/Uv03ltooffee29ZzwENgodA+FlApO/Blsa+1sglm6D0hfqLz8x34NdtTaAmXHi8cPrfNxSOq/e8n3M/SrEZW7A12rA9OrAzurAbe7A3+rAfB3AwhnAYR3AUx2IcJ7AckziF0ziDs1HBOZzHhVjEJVzGlVjFtVjHjdjELdzGHdyNPdzHAzyMIzzGkzjFMzzHC7yMK7zGG7zFu7jHB3yMJ3yOF3yNN6xCo5RGKf/6Ke8bJtRZRzfohAAAAABJRU5ErkJggg==</ImageData>
+      <MIMEType>image/png</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select * from products</CommandText>
+        <DataSourceName>Northwind</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ProductID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ProductID</DataField>
+        </Field>
+        <Field Name="ProductName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProductName</DataField>
+        </Field>
+        <Field Name="SupplierID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SupplierID</DataField>
+        </Field>
+        <Field Name="CategoryID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CategoryID</DataField>
+        </Field>
+        <Field Name="QuantityPerUnit">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>QuantityPerUnit</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitsInStock">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsInStock</DataField>
+        </Field>
+        <Field Name="UnitsOnOrder">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsOnOrder</DataField>
+        </Field>
+        <Field Name="ReorderLevel">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>ReorderLevel</DataField>
+        </Field>
+        <Field Name="Discontinued">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Discontinued</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.75in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

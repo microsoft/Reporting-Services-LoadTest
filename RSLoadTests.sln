@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSLoad", "src\RSLoad\RSLoad.csproj", "{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D38D8D9-45EB-4782-9A33-DF7BCCC1EC63}"
+	ProjectSection(SolutionItems) = preProject
+		RSLoadTest.testsettings = RSLoadTest.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSAccessor", "src\RSAccessor\RSAccessor.csproj", "{B75D6817-6B90-4D2B-9DA2-DE6C42057787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{1D4B63F2-E146-4F36-8272-93B7EB8FB448}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75D6817-6B90-4D2B-9DA2-DE6C42057787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75D6817-6B90-4D2B-9DA2-DE6C42057787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75D6817-6B90-4D2B-9DA2-DE6C42057787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75D6817-6B90-4D2B-9DA2-DE6C42057787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B75D6817-6B90-4D2B-9DA2-DE6C42057787} = {1D4B63F2-E146-4F36-8272-93B7EB8FB448}
+	EndGlobalSection
+EndGlobal

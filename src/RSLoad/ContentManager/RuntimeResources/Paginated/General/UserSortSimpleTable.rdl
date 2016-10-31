@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <rd:ReportID>0a06a00f-486e-4376-9428-ddf816fc662b</rd:ReportID>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <DataSources>
+    <DataSource Name="DataSet1">
+      <DataSourceReference>Northwind</DataSourceReference>
+      <rd:DataSourceID>d5e7cb85-bb1d-4ac9-b806-c9ebdd46d6b1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table2">
+        <PageBreakAtStart>true</PageBreakAtStart>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>1.75in</Top>
+        <ZIndex>1</ZIndex>
+        <PageBreakAtEnd>true</PageBreakAtEnd>
+        <Width>3in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>1in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EmployeeID.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortTarget>Table1</SortTarget>
+                        <SortExpression>=(Fields!EmployeeID.Value)</SortExpression>
+                      </UserSort>
+                      <Value>SORT ORDER</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>3in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Table Name="Table1">
+        <PageBreakAtStart>true</PageBreakAtStart>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.3333in</Top>
+        <PageBreakAtEnd>true</PageBreakAtEnd>
+        <Width>3in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>1in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox_data">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EmployeeID.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox_sort">
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortTarget>Table1</SortTarget>
+                        <SortExpression>=(Fields!EmployeeID.Value)</SortExpression>
+                      </UserSort>
+                      <Value>SORT ORDER</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>3in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.25in</Height>
+      </Table>
+    </ReportItems>
+    <Height>3in</Height>
+  </Body>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT EmployeeID FROM Employees</CommandText>
+        <DataSourceName>DataSet1</DataSourceName>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6in</Width>
+</Report>

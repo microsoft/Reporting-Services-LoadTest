@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Northwind1">
+      <DataSourceReference>Northwind</DataSourceReference>
+      <rd:DataSourceID>1c99f292-b883-450e-9c3b-f1efcdd1f8e9</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>Northwind</DataSetName>
+        <Top>0.375in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="EmployeeID">
+                          <rd:DefaultName>EmployeeID</rd:DefaultName>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!EmployeeID.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Subreport Name="subreport1">
+                          <Parameters>
+                            <Parameter Name="EmployeeID">
+                              <Value>=Fields!EmployeeID.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <ReportName>UserSort_SubReportDetail</ReportName>
+                        </Subreport>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Fields!EmployeeID.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortTarget>table1</SortTarget>
+                        <SortExpression>=Fields!EmployeeID.Value</SortExpression>
+                        <SortExpressionScope>table1_Group1</SortExpressionScope>
+                      </UserSort>
+                      <Value>Employee ID</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.55556in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.5in</Height>
+      </Table>
+    </ReportItems>
+    <Height>1.375in</Height>
+  </Body>
+  <rd:ReportID>3c1bd8ff-5240-45a8-98e8-1026b4b35fa7</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="Northwind">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>SELECT   top 5     EmployeeID, TerritoryID
+FROM            EmployeeTerritories</CommandText>
+        <DataSourceName>Northwind1</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="EmployeeID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>EmployeeID</DataField>
+        </Field>
+        <Field Name="TerritoryID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TerritoryID</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>3.80556in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2009/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DS_SqlMaps">
+      <DataSourceReference>DS_SqlMaps</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MapElementType">
+          <DataField>MapElementType</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpatialData">
+          <DataField>SpatialData</DataField>
+          <rd:TypeName>System.Object</rd:TypeName>
+        </Field>
+        <Field Name="AREA">
+          <DataField>AREA</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="STATE_FIPS">
+          <DataField>STATE_FIPS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SUB_REGION">
+          <DataField>SUB_REGION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_ABBR">
+          <DataField>STATE_ABBR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="POP1990">
+          <DataField>POP1990</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="POP1997">
+          <DataField>POP1997</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="POP90_SQMI">
+          <DataField>POP90_SQMI</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="HOUSEHOLDS">
+          <DataField>HOUSEHOLDS</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MALES">
+          <DataField>MALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FEMALES">
+          <DataField>FEMALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="WHITE">
+          <DataField>WHITE</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="BLACK">
+          <DataField>BLACK</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AMERI_ES">
+          <DataField>AMERI_ES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ASIAN_PI">
+          <DataField>ASIAN_PI</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OTHER">
+          <DataField>OTHER</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="HISPANIC">
+          <DataField>HISPANIC</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_UNDER5">
+          <DataField>AGE_UNDER5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_5_17">
+          <DataField>AGE_5_17</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_18_29">
+          <DataField>AGE_18_29</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_30_49">
+          <DataField>AGE_30_49</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_50_64">
+          <DataField>AGE_50_64</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AGE_65_UP">
+          <DataField>AGE_65_UP</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NEVERMARRY">
+          <DataField>NEVERMARRY</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MARRIED">
+          <DataField>MARRIED</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SEPARATED">
+          <DataField>SEPARATED</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="WIDOWED">
+          <DataField>WIDOWED</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DIVORCED">
+          <DataField>DIVORCED</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="HSEHLD_1_M">
+          <DataField>HSEHLD_1_M</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="HSEHLD_1_F">
+          <DataField>HSEHLD_1_F</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MARHH_CHD">
+          <DataField>MARHH_CHD</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MARHH_NO_C">
+          <DataField>MARHH_NO_C</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MHH_CHILD">
+          <DataField>MHH_CHILD</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FHH_CHILD">
+          <DataField>FHH_CHILD</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="HSE_UNITS">
+          <DataField>HSE_UNITS</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="VACANT">
+          <DataField>VACANT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OWNER_OCC">
+          <DataField>OWNER_OCC</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="RENTER_OCC">
+          <DataField>RENTER_OCC</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MEDIAN_VAL">
+          <DataField>MEDIAN_VAL</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MEDIANRENT">
+          <DataField>MEDIANRENT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS_1DET">
+          <DataField>UNITS_1DET</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS_1ATT">
+          <DataField>UNITS_1ATT</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS2">
+          <DataField>UNITS2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS3_9">
+          <DataField>UNITS3_9</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS10_49">
+          <DataField>UNITS10_49</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UNITS50_UP">
+          <DataField>UNITS50_UP</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MOBILEHOME">
+          <DataField>MOBILEHOME</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NO_FARMS87">
+          <DataField>NO_FARMS87</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AVG_SIZE87">
+          <DataField>AVG_SIZE87</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CROP_ACR87">
+          <DataField>CROP_ACR87</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="AVG_SALE87">
+          <DataField>AVG_SALE87</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ELECTORAL_COLLEGE">
+          <DataField>ELECTORAL_COLLEGE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.MapElementType
+  ,USA.Name
+  ,USA.SpatialData
+  ,USA.AREA
+  ,USA.STATE_FIPS
+  ,USA.SUB_REGION
+  ,USA.STATE_ABBR
+  ,USA.POP1990
+  ,USA.POP1997
+  ,USA.POP90_SQMI
+  ,USA.HOUSEHOLDS
+  ,USA.MALES
+  ,USA.FEMALES
+  ,USA.WHITE
+  ,USA.BLACK
+  ,USA.AMERI_ES
+  ,USA.ASIAN_PI
+  ,USA.OTHER
+  ,USA.HISPANIC
+  ,USA.AGE_UNDER5
+  ,USA.AGE_5_17
+  ,USA.AGE_18_29
+  ,USA.AGE_30_49
+  ,USA.AGE_50_64
+  ,USA.AGE_65_UP
+  ,USA.NEVERMARRY
+  ,USA.MARRIED
+  ,USA.SEPARATED
+  ,USA.WIDOWED
+  ,USA.DIVORCED
+  ,USA.HSEHLD_1_M
+  ,USA.HSEHLD_1_F
+  ,USA.MARHH_CHD
+  ,USA.MARHH_NO_C
+  ,USA.MHH_CHILD
+  ,USA.FHH_CHILD
+  ,USA.HSE_UNITS
+  ,USA.VACANT
+  ,USA.OWNER_OCC
+  ,USA.RENTER_OCC
+  ,USA.MEDIAN_VAL
+  ,USA.MEDIANRENT
+  ,USA.UNITS_1DET
+  ,USA.UNITS_1ATT
+  ,USA.UNITS2
+  ,USA.UNITS3_9
+  ,USA.UNITS10_49
+  ,USA.UNITS50_UP
+  ,USA.MOBILEHOME
+  ,USA.NO_FARMS87
+  ,USA.AVG_SIZE87
+  ,USA.CROP_ACR87
+  ,USA.AVG_SALE87
+  ,USA.ELECTORAL_COLLEGE
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="MapElementType" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="SpatialData" /><ColumnExpression ColumnOwner="USA" ColumnName="AREA" /><ColumnExpression ColumnOwner="USA" ColumnName="STATE_FIPS" /><ColumnExpression ColumnOwner="USA" ColumnName="SUB_REGION" /><ColumnExpression ColumnOwner="USA" ColumnName="STATE_ABBR" /><ColumnExpression ColumnOwner="USA" ColumnName="POP1990" /><ColumnExpression ColumnOwner="USA" ColumnName="POP1997" /><ColumnExpression ColumnOwner="USA" ColumnName="POP90_SQMI" /><ColumnExpression ColumnOwner="USA" ColumnName="HOUSEHOLDS" /><ColumnExpression ColumnOwner="USA" ColumnName="MALES" /><ColumnExpression ColumnOwner="USA" ColumnName="FEMALES" /><ColumnExpression ColumnOwner="USA" ColumnName="WHITE" /><ColumnExpression ColumnOwner="USA" ColumnName="BLACK" /><ColumnExpression ColumnOwner="USA" ColumnName="AMERI_ES" /><ColumnExpression ColumnOwner="USA" ColumnName="ASIAN_PI" /><ColumnExpression ColumnOwner="USA" ColumnName="OTHER" /><ColumnExpression ColumnOwner="USA" ColumnName="HISPANIC" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_UNDER5" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_5_17" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_18_29" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_30_49" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_50_64" /><ColumnExpression ColumnOwner="USA" ColumnName="AGE_65_UP" /><ColumnExpression ColumnOwner="USA" ColumnName="NEVERMARRY" /><ColumnExpression ColumnOwner="USA" ColumnName="MARRIED" /><ColumnExpression ColumnOwner="USA" ColumnName="SEPARATED" /><ColumnExpression ColumnOwner="USA" ColumnName="WIDOWED" /><ColumnExpression ColumnOwner="USA" ColumnName="DIVORCED" /><ColumnExpression ColumnOwner="USA" ColumnName="HSEHLD_1_M" /><ColumnExpression ColumnOwner="USA" ColumnName="HSEHLD_1_F" /><ColumnExpression ColumnOwner="USA" ColumnName="MARHH_CHD" /><ColumnExpression ColumnOwner="USA" ColumnName="MARHH_NO_C" /><ColumnExpression ColumnOwner="USA" ColumnName="MHH_CHILD" /><ColumnExpression ColumnOwner="USA" ColumnName="FHH_CHILD" /><ColumnExpression ColumnOwner="USA" ColumnName="HSE_UNITS" /><ColumnExpression ColumnOwner="USA" ColumnName="VACANT" /><ColumnExpression ColumnOwner="USA" ColumnName="OWNER_OCC" /><ColumnExpression ColumnOwner="USA" ColumnName="RENTER_OCC" /><ColumnExpression ColumnOwner="USA" ColumnName="MEDIAN_VAL" /><ColumnExpression ColumnOwner="USA" ColumnName="MEDIANRENT" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS_1DET" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS_1ATT" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS2" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS3_9" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS10_49" /><ColumnExpression ColumnOwner="USA" ColumnName="UNITS50_UP" /><ColumnExpression ColumnOwner="USA" ColumnName="MOBILEHOME" /><ColumnExpression ColumnOwner="USA" ColumnName="NO_FARMS87" /><ColumnExpression ColumnOwner="USA" ColumnName="AVG_SIZE87" /><ColumnExpression ColumnOwner="USA" ColumnName="CROP_ACR87" /><ColumnExpression ColumnOwner="USA" ColumnName="AVG_SALE87" /><ColumnExpression ColumnOwner="USA" ColumnName="ELECTORAL_COLLEGE" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <rd:DataRegionPlaceholder Name="DataRegionPlaceholder">
+            <rd:Top>0.6in</rd:Top>
+            <rd:Height>1.5in</rd:Height>
+            <rd:Width>5.5in</rd:Width>
+            <rd:Style />
+          </rd:DataRegionPlaceholder>
+          <Textbox Name="ReportTitle">
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>20pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.4in</Height>
+            <Width>5.5in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Map Name="Map1">
+            <MapViewport>
+              <MapCoordinateSystem>Geographic</MapCoordinateSystem>
+              <MapProjection>Mercator</MapProjection>
+              <ProjectionCenterX>0</ProjectionCenterX>
+              <ProjectionCenterY>0</ProjectionCenterY>
+              <MapLimits>
+                <MinimumX>NaN</MinimumX>
+                <MinimumY>NaN</MinimumY>
+                <MaximumX>NaN</MaximumX>
+                <MaximumY>NaN</MaximumY>
+              </MapLimits>
+              <MapCustomView>
+                <Zoom>100</Zoom>
+              </MapCustomView>
+              <MapMeridians>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Hidden>false</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapMeridians>
+              <MapParallels>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Hidden>false</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapParallels>
+              <GridUnderContent>false</GridUnderContent>
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>White</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                <ShadowOffset>1pt</ShadowOffset>
+              </Style>
+              <LeftMargin>4pt</LeftMargin>
+              <RightMargin>4pt</RightMargin>
+              <TopMargin>4pt</TopMargin>
+              <BottomMargin>4pt</BottomMargin>
+            </MapViewport>
+            <MapDataRegions>
+              <MapDataRegion Name="Map1_ShapeLayer1_DataRegion">
+                <DataSetName>DataSet2</DataSetName>
+                <MapMember>
+                  <Group Name="Map1_ShapeLayer1_Group">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </MapMember>
+              </MapDataRegion>
+            </MapDataRegions>
+            <MapLayers>
+              <MapPolygonLayer Name="ShapeLayer1">
+                <MapPolygonTemplate>
+                  <CenterPointOffsetX>0</CenterPointOffsetX>
+                  <CenterPointOffsetY>0</CenterPointOffsetY>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>White</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                  </Style>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip />
+                </MapPolygonTemplate>
+                <MapPolygonRules>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!HOUSEHOLDS.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                  </MapColorRangeRule>
+                </MapPolygonRules>
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Circle</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>White</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                  </Style>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip />
+                </MapMarkerTemplate>
+                <MapCenterPointRules>
+                  <MapSizeRule>
+                    <StartSize>1pt</StartSize>
+                    <EndSize>30pt</EndSize>
+                    <DataValue>=Sum(Fields!HOUSEHOLDS.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                  </MapSizeRule>
+                </MapCenterPointRules>
+                <MapDataRegionName>Map1_ShapeLayer1_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>Name</FieldName>
+                    <BindingExpression>=Fields!Name.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapSpatialDataSet>
+                  <DataSetName>DataSet2</DataSetName>
+                  <SpatialField>SpatialData</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>ELECTORAL_COLLEGE</MapFieldName>
+                    <MapFieldName>AVG_SALE87</MapFieldName>
+                    <MapFieldName>CROP_ACR87</MapFieldName>
+                    <MapFieldName>AVG_SIZE87</MapFieldName>
+                    <MapFieldName>NO_FARMS87</MapFieldName>
+                    <MapFieldName>MOBILEHOME</MapFieldName>
+                    <MapFieldName>UNITS50_UP</MapFieldName>
+                    <MapFieldName>UNITS10_49</MapFieldName>
+                    <MapFieldName>UNITS3_9</MapFieldName>
+                    <MapFieldName>UNITS2</MapFieldName>
+                    <MapFieldName>UNITS_1ATT</MapFieldName>
+                    <MapFieldName>UNITS_1DET</MapFieldName>
+                    <MapFieldName>MEDIANRENT</MapFieldName>
+                    <MapFieldName>MEDIAN_VAL</MapFieldName>
+                    <MapFieldName>RENTER_OCC</MapFieldName>
+                    <MapFieldName>OWNER_OCC</MapFieldName>
+                    <MapFieldName>VACANT</MapFieldName>
+                    <MapFieldName>HSE_UNITS</MapFieldName>
+                    <MapFieldName>FHH_CHILD</MapFieldName>
+                    <MapFieldName>MHH_CHILD</MapFieldName>
+                    <MapFieldName>MARHH_NO_C</MapFieldName>
+                    <MapFieldName>MARHH_CHD</MapFieldName>
+                    <MapFieldName>HSEHLD_1_F</MapFieldName>
+                    <MapFieldName>HSEHLD_1_M</MapFieldName>
+                    <MapFieldName>DIVORCED</MapFieldName>
+                    <MapFieldName>WIDOWED</MapFieldName>
+                    <MapFieldName>SEPARATED</MapFieldName>
+                    <MapFieldName>MARRIED</MapFieldName>
+                    <MapFieldName>NEVERMARRY</MapFieldName>
+                    <MapFieldName>AGE_65_UP</MapFieldName>
+                    <MapFieldName>AGE_50_64</MapFieldName>
+                    <MapFieldName>AGE_30_49</MapFieldName>
+                    <MapFieldName>AGE_18_29</MapFieldName>
+                    <MapFieldName>AGE_5_17</MapFieldName>
+                    <MapFieldName>AGE_UNDER5</MapFieldName>
+                    <MapFieldName>HISPANIC</MapFieldName>
+                    <MapFieldName>OTHER</MapFieldName>
+                    <MapFieldName>ASIAN_PI</MapFieldName>
+                    <MapFieldName>AMERI_ES</MapFieldName>
+                    <MapFieldName>BLACK</MapFieldName>
+                    <MapFieldName>WHITE</MapFieldName>
+                    <MapFieldName>FEMALES</MapFieldName>
+                    <MapFieldName>MALES</MapFieldName>
+                    <MapFieldName>HOUSEHOLDS</MapFieldName>
+                    <MapFieldName>POP90_SQMI</MapFieldName>
+                    <MapFieldName>POP1997</MapFieldName>
+                    <MapFieldName>POP1990</MapFieldName>
+                    <MapFieldName>STATE_ABBR</MapFieldName>
+                    <MapFieldName>SUB_REGION</MapFieldName>
+                    <MapFieldName>STATE_FIPS</MapFieldName>
+                    <MapFieldName>AREA</MapFieldName>
+                    <MapFieldName>Name</MapFieldName>
+                    <MapFieldName>MapElementType</MapFieldName>
+                    <MapFieldName>id</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>0</Transparency>
+              </MapPolygonLayer>
+            </MapLayers>
+            <MapLegends>
+              <MapLegend Name="Legend1">
+                <MapLegendTitle>
+                  <Style>
+                    <BackgroundColor>#00ffffff</BackgroundColor>
+                  </Style>
+                  <Caption />
+                </MapLegendTitle>
+                <AutoFitTextDisabled>false</AutoFitTextDisabled>
+                <InterlacedRows>false</InterlacedRows>
+                <EquallySpacedItems>false</EquallySpacedItems>
+                <Position>RightTop</Position>
+                <DockOutsideViewport>true</DockOutsideViewport>
+                <Hidden>false</Hidden>
+                <ToolTip />
+                <Style>
+                  <Border>
+                    <Color>Gray</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                  <BackgroundColor>White</BackgroundColor>
+                  <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                  <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                  <ShadowOffset>1pt</ShadowOffset>
+                </Style>
+                <LeftMargin>4pt</LeftMargin>
+                <RightMargin>4pt</RightMargin>
+                <TopMargin>4pt</TopMargin>
+                <BottomMargin>4pt</BottomMargin>
+                <ZIndex>1</ZIndex>
+              </MapLegend>
+            </MapLegends>
+            <MapDistanceScale>
+              <Position>RightBottom</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>false</Hidden>
+              <ToolTip />
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>White</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                <ShadowOffset>1pt</ShadowOffset>
+              </Style>
+              <MapSize>
+                <Width>80</Width>
+                <Height>40</Height>
+                <Unit>Point</Unit>
+              </MapSize>
+              <LeftMargin>4pt</LeftMargin>
+              <RightMargin>4pt</RightMargin>
+              <TopMargin>4pt</TopMargin>
+              <BottomMargin>4pt</BottomMargin>
+              <ZIndex>1</ZIndex>
+            </MapDistanceScale>
+            <MapColorScale>
+              <MapColorScaleTitle>
+                <Style />
+                <Caption />
+              </MapColorScaleTitle>
+              <LabelFormat>#,##0.##</LabelFormat>
+              <HideEndLabels>false</HideEndLabels>
+              <NoDataText>No data</NoDataText>
+              <Position>LeftBottom</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>false</Hidden>
+              <ToolTip />
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>White</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                <ShadowOffset>1pt</ShadowOffset>
+              </Style>
+              <LeftMargin>4pt</LeftMargin>
+              <RightMargin>4pt</RightMargin>
+              <TopMargin>4pt</TopMargin>
+              <BottomMargin>4pt</BottomMargin>
+              <ZIndex>1</ZIndex>
+            </MapColorScale>
+            <MapBorderSkin>
+              <Style>
+                <Border />
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                <Color>White</Color>
+              </Style>
+            </MapBorderSkin> 
+            <Top>0.60292in</Top>
+            <Left>0.89458in</Left>
+            <Height>4.67708in</Height>
+            <Width>6.95833in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Map>
+        </ReportItems>
+        <Height>5.28in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>7.85292in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <rd:ReportID>5455a1f9-19db-4fd0-9ac4-ffa9e63554c5</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

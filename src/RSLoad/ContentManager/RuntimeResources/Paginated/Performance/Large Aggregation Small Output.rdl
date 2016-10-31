@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Height>0.5in</Height>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Year</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Unit Price</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.125in</Top>
+        <Width>2.125in</Width>
+        <TableGroups>
+          <TableGroup>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox6">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Year(Fields!ModifiedDate.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="UnitPrice_1">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <rd:DefaultName>UnitPrice_1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Sum(Fields!UnitPrice.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Grouping Name="table1_Group1">
+              <GroupExpressions>
+                <GroupExpression>=Year(Fields!ModifiedDate.Value)</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Left>0.125in</Left>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>0.875in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>847e63d7-f043-4ef5-b6c9-5e2cb286dced</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>2.375in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CarrierTrackingNumber">
+          <DataField>CarrierTrackingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceDiscount">
+          <DataField>UnitPriceDiscount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     TOP 50000 OrderQty, UnitPrice, ModifiedDate, CarrierTrackingNumber, UnitPriceDiscount
+FROM         SalesOrderDetail
+UNION ALL
+SELECT     TOP 50000 OrderQty, UnitPrice, ModifiedDate, CarrierTrackingNumber, UnitPriceDiscount
+FROM         SalesOrderDetail</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>2475185a-d6f8-43c7-87ba-aca329c3fa16</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

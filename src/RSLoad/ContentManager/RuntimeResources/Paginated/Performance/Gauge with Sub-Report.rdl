@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2007/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="SalesPersonID">
+          <DataField>SalesPersonID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SalesYTD">
+          <DataField>SalesYTD</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     SalesPersonID, SalesYTD
+FROM         SalesPerson</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="list1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>6in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.875in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="list1_Contents">
+                      <ReportItems>
+                        <Textbox Name="SalesPersonID">
+                          <Value>=Fields!SalesPersonID.Value</Value>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Left>0.125in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1in</Width>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="SalesYTD">
+                          <Value>=Fields!SalesYTD.Value</Value>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Left>1.25in</Left>
+                          <Height>0.25in</Height>
+                          <Width>1in</Width>
+                          <ZIndex>1</ZIndex>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Subreport Name="subreport1">
+                          <ReportName>Gauge</ReportName>
+                          <KeepTogether>true</KeepTogether>
+                          <Top>0.125in</Top>
+                          <Left>2.375in</Left>
+                          <Height>1.625in</Height>
+                          <Width>3.625in</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <Border />
+                            <TopBorder />
+                            <BottomBorder />
+                            <LeftBorder />
+                            <RightBorder />
+                          </Style>
+                        </Subreport>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="list1_Details_Group" />
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.25in</Top>
+        <Left>0.125in</Left>
+        <Height>1.875in</Height>
+        <Width>6in</Width>
+        <Style />
+      </Tablix>
+    </ReportItems>
+    <Height>2.25in</Height>
+    <Style />
+  </Body>
+  <Width>6.25in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+</Report>

@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2009/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DS_SalesDataDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SqlMaps">
+      <DataSourceReference>DS_SqlMaps</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SalesDatDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_Antartica">
+      <DataSourceReference>DS_Antartica</DataSourceReference>
+    </DataSource>
+<DataSource Name="DS_SqlSpatial">
+      <DataSourceReference>DS_SqlSpatial</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpatialData">
+          <DataField>SpatialData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.Name
+  ,USA.SpatialData
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="SpatialData" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MALES">
+          <DataField>MALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FEMALES">
+          <DataField>FEMALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.Name
+  ,USA.MALES
+  ,USA.FEMALES
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="MALES" /><ColumnExpression ColumnOwner="USA" ColumnName="FEMALES" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet3">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_NAME">
+          <DataField>STATE_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="geom">
+          <DataField>geom</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlSpatial</DataSourceName>
+        <CommandText>SELECT
+  counties.ID
+  ,counties.NAME
+  ,counties.STATE_NAME
+  ,counties.geom
+FROM
+  counties
+WHERE counties.STATE_NAME LIKE 'Washington'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet4">
+      <Fields>
+        <Field Name="lng">
+          <DataField>lng</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lat">
+          <DataField>lat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="group">
+          <DataField>group</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GEOG">
+          <DataField>GEOG</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeography, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_Antartica</DataSourceName>
+        <CommandText>SELECT
+  Antartica.lng
+  ,Antartica.lat
+  ,Antartica.[group]
+  ,Antartica.GEOG
+FROM
+  Antartica</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="Antartica" ColumnName="lng" /><ColumnExpression ColumnOwner="Antartica" ColumnName="lat" /><ColumnExpression ColumnOwner="Antartica" ColumnName="group" /><ColumnExpression ColumnOwner="Antartica" ColumnName="GEOG" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Map Name="Map7">
+            <MapViewport>
+              <MapCoordinateSystem>Geographic</MapCoordinateSystem>
+              <MapProjection>Mercator</MapProjection>
+              <ProjectionCenterX>0</ProjectionCenterX>
+              <ProjectionCenterY>0</ProjectionCenterY>
+              <MapLimits>
+                <MinimumX>NaN</MinimumX>
+                <MinimumY>NaN</MinimumY>
+                <MaximumX>NaN</MaximumX>
+                <MaximumY>NaN</MaximumY>
+              </MapLimits>
+              <SimplificationResolution>0.01</SimplificationResolution>
+              <MapCustomView>
+                <Zoom>100</Zoom>
+              </MapCustomView>
+              <MapMeridians>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <FontSize>8pt</FontSize>
+                  <Format>#°E;#°W;0°</Format>
+                  <Color>#c08080ff</Color>
+                </Style>
+                <Hidden>true</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapMeridians>
+              <MapParallels>
+                <Style>
+                  <Border>
+                    <Color>#c08080ff</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <FontSize>8pt</FontSize>
+                  <Format>#°N;#°S;0°</Format>
+                  <Color>#c08080ff</Color>
+                </Style>
+                <Hidden>true</Hidden>
+                <Interval>NaN</Interval>
+                <ShowLabels>true</ShowLabels>
+              </MapParallels>
+              <GridUnderContent>false</GridUnderContent>
+              <Style>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>Solid</Style>
+                </Border>
+                <BackgroundColor>White</BackgroundColor>
+                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                <ShadowOffset>1pt</ShadowOffset>
+              </Style>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapViewport>
+            <MapDataRegions>
+              <MapDataRegion Name="Map7_PolygonLayer1_DataRegion">
+                <DataSetName>DataSet2</DataSetName>
+                <MapMember>
+                  <Group Name="Map1_PolygonLayer1_Group">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!id.Value</GroupExpression>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </MapMember>
+              </MapDataRegion>
+            </MapDataRegions>
+            <MapLayers>
+              <MapPolygonLayer Name="PolygonLayer1">
+                <MapPolygonTemplate>
+                  <CenterPointOffsetX>0</CenterPointOffsetX>
+                  <CenterPointOffsetY>0</CenterPointOffsetY>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>White</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label>#NAME</Label>
+                  <ToolTip />
+                  <DataElementLabel />
+                </MapPolygonTemplate>
+                <MapPolygonRules>
+                  <MapColorPaletteRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!MALES.Value)</DataValue>
+                    <DistributionType>EqualInterval</DistributionType>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                  </MapColorPaletteRule>
+                </MapPolygonRules>
+                <MapMarkerTemplate>
+                  <MapMarker>
+                    <MapMarkerStyle>Circle</MapMarkerStyle>
+                  </MapMarker>
+                  <Style>
+                    <Border>
+                      <Color>Gray</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                    <BackgroundColor>Aqua</BackgroundColor>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundGradientEndColor>PaleTurquoise</BackgroundGradientEndColor>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                  <Hidden>false</Hidden>
+                  <OffsetX>0</OffsetX>
+                  <OffsetY>0</OffsetY>
+                  <Label />
+                  <ToolTip>Male Percentage</ToolTip>
+                  <DataElementLabel />
+                </MapMarkerTemplate>
+                <MapCenterPointRules>
+                  <MapColorRangeRule>
+                    <ShowInColorScale>true</ShowInColorScale>
+                    <DataValue>=Sum(Fields!MALES.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                  </MapColorRangeRule>
+                  <MapMarkerRule>
+                    <MapMarkers>
+                      <MapMarker>
+                        <MapMarkerStyle>Circle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Diamond</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Pentagon</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Rectangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Star</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Triangle</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Trapezoid</MapMarkerStyle>
+                      </MapMarker>
+                      <MapMarker>
+                        <MapMarkerStyle>Wedge</MapMarkerStyle>
+                      </MapMarker>
+                    </MapMarkers>
+                    <DataValue>=Sum(Fields!MALES.Value)</DataValue>
+                    <StartValue />
+                    <EndValue />
+                    <LegendName />
+                    <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                  </MapMarkerRule>
+                </MapCenterPointRules>
+                <MapDataRegionName>Map7_PolygonLayer1_DataRegion</MapDataRegionName>
+                <MapBindingFieldPairs>
+                  <MapBindingFieldPair>
+                    <FieldName>id</FieldName>
+                    <BindingExpression>=Fields!id.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                  <MapBindingFieldPair>
+                    <FieldName>Name</FieldName>
+                    <BindingExpression>=Fields!Name.Value</BindingExpression>
+                  </MapBindingFieldPair>
+                </MapBindingFieldPairs>
+                <MapFieldDefinitions>
+                  <MapFieldDefinition>
+                    <Name>Name</Name>
+                    <DataType>String</DataType>
+                  </MapFieldDefinition>
+                </MapFieldDefinitions>
+                <MapSpatialDataSet>
+                  <DataSetName>DataSet1</DataSetName>
+                  <SpatialField>SpatialData</SpatialField>
+                  <MapFieldNames>
+                    <MapFieldName>id</MapFieldName>
+                    <MapFieldName>Name</MapFieldName>
+                  </MapFieldNames>
+                </MapSpatialDataSet>
+                <Transparency>0</Transparency>
+              </MapPolygonLayer>
+            </MapLayers>
+            <MapDistanceScale>
+              <ScaleColor>CornflowerBlue</ScaleColor>
+              <ScaleBorderColor>DarkViolet</ScaleBorderColor>
+              <Position>RightBottom</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>true</Hidden>
+              <ToolTip>This is DistanceScale</ToolTip>
+              <Style>
+                <Border>
+                  <Color>Blue</Color>
+                  <Style>Dashed</Style>
+                  <Width>2pt</Width>
+                </Border>
+                <BackgroundColor>SeaGreen</BackgroundColor>
+                <BackgroundGradientType>DiagonalRight</BackgroundGradientType>
+                <BackgroundGradientEndColor>LightBlue</BackgroundGradientEndColor>
+                <FontSize>8pt</FontSize>
+                <Color>Brown</Color>
+                <BackgroundHatchType>DarkUpwardDiagonal</BackgroundHatchType>
+                <ShadowOffset>1.5pt</ShadowOffset>
+              </Style>
+              <MapSize>
+                <Width>80</Width>
+                <Height>40</Height>
+                <Unit>Point</Unit>
+              </MapSize>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapDistanceScale>
+            <MapColorScale>
+              <MapColorScaleTitle>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+                <Caption>ColorScale</Caption>
+              </MapColorScaleTitle>
+              <TickMarkLength>2.75pt</TickMarkLength>
+              <ColorBarBorderColor>DarkViolet</ColorBarBorderColor>
+              <LabelFormat>#,##0.##</LabelFormat>
+              <HideEndLabels>false</HideEndLabels>
+              <RangeGapColor>LightBlue</RangeGapColor>
+              <NoDataText>No data</NoDataText>
+              <Position>LeftBottom</Position>
+              <DockOutsideViewport>false</DockOutsideViewport>
+              <Hidden>true</Hidden>
+              <ToolTip>This is a Map Color Scale</ToolTip>
+              <Style>
+                <Border>
+                  <Color>Aqua</Color>
+                  <Style>DashDot</Style>
+                  <Width>2pt</Width>
+                </Border>
+                <BackgroundColor>SeaGreen</BackgroundColor>
+                <BackgroundGradientType>Center</BackgroundGradientType>
+                <BackgroundGradientEndColor>Plum</BackgroundGradientEndColor>
+                <FontSize>8pt</FontSize>
+                <BackgroundHatchType>BackwardDiagonal</BackgroundHatchType>
+                <ShadowOffset>1.5pt</ShadowOffset>
+              </Style>
+              <LeftMargin>2pt</LeftMargin>
+              <RightMargin>2pt</RightMargin>
+              <TopMargin>2pt</TopMargin>
+              <BottomMargin>2pt</BottomMargin>
+            </MapColorScale>
+            <MapBorderSkin>
+              <Style>
+                <Border />
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                <Color>White</Color>
+              </Style>
+            </MapBorderSkin>
+            <Top>0.1in</Top>
+            <Left>0.1in</Left>
+            <Height>3.72222in</Height>
+            <Width>5.83333in</Width>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Map>
+          <Textbox Name="ReportTitle">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Map - PolygonLayer(ColorAnalytical)</Value>
+                    <Style>
+                      <FontFamily>Verdana</FontFamily>
+                      <FontSize>20pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <Height>0.4in</Height>
+            <Width>5.5in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>5.30083in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6.5925in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <rd:ReportID>e28531cc-4f20-4830-8971-a0553c953978</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

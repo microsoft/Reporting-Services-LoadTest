@@ -1,0 +1,2634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">   
+<DataSources>
+    <DataSource Name="SSRSMemoryUse">
+      <DataSourceReference>SSRSMemoryUse</DataSourceReference>
+      <rd:DataSourceID>f5117faa-ed3d-4377-a203-f9ea3c63c8e5</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.25in</BottomMargin>
+  <RightMargin>0.25in</RightMargin>
+  <PageWidth>11in</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="NumDesiredRows">
+      <DataType>Integer</DataType>
+      <AllowBlank>true</AllowBlank>
+      <DefaultValue>
+        <Values>
+          <Value>100000</Value>
+        </Values>
+      </DefaultValue>      
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <Left>0.125in</Left>
+        <Top>0.825in</Top>
+        <ZIndex>3</ZIndex>
+        <Width>10.125in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>12pt</FontSize>
+          <Color>="#" &amp; Trim(First(Fields!SecondaryHeaderColor.Value,"HeaderInfo"))</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Custom Unit Performance Analysis - New Format</Value>
+      </Textbox>
+      <Textbox Name="DateRange">
+        <Left>0.125in</Left>
+        <Top>1.1in</Top>
+        <ZIndex>2</ZIndex>
+        <Width>10.125in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <Color>="#" &amp; Trim(First(Fields!SecondaryHeaderColor.Value,"HeaderInfo"))</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=CDate(First(Fields!CurrentStartDate.Value, "HeaderInfo")).ToShortDateString() &amp; " - " &amp;  CDate(First(Fields!CurrentEndDate.Value, "HeaderInfo")).ToShortDateString()</Value>
+      </Textbox>
+      <Textbox Name="ClientName">
+        <Left>0.125in</Left>
+        <Top>0.575in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>10.125in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>12pt</FontSize>
+          <Color>="#" &amp; Trim(First(Fields!MainHeaderColor.Value,"HeaderInfo"))</Color>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Trim(First(Fields!ClientName.Value, "HeaderInfo"))</Value>
+      </Textbox>
+      <Table Name="table1">
+        <NoRows>=" NO DATA FOUND : " &amp; ReportItems!DateRange.Value</NoRows>
+        <Left>0.125in</Left>
+        <DataSetName>UnitPerformanceA</DataSetName>
+        <Top>1.375in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="PageBreakGroup">
+              <PageBreakAtEnd>true</PageBreakAtEnd>
+              <GroupExpressions>
+                <GroupExpression>=Ceiling(RowNumber(Nothing)/65500)</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </TableGroup>
+        </TableGroups>
+        <Width>47.025in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Unit">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>42</ZIndex>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Fields!Unit1.Value Is Nothing) OR System.String.Compare(Fields!Unit1.Value, System.String.Empty) = 0, IIF((Fields!Unit2.Value Is Nothing) OR System.String.Compare(Fields!Unit2.Value, System.String.Empty) = 0, Fields!OpOrg3Level1.Value, Fields!Unit2.Value), Fields!Unit1.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ChargeCreditsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>ChargeCreditsReceived</rd:DefaultName>
+                      <ZIndex>41</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ChrgChrgCredRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalLiabilityAvoidedOrSuspended">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>40</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TotalLiabilityAvoided.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalBenefitChargesReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>TotalBenefitChargesReceived</rd:DefaultName>
+                      <ZIndex>39</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>C</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ChrgTotalBnftChrgRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SeparationsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>38</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SepsRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimsProcessed">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>37</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmProc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LateClaimsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>36</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmProcLate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="RequestsForInformation">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>RequestsForInformation</rd:DefaultName>
+                      <ZIndex>35</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!InfoReqReqForInfo.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimsProtested">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>34</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmProt.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimsNotProtested">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>33</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmNotProt.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimDecisionsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>32</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmDecRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="AppealsFiled">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>31</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AppFiled.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingsScheduled">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>30</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearSched.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingDecisionsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>29</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearDecRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SecondLevelAppealsFiled">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>28</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SecLvlAppFiled.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SecondLevelAppealDecisionsReceived">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>SecondLevelAppealDecisionsReceived</rd:DefaultName>
+                      <ZIndex>27</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SecLvlDecRecd.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OverallWinRate">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>26</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>P0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value = 0, 0, ((Fields!ClmDecRecdWon.Value + Fields!HearDecRecdWon.Value + Fields!SecLvlDecRecdWon.Value)/(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value - Fields!DecPending.Value )) )</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OverallLossRate">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>25</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>P0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value = 0, 0, ((Fields!ClmDecRecdLost.Value	+ Fields!HearDecRecdLost.Value +	Fields!SecLvlDecRecdLost.Value- Fields!DecPending.Value)/(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value)) )</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="MisconductDischargeSeparations">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>24</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TotalMiscDschSeps.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VoluntaryQuitsResignationSeparations">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>23</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TotalVolQuitsResSeps.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="MisconductDischarges">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>22</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmMiscDsch.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VoluntaryQuitsResignations">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>VoluntaryQuitsResignations</rd:DefaultName>
+                      <ZIndex>21</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmVolQuitsRes.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="JobRefusalsAvailabilityIssues">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>JobRefusalsAvailabilityIssues</rd:DefaultName>
+                      <ZIndex>20</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmJobRefAvailIssues.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DisqualifyingPayIssues">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmDisqPayIssues.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LaborDisputeStrike">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmLaborDispStrike.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OtherClaimsProtested">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmOtherClmProt.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PoorPerformanceNoMisconduct">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmPoorPerfNoMisc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LackOfWorkLaidOff">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmLackOfWorkLaidOff.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NotProtestedAtClientRequest">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <Value>=Fields!ClmNotProtClientReq.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NoSeparationInformationProvided">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <Value>=Fields!ClmNoSepInfoProv.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimsNotProtestedByStateRegulation">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>ClaimsNotProtestedByStateRegulation</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmClmNotProtStateReg.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OtherClaimsNotProtested">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>OtherClaimsNotProtested</rd:DefaultName>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmOtherClmNotProt.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="MissingSeparations">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmMissingSeps.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SeparationRecordNotAvailable">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmSepRcrdNotAvail.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ClaimsReceivedTooLateToProtest">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmClmRecdTooLateToProt.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SeparationInfoRequestedNoResponse">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmSepInfoReqNoResp.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NotProtestedAtClientRequestPC">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ClmNotProtClientReq.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DecisionReceivedTooLateToAppeal">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!DetermTooLateToAppeal.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NoFurtherAppealRequestedByEmployer">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!NoFthrAppealReq.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingNoticeReceivedAfterHearingDate">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearSchedHearNtcRecdAfterHearDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingsLostEmployerDidNotAttend">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>HearingsLostEmployerDidNotAttend</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearDecRecdLostEmplNotAttend.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingsLostNoFirsthandTestimony">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>HearingsLostNoFirsthandTestimony</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearDecRecdLostNoFrstTest.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="HearingsLostInsufficientDocumentation">
+                      <DataElementOutput>Output</DataElementOutput>
+                      <rd:DefaultName>HearingsLostInsufficientDocumentation</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <Format>D0</Format>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#" &amp; Trim(First(Fields!DetailAlternateBGColor.Value, "HeaderInfo")), "#FFFFFF")</BackgroundColor>
+                        <PaddingRight>15pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!HearDecRecdLostLostInsuffDoc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ZIndex>85</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=LTrim(Fields!Unit1.Value) + LTrim(Fields!Unit2.Value)</SortExpression>
+                      </UserSort>
+                      <Value>Unit</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <ZIndex>84</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ChrgChrgCredRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>Charge Credits Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>83</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!TotalLiabilityAvoided.Value</SortExpression>
+                      </UserSort>
+                      <Value>Total Liability Avoided Or Suspended</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>82</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ChrgTotalBnftChrgRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>Total Benefit Charges Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>81</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!SepsRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>Separations Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <ZIndex>80</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmProc.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claims Processed</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>79</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmProcLate.Value</SortExpression>
+                      </UserSort>
+                      <Value>Late Claims Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox22">
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <ZIndex>78</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!InfoReqReqForInfo.Value</SortExpression>
+                      </UserSort>
+                      <Value>Requests For Information</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox49">
+                      <rd:DefaultName>textbox49</rd:DefaultName>
+                      <ZIndex>77</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmProt.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claims Protested </Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <rd:DefaultName>textbox53</rd:DefaultName>
+                      <ZIndex>76</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmNotProt.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claims Not Protested </Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox55">
+                      <rd:DefaultName>textbox55</rd:DefaultName>
+                      <ZIndex>75</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmDecRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claim Decisions Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox73">
+                      <rd:DefaultName>textbox73</rd:DefaultName>
+                      <ZIndex>74</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!AppFiled.Value</SortExpression>
+                      </UserSort>
+                      <Value>Appeals Filed</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox81">
+                      <rd:DefaultName>textbox81</rd:DefaultName>
+                      <ZIndex>73</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearSched.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearings Scheduled</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox91">
+                      <rd:DefaultName>textbox91</rd:DefaultName>
+                      <ZIndex>72</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearDecRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearing Decisions Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox105">
+                      <rd:DefaultName>textbox105</rd:DefaultName>
+                      <ZIndex>71</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!SecLvlAppFiled.Value</SortExpression>
+                      </UserSort>
+                      <Value>2nd Level Appeals Filed</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox107">
+                      <rd:DefaultName>textbox107</rd:DefaultName>
+                      <ZIndex>70</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!SecLvlDecRecd.Value</SortExpression>
+                      </UserSort>
+                      <Value>2nd Level Appeal Decisions Received</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox123">
+                      <rd:DefaultName>textbox123</rd:DefaultName>
+                      <ZIndex>69</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=IIF(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value = 0, 0, ((Fields!ClmDecRecdWon.Value + Fields!HearDecRecdWon.Value + Fields!SecLvlDecRecdWon.Value)/(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value - Fields!DecPending.Value )) )</SortExpression>
+                      </UserSort>
+                      <Value>Overall Win Rate (%)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox125">
+                      <rd:DefaultName>textbox125</rd:DefaultName>
+                      <ZIndex>68</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=IIF(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value = 0, 0, ((Fields!ClmDecRecdLost.Value	+ Fields!HearDecRecdLost.Value +	Fields!SecLvlDecRecdLost.Value- Fields!DecPending.Value)/(Fields!ClmDecRecd.Value + Fields!HearDecRecd.Value + Fields!SecLvlDecRecd.Value -Fields!DecPending.Value)) )</SortExpression>
+                      </UserSort>
+                      <Value>Overall Loss Rate(%)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <ZIndex>67</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!TotalMiscDschSeps.Value</SortExpression>
+                      </UserSort>
+                      <Value>Misconduct Discharge Separations</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>66</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!TotalVolQuitsResSeps.Value</SortExpression>
+                      </UserSort>
+                      <Value>Voluntary Quits / Resignation Separations</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox127">
+                      <rd:DefaultName>textbox127</rd:DefaultName>
+                      <ZIndex>65</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmMiscDsch.Value</SortExpression>
+                      </UserSort>
+                      <Value>Misconduct Discharges</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox131">
+                      <rd:DefaultName>textbox131</rd:DefaultName>
+                      <ZIndex>64</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmVolQuitsRes.Value</SortExpression>
+                      </UserSort>
+                      <Value>Voluntary Quits / Resignations</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox134">
+                      <rd:DefaultName>textbox134</rd:DefaultName>
+                      <ZIndex>63</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmJobRefAvailIssues.Value</SortExpression>
+                      </UserSort>
+                      <Value>Job Refusals / Availability Issues</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox139">
+                      <rd:DefaultName>textbox139</rd:DefaultName>
+                      <ZIndex>62</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmDisqPayIssues.Value</SortExpression>
+                      </UserSort>
+                      <Value>Disqualifying Pay Issues</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox147">
+                      <rd:DefaultName>textbox147</rd:DefaultName>
+                      <ZIndex>61</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmLaborDispStrike.Value</SortExpression>
+                      </UserSort>
+                      <Value>Labor Dispute / Strike</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox151">
+                      <rd:DefaultName>textbox151</rd:DefaultName>
+                      <ZIndex>60</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmOtherClmProt.Value</SortExpression>
+                      </UserSort>
+                      <Value>Other Claims Protested</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox155">
+                      <rd:DefaultName>textbox155</rd:DefaultName>
+                      <ZIndex>59</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmPoorPerfNoMisc.Value</SortExpression>
+                      </UserSort>
+                      <Value>Poor Performance - No Misconduct </Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox159">
+                      <rd:DefaultName>textbox159</rd:DefaultName>
+                      <ZIndex>58</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmLackOfWorkLaidOff.Value</SortExpression>
+                      </UserSort>
+                      <Value>Lack Of Work / Laid Off</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox163">
+                      <rd:DefaultName>textbox163</rd:DefaultName>
+                      <ZIndex>57</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmNotProtClientReq.Value</SortExpression>
+                      </UserSort>
+                      <Value>Not Protested At Client Request</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox167">
+                      <rd:DefaultName>textbox167</rd:DefaultName>
+                      <ZIndex>56</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmNoSepInfoProv.Value</SortExpression>
+                      </UserSort>
+                      <Value>No Separation Information Provided</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox169">
+                      <rd:DefaultName>textbox169</rd:DefaultName>
+                      <ZIndex>55</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmClmNotProtStateReg.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claims Not Protested By State Regulation</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox175">
+                      <rd:DefaultName>textbox175</rd:DefaultName>
+                      <ZIndex>54</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmOtherClmNotProt.Value</SortExpression>
+                      </UserSort>
+                      <Value>Other Claims Not Protested</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <ZIndex>53</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmMissingSeps.Value</SortExpression>
+                      </UserSort>
+                      <Value>Missing Separations</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <ZIndex>52</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmSepRcrdNotAvail.Value</SortExpression>
+                      </UserSort>
+                      <Value>Separation Record Not Available</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox99">
+                      <ZIndex>51</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmClmRecdTooLateToProt.Value</SortExpression>
+                      </UserSort>
+                      <Value>Claims Received Too Late To Protest</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox185">
+                      <rd:DefaultName>textbox185</rd:DefaultName>
+                      <ZIndex>50</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmSepInfoReqNoResp.Value</SortExpression>
+                      </UserSort>
+                      <Value>Separation Info Requested - No Response</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox191">
+                      <rd:DefaultName>textbox191</rd:DefaultName>
+                      <ZIndex>49</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!ClmNotProtClientReq.Value</SortExpression>
+                      </UserSort>
+                      <Value>Not Protested At Client Request</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox197">
+                      <rd:DefaultName>textbox197</rd:DefaultName>
+                      <ZIndex>48</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!DetermTooLateToAppeal.Value</SortExpression>
+                      </UserSort>
+                      <Value>Decision Received Too Late To Appeal</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox209">
+                      <rd:DefaultName>textbox209</rd:DefaultName>
+                      <ZIndex>47</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!NoFthrAppealReq.Value</SortExpression>
+                      </UserSort>
+                      <Value>No Furthur Appeal Requested By Employer </Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox215">
+                      <rd:DefaultName>textbox215</rd:DefaultName>
+                      <ZIndex>46</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearSchedHearNtcRecdAfterHearDate.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearing Notice Received After Hearing Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox221">
+                      <rd:DefaultName>textbox221</rd:DefaultName>
+                      <ZIndex>45</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearDecRecdLostEmplNotAttend.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearings Lost -Employer Not Attend</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox227">
+                      <rd:DefaultName>textbox227</rd:DefaultName>
+                      <ZIndex>44</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearDecRecdLostNoFrstTest.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearings Lost - No FirstHand Testimony</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox233">
+                      <rd:DefaultName>textbox233</rd:DefaultName>
+                      <ZIndex>43</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Color>="#" &amp; Trim(First(Fields!ColumnHeaderTextColor.Value,"HeaderInfo"))</Color>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <UserSort>
+                        <SortExpression>=Fields!HearDecRecdLostLostInsuffDoc.Value</SortExpression>
+                      </UserSort>
+                      <Value>Hearings Lost - Insufficient Documentation</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.5in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>5.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.95in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.95in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.95in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.95in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.075in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.925in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.3in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.925in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.85in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.8in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.8in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.325in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.85in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.975in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.95in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.175in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.925in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.925in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.125in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>2.125in</Height>
+  </Body>
+  <rd:ReportID>149fb5ef-a00b-4edf-b5d2-358dd473c027</rd:ReportID>
+  <LeftMargin>0.25in</LeftMargin>
+  <DataSets>
+    <DataSet Name="UnitPerformanceA">
+      <Query>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>getDataForCustomUnitPerformance</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@NumDesiredRows">
+            <Value>=Parameters!NumDesiredRows.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <DataSourceName>SSRSMemoryUse</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Unit1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Unit1</DataField>
+        </Field>
+        <Field Name="Unit2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Unit2</DataField>
+        </Field>
+        <Field Name="OpOrg3Level1">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>OpOrg3Level1</DataField>
+        </Field>
+        <Field Name="ClmProc">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmProc</DataField>
+        </Field>
+        <Field Name="ClmProt">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmProt</DataField>
+        </Field>
+        <Field Name="ClmNotProt">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmNotProt</DataField>
+        </Field>
+        <Field Name="ClmMiscDsch">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmMiscDsch</DataField>
+        </Field>
+        <Field Name="ClmVolQuitsRes">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmVolQuitsRes</DataField>
+        </Field>
+        <Field Name="ClmJobRefAvailIssues">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmJobRefAvailIssues</DataField>
+        </Field>
+        <Field Name="ClmDisqPayIssues">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDisqPayIssues</DataField>
+        </Field>
+        <Field Name="ClmLaborDispStrike">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmLaborDispStrike</DataField>
+        </Field>
+        <Field Name="ClmOtherClmProt">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmOtherClmProt</DataField>
+        </Field>
+        <Field Name="ClmPoorPerfNoMisc">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmPoorPerfNoMisc</DataField>
+        </Field>
+        <Field Name="ClmLackOfWorkLaidOff">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmLackOfWorkLaidOff</DataField>
+        </Field>
+        <Field Name="ClmNoSepInfoProv">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmNoSepInfoProv</DataField>
+        </Field>
+        <Field Name="ClmClmNotProtStateReg">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmClmNotProtStateReg</DataField>
+        </Field>
+        <Field Name="ClmOtherClmNotProt">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmOtherClmNotProt</DataField>
+        </Field>
+        <Field Name="ClmMissingSeps">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmMissingSeps</DataField>
+        </Field>
+        <Field Name="ClmSepRcrdNotAvail">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmSepRcrdNotAvail</DataField>
+        </Field>
+        <Field Name="ClmClmRecdTooLateToProt">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmClmRecdTooLateToProt</DataField>
+        </Field>
+        <Field Name="ClmSepInfoReqNoResp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmSepInfoReqNoResp</DataField>
+        </Field>
+        <Field Name="ClmNotProtClientReq">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmNotProtClientReq</DataField>
+        </Field>
+        <Field Name="ClmProcLate">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmProcLate</DataField>
+        </Field>
+        <Field Name="ClmProcLateLiab">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ClmProcLateLiab</DataField>
+        </Field>
+        <Field Name="ClmDecRecd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecd</DataField>
+        </Field>
+        <Field Name="ClmDecRecdWon">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdWon</DataField>
+        </Field>
+        <Field Name="ClmDecRecdWonLiabAvoidSusp">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ClmDecRecdWonLiabAvoidSusp</DataField>
+        </Field>
+        <Field Name="ClmDecRecdLost">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdLost</DataField>
+        </Field>
+        <Field Name="ClmDecRecdMiscDschSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdMiscDschSep</DataField>
+        </Field>
+        <Field Name="ClmDecRecdVolQuitResSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdVolQuitResSep</DataField>
+        </Field>
+        <Field Name="ClmDecRecdTooLateToApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdTooLateToApp</DataField>
+        </Field>
+        <Field Name="ClmDecRecdNoFthrApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ClmDecRecdNoFthrApp</DataField>
+        </Field>
+        <Field Name="HearDecRecd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecd</DataField>
+        </Field>
+        <Field Name="HearDecRecdWon">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdWon</DataField>
+        </Field>
+        <Field Name="HearDecRecdWonLiabAvoidSusp">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>HearDecRecdWonLiabAvoidSusp</DataField>
+        </Field>
+        <Field Name="HearDecRecdLost">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdLost</DataField>
+        </Field>
+        <Field Name="HearDecRecdEmplAppealWon">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdEmplAppealWon</DataField>
+        </Field>
+        <Field Name="HearDecRecdLostEmplNotAttend">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdLostEmplNotAttend</DataField>
+        </Field>
+        <Field Name="HearDecRecdLostNoFrstTest">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdLostNoFrstTest</DataField>
+        </Field>
+        <Field Name="HearDecRecdLostLostInsuffDoc">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdLostLostInsuffDoc</DataField>
+        </Field>
+        <Field Name="HearDecRecdMiscDschSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdMiscDschSep</DataField>
+        </Field>
+        <Field Name="HearDecRecdVolQuitResSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdVolQuitResSep</DataField>
+        </Field>
+        <Field Name="HearDecRecdTooLateToApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdTooLateToApp</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecd</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdWon">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdWon</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdWonLiabAvoidSusp">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SecLvlDecRecdWonLiabAvoidSusp</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdLost">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdLost</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdMiscDschSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdMiscDschSep</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdVolQuitResSep">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdVolQuitResSep</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdTooLateToApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdTooLateToApp</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdTooLateToAppLiab">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SecLvlDecRecdTooLateToAppLiab</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdNoFthrApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlDecRecdNoFthrApp</DataField>
+        </Field>
+        <Field Name="SecLvlDecRecdNoFthrAppLiab">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SecLvlDecRecdNoFthrAppLiab</DataField>
+        </Field>
+        <Field Name="TotalLiabAvoidOrSusp">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TotalLiabAvoidOrSusp</DataField>
+        </Field>
+        <Field Name="DecPending">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DecPending</DataField>
+        </Field>
+        <Field Name="ChrgChrgCredRecd">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ChrgChrgCredRecd</DataField>
+        </Field>
+        <Field Name="ChrgTotalBnftChrgRecd">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>ChrgTotalBnftChrgRecd</DataField>
+        </Field>
+        <Field Name="HearSched">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearSched</DataField>
+        </Field>
+        <Field Name="HearSchedHearNtcRecdAfterHearDate">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearSchedHearNtcRecdAfterHearDate</DataField>
+        </Field>
+        <Field Name="HearSchedHearNtcRecdAfterHearDateLiab">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>HearSchedHearNtcRecdAfterHearDateLiab</DataField>
+        </Field>
+        <Field Name="AppFiled">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>AppFiled</DataField>
+        </Field>
+        <Field Name="SecLvlAppFiled">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SecLvlAppFiled</DataField>
+        </Field>
+        <Field Name="SepsRecd">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SepsRecd</DataField>
+        </Field>
+        <Field Name="InfoReqReqForInfo">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>InfoReqReqForInfo</DataField>
+        </Field>
+        <Field Name="HearDecRecdNoFthrApp">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>HearDecRecdNoFthrApp</DataField>
+        </Field>
+        <Field Name="TotalLiabilityAvoided">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TotalLiabilityAvoided</DataField>
+        </Field>
+        <Field Name="DetermTooLateToAppeal">
+          <Value>=Fields!ClmDecRecdTooLateToApp.Value + Fields!HearDecRecdTooLateToApp.Value</Value>
+        </Field>
+        <Field Name="NoFthrAppealReq">
+          <Value>=Fields!ClmDecRecdNoFthrApp.Value + Fields!HearDecRecdNoFthrApp.Value</Value>
+        </Field>
+        <Field Name="OverallWinRate">
+          <Value>=IIF((Fields!OverallWins.Value + Fields!OverallLoss.Value - Fields!DecPending.Value) = 0, 0, (Fields!OverallWins.Value / (Fields!OverallWins.Value + Fields!OverallLoss.Value - Fields!DecPending.Value)) * 100)</Value>
+        </Field>
+        <Field Name="OverallLossRate">
+          <Value>=IIF((Fields!OverallWins.Value + Fields!OverallLoss.Value - Fields!DecPending.Value) = 0, 0, (Fields!OverallLoss.Value / (Fields!OverallWins.Value + Fields!OverallLoss.Value - Fields!DecPending.Value)) * 100)</Value>
+        </Field>
+        <Field Name="OverallWins">
+          <Value>=Fields!ClmDecRecdWon.Value + Fields!HearDecRecdWon.Value + Fields!SecLvlDecRecdWon.Value</Value>
+        </Field>
+        <Field Name="OverallLoss">
+          <Value>=Fields!ClmDecRecdLost.Value + Fields!HearDecRecdLost.Value + Fields!SecLvlDecRecdLost.Value</Value>
+        </Field>
+        <Field Name="TotalMiscDschSeps">
+          <Value>=Fields!ClmDecRecdMiscDschSep.Value + Fields!HearDecRecdMiscDschSep.Value + Fields!SecLvlDecRecdMiscDschSep.Value</Value>
+        </Field>
+        <Field Name="TotalVolQuitsResSeps">
+          <Value>=Fields!ClmDecRecdVolQuitResSep.Value+ Fields!HearDecRecdVolQuitResSep.Value + Fields!SecLvlDecRecdVolQuitResSep.Value</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="HeaderInfo">
+      <Query>
+        <CommandText>proc_rpt_getReportHeaderInfo</CommandText>
+        <DataSourceName>SSRSMemoryUse</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="CurrentStartDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CurrentStartDate</DataField>
+        </Field>
+        <Field Name="CurrentEndDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CurrentEndDate</DataField>
+        </Field>
+        <Field Name="PriorStartDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PriorStartDate</DataField>
+        </Field>
+        <Field Name="PriorEndDate">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>PriorEndDate</DataField>
+        </Field>
+        <Field Name="ClientName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientName</DataField>
+        </Field>
+        <Field Name="Color1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Color1</DataField>
+        </Field>
+        <Field Name="Color2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Color2</DataField>
+        </Field>
+        <Field Name="Color3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Color3</DataField>
+        </Field>
+        <Field Name="Color4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Color4</DataField>
+        </Field>
+        <Field Name="MainHeaderColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>MainHeaderColor</DataField>
+        </Field>
+        <Field Name="SecondaryHeaderColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SecondaryHeaderColor</DataField>
+        </Field>
+        <Field Name="ColumnHeaderTextColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ColumnHeaderTextColor</DataField>
+        </Field>
+        <Field Name="SectionHeaderTextColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SectionHeaderTextColor</DataField>
+        </Field>
+        <Field Name="SectionHeaderBGColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SectionHeaderBGColor</DataField>
+        </Field>
+        <Field Name="DetailAlternateBGColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DetailAlternateBGColor</DataField>
+        </Field>
+        <Field Name="HyperlinkTextColor">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>HyperlinkTextColor</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code>Function Visibility(ByVal values as object(), ByVal expected as string) as boolean
+	Dim i as int32 = 0
+	For i = 0 To values.Length - 1
+		If String.Compare(values(i), expected) = 0 Then
+			Return False
+		End If
+	Next
+	Return True
+End Function
+
+Function DisplayTime(ByVal dateRangeOption as integer) as string
+ If dateRangeOption = 0 Then
+ 'Last Week
+  return "Week " &amp; Week(System.DateTime.Now().AddDays(-7)) &amp; " " &amp; System.DateTime.Now().AddDays(-7).Year()
+ Else If dateRangeOption = 1 Then
+ 'Last Month
+  return MonthName(System.DateTime.Now().AddMonths(-1).Month()) &amp; " " &amp; System.DateTime.Now().AddMonths(-1).Year()
+ Else If dateRangeOption = 2 Then
+ 'Last Quarter
+  return "Quarter " &amp; Quarter(System.DateTime.Now().Month() - 3) &amp; " " &amp; System.DateTime.Now().AddMonths(-3).Year()
+ Else
+ 'Custom
+  'do nothing
+ End If
+End Function
+ 
+Function MonthName(ByVal monthNum as integer) as string
+ If monthNum = 1
+  return "January"
+ ElseIf monthNum = 2
+  return "February"
+ ElseIf monthNum = 3
+  return "March"
+ ElseIf monthNum = 4
+  return "April"
+ ElseIf monthNum = 5
+  return "May"
+ ElseIf monthNum = 6
+  return "June"
+ ElseIf monthNum = 7
+  return "July"
+ ElseIf monthNum = 8
+  return "August"
+ ElseIf monthNum = 9
+  return "September"
+ ElseIf monthNum = 10
+  return "October"
+ ElseIf monthNum = 11
+  return "November"
+ ElseIf monthNum = 12
+  return "December"
+ End If
+End Function
+ 
+Shared Function Week(ByVal inDate As DateTime) As Integer
+        Const JAN As Integer = 1
+        Const DEC As Integer = 12
+        Const LASTDAYOFDEC As Integer = 31
+        Const FIRSTDAYOFJAN As Integer = 1
+        Const THURSDAY As Integer = 4
+        Dim ThursdayFlag As Boolean = False
+        Dim DayOfYear As Integer = inDate.DayOfYear
+        Dim StartWeekDayOfYear As Integer = _
+           DirectCast(New DateTime(inDate.Year, JAN, FIRSTDAYOFJAN).DayOfWeek, Integer)
+        Dim EndWeekDayOfYear As Integer = _
+            DirectCast(New DateTime(inDate.Year, DEC, LASTDAYOFDEC).DayOfWeek, Integer)
+        If StartWeekDayOfYear = 0 Then
+            StartWeekDayOfYear = 7
+        End If
+        If EndWeekDayOfYear = 0 Then
+            EndWeekDayOfYear = 7
+        End If
+        Dim DaysInFirstWeek As Integer = 8 - StartWeekDayOfYear
+        Dim DaysInLastWeek As Integer = 8 - EndWeekDayOfYear
+        If StartWeekDayOfYear = THURSDAY OrElse EndWeekDayOfYear = THURSDAY Then
+            ThursdayFlag = True
+       End If
+        Dim FullWeeks As Integer = _
+            CType(Math.Ceiling((DayOfYear - DaysInFirstWeek) / 7), Integer)
+ 
+        Dim WeekNumber As Integer = FullWeeks
+       If DaysInFirstWeek &gt;= THURSDAY Then
+            WeekNumber = WeekNumber + 1
+        End If
+       If WeekNumber &gt; 52 AndAlso Not ThursdayFlag Then
+            WeekNumber = 1
+        End If
+        If WeekNumber = 0 Then
+            WeekNumber = Week( _ 
+                New DateTime(inDate.Year - 1, DEC, LASTDAYOFDEC))
+        End If
+        Return WeekNumber
+    End Function 
+ 
+Shared Function Quarter(ByVal inMonth as Integer) As Integer
+ If (inMonth = 1 OR inMonth = 2 OR inMonth = 3)
+  return 1
+ ElseIf (inMonth = 4 OR inMonth = 5 OR inMonth = 6)
+  return 2
+ Else If (inMonth = 7 OR inMonth = 8 OR inMonth = 9)
+  return 3
+ Else If (inMonth = 0 OR inMonth =  -1 OR inMonth = -2)
+  return 4
+ End If
+End Function
+
+Function SqlClientCodeToMdxClientCode(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+	return "[Dim Client Loc].[Client Code].&amp;[" &amp; tempString &amp; "]"
+End Function
+
+Function MdxClientCodeToSqlClientCode(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+	return tempString.Substring(33,4)
+End Function
+
+Function SqlTimeToMdxTime(ByVal value as object) as string
+	Dim tempString as string = CDate(value).ToShortDateString()
+	Dim year as string = tempString.SubString(tempString.Length - 4, 4)
+	Dim month as string = tempString.SubString(0, tempString.IndexOf("/"))
+	Dim day as string = tempString.SubString(tempString.IndexOf("/") + 1, tempString.LastIndexOf("/") - tempString.IndexOf("/") - 1)
+
+	If month.Length = 1 Then
+		month = "0" + month
+	End If
+
+	If day.Length = 1 Then
+		day = "0" + day
+	End If
+
+	return "[Dim Time].[FullDate].&amp;[" &amp; _
+		year &amp; _
+		"-" &amp; month &amp; _
+		"-" &amp; day  &amp; _
+		"T00:00:00]"
+End Function
+
+Function MdxTimeToSqlTime(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+	return tempString.SubString(29,2) &amp; "/" &amp; _
+		tempString.SubString(32,2) &amp; "/" &amp; _
+		tempString.SubString(24,4) 
+End Function
+
+Function RemoveUnknown(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+
+	While tempString.IndexOf("Unknown") &gt; 0
+		tempString = tempString.Remove(tempString.IndexOf("Unknown") - 1, 8)
+	End While
+	
+	If tempString.IndexOf("Unknown") = 0
+		tempString = "Unknown"
+	End If
+
+	Return tempString
+End Function
+
+Function OutputUnknown(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+	If value Is Nothing Or String.Compare(tempString, String.Empty) = 0 Then
+		return "0"
+	Else If String.Compare(tempString.Trim(), String.Empty) = 0 Then
+		return "0"
+	Else
+		return tempString
+	End If
+End Function
+
+Function OutputUnknownMoney(ByVal value as object) as string
+	Dim tempString as string = CType(value, System.String)
+	If value Is Nothing Or String.Compare(tempString, String.Empty) = 0 Then
+		return "$0.00"
+	Else If String.Compare(tempString.Trim(), String.Empty) = 0 Then
+		return "$0.00"
+	Else
+		return tempString
+	End If
+End Function
+	</Code>
+  <Width>49.4in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <PageFooter>
+    <ReportItems>
+      <Line Name="line1">
+        <Left>0.125in</Left>
+        <ZIndex>2</ZIndex>
+        <Width>10.125in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox4">
+        <Left>9.25in</Left>
+        <Top>0.05208in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>1in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>=" Page " &amp;  Globals!PageNumber &amp; " of " &amp;  Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <Left>0.125in</Left>
+        <Top>0.05208in</Top>
+        <Width>9in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>Custom Unit Performance Analysis</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.45208in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageFooter>
+  <TopMargin>0.25in</TopMargin>
+  <PageHeight>8.5in</PageHeight>
+</Report>

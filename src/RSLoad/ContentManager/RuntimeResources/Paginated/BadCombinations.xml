@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBadCombination xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BadCombination Method="UrlAccessLiveExportEXCEL">
+    <InvalidReport>DeepT-Large</InvalidReport>
+    <InvalidReport>SimpleT-Massive</InvalidReport>
+    <InvalidReport>SimpleT-Large</InvalidReport>
+    <InvalidReport>SimpleT-Large-Pagination</InvalidReport>
+  </BadCombination>
+  <BadCombination Method="UrlAccessSnapshotExportEXCEL">
+    <InvalidReport>DeepT-Large</InvalidReport>
+    <InvalidReport>SimpleT-Massive</InvalidReport>
+    <InvalidReport>SimpleT-Large</InvalidReport>
+    <InvalidReport>SimpleT-Large-Pagination</InvalidReport>
+  </BadCombination>
+  <BadCombination Method="UrlAccessLiveExportPDF">
+    <InvalidReport>MatrixSubRpt</InvalidReport>
+  </BadCombination>
+  <BadCombination Method="UrlAccessSnapshotExportPDF">
+    <InvalidReport>MatrixSubRpt</InvalidReport>
+  </BadCombination>
+</ArrayOfBadCombination>

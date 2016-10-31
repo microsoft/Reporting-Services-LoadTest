@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Height>0.5in</Height>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>First Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Last Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Sick Leave Hours</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="FirstName">
+                      <Style>
+                        <PaddingLeft>=CStr(Level()*10+2) &amp; "pt"</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>FirstName</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FirstName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LastName">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <rd:DefaultName>LastName</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LastName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SickLeaveHours">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <rd:DefaultName>SickLeaveHours</rd:DefaultName>
+                      <Value>=Fields!SickLeaveHours.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <Grouping Name="table1_Details_Group">
+            <GroupExpressions>
+              <GroupExpression>=Fields!EmployeeID.Value</GroupExpression>
+            </GroupExpressions>
+            <Parent>=Fields!ManagerID.Value</Parent>
+          </Grouping>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!FirstName.Value</SortExpression>
+              <Direction>Ascending</Direction>
+            </SortBy>
+          </Sorting>
+        </Details>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.5in</Top>
+        <Width>4.75in</Width>
+        <Left>0.25in</Left>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.58333in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.58333in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.58333in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>1.25in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>269f04a0-efed-4b18-988f-739ae97328d4</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>8.16667in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ManagerID">
+          <DataField>ManagerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SickLeaveHours">
+          <DataField>SickLeaveHours</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     FirstName, LastName, EmployeeID, ManagerID, SickLeaveHours
+FROM         Employee</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>ec74653b-65cd-426c-a67c-6251cf9046cb</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

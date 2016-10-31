@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox4">
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+        <Top>0.75cm</Top>
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Height>0.63492cm</Height>
+        <Width>2.53968cm</Width>
+        <CanGrow>true</CanGrow>
+        <Value>"ABCDEF"</Value>
+        <Left>5.25cm</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.88594in</Height>
+  </PageHeader>
+  <RightMargin>2.5cm</RightMargin>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Style />
+        <Height>2.75cm</Height>
+        <Top>1.25cm</Top>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!SalesOrderID.Value</GroupExpression>
+            <GroupExpression>=Fields!SalesPersonID.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <Width>18.5cm</Width>
+        <DataSetName>DataSet</DataSetName>
+        <ReportItems>
+          <Table Name="table1">
+            <Height>1.90476cm</Height>
+            <Style />
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.63492cm</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox1">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <rd:DefaultName>textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Purchase Order Number</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Sales Order Number</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>6</ZIndex>
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>Total Due</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.63492cm</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="PurchaseOrderNumber_1">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <rd:DefaultName>PurchaseOrderNumber_1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!PurchaseOrderNumber.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="SalesOrderNumber">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <rd:DefaultName>SalesOrderNumber</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!SalesOrderNumber.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="TotalDue">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextAlign>Left</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <rd:DefaultName>TotalDue</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!TotalDue.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <Top>0.25cm</Top>
+            <Width>18.25cm</Width>
+            <Footer>
+              <TableRows>
+                <TableRow>
+                  <Height>0.63492cm</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox7">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>5</ZIndex>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox8">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>4</ZIndex>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox9">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Footer>
+            <TableColumns>
+              <TableColumn>
+                <Width>6.08333cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>6.08333cm</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>6.08333cm</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+        </ReportItems>
+        <Left>1.5cm</Left>
+      </List>
+    </ReportItems>
+    <Style />
+    <Height>12.75cm</Height>
+    <ColumnSpacing>1cm</ColumnSpacing>
+  </Body>
+  <TopMargin>2.5cm</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks">
+      <rd:DataSourceID>b3f19fb6-c676-4e6d-a4f3-39b6374dc2b8</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>21.5cm</Width>
+  <DataSets>
+    <DataSet Name="DataSet">
+      <Fields>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SalesPersonID">
+          <DataField>SalesPersonID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TerritoryID">
+          <DataField>TerritoryID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="PurchaseOrderNumber">
+          <DataField>PurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TaxAmt">
+          <DataField>TaxAmt</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalDue">
+          <DataField>TotalDue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SalesOrderNumber">
+          <DataField>SalesOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Expr2">
+          <DataField>Expr2</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Comment">
+          <DataField>Comment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OnlineOrderFlag">
+          <DataField>OnlineOrderFlag</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ContactID">
+          <DataField>ContactID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CreditCardExpYear">
+          <DataField>CreditCardExpYear</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="CreditCardExpMonth">
+          <DataField>CreditCardExpMonth</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="CreditCardNumber">
+          <DataField>CreditCardNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreditCardID">
+          <DataField>CreditCardID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="ShipMethodID">
+          <DataField>ShipMethodID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="ShipDate">
+          <DataField>ShipDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ShipToAddressID">
+          <DataField>ShipToAddressID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BillToAddressID">
+          <DataField>BillToAddressID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="RevisionNumber">
+          <DataField>RevisionNumber</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Freight">
+          <DataField>Freight</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Expr3">
+          <DataField>Expr3</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="Expr4">
+          <DataField>Expr4</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr5">
+          <DataField>Expr5</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CarrierTrackingNumber">
+          <DataField>CarrierTrackingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceDiscount">
+          <DataField>UnitPriceDiscount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="rowguid">
+          <DataField>rowguid</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="LineTotal">
+          <DataField>LineTotal</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductNumber">
+          <DataField>ProductNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DiscontinuedDate">
+          <DataField>DiscontinuedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SalesOrderID">
+          <DataField>SalesOrderID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT Top 1000 sh.CustomerID, sh.SalesPersonID, sh.TerritoryID, sh.PurchaseOrderNumber, sh.CurrencyCode, sh.SubTotal, sh.TaxAmt, sh.TotalDue, 
+                      sh.SalesOrderNumber, sh.DueDate, sh.rowguid AS Expr1, sh.ModifiedDate AS Expr2, sh.Comment, sh.OnlineOrderFlag, sh.ContactID, 
+                      sh.CreditCardExpYear, sh.CreditCardExpMonth, sh.CreditCardNumber, sh.CreditCardID, sh.ShipMethodID, sh.ShipDate, sh.ShipToAddressID, 
+                      sh.BillToAddressID, sh.Status, sh.RevisionNumber, sh.OrderDate, sh.Freight, sd.LineNumber AS Expr3, sd.ProductID AS Expr4, 
+                      sd.SpecialOfferID AS Expr5, sd.CarrierTrackingNumber, sd.OrderQty, sd.UnitPrice, sd.UnitPriceDiscount, sd.ModifiedDate, sd.rowguid, sd.LineTotal, 
+                      Product.Name, Product.ProductNumber, Product.DiscontinuedDate, sd.SalesOrderID
+FROM         SalesOrderHeader sh INNER JOIN
+                      SalesOrderDetail sd ON sh.SalesOrderID = sd.SalesOrderID INNER JOIN
+                      Product ON sd.ProductID = Product.ProductID
+WHERE     (sd.SalesOrderID &lt; 6000)</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>2.5cm</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeight>29.7cm</PageHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <PageWidth>21cm</PageWidth>
+  <rd:ReportID>ea7c342d-1b0e-4344-95ea-9bb2a63afdfa</rd:ReportID>
+  <BottomMargin>2.5cm</BottomMargin>
+  <Language>en-US</Language>
+</Report>

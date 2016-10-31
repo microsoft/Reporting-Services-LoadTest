@@ -1,0 +1,51 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccountType": {
+      "value": "Premium_LRS"
+    },
+    "adminUsername": {
+      "value": "admin123"
+    },
+    "adminPassword": {
+      "value": "ProvideAPassword"
+    },
+    "sqlServerServiceAccountUserName": {
+      "value": "admin123sql"
+    },
+    "sqlServerServiceAccountPassword": {
+      "value": "ProvideAPassword"
+    },
+    "sqlServerSAUserName": {
+      "value": "performance"
+    },
+    "sqlServerSAPassword": {
+      "value": "ProvideAPassword"
+    },
+    "ssrsDNSPrefix": {
+      "value": "ssrsrtm"
+    },
+    "adVMSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "sqlVMSize": {
+      "value": "Standard_DS4_v2"
+    },
+    "ssrsVMSize": {
+      "value": "Standard_DS4_v2"
+    },
+    "sqlImageVersion": {
+      "value": "SQL2016-WS2016"
+    },
+    "sqlImageSKU": {
+      "value": "Enterprise"
+    },
+    "ssrsImageVersion": {
+      "value": "SQL2016-WS2016"
+    },
+    "ssrsImageSKU": {
+      "value": "Enterprise"
+    }
+  }
+}

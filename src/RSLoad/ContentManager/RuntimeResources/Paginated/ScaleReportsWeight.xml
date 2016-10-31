@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfReportWeight xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ReportWeight Report="DeepM-Large" Weight="2" />
+  <ReportWeight Report="DeepM-Medium" Weight="9" />
+  <ReportWeight Report="DeepT-Large" Weight="1" />
+  <ReportWeight Report="DeepT-Medium" Weight="27" />
+  <ReportWeight Report="RandomCustomerReport" Weight="10" />
+  <ReportWeight Report="RecursiveT" Weight="9" />
+  <ReportWeight Report="SimpleL-Medium" Weight="1" />
+  <ReportWeight Report="SimpleL-Subreports" Weight="1" />
+  <ReportWeight Report="SimpleM-Large" Weight="1" />
+  <ReportWeight Report="SimpleM-Medium" Weight="5" />
+  <ReportWeight Report="SimpleM-Small" Weight="3" />
+  <ReportWeight Report="SimpleT-Large" Weight="3" />
+  <ReportWeight Report="SimpleT-Medium" Weight="14" />
+  <ReportWeight Report="SimpleT-Small" Weight="8" />
+</ArrayOfReportWeight>

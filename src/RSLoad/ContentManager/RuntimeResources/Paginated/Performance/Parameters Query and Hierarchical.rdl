@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Height>0.5in</Height>
+        <Style />
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Employee</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Order Month</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <BackgroundColor>IndianRed</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>Order Year</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.25in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Employee">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <rd:DefaultName>Employee</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Employee.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OrderMonth">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <rd:DefaultName>OrderMonth</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!OrderMonth.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="OrderYear">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <rd:DefaultName>OrderYear</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!OrderYear.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>EmpSalesYearOverYear</DataSetName>
+        <Top>0.125in</Top>
+        <Width>4.25001in</Width>
+        <Left>0.25in</Left>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.41667in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.41667in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.41667in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>0.75in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>65d91580-9d72-43f2-81b8-b94564bcc72e</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>5in</Width>
+  <DataSets>
+    <DataSet Name="SalesOrderYear">
+      <Fields>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT DISTINCT DATEPART(YEAR, OrderDate) AS Expr1
+FROM         SalesOrderHeader</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="SalesOrderMonth">
+      <Fields>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT DISTINCT DATEPART(MONTH, OrderDate) AS Expr1
+FROM         SalesOrderHeader
+WHERE     (DATEPART(YEAR, OrderDate) = @RptParamYear)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@RptParamYear">
+            <Value>=Parameters!RptParamYear.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="SalesEmp">
+      <Fields>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Employee">
+          <DataField>Employee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     Employee.EmployeeID, Employee.FirstName + N' ' + Employee.LastName AS Employee
+FROM         Employee INNER JOIN
+                      SalesPerson ON Employee.EmployeeID = SalesPerson.SalesPersonID
+ORDER BY Employee.LastName, Employee.FirstName</CommandText>
+      </Query>
+    </DataSet>
+    <DataSet Name="EmpSalesYearOverYear">
+      <Fields>
+        <Field Name="Employee">
+          <DataField>Employee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderYear">
+          <DataField>OrderYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderMonthNum">
+          <DataField>OrderMonthNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderMonth">
+          <DataField>OrderMonth</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     Employee.FirstName + ' ' + Employee.LastName AS Employee, DATEPART(Year, SalesOrderHeader.OrderDate) AS OrderYear, DATEPART(Month, 
+                      SalesOrderHeader.OrderDate) AS OrderMonthNum, DATENAME(Month, SalesOrderHeader.OrderDate) AS OrderMonth, SUM(SalesOrderDetail.LineTotal) 
+                      AS Sales
+FROM         SalesOrderHeader INNER JOIN
+                      SalesOrderDetail ON SalesOrderHeader.SalesOrderID = SalesOrderDetail.SalesOrderID INNER JOIN
+                      SalesPerson ON SalesOrderHeader.SalesPersonID = SalesPerson.SalesPersonID INNER JOIN
+                      Employee ON SalesPerson.SalesPersonID = Employee.EmployeeID
+WHERE     (DATEPART(Year, SalesOrderHeader.OrderDate) = @RptParamYear - 1 OR
+                      DATEPART(Year, SalesOrderHeader.OrderDate) = @RptParamYear) AND (SalesOrderHeader.SalesPersonID = @RptParamEmp) AND 
+                      (DATEPART(Month, SalesOrderHeader.OrderDate) &lt;= @RptParamMonth)
+GROUP BY Employee.FirstName + ' ' + Employee.LastName, SalesOrderHeader.SalesPersonID, DATEPART(Year, SalesOrderHeader.OrderDate), 
+                      DATEPART(Month, SalesOrderHeader.OrderDate), DATENAME(Month, SalesOrderHeader.OrderDate)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@RptParamYear">
+            <Value>=Parameters!RptParamYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@RptParamEmp">
+            <Value>=Parameters!RptParamEmp.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@RptParamMonth">
+            <Value>=Parameters!RptParamMonth.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>66cf3a14-accc-4bc3-b958-d055b236ae22</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="RptParamYear">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>SalesOrderYear</DataSetName>
+          <ValueField>Expr1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Year</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesOrderYear</DataSetName>
+          <ValueField>Expr1</ValueField>
+          <LabelField>Expr1</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="RptParamMonth">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>SalesOrderMonth</DataSetName>
+          <ValueField>Expr1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Month</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesOrderMonth</DataSetName>
+          <ValueField>Expr1</ValueField>
+          <LabelField>Expr1</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="RptParamEmp">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>SalesEmp</DataSetName>
+          <ValueField>EmployeeID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Employee</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesEmp</DataSetName>
+          <ValueField>EmployeeID</ValueField>
+          <LabelField>Employee</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

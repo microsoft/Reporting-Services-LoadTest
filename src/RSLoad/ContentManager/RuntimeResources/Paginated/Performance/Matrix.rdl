@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox2">
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+              <ZIndex>7</ZIndex>
+              <rd:DefaultName>textbox2</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>1in</Height>
+        <ZIndex>1</ZIndex>
+        <Style />
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="TotalDue">
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>c</Format>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <rd:DefaultName>TotalDue</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!TotalDue.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.25in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1.375in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>AdventureWorks2000</DataSetName>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_OrderYear">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderYear.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="OrderYear">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>SaddleBrown</BackgroundColor>
+                    <TextAlign>Right</TextAlign>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <rd:DefaultName>OrderYear</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!OrderYear.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_OrderQtr">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderQtr.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Visibility>
+                <ToggleItem>OrderYear</ToggleItem>
+              </Visibility>
+              <ReportItems>
+                <Textbox Name="OrderQtr">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>Firebrick</BackgroundColor>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>5</ZIndex>
+                  <rd:DefaultName>OrderQtr</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!OrderQtr.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_OrderMonth">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderMonth.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Visibility>
+                <ToggleItem>OrderQtr</ToggleItem>
+              </Visibility>
+              <ReportItems>
+                <Textbox Name="OrderMonth">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>Peru</BackgroundColor>
+                    <TextAlign>Right</TextAlign>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <rd:DefaultName>OrderMonth</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!OrderMonth.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>4.625in</Width>
+        <Top>0.375in</Top>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_Country">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Country.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="Country">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <rd:DefaultName>Country</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Country.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_StateProv">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!StateProv.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Visibility>
+                <ToggleItem>Country</ToggleItem>
+              </Visibility>
+              <ReportItems>
+                <Textbox Name="StateProv">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>SteelBlue</BackgroundColor>
+                    <TextAlign>Right</TextAlign>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!StateProv.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_City">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!City.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Visibility>
+                <ToggleItem>StateProv</ToggleItem>
+              </Visibility>
+              <ReportItems>
+                <Textbox Name="City">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <BackgroundColor>LightSlateGray</BackgroundColor>
+                    <Color>White</Color>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                    <FontWeight>700</FontWeight>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <rd:DefaultName>City</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!City.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1.25in</Width>
+          </RowGrouping>
+        </RowGroupings>
+      </Matrix>
+      <Textbox Name="textbox1">
+        <Style>
+          <BorderStyle>
+            <Bottom>Solid</Bottom>
+          </BorderStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <FontFamily>Times New Roman</FontFamily>
+          <BackgroundColor>Brown</BackgroundColor>
+          <BorderWidth>
+            <Bottom>3pt</Bottom>
+          </BorderWidth>
+          <BorderColor>
+            <Bottom>Black</Bottom>
+          </BorderColor>
+          <TextAlign>Left</TextAlign>
+          <FontSize>18pt</FontSize>
+          <Color>White</Color>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingRight>2pt</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>0.33in</Height>
+        <Width>6in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>Matrix</Value>
+      </Textbox>
+    </ReportItems>
+    <Style />
+    <Height>1.625in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>012d9b5e-a90c-4057-adea-29d8d1c7a36a</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>6.125in</Width>
+  <DataSets>
+    <DataSet Name="AdventureWorks2000">
+      <Fields>
+        <Field Name="OrderYear">
+          <DataField>OrderYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderQtr">
+          <DataField>OrderQtr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderMonth">
+          <DataField>OrderMonth</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StateProv">
+          <DataField>StateProv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TaxAmt">
+          <DataField>TaxAmt</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalDue">
+          <DataField>TotalDue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     DATEPART(yy, SalesOrderHeader.OrderDate) AS OrderYear, 'Q' + DATENAME(qq, SalesOrderHeader.OrderDate) AS OrderQtr, DATEPART(mm, 
+                      SalesOrderHeader.OrderDate) AS OrderMonth, CountryRegion.Name AS Country, StateProvince.Name AS StateProv, Address.City, 
+                      SalesOrderHeader.SubTotal, SalesOrderHeader.TaxAmt, SalesOrderHeader.TotalDue
+FROM         Customer INNER JOIN
+                      CustomerAddress ON Customer.CustomerID = CustomerAddress.CustomerID INNER JOIN
+                      Address ON CustomerAddress.AddressID = Address.AddressID INNER JOIN
+                      SalesOrderHeader ON Customer.CustomerID = SalesOrderHeader.CustomerID AND 
+                      Address.AddressID = SalesOrderHeader.BillToAddressID INNER JOIN
+                      CountryRegion ON Address.CountryRegionCode = CountryRegion.CountryRegionCode INNER JOIN
+                      StateProvince ON Address.StateProvinceID = StateProvince.StateProvinceID AND 
+                      CountryRegion.CountryRegionCode = StateProvince.CountryRegionCode</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>027bcbfb-6085-4e6d-bf0f-089a4bf30d43</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

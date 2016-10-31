@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingRight>2pt</PaddingRight>
+              </Style>
+              <ZIndex>4</ZIndex>
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Height>0.5in</Height>
+        <ZIndex>1</ZIndex>
+        <Style />
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Sales">
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <Format>C</Format>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingRight>2pt</PaddingRight>
+                    </Style>
+                    <rd:DefaultName>Sales</rd:DefaultName>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!Sales.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.25in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1.125in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <DataSetName>DataSet1</DataSetName>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_ProdCat">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProdCat.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="ProdCat">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <rd:DefaultName>ProdCat</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!ProdCat.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>3.125in</Width>
+        <Top>4.5in</Top>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_OrderYear">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderYear.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="OrderYear">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <rd:DefaultName>OrderYear</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!OrderYear.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_OrderQtr">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderQtr.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="OrderQtr">
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingRight>2pt</PaddingRight>
+                  </Style>
+                  <ZIndex>1</ZIndex>
+                  <rd:DefaultName>OrderQtr</rd:DefaultName>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!OrderQtr.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+        </RowGroupings>
+      </Matrix>
+      <Chart Name="SalesChart">
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <Style />
+        <Legend>
+          <Visible>true</Visible>
+          <Style />
+          <Position>BottomCenter</Position>
+          <Layout>Table</Layout>
+        </Legend>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Sales.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel>
+                  <Style>
+                    <Format>P2</Format>
+                  </Style>
+                  <Value>=iif( Sum(Fields!Sales.Value)/Sum(Fields!Sales.Value,"SalesChart") &lt; 0.03, " ", Sum(Fields!Sales.Value)/Sum(Fields!Sales.Value,"SalesChart"))</Value>
+                  <Position>Top</Position>
+                  <Visible>true</Visible>
+                </DataLabel>
+                <Style>
+                  <BorderWidth>
+                    <Default>=iif( Sum(Fields!Sales.Value)/Sum(Fields!Sales.Value,"SalesChart") &lt; 0.03, "0.5 pt", "1 pt")</Default>
+                  </BorderWidth>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Marker>
+                  <Size>6pt</Size>
+                </Marker>
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <CategoryAxis>
+          <Axis>
+            <Title>
+              <Style />
+            </Title>
+            <Style />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style />
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style />
+            </MinorGridLines>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <DataSetName>DataSet1</DataSetName>
+        <PointWidth>0</PointWidth>
+        <Type>Pie</Type>
+        <Title>
+          <Style />
+        </Title>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="newChart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProdCat.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=Fields!ProdCat.Value</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="newChart1_CategoryGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderYear.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label />
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Height>4.375in</Height>
+        <Subtype>Plain</Subtype>
+        <PlotArea>
+          <Style />
+        </PlotArea>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Style />
+            </Title>
+            <Style />
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style />
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style />
+            </MinorGridLines>
+            <Scalar>true</Scalar>
+          </Axis>
+        </ValueAxis>
+      </Chart>
+    </ReportItems>
+    <Style />
+    <Height>5.5in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+      <rd:DataSourceID>5fda8710-6cb2-4013-bf0e-e8aadd63e007</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <Width>7in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ProdCat">
+          <DataField>ProdCat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubCat">
+          <DataField>SubCat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderYear">
+          <DataField>OrderYear</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderQtr">
+          <DataField>OrderQtr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     ProductCategory.Name AS ProdCat, ProductSubCategory.Name AS SubCat, DATEPART(yy, SalesOrderHeader.OrderDate) AS OrderYear, 
+                      'Q' + DATENAME(qq, SalesOrderHeader.OrderDate) AS OrderQtr, SUM(SalesOrderDetail.UnitPrice * SalesOrderDetail.OrderQty) AS Sales
+FROM         ProductSubCategory INNER JOIN
+                      SalesOrderHeader INNER JOIN
+                      SalesOrderDetail ON SalesOrderHeader.SalesOrderID = SalesOrderDetail.SalesOrderID INNER JOIN
+                      Product ON SalesOrderDetail.ProductID = Product.ProductID ON 
+                      ProductSubCategory.ProductSubCategoryID = Product.ProductSubCategoryID INNER JOIN
+                      ProductCategory ON ProductSubCategory.ProductCategoryID = ProductCategory.ProductCategoryID
+WHERE     (SalesOrderHeader.OrderDate BETWEEN '1/1/2002' AND '12/31/2003')
+GROUP BY DATEPART(yy, SalesOrderHeader.OrderDate), ProductCategory.Name, ProductSubCategory.Name, 'Q' + DATENAME(qq, 
+                      SalesOrderHeader.OrderDate), ProductSubCategory.ProductSubCategoryID</CommandText>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>9059fe01-2a5d-4d68-bfd9-2a49ccc184e6</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

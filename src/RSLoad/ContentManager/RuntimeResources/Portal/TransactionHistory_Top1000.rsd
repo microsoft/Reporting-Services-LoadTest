@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>/MobileTest/AdventureWorks</DataSourceReference>
+      <CommandText>SELECT TOP 1000 [TransactionID]
+      ,[ProductID]
+      ,[ReferenceOrderID]
+      ,[ReferenceOrderLineID]
+      ,[TransactionDate]
+      ,[TransactionType]
+      ,[Quantity]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks].[Production].[TransactionHistory]</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="TransactionID">
+        <DataField>TransactionID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ProductID">
+        <DataField>ProductID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ReferenceOrderID">
+        <DataField>ReferenceOrderID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ReferenceOrderLineID">
+        <DataField>ReferenceOrderLineID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TransactionDate">
+        <DataField>TransactionDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TransactionType">
+        <DataField>TransactionType</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Quantity">
+        <DataField>Quantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ModifiedDate">
+        <DataField>ModifiedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ActualCost">
+        <DataField>ActualCost</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://dz-evlevy/ReportServer_THREEPOINTTHREE</rd:ReportServerUrl>
+</SharedDataSet>

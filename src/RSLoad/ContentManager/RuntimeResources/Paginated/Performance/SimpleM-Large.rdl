@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DWScale">
+      <DataSourceReference>DWScale</DataSourceReference>
+      <rd:DataSourceID>ecab7add-538b-485c-adfb-cfb71680b998</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>0.25in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>0.625in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="State_Code">
+                  <rd:DefaultName>State_Code</rd:DefaultName>
+                  <ZIndex>4</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!State_Code.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>Gainsboro</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>Total</Value>
+                  </Textbox>
+                </ReportItems>
+                <Style>
+                  <BackgroundColor>Gainsboro</BackgroundColor>
+                </Style>
+              </Subtotal>
+              <Grouping Name="matrix1_State_Code">
+                <PageBreakAtEnd>true</PageBreakAtEnd>
+                <GroupExpressions>
+                  <GroupExpression>=Fields!State_Code.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="City">
+                  <rd:DefaultName>City</rd:DefaultName>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!City.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox3">
+                    <rd:DefaultName>textbox3</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>Total</Value>
+                  </Textbox>
+                </ReportItems>
+                <Style>
+                  <BackgroundColor>WhiteSmoke</BackgroundColor>
+                </Style>
+              </Subtotal>
+              <Grouping Name="matrix1_City">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!City.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Card_Type_Code">
+                  <rd:DefaultName>Card_Type_Code</rd:DefaultName>
+                  <ZIndex>6</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Card_Type_Code.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Card_Type_Code">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Card_Type_Code.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Card_Status_Code">
+                  <rd:DefaultName>Card_Status_Code</rd:DefaultName>
+                  <ZIndex>5</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Card_Status_Code.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Grouping Name="matrix1_Card_Status_Code">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Card_Status_Code.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSet1</DataSetName>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="textbox4">
+                    <rd:DefaultName>textbox4</rd:DefaultName>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=CountRows()</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>1in</Height>
+  </Body>
+  <rd:ReportID>4be9467e-d669-47a1-a0a9-61b0e6b0813a</rd:ReportID>
+  <LeftMargin>0.25in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     City, State_Code, Card_Type_Code, Card_Status_Code, Member_ID
+FROM         Tbl_Dim_Customer
+GROUP BY City, State_Code, Card_Type_Code, Card_Status_Code, Member_ID
+HAVING      (Card_Type_Code &lt;&gt; 'U')</CommandText>
+        <DataSourceName>DWScale</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="State_Code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State_Code</DataField>
+        </Field>
+        <Field Name="Card_Type_Code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Card_Type_Code</DataField>
+        </Field>
+        <Field Name="Card_Status_Code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Card_Status_Code</DataField>
+        </Field>
+        <Field Name="Member_ID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Member_ID</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>2.625in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

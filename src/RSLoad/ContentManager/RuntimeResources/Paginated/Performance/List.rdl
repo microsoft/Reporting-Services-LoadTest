@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Style />
+        <Height>0.25in</Height>
+        <Top>0.25in</Top>
+        <Width>5.75in</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <ReportItems>
+          <Textbox Name="UnitPriceDiscount">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <rd:DefaultName>UnitPriceDiscount</rd:DefaultName>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!UnitPriceDiscount.Value</Value>
+            <Left>4.625in</Left>
+          </Textbox>
+          <Textbox Name="CarrierTrackingNumber">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <rd:DefaultName>CarrierTrackingNumber</rd:DefaultName>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!CarrierTrackingNumber.Value</Value>
+            <Left>3.5in</Left>
+          </Textbox>
+          <Textbox Name="ModifiedDate">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <rd:DefaultName>ModifiedDate</rd:DefaultName>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!ModifiedDate.Value</Value>
+            <Left>2.375in</Left>
+          </Textbox>
+          <Textbox Name="UnitPrice">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <rd:DefaultName>UnitPrice</rd:DefaultName>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!UnitPrice.Value</Value>
+            <Left>1.25in</Left>
+          </Textbox>
+          <Textbox Name="OrderQty">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <rd:DefaultName>OrderQty</rd:DefaultName>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!OrderQty.Value</Value>
+            <Left>0.125in</Left>
+          </Textbox>
+        </ReportItems>
+        <Left>0.125in</Left>
+      </List>
+    </ReportItems>
+    <Style />
+    <Height>0.625in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>36b05d8f-cf8c-4e37-a6fe-f40f87d3a9f0</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>6.25in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CarrierTrackingNumber">
+          <DataField>CarrierTrackingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceDiscount">
+          <DataField>UnitPriceDiscount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     TOP 1000 OrderQty, UnitPrice, ModifiedDate, CarrierTrackingNumber, UnitPriceDiscount
+FROM         SalesOrderDetail</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>bcd4f9c8-f5f6-4dca-a7d3-1dcb46bdfd53</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

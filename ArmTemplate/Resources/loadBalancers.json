@@ -1,0 +1,225 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "ssrslbName": {
+      "type": "string"
+    },
+    "adlbName": {
+      "type": "string"
+    },
+    "sqllbName": {
+      "type": "string"
+    },
+    "LBFE": {
+      "type": "string"
+    },
+    "LBBE": {
+      "type": "string"
+    },
+    "RDPNAT": {
+      "type": "string"
+    },
+    "ssrsWebNAT": {
+      "type": "string"
+    },
+    "ssrsPublicIPResourceId": {
+      "type": "string"
+    },
+    "adPublicIpResourceId": {
+      "type": "string"
+    },
+    "sqldatasourcelbName": {
+      "type": "string"
+    },
+    "sqlPublicIpResourceId": {
+      "type": "string"
+    },
+    "sqldatasourcePublicIpResourceId": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('ssrslbName')]",
+      "type": "Microsoft.Network/loadBalancers",
+      "location": "[parameters('location')]",
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[parameters('LBFE')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('ssrsPublicIPResourceId')]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[parameters('LBBE')]"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "[parameters('RDPNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          },
+          {
+            "name": "[parameters('ssrsWebNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 80,
+              "backendPort": 80,
+              "enableFloatingIP": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('adlbName')]",
+      "type": "Microsoft.Network/loadBalancers",
+      "location": "[parameters('location')]",
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[parameters('LBFE')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('adPublicIpResourceId')]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[parameters('LBBE')]"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "[parameters('RDPNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('adlbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('sqllbName')]",
+      "type": "Microsoft.Network/loadBalancers",
+      "location": "[parameters('location')]",
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[parameters('LBFE')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('sqlPublicIpResourceId')]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[parameters('LBBE')]"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "[parameters('RDPNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('sqllbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('sqldatasourcelbName')]",
+      "type": "Microsoft.Network/loadBalancers",
+      "location": "[parameters('location')]",
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[parameters('LBFE')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('sqldatasourcePublicIpResourceId')]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[parameters('LBBE')]"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "[parameters('RDPNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('sqldatasourcelbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {
+    "ssrslbID": {
+      "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('ssrsLBName'))]",
+      "type": "string"
+    },
+    "sqllbID": {
+      "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('sqlLBName'))]",
+      "type": "string"
+    },
+    "adlbID": {
+      "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('adLBName'))]",
+      "type": "string"
+    },
+    "sqldatasourcelbID": {
+      "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('sqldatasourcelbName'))]",
+      "type": "string"
+    }
+  }
+}

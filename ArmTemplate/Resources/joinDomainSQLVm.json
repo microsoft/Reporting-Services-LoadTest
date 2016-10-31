@@ -1,0 +1,60 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "vmName": {
+      "type": "string"
+    },
+    "adminUsername": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "securestring"
+    },
+    "domainJoinConfgureModulesURL": {
+      "type": "string"
+    },
+    "domainJoinConfigurationFunction": {
+      "type": "string"
+    },
+    "domainName": {
+      "type": "string"
+    }
+
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('vmName'),'/CreateSQLServer')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]",
+      "properties": {
+        "publisher": "Microsoft.Powershell",
+        "type": "DSC",
+        "typeHandlerVersion": "2.17",
+        "autoUpgradeMinorVersion": false,
+        "settings": {
+          "ModulesUrl": "[parameters('domainJoinConfgureModulesURL')]",
+          "wmfVersion": "5.0",
+          "ConfigurationFunction": "[parameters('domainJoinConfigurationFunction')]",
+          "Properties": {
+            "DomainName": "[parameters('domainName')]",
+            "AdminCreds": {
+              "UserName": "[parameters('adminUserName')]",
+              "Password": "PrivateSettingsRef:AdminPassword"
+            }
+          }
+        },
+        "protectedSettings": {
+          "Items": {
+            "AdminPassword": "[parameters('adminPassword')]"
+          }
+        }
+      }
+    }
+  ],
+  "outputs": { }
+}

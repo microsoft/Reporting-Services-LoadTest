@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Northwind">
+      <DataSourceReference>Northwind</DataSourceReference>
+      <rd:DataSourceID>5fda8710-6cb2-4013-bf0e-e8aadd63e007</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1.875in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <Left>0.125in</Left>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="SupplierID">
+                  <rd:DefaultName>SupplierID</rd:DefaultName>
+                  <ZIndex>5</ZIndex>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>LightCyan</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>="SUPPLIER=" &amp; Fields!SupplierID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox1">
+                    <rd:DefaultName>textbox1</rd:DefaultName>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>DodgerBlue</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>SUPPLIERTOTAL</Value>
+                  </Textbox>
+                </ReportItems>
+                <Style>
+                  <BackgroundColor>DodgerBlue</BackgroundColor>
+                </Style>
+                <Position>Before</Position>
+              </Subtotal>
+              <Grouping Name="matrix1_SupplierID">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SupplierID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1in</Width>
+            <StaticRows>
+              <StaticRow>
+                <ReportItems>
+                  <Textbox Name="textbox4">
+                    <rd:DefaultName>textbox4</rd:DefaultName>
+                    <ZIndex>4</ZIndex>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>PaleTurquoise</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>UnitsInStock</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticRow>
+              <StaticRow>
+                <ReportItems>
+                  <Textbox Name="textbox5">
+                    <rd:DefaultName>textbox5</rd:DefaultName>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>PaleTurquoise</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>Product</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticRow>
+            </StaticRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="CategoryID">
+                  <rd:DefaultName>CategoryID</rd:DefaultName>
+                  <ZIndex>7</ZIndex>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>LightSkyBlue</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>="CATEGORY=" &amp; Fields!CategoryID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <ZIndex>6</ZIndex>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>LightSkyBlue</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>Total</Value>
+                  </Textbox>
+                </ReportItems>
+                <Style>
+                  <BackgroundColor>SkyBlue</BackgroundColor>
+                </Style>
+              </Subtotal>
+              <Grouping Name="matrix1_CategoryID">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!CategoryID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.125in</Top>
+        <Width>5.75in</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="ProductName">
+              <rd:DefaultName>ProductName</rd:DefaultName>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <BackgroundColor>DeepSkyBlue</BackgroundColor>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value>="TOTAL=" &amp; Count(Fields!ProductName.Value)</Value>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="UnitsInStock">
+                    <rd:DefaultName>UnitsInStock</rd:DefaultName>
+                    <ZIndex>3</ZIndex>
+                    <Style>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <BackgroundColor>Azure</BackgroundColor>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>="UNITS="&amp;Sum(Fields!UnitsInStock.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+          <MatrixRow>
+            <Height>0.875in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Matrix Name="matrix2">
+                    <MatrixColumns>
+                      <MatrixColumn>
+                        <Width>0.9375in</Width>
+                      </MatrixColumn>
+                    </MatrixColumns>
+                    <RowGroupings>
+                      <RowGrouping>
+                        <Width>0.9375in</Width>
+                        <DynamicRows>
+                          <ReportItems>
+                            <Textbox Name="ProductName_1">
+                              <rd:DefaultName>ProductName_1</rd:DefaultName>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <Value>="PRODUCT="&amp;UCase(Fields!ProductName.Value)</Value>
+                            </Textbox>
+                          </ReportItems>
+                          <Grouping Name="matrix2_ProductID">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!ProductID.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Grouping>
+                        </DynamicRows>
+                      </RowGrouping>
+                    </RowGroupings>
+                    <ColumnGroupings>
+                      <ColumnGrouping>
+                        <Height>0.43751in</Height>
+                        <StaticColumns>
+                          <StaticColumn>
+                            <ReportItems>
+                              <Textbox Name="textbox9">
+                                <rd:DefaultName>textbox9</rd:DefaultName>
+                                <ZIndex>2</ZIndex>
+                                <Style>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                </Style>
+                                <CanGrow>true</CanGrow>
+                                <Value>Static</Value>
+                              </Textbox>
+                            </ReportItems>
+                          </StaticColumn>
+                        </StaticColumns>
+                      </ColumnGrouping>
+                    </ColumnGroupings>
+                    <ZIndex>1</ZIndex>
+                    <Corner>
+                      <ReportItems>
+                        <Textbox Name="textbox3">
+                          <rd:DefaultName>textbox3</rd:DefaultName>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>="INNERCORNER=" &amp; Sum(Fields!ProductID.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </Corner>
+                    <MatrixRows>
+                      <MatrixRow>
+                        <Height>0.43749in</Height>
+                        <MatrixCells>
+                          <MatrixCell>
+                            <ReportItems>
+                              <Textbox Name="UnitsOnOrder">
+                                <rd:DefaultName>UnitsOnOrder</rd:DefaultName>
+                                <Style>
+                                  <TextAlign>Right</TextAlign>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                </Style>
+                                <CanGrow>true</CanGrow>
+                                <Value>="ONORDER="&amp;Sum(Fields!UnitsOnOrder.Value)</Value>
+                              </Textbox>
+                            </ReportItems>
+                          </MatrixCell>
+                        </MatrixCells>
+                      </MatrixRow>
+                    </MatrixRows>
+                  </Matrix>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>2.625in</Height>
+  </Body>
+  <rd:ReportID>ab05eb76-fb3c-4ca3-8892-e2cd67a2d98d</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select top 4 * from products</CommandText>
+        <DataSourceName>Northwind</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ProductID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ProductID</DataField>
+        </Field>
+        <Field Name="ProductName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProductName</DataField>
+        </Field>
+        <Field Name="SupplierID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SupplierID</DataField>
+        </Field>
+        <Field Name="CategoryID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CategoryID</DataField>
+        </Field>
+        <Field Name="QuantityPerUnit">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>QuantityPerUnit</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitsInStock">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsInStock</DataField>
+        </Field>
+        <Field Name="UnitsOnOrder">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsOnOrder</DataField>
+        </Field>
+        <Field Name="ReorderLevel">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>ReorderLevel</DataField>
+        </Field>
+        <Field Name="Discontinued">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Discontinued</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.875in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

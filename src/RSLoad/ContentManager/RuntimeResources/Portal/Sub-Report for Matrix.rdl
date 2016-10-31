@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <Height>0.21in</Height>
+        <Style>
+          <BorderStyle>
+            <Top>Solid</Top>
+          </BorderStyle>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderWidth>
+            <Top>3pt</Top>
+          </BorderWidth>
+        </Style>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.21in</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="City">
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <rd:DefaultName>City</rd:DefaultName>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!City.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <DataSetName>AdventureWorks2000</DataSetName>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Style />
+    <Height>0.25in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>34df96c2-309d-4283-a556-c82ab56ea571</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>1in</Width>
+  <DataSets>
+    <DataSet Name="AdventureWorks2000">
+      <Fields>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT DISTINCT City
+FROM         Address
+WHERE     (StateProvinceID = @StateProvinceID) AND (CountryRegionCode = @CountryRegionCode)
+ORDER BY City</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StateProvinceID">
+            <Value>=Parameters!StateProvinceID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CountryRegionCode">
+            <Value>=Parameters!CountryRegionCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>0015b0de-dc8f-4b7f-a000-01b7ddb4f31e</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="StateProvinceID">
+      <DataType>String</DataType>
+      <Prompt>StateProvinceID</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>15</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="CountryRegionCode">
+      <DataType>String</DataType>
+      <Prompt>CountryRegionCode</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>US</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

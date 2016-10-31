@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DWScale">
+      <DataSourceReference>DWScale</DataSourceReference>
+      <rd:DataSourceID>973324a0-712a-4f77-be11-40129032b401</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="Percent">
+      <DataType>Float</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Percent Of Data To Include</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="SK_Store_ID">
+                      <rd:DefaultName>SK_Store_ID</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SK_Store_ID.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Item_Desc">
+                      <rd:DefaultName>Item_Desc</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Item_Desc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="On_Hand_Qty">
+                      <rd:DefaultName>On_Hand_Qty</rd:DefaultName>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!On_Hand_Qty.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Store ID</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Item Desc</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>On Hand Qty</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.16667in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.16667in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.16667in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>0.5in</Height>
+  </Body>
+  <rd:ReportID>35357b25-a099-4183-9286-443ddab5a99b</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     Tbl_Dim_Item.ISBN, Tbl_Dim_Item.Item_Desc, Tbl_Dim_Item.Retail_Amt, Tbl_Dim_Item.BN_Retail, Tbl_Dim_Item.Product_Type, 
+                      Tbl_Dim_Item.Subject, Tbl_Dim_Item.Category, Tbl_Dim_Item.Dept, Tbl_Dim_Item.Dept_Group, Tbl_Dim_Item.Author_Lname, 
+                      Tbl_Dim_Item.Author_Fname, Tbl_Dim_Item.Author, Tbl_Fact_Store_Inventory.On_Hand_Qty, Tbl_Fact_Store_Inventory.On_Order_Qty, 
+                      Tbl_Fact_Store_Inventory.SK_Store_ID
+FROM         Tbl_Fact_Store_Inventory INNER JOIN
+                      Tbl_Dim_Item ON Tbl_Fact_Store_Inventory.SK_Item_ID = Tbl_Dim_Item.SK_Item_ID
+WHERE     (RAND(Tbl_Fact_Store_Inventory.Retail_Amt * Tbl_Fact_Store_Inventory.SK_Store_ID) &lt; @Percent / 100.0)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Percent">
+            <Value>=Parameters!Percent.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>999999999</Timeout>
+        <DataSourceName>DWScale</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ISBN">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ISBN</DataField>
+        </Field>
+        <Field Name="Item_Desc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Item_Desc</DataField>
+        </Field>
+        <Field Name="Retail_Amt">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>Retail_Amt</DataField>
+        </Field>
+        <Field Name="BN_Retail">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>BN_Retail</DataField>
+        </Field>
+        <Field Name="Product_Type">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Product_Type</DataField>
+        </Field>
+        <Field Name="Subject">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Subject</DataField>
+        </Field>
+        <Field Name="Category">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Category</DataField>
+        </Field>
+        <Field Name="Dept">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dept</DataField>
+        </Field>
+        <Field Name="Dept_Group">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Dept_Group</DataField>
+        </Field>
+        <Field Name="Author_Lname">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Author_Lname</DataField>
+        </Field>
+        <Field Name="Author_Fname">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Author_Fname</DataField>
+        </Field>
+        <Field Name="Author">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Author</DataField>
+        </Field>
+        <Field Name="On_Hand_Qty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>On_Hand_Qty</DataField>
+        </Field>
+        <Field Name="On_Order_Qty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>On_Order_Qty</DataField>
+        </Field>
+        <Field Name="SK_Store_ID">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>SK_Store_ID</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

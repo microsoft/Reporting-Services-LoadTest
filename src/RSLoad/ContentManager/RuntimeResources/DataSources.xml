@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSources>
+  <DataSource Name="AdventureWorks2000" Extension="SQL"  Database="AdventureWorks2000" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="AdventureWorks" Extension="SQL"  Database="AdventureWorks" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="AdventureWorks2008" Extension="SQL"  Database="AdventureWorks2008" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="DWScale" Extension="SQL"  Database="DWScale" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="Northwind" Extension="SQL"  Database="Northwind" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="NorthwindArabic" Extension="SQL"  Database="NorthwindArabic" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="HomeAdvisor" Extension="SQL"  Database="HomeAdvisor" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="Sparkline" Extension="SQL"  Database="AdventureWorks2000" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="DS_Antartica" Extension="SQL"  Database="RS_Antartica" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="DS_SalesDataDemo" Extension="SQL"  Database="RS_SalesDataDemo" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="DS_SqlMaps" Extension="SQL"  Database="RS_SqlMaps" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+  <DataSource Name="DS_SqlSpatial" Extension="SQL"  Database="RS_SqlSpatial" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+</DataSources>

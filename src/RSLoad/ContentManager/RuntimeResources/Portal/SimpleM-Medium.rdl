@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DWScale">
+      <DataSourceReference>DWScale</DataSourceReference>
+      <rd:DataSourceID>27c4e63c-94ac-4c80-a5e9-a4f2319e2ffa</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Region">
+                  <rd:DefaultName>Region</rd:DefaultName>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>Gainsboro</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Region.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!Region.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Grouping Name="matrix1_Region">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Region.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>1in</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="State">
+                  <rd:DefaultName>State</rd:DefaultName>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>WhiteSmoke</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!State.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!State.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Grouping Name="matrix1_State">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!State.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Calendar_Year_ID">
+                  <rd:DefaultName>Calendar_Year_ID</rd:DefaultName>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <BackgroundColor>Gainsboro</BackgroundColor>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!Calendar_Year_ID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!Calendar_Year_ID.Value</SortExpression>
+                  <Direction>Ascending</Direction>
+                </SortBy>
+              </Sorting>
+              <Grouping Name="matrix1_Calendar_Year_ID">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Calendar_Year_ID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>0.25in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <DataSetName>DataSet1</DataSetName>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <Value />
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Qty">
+                    <rd:DefaultName>Qty</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!Qty.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>0.5in</Height>
+  </Body>
+  <rd:ReportID>533fb180-4584-4845-af64-7519b299688f</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     Tbl_Dim_Store.Status_Desc, Tbl_Dim_Store.Region, Tbl_Dim_Store.District, Tbl_Dim_Store.Market_Area, Tbl_Dim_Store.City, Tbl_Dim_Store.State, 
+                      Tbl_Dim_Date.Calendar_Year_ID, Tbl_Dim_Date.Calendar_Qtr_ID, SUM(Tbl_Fact_Store_Inventory.On_Hand_Qty) AS Qty
+FROM         Tbl_Dim_Store INNER JOIN
+                      Tbl_Fact_Store_Inventory ON Tbl_Dim_Store.SK_Store_ID = Tbl_Fact_Store_Inventory.SK_Store_ID INNER JOIN
+                      Tbl_Dim_Date ON Tbl_Fact_Store_Inventory.SK_Date_ID = Tbl_Dim_Date.SK_Date_ID
+GROUP BY Tbl_Dim_Store.Status_Desc, Tbl_Dim_Store.Region, Tbl_Dim_Store.District, Tbl_Dim_Store.Market_Area, Tbl_Dim_Store.City, Tbl_Dim_Store.State, 
+                      Tbl_Dim_Date.Calendar_Year_ID, Tbl_Dim_Date.Calendar_Qtr_ID
+HAVING      (NOT (Tbl_Dim_Store.Region IS NULL)) AND (NOT (Tbl_Dim_Store.District IS NULL)) AND (NOT (Tbl_Dim_Store.City IS NULL)) AND 
+                      (NOT (Tbl_Dim_Store.State IS NULL))</CommandText>
+        <DataSourceName>DWScale</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Status_Desc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Status_Desc</DataField>
+        </Field>
+        <Field Name="Region">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Region</DataField>
+        </Field>
+        <Field Name="District">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>District</DataField>
+        </Field>
+        <Field Name="Market_Area">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Market_Area</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="State">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State</DataField>
+        </Field>
+        <Field Name="Calendar_Year_ID">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>Calendar_Year_ID</DataField>
+        </Field>
+        <Field Name="Calendar_Qtr_ID">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>Calendar_Qtr_ID</DataField>
+        </Field>
+        <Field Name="Qty">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Qty</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>3in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

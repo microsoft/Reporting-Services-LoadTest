@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DWScale">
+      <DataSourceReference>DWScale</DataSourceReference>
+      <rd:DataSourceID>27c4e63c-94ac-4c80-a5e9-a4f2319e2ffa</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox7">
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>3.875in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <BackgroundColor>Silver</BackgroundColor>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Store Locations</Value>
+      </Textbox>
+      <List Name="list1">
+        <ReportItems>
+          <Textbox Name="District">
+            <RepeatWith>list2</RepeatWith>
+            <rd:DefaultName>District</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>3.875in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <BackgroundColor>Gainsboro</BackgroundColor>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!District.Value</Value>
+          </Textbox>
+          <List Name="list2">
+            <Left>0.25in</Left>
+            <ReportItems>
+              <Textbox Name="textbox5">
+                <Left>0.25in</Left>
+                <Top>1.375in</Top>
+                <ZIndex>4</ZIndex>
+                <Width>1.25in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontWeight>700</FontWeight>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>Smallest Stores</Value>
+              </Textbox>
+              <Textbox Name="textbox4">
+                <Left>0.25in</Left>
+                <Top>0.25in</Top>
+                <rd:DefaultName>textbox4</rd:DefaultName>
+                <ZIndex>3</ZIndex>
+                <Width>1.125in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <FontWeight>700</FontWeight>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>Largest Stores</Value>
+              </Textbox>
+              <List Name="list4">
+                <Left>0.25in</Left>
+                <Filters>
+                  <Filter>
+                    <Operator>BottomPercent</Operator>
+                    <FilterValues>
+                      <FilterValue>=50</FilterValue>
+                    </FilterValues>
+                    <FilterExpression>=Fields!Square_Feet.Value</FilterExpression>
+                  </Filter>
+                </Filters>
+                <ReportItems>
+                  <Textbox Name="textbox1">
+                    <Top>0.5in</Top>
+                    <ZIndex>2</ZIndex>
+                    <Width>1in</Width>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=CStr(Fields!Square_Feet.Value)+" sq ft"</Value>
+                  </Textbox>
+                  <Textbox Name="textbox2">
+                    <Top>0.25in</Top>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.25in</Height>
+                    <Value>=Fields!City.Value+", "+Fields!State.Value+"  "+Fields!Zip_Code.Value</Value>
+                  </Textbox>
+                  <Textbox Name="textbox3">
+                    <Style>
+                      <BorderStyle>
+                        <Top>=iif(Previous(Fields!City.Value)=Fields!City.Value,"Solid","None")</Top>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.25in</Height>
+                    <Value>=Fields!Addr_Line1.Value</Value>
+                  </Textbox>
+                </ReportItems>
+                <Top>1.625in</Top>
+                <ZIndex>2</ZIndex>
+                <Width>3.375in</Width>
+              </List>
+              <Textbox Name="City_1">
+                <RepeatWith>list3</RepeatWith>
+                <rd:DefaultName>City_1</rd:DefaultName>
+                <ZIndex>1</ZIndex>
+                <Width>3.625in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <BackgroundColor>WhiteSmoke</BackgroundColor>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>=Fields!City.Value</Value>
+              </Textbox>
+              <List Name="list3">
+                <Left>0.25in</Left>
+                <Filters>
+                  <Filter>
+                    <Operator>TopPercent</Operator>
+                    <FilterValues>
+                      <FilterValue>=50</FilterValue>
+                    </FilterValues>
+                    <FilterExpression>=Fields!Square_Feet.Value</FilterExpression>
+                  </Filter>
+                </Filters>
+                <ReportItems>
+                  <Textbox Name="Square_Feet">
+                    <Top>0.5in</Top>
+                    <rd:DefaultName>Square_Feet</rd:DefaultName>
+                    <ZIndex>2</ZIndex>
+                    <Width>1in</Width>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>=CStr(Fields!Square_Feet.Value)+" sq ft"</Value>
+                  </Textbox>
+                  <Textbox Name="City">
+                    <Top>0.25in</Top>
+                    <rd:DefaultName>City</rd:DefaultName>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.25in</Height>
+                    <Value>=Fields!City.Value+", "+Fields!State.Value+"  "+Fields!Zip_Code.Value</Value>
+                  </Textbox>
+                  <Textbox Name="Addr_Line1">
+                    <rd:DefaultName>Addr_Line1</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Top>=iif(Previous(Fields!City.Value)=Fields!City.Value,"Solid","None")</Top>
+                      </BorderStyle>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.25in</Height>
+                    <Value>=Fields!Addr_Line1.Value</Value>
+                  </Textbox>
+                </ReportItems>
+                <Top>0.5in</Top>
+                <Width>3.375in</Width>
+                <Height>0.75in</Height>
+              </List>
+            </ReportItems>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.25in</Top>
+            <Grouping Name="list2_Details_Group">
+              <GroupExpressions>
+                <GroupExpression>=Fields!City.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+          </List>
+        </ReportItems>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.25in</Top>
+        <Grouping Name="list1_Details_Group">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <Label>=Fields!District.Value</Label>
+          <GroupExpressions>
+            <GroupExpression>=Fields!District.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>2.875in</Height>
+  </Body>
+  <rd:ReportID>533fb180-4584-4845-af64-7519b299688f</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     Status_Desc, Region, District, Market_Area, City, State, Store_Num, Store_Desc, Addr_Line1, Zip_Code, Square_Feet
+FROM         Tbl_Dim_Store
+GROUP BY Status_Desc, Region, District, Market_Area, City, State, Store_Num, Store_Desc, Addr_Line1, Zip_Code, Square_Feet
+HAVING      (NOT (District IS NULL))
+ORDER BY District, City</CommandText>
+        <DataSourceName>DWScale</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="Status_Desc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Status_Desc</DataField>
+        </Field>
+        <Field Name="Region">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Region</DataField>
+        </Field>
+        <Field Name="District">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>District</DataField>
+        </Field>
+        <Field Name="Market_Area">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Market_Area</DataField>
+        </Field>
+        <Field Name="City">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="State">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>State</DataField>
+        </Field>
+        <Field Name="Store_Num">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Store_Num</DataField>
+        </Field>
+        <Field Name="Store_Desc">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Store_Desc</DataField>
+        </Field>
+        <Field Name="Addr_Line1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Addr_Line1</DataField>
+        </Field>
+        <Field Name="Zip_Code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Zip_Code</DataField>
+        </Field>
+        <Field Name="Square_Feet">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Square_Feet</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>4in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

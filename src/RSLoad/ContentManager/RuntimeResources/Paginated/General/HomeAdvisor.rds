@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>HomeAdvisor</Name>
+  <DataSourceID>0eb3e65a-b42d-41a0-90f5-ef8ed8420382</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>SQLPOD009-13;initial catalog=HomeAdvisor</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <RightMargin>1in</RightMargin>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Style />
+        <Height>1.875in</Height>
+        <Top>0.25in</Top>
+        <Width>6in</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <ReportItems>
+          <Subreport Name="subreport1">
+            <Style />
+            <ZIndex>2</ZIndex>
+            <Top>0.125in</Top>
+            <ReportName>Chart</ReportName>
+            <Height>1.625in</Height>
+            <Parameters>
+              <Parameter Name="SalesPersonID">
+                <Value>=Fields!SalesPersonID.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Left>2.375in</Left>
+          </Subreport>
+          <Textbox Name="SalesYTD">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <rd:DefaultName>SalesYTD</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <Value>=Fields!SalesYTD.Value</Value>
+            <CanGrow>true</CanGrow>
+            <Left>1.25in</Left>
+          </Textbox>
+          <Textbox Name="SalesPersonID">
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <TextAlign>Right</TextAlign>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <rd:DefaultName>SalesPersonID</rd:DefaultName>
+            <Height>0.25in</Height>
+            <Width>1in</Width>
+            <CanGrow>true</CanGrow>
+            <Value>=Fields!SalesPersonID.Value</Value>
+            <Left>0.125in</Left>
+          </Textbox>
+        </ReportItems>
+        <Left>0.125in</Left>
+      </List>
+    </ReportItems>
+    <Style />
+    <Height>2.25in</Height>
+  </Body>
+  <TopMargin>1in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks2000">
+      <rd:DataSourceID>36b05d8f-cf8c-4e37-a6fe-f40f87d3a9f0</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>6.25in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="SalesPersonID">
+          <DataField>SalesPersonID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SalesYTD">
+          <DataField>SalesYTD</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks2000</DataSourceName>
+        <CommandText>SELECT     SalesPersonID, SalesYTD
+FROM         SalesPerson</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <LeftMargin>1in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <rd:ReportID>bcd4f9c8-f5f6-4dca-a7d3-1dcb46bdfd53</rd:ReportID>
+  <BottomMargin>1in</BottomMargin>
+</Report>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>/MobileTest/AdventureWorks</DataSourceReference>
+      <CommandText>SELECT TOP 50000 [WorkOrderID]
+      ,[ProductID]
+      ,[OrderQty]
+      ,[StockedQty]
+      ,[ScrappedQty]
+      ,[StartDate]
+      ,[EndDate]
+      ,[DueDate]
+      ,[ScrapReasonID]
+      ,[ModifiedDate]
+  FROM [AdventureWorks].[Production].[WorkOrder]</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="WorkOrderID">
+        <DataField>WorkOrderID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ProductID">
+        <DataField>ProductID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OrderQty">
+        <DataField>OrderQty</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="StockedQty">
+        <DataField>StockedQty</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ScrappedQty">
+        <DataField>ScrappedQty</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="StartDate">
+        <DataField>StartDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="EndDate">
+        <DataField>EndDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="DueDate">
+        <DataField>DueDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ScrapReasonID">
+        <DataField>ScrapReasonID</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="ModifiedDate">
+        <DataField>ModifiedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://dz-evlevy/ReportServer_THREEPOINTTHREE</rd:ReportServerUrl>
+</SharedDataSet>

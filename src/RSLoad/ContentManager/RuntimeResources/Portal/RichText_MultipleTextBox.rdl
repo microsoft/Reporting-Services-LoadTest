@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <Body>
+    <ReportItems>
+     <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>-This is one textrun-</Value>
+                                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>Blue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+					-This is another textrun-
+				</Value>
+				                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Arial</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Black</Color>
+                </Style>	
+              </TextRun>
+              <TextRun>
+                <Value>
+					-This is another textrun-
+                </Value>
+                               <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Courier</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>ExtraBold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Blue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.63542in</Top>
+        <Left>0.125in</Left>
+        <Height>0.58333in</Height>
+        <Width>6.22917in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TopBorder>
+            <Style>Double</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Style>Double</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Double</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Double</Style>
+          </RightBorder>
+          <BackgroundColor>red</BackgroundColor>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>16pt</FontSize>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <Direction>RTL</Direction>
+          
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Again, I always go to sea as a sailor, because they make a point of
+paying me for my trouble, whereas they never pay passengers a single
+penny that I ever heard of.  On the contrary, passengers themselves
+must pay.  And there is all the difference in the world between
+paying and being paid.  The act of paying is perhaps the most
+uncomfortable infliction that the two orchard thieves entailed upon
+us.  But BEING PAID,--what will compare with it?  The urbane activity
+with which a man receives money is really marvellous, considering
+that we so earnestly believe money to be the root of all earthly
+ills, and that on no account can a monied man enter heaven.  Ah! how
+cheerfully we consign ourselves to perdition!
+
+
+</Value>
+               <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                  <Color>Blue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+					Finally, I always go to sea as a sailor, because of the wholesome
+exercise and pure air of the fore-castle deck.  For as in this world,
+head winds are far more prevalent than winds from astern (that is, if
+you never violate the Pythagorean maxim), so for the most part the
+Commodore on the quarter-deck gets his atmosphere at second hand from
+the sailors on the forecastle.  He thinks he breathes it first; but
+not so.  In much the same way do the commonalty lead their leaders in
+many other things, at the same time that the leaders little suspect
+it.  But wherefore it was that after having repeatedly smelt the sea
+as a merchant sailor, I should now take it into my head to go on a
+whaling voyage; this the invisible police officer of the Fates, who
+has the constant surveillance of me, and secretly dogs me, and
+influences me in some unaccountable way--he can better answer than
+any one else.  And, doubtless, my going on this whaling voyage,
+formed part of the grand programme of Providence that was drawn up a
+long time ago.  It came in as a sort of brief interlude and solo
+between more extensive performances.  I take it that this part of the
+bill must have run something like this:
+
+
+"GRAND CONTESTED ELECTION FOR THE PRESIDENCY OF THE UNITED STATES.
+"WHALING VOYAGE BY ONE ISHMAEL.
+"BLOODY BATTLE IN AFFGHANISTAN."
+
+
+Though I cannot tell why it was exactly that those stage managers,
+the Fates, put me down for this shabby part of a whaling voyage, when
+others were set down for magnificent parts in high tragedies, and
+short and easy parts in genteel comedies, and jolly parts in
+farces--though I cannot tell why this was exactly; yet, now that I
+recall all the circumstances, I think I can see a little into the
+springs and motives which being cunningly presented to me under
+various disguises, induced me to set about performing the part I did,
+besides cajoling me into the delusion that it was a choice resulting
+from my own unbiased freewill and discriminating judgment.
+
+
+				</Value>	
+				<Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Courier</FontFamily>
+                  <FontSize>10pt</FontSize>
+                  <FontWeight>ExtraBold</FontWeight>
+                  <TextDecoration>LineThrough</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+					Chief among these motives was the overwhelming idea of the great
+whale himself.  Such a portentous and mysterious monster roused all
+my curiosity.  Then the wild and distant seas where he rolled his
+island bulk; the undeliverable, nameless perils of the whale; these,
+with all the attending marvels of a thousand Patagonian sights and
+sounds, helped to sway me to my wish.  With other men, perhaps, such
+things would not have been inducements; but as for me, I am tormented
+with an everlasting itch for things remote.  I love to sail forbidden
+seas, and land on barbarous coasts.  Not ignoring what is good, I am
+quick to perceive a horror, and could still be social with it--would
+they let me--since it is but well to be on friendly terms with all
+the inmates of the place one lodges in.
+
+By reason of these things, then, the whaling voyage was welcome; the
+great flood-gates of the wonder-world swung open, and in the wild
+conceits that swayed me to my purpose, two and two there floated into
+my inmost soul, endless processions of the whale, and, mid most of
+them all, one grand hooded phantom, like a snow hill in the air.
+                </Value>
+                 <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Arial</FontFamily>
+                  <FontSize>24pt</FontSize>
+                  <FontWeight>Medium</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.63542in</Top>
+        <Left>0.125in</Left>
+        <Height>0.58333in</Height>
+        <Width>16.22917in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TopBorder>
+            <Style>Double</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Style>Double</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Double</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Double</Style>
+          </RightBorder>
+          <BackgroundColor>#999999</BackgroundColor>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>16pt</FontSize>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+          <Direction>RTL</Direction>
+          <WritingMode>Vertical</WritingMode>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+         <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>-This is one textrun-</Value>
+                               <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Arial</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Black</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+					-This is another textrun-
+				</Value>
+				                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>10pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
+                  <TextDecoration>Overline</TextDecoration>
+                  <Color>Yellow</Color>
+                </Style>	
+              </TextRun>
+              <TextRun>
+                <Value>
+					-This is another textrun-
+                </Value>
+                                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Heavy</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+       
+        <Top>0.63542in</Top>
+        <Left>0.125in</Left>
+        <Height>0.58333in</Height>
+        <Width>16.22917in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TopBorder>
+            <Style>Double</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Style>Double</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Style>Double</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Style>Double</Style>
+          </RightBorder>
+          <BackgroundColor>#528ae7</BackgroundColor>
+          <FontFamily>Courier New</FontFamily>
+          <FontSize>16pt</FontSize>
+          <TextDecoration>Underline</TextDecoration>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
+  </Body>
+  <Width>6.5in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+</Report>

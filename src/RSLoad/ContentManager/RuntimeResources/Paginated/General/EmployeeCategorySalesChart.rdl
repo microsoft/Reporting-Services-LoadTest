@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition">
+  <Body>
+    <ReportItems>
+      <Chart Name="newChart1">
+        <ThreeDProperties>
+          <Rotation>30</Rotation>
+          <Inclination>30</Inclination>
+          <Shading>Simple</Shading>
+          <WallThickness>50</WallThickness>
+        </ThreeDProperties>
+        <ZIndex>6</ZIndex>
+        <Style />
+        <Legend>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+          </Style>
+          <Position>RightCenter</Position>
+        </Legend>
+        <Palette>Default</Palette>
+        <ChartData>
+          <ChartSeries>
+            <DataPoints>
+              <DataPoint>
+                <DataValues>
+                  <DataValue>
+                    <Value>=Sum(Fields!Sales.Value)</Value>
+                  </DataValue>
+                </DataValues>
+                <DataLabel />
+                <Marker />
+              </DataPoint>
+            </DataPoints>
+          </ChartSeries>
+        </ChartData>
+        <CategoryAxis>
+          <Axis>
+            <Title />
+            <Style>
+              <FontSize>9pt</FontSize>
+              <FontWeight>Normal</FontWeight>
+            </Style>
+            <MajorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+          </Axis>
+        </CategoryAxis>
+        <DataSetName>DataSet1</DataSetName>
+        <Type>Bar</Type>
+        <Top>0.75in</Top>
+        <Title />
+        <Width>5.625in</Width>
+        <CategoryGroupings>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="newChart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=DATEPART(DateInterval.Year, Fields!OrderDate.Value)</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>=DATEPART(DateInterval.Year, Fields!OrderDate.Value)</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+          <CategoryGrouping>
+            <DynamicCategories>
+              <Grouping Name="newChart1_CategoryGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=DATEPART(DateInterval.Quarter, Fields!OrderDate.Value)</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Label>="QTR " &amp; DATEPART(DateInterval.Quarter, Fields!OrderDate.Value)</Label>
+            </DynamicCategories>
+          </CategoryGrouping>
+        </CategoryGroupings>
+        <Height>3in</Height>
+        <SeriesGroupings>
+          <SeriesGrouping>
+            <StaticSeries>
+              <StaticMember>
+                <Label>Value1</Label>
+              </StaticMember>
+            </StaticSeries>
+          </SeriesGrouping>
+        </SeriesGroupings>
+        <Subtype>Plain</Subtype>
+        <PlotArea>
+          <Style>
+            <BorderStyle>
+              <Default>Solid</Default>
+            </BorderStyle>
+            <BackgroundColor>LightGrey</BackgroundColor>
+          </Style>
+        </PlotArea>
+        <Left>0.125in</Left>
+        <ValueAxis>
+          <Axis>
+            <Title>
+              <Caption>Total Sales</Caption>
+            </Title>
+            <Style>
+              <FontSize>9pt</FontSize>
+              <FontWeight>Normal</FontWeight>
+            </Style>
+            <MajorGridLines>
+              <ShowGridLines>true</ShowGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MajorGridLines>
+            <MinorGridLines>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </MinorGridLines>
+            <Margin>true</Margin>
+            <Visible>true</Visible>
+          </Axis>
+        </ValueAxis>
+      </Chart>
+      <Textbox Name="textbox3">
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Height>0.25in</Height>
+        <Width>5.75in</Width>
+        <Value>Employee Sales Charts by Category</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Top>0.3125in</Top>
+        <Height>15pt</Height>
+        <Width>0.9375in</Width>
+        <Value>Employee:</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Top>0.5084in</Top>
+        <Height>15pt</Height>
+        <Width>0.9375in</Width>
+        <Value>Category:</Value>
+      </Textbox>
+      <List Name="listControl1">
+        <Style />
+        <Height>2.6875in</Height>
+        <Top>3.9375in</Top>
+        <Grouping Name="Product">
+          <GroupExpressions>
+            <GroupExpression>=Fields!ProductName.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <ZIndex>2</ZIndex>
+        <Width>6.3125in</Width>
+        <ReportItems>
+          <Chart Name="newChart2">
+            <ThreeDProperties>
+              <Rotation>30</Rotation>
+              <Inclination>30</Inclination>
+              <Shading>Simple</Shading>
+              <WallThickness>50</WallThickness>
+            </ThreeDProperties>
+            <ZIndex>2</ZIndex>
+            <Style />
+            <Legend>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+              <Position>RightCenter</Position>
+            </Legend>
+            <Palette>Default</Palette>
+            <ChartData>
+              <ChartSeries>
+                <DataPoints>
+                  <DataPoint>
+                    <DataValues>
+                      <DataValue>
+                        <Value>=Sum(Fields!Sales.Value)</Value>
+                      </DataValue>
+                    </DataValues>
+                    <DataLabel />
+                    <Marker />
+                  </DataPoint>
+                </DataPoints>
+              </ChartSeries>
+            </ChartData>
+            <CategoryAxis>
+              <Axis>
+                <Title />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+                <MajorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Visible>true</Visible>
+              </Axis>
+            </CategoryAxis>
+            <DataSetName>DataSet1</DataSetName>
+            <Type>Column</Type>
+            <Top>0.4375in</Top>
+            <Title />
+            <Width>5.5in</Width>
+            <CategoryGroupings>
+              <CategoryGrouping>
+                <DynamicCategories>
+                  <Grouping Name="newChart2_CategoryGroup1">
+                    <GroupExpressions>
+                      <GroupExpression>=DATEPART(DateInterval.Year, Fields!OrderDate.Value)</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Label>=DATEPART(DateInterval.Year, Fields!OrderDate.Value)</Label>
+                </DynamicCategories>
+              </CategoryGrouping>
+              <CategoryGrouping>
+                <DynamicCategories>
+                  <Grouping Name="newChart2_CategoryGroup2">
+                    <GroupExpressions>
+                      <GroupExpression>=DATEPART(DateInterval.Quarter, Fields!OrderDate.Value)</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Label>="Qtr " &amp; DATEPART(DateInterval.Quarter, Fields!OrderDate.Value)</Label>
+                </DynamicCategories>
+              </CategoryGrouping>
+            </CategoryGroupings>
+            <Height>2.125in</Height>
+            <SeriesGroupings>
+              <SeriesGrouping>
+                <StaticSeries>
+                  <StaticMember>
+                    <Label>Value1</Label>
+                  </StaticMember>
+                </StaticSeries>
+              </SeriesGrouping>
+            </SeriesGroupings>
+            <Subtype>Plain</Subtype>
+            <PlotArea>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <BackgroundColor>LightGrey</BackgroundColor>
+              </Style>
+            </PlotArea>
+            <Left>0.1875in</Left>
+            <ValueAxis>
+              <Axis>
+                <Title>
+                  <Caption>Total Sales</Caption>
+                </Title>
+                <MajorGridLines>
+                  <ShowGridLines>true</ShowGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Visible>true</Visible>
+              </Axis>
+            </ValueAxis>
+          </Chart>
+          <Textbox Name="textbox7">
+            <Style>
+              <FontSize>12pt</FontSize>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <Top>0.1875in</Top>
+            <Height>15pt</Height>
+            <Width>4.75in</Width>
+            <Value>=Fields!ProductName.Value</Value>
+            <Left>1in</Left>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Style>
+              <FontSize>12pt</FontSize>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Top>0.1875in</Top>
+            <Height>15pt</Height>
+            <Width>1in</Width>
+            <Value>Product:</Value>
+          </Textbox>
+        </ReportItems>
+      </List>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontSize>12pt</FontSize>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Top>0.3125in</Top>
+        <Height>15pt</Height>
+        <Width>4.8125in</Width>
+        <Value>=First(Fields!FirstName.Value) &amp; " " &amp; First(Fields!LastName.Value)</Value>
+        <Left>0.9375in</Left>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <Style>
+          <FontSize>12pt</FontSize>
+        </Style>
+        <Top>0.5084in</Top>
+        <Height>15pt</Height>
+        <Width>4.8125in</Width>
+        <Value>=First(Fields!CategoryName.Value) &amp; " (All Products)"</Value>
+        <Left>0.9375in</Left>
+      </Textbox>
+    </ReportItems>
+    <Style />
+    <Height>8.25in</Height>
+  </Body>
+  <DataSources>
+    <DataSource Name="DataSource1">
+     <DataSourceReference>Northwind</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Width>6.375in</Width>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+        </Field>
+        <Field Name="CategoryID">
+          <DataField>CategoryID</DataField>
+        </Field>
+        <Field Name="CategoryName">
+          <DataField>CategoryName</DataField>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="ProductName">
+          <DataField>ProductName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT     dbo.Employees.EmployeeID, dbo.Employees.FirstName, dbo.Employees.LastName, dbo.Categories.CategoryID, dbo.Categories.CategoryName, 
+                      SUM(dbo.[Order Details].UnitPrice * dbo.[Order Details].Quantity) AS Sales, dbo.Orders.OrderDate, dbo.Products.ProductName
+FROM         dbo.Employees INNER JOIN
+                      dbo.Orders ON dbo.Employees.EmployeeID = dbo.Orders.EmployeeID INNER JOIN
+                      dbo.[Order Details] ON dbo.Orders.OrderID = dbo.[Order Details].OrderID INNER JOIN
+                      dbo.Products ON dbo.[Order Details].ProductID = dbo.Products.ProductID INNER JOIN
+                      dbo.Categories ON dbo.Products.CategoryID = dbo.Categories.CategoryID
+WHERE     (dbo.Categories.CategoryID = @CategoryID) AND (dbo.Employees.EmployeeID = @EmployeeID)
+GROUP BY dbo.Employees.EmployeeID, dbo.Employees.FirstName, dbo.Employees.LastName, dbo.Categories.CategoryID, dbo.Categories.CategoryName, 
+                      dbo.Orders.OrderDate, dbo.Products.ProductName</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@CategoryID">
+            <Value>=Parameters!CategoryID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EmployeeID">
+            <Value>=Parameters!EmployeeID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Description>Displays a series of charts of the sales details for a selected employee and product category.</Description>
+  <ReportParameters>
+    <ReportParameter Name="EmployeeID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Employee ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CategoryID">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Category ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

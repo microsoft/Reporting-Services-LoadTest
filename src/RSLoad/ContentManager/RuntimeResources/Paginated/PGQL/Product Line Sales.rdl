@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2003/10/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <rd:GridSpacing>0.0625in</rd:GridSpacing>
+  <RightMargin>0.75in</RightMargin>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="TopStores">
+        <ZIndex>6</ZIndex>
+        <Top>4.875in</Top>
+        <ReportItems>
+          <Chart Name="TopStoresChart">
+            <ThreeDProperties>
+              <Rotation>30</Rotation>
+              <Inclination>30</Inclination>
+              <Shading>Simple</Shading>
+              <WallThickness>50</WallThickness>
+            </ThreeDProperties>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+            <Legend>
+              <Visible>true</Visible>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <FontSize>8pt</FontSize>
+              </Style>
+              <Position>BottomCenter</Position>
+              <Layout>Table</Layout>
+            </Legend>
+            <Palette>SemiTransparent</Palette>
+            <ChartData>
+              <ChartSeries>
+                <DataPoints>
+                  <DataPoint>
+                    <DataValues>
+                      <DataValue>
+                        <Value>=Sum(Fields!SaleAmount.Value)/1000</Value>
+                      </DataValue>
+                    </DataValues>
+                    <DataLabel>
+                      <Style>
+                        <Format>C</Format>
+                        <FontWeight>700</FontWeight>
+                      </Style>
+                      <Value>=Sum(Fields!SaleAmount.Value)/1000</Value>
+                      <Visible>true</Visible>
+                    </DataLabel>
+                    <Marker />
+                  </DataPoint>
+                </DataPoints>
+              </ChartSeries>
+            </ChartData>
+            <CategoryAxis>
+              <Axis>
+                <Title />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <MajorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Visible>true</Visible>
+              </Axis>
+            </CategoryAxis>
+            <DataSetName>TopCustomers</DataSetName>
+            <Type>Pie</Type>
+            <Top>0.25in</Top>
+            <Title />
+            <CategoryGroupings>
+              <CategoryGrouping>
+                <DynamicCategories>
+                  <Grouping Name="TopStoresChart_StoreName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!StoreName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Label>=Fields!StoreName.Value</Label>
+                </DynamicCategories>
+              </CategoryGrouping>
+            </CategoryGroupings>
+            <Height>2.875in</Height>
+            <Subtype>Plain</Subtype>
+            <PlotArea>
+              <Style>
+                <BackgroundColor>LightGrey</BackgroundColor>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </PlotArea>
+            <Left>3.25in</Left>
+            <ValueAxis>
+              <Axis>
+                <Title>
+                  <Caption>Sales (thousands)</Caption>
+                </Title>
+                <Style>
+                  <Format>$#,###</Format>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <MajorGridLines>
+                  <ShowGridLines>true</ShowGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Visible>true</Visible>
+                <Scalar>true</Scalar>
+              </Axis>
+            </ValueAxis>
+          </Chart>
+          <Table Name="TopStoresTable">
+            <Height>0.5in</Height>
+            <ZIndex>1</ZIndex>
+            <Style />
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="StoreName_Label">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>MediumSlateBlue</Default>
+                            </BorderColor>
+                            <TextAlign>Left</TextAlign>
+                            <Color>White</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <Value>Store Name</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="SaleAmountStore_Label">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>MediumSlateBlue</Default>
+                            </BorderColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>White</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>700</FontWeight>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <Value>Sales</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="StoreName">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextAlign>Left</TextAlign>
+                            <Color>DarkSlateBlue</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <Value>=Fields!StoreName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="SaleAmountStore">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <Format>c</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <Value>=Fields!SaleAmount.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!SaleAmount.Value</SortExpression>
+                  <Direction>Descending</Direction>
+                </SortBy>
+              </Sorting>
+            </Details>
+            <DataSetName>TopCustomers</DataSetName>
+            <Top>0.375in</Top>
+            <Width>3.125in</Width>
+            <TableColumns>
+              <TableColumn>
+                <Width>2in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.125in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+          <Textbox Name="TopStoresHeader">
+            <Style>
+              <PaddingLeft>6pt</PaddingLeft>
+              <BackgroundColor>Firebrick</BackgroundColor>
+              <BorderColor>
+                <Default>#000000</Default>
+              </BorderColor>
+              <FontSize>12pt</FontSize>
+              <LineHeight>22pt</LineHeight>
+              <Color>White</Color>
+              <PaddingRight>0in</PaddingRight>
+              <FontWeight>700</FontWeight>
+            </Style>
+            <Height>0.25in</Height>
+            <Value>Top Stores</Value>
+          </Textbox>
+        </ReportItems>
+        <Height>3.1875in</Height>
+        <Width>6.875in</Width>
+        <Style />
+        <Left>0.0625in</Left>
+      </Rectangle>
+      <Textbox Name="CategorySelection">
+        <Style>
+          <PaddingLeft>5pt</PaddingLeft>
+          <BackgroundColor>White</BackgroundColor>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>SlateBlue</Color>
+          <PaddingBottom>3pt</PaddingBottom>
+          <PaddingTop>3pt</PaddingTop>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Top>1.875in</Top>
+        <Height>0.25in</Height>
+        <Width>6.875in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>=Parameters!ProductCategory.Label + " (" + Parameters!ProductSubCategory.Label + ")"</Value>
+        <Left>0.0625in</Left>
+      </Textbox>
+      <Textbox Name="TopEmployeesHeader">
+        <Style>
+          <PaddingLeft>6pt</PaddingLeft>
+          <BackgroundColor>Firebrick</BackgroundColor>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>12pt</FontSize>
+          <LineHeight>22pt</LineHeight>
+          <Color>White</Color>
+          <PaddingRight>0in</PaddingRight>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Top>2.125in</Top>
+        <Height>0.25in</Height>
+        <Width>6.875in</Width>
+        <Value>Top Employees</Value>
+        <Left>0.0625in</Left>
+      </Textbox>
+      <Rectangle Name="Banner">
+        <ZIndex>3</ZIndex>
+        <Top>1.25in</Top>
+        <ReportItems>
+          <Image Name="BannerRight">
+            <ZIndex>1</ZIndex>
+            <MIMEType>image/jpeg</MIMEType>
+            <Source>Embedded</Source>
+            <Style />
+            <Value>tires</Value>
+            <Left>3.125in</Left>
+            <Sizing>Fit</Sizing>
+          </Image>
+          <Rectangle Name="BannerLeft">
+            <Width>3.125in</Width>
+            <Style>
+              <BackgroundColor>SlateBlue</BackgroundColor>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <Height>0.25in</Height>
+        <Width>6.875in</Width>
+        <Style />
+        <Left>0.0625in</Left>
+      </Rectangle>
+      <Image Name="logo">
+        <ZIndex>2</ZIndex>
+        <MIMEType>image/jpeg</MIMEType>
+        <Height>1.19792in</Height>
+        <Width>3.76042in</Width>
+        <Source>Embedded</Source>
+        <Style />
+        <Value>wholelogolft_lowres</Value>
+        <Left>0.0625in</Left>
+        <Sizing>AutoSize</Sizing>
+      </Image>
+      <Textbox Name="DateRange">
+        <Style>
+          <PaddingLeft>5pt</PaddingLeft>
+          <BackgroundColor>White</BackgroundColor>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <Color>SlateBlue</Color>
+          <PaddingBottom>3pt</PaddingBottom>
+          <PaddingTop>3pt</PaddingTop>
+          <FontWeight>700</FontWeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Top>1.625in</Top>
+        <Height>0.25in</Height>
+        <Width>6.875in</Width>
+        <CanGrow>true</CanGrow>
+        <Value>=Parameters!StartDate.Value + " through " + Parameters!EndDate.Value</Value>
+        <Left>0.0625in</Left>
+      </Textbox>
+      <Rectangle Name="TopEmployees">
+        <Top>2.375in</Top>
+        <ReportItems>
+          <Chart Name="TopEmployeesChart">
+            <ThreeDProperties>
+              <Rotation>30</Rotation>
+              <Inclination>30</Inclination>
+              <Shading>Simple</Shading>
+              <WallThickness>50</WallThickness>
+            </ThreeDProperties>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+            <Legend>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+              <Position>RightCenter</Position>
+            </Legend>
+            <Palette>Excel</Palette>
+            <ChartData>
+              <ChartSeries>
+                <DataPoints>
+                  <DataPoint>
+                    <DataValues>
+                      <DataValue>
+                        <Value>=Sum(Fields!SaleAmount.Value)/1000</Value>
+                      </DataValue>
+                    </DataValues>
+                    <DataLabel>
+                      <Style>
+                        <Format>C</Format>
+                      </Style>
+                      <Value>=Sum(Fields!SaleAmount.Value)/1000</Value>
+                      <Visible>true</Visible>
+                    </DataLabel>
+                    <Marker />
+                  </DataPoint>
+                </DataPoints>
+              </ChartSeries>
+            </ChartData>
+            <CategoryAxis>
+              <Axis>
+                <Title />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <MajorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Visible>true</Visible>
+              </Axis>
+            </CategoryAxis>
+            <DataSetName>TopEmployees</DataSetName>
+            <Type>Bar</Type>
+            <Title />
+            <CategoryGroupings>
+              <CategoryGrouping>
+                <DynamicCategories>
+                  <Grouping Name="TopEmployeesChart_EmployeeName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!FullName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Label>=Fields!FullName.Value</Label>
+                </DynamicCategories>
+              </CategoryGrouping>
+            </CategoryGroupings>
+            <Height>2.375in</Height>
+            <Subtype>Plain</Subtype>
+            <PlotArea>
+              <Style>
+                <BackgroundColor>LightGrey</BackgroundColor>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+              </Style>
+            </PlotArea>
+            <Left>3.25in</Left>
+            <ValueAxis>
+              <Axis>
+                <Title>
+                  <Caption>Sales (in thousands)</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </Title>
+                <Style>
+                  <Format>$#,###</Format>
+                </Style>
+                <MajorGridLines>
+                  <ShowGridLines>true</ShowGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MajorGridLines>
+                <MinorGridLines>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                </MinorGridLines>
+                <Margin>true</Margin>
+                <Scalar>true</Scalar>
+              </Axis>
+            </ValueAxis>
+          </Chart>
+          <Table Name="TopEmployeesTable">
+            <Height>0.5in</Height>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="FullName_Label">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>MediumSlateBlue</Default>
+                            </BorderColor>
+                            <LineHeight>15pt</LineHeight>
+                            <TextAlign>Left</TextAlign>
+                            <Color>White</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>900</FontWeight>
+                          </Style>
+                          <ZIndex>3</ZIndex>
+                          <Value>Employee Name</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="SaleAmountEmp_Label">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <BackgroundColor>SlateBlue</BackgroundColor>
+                            <BorderColor>
+                              <Default>MediumSlateBlue</Default>
+                            </BorderColor>
+                            <LineHeight>15pt</LineHeight>
+                            <TextAlign>Center</TextAlign>
+                            <Color>White</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                            <FontWeight>900</FontWeight>
+                          </Style>
+                          <ZIndex>2</ZIndex>
+                          <Value>Sales</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+            </Header>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <Height>0.25in</Height>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="FullName">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <TextAlign>Left</TextAlign>
+                            <Color>DarkSlateBlue</Color>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <ZIndex>1</ZIndex>
+                          <Action>
+                            <Drillthrough>
+                              <Parameters>
+                                <Parameter Name="EmpID">
+                                  <Value>=Fields!EmployeeID.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ReportMonth">
+                                  <Value>=Month(Parameters!EndDate.Value)</Value>
+                                </Parameter>
+                                <Parameter Name="ReportYear">
+                                  <Value>=Year(Parameters!EndDate.Value)</Value>
+                                </Parameter>
+                              </Parameters>
+                              <ReportName>Employee Sales Summary</ReportName>
+                            </Drillthrough>
+                          </Action>
+                          <Value>=Fields!FullName.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="SaleAmountEmp">
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <Format>c</Format>
+                            <TextAlign>Right</TextAlign>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingRight>2pt</PaddingRight>
+                          </Style>
+                          <Value>=Fields!SaleAmount.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                </TableRow>
+              </TableRows>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!SaleAmount.Value</SortExpression>
+                  <Direction>Descending</Direction>
+                </SortBy>
+              </Sorting>
+            </Details>
+            <DataSetName>TopEmployees</DataSetName>
+            <Top>0.125in</Top>
+            <Width>3.1875in</Width>
+            <TableColumns>
+              <TableColumn>
+                <Width>2.01042in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.17708in</Width>
+              </TableColumn>
+            </TableColumns>
+          </Table>
+        </ReportItems>
+        <Height>2.4375in</Height>
+        <Width>6.875in</Width>
+        <Style />
+        <Left>0.0625in</Left>
+      </Rectangle>
+    </ReportItems>
+    <Style />
+    <Height>8.125in</Height>
+  </Body>
+  <TopMargin>0.5in</TopMargin>
+  <DataSources>
+    <DataSource Name="AdventureWorks">
+      <rd:DataSourceID>54afed67-d321-47d4-b394-d019252ddfff</rd:DataSourceID>
+      <DataSourceReference>AdventureWorks2000</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <Code />
+  <Width>7in</Width>
+  <DataSets>
+    <DataSet Name="TopEmployees">
+      <Fields>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SaleAmount">
+          <DataField>SaleAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FullName">
+          <Value>=Fields!LastName.Value &amp; ", " &amp; Fields!FirstName.Value</Value>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT     TOP 5 Employee.LastName, Employee.FirstName, Employee.EmployeeID, SUM(SalesOrderHeader.SubTotal) AS SaleAmount
+FROM         SalesPerson INNER JOIN
+                      Employee ON SalesPerson.SalesPersonID = Employee.EmployeeID INNER JOIN
+                      SalesOrderHeader ON SalesPerson.SalesPersonID = SalesOrderHeader.SalesPersonID INNER JOIN
+                      SalesOrderDetail ON SalesOrderHeader.SalesOrderID = SalesOrderDetail.SalesOrderID INNER JOIN
+                      Product ON SalesOrderDetail.ProductID = Product.ProductID INNER JOIN
+                      ProductSubCategory ON Product.ProductSubCategoryID = ProductSubCategory.ProductSubCategoryID INNER JOIN
+                      ProductCategory ON ProductSubCategory.ProductCategoryID = ProductCategory.ProductCategoryID
+WHERE     (ProductCategory.ProductCategoryID = @ProductCategory) AND (ProductSubCategory.ProductSubCategoryID = @ProductSubCategory) AND 
+                      (SalesOrderHeader.OrderDate &gt; @StartDate) AND (SalesOrderHeader.OrderDate &lt; @EndDate)
+GROUP BY Employee.LastName, Employee.FirstName, Employee.EmployeeID, ProductCategory.ProductCategoryID, ProductSubCategory.ProductSubCategoryID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ProductSubCategory">
+            <Value>=Parameters!ProductSubCategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="ProductCategories">
+      <Fields>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT DISTINCT ProductCategoryID, Name
+FROM         ProductCategory
+ORDER BY Name</CommandText>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="TopCustomers">
+      <Fields>
+        <Field Name="StoreName">
+          <DataField>StoreName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SaleAmount">
+          <DataField>SaleAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ProductSubCategoryID">
+          <DataField>ProductSubCategoryID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT     TOP 5 Store.Name AS StoreName, SUM(SalesOrderHeader.SubTotal) AS SaleAmount, ProductSubCategory.ProductSubCategoryID, 
+                      ProductSubCategory.ProductCategoryID
+FROM         Product INNER JOIN
+                      ProductSubCategory ON Product.ProductSubCategoryID = ProductSubCategory.ProductSubCategoryID INNER JOIN
+                      SalesOrderDetail ON Product.ProductID = SalesOrderDetail.ProductID INNER JOIN
+                      Customer INNER JOIN
+                      SalesOrderHeader ON Customer.CustomerID = SalesOrderHeader.CustomerID INNER JOIN
+                      Store ON Customer.CustomerID = Store.CustomerID ON SalesOrderDetail.SalesOrderID = SalesOrderHeader.SalesOrderID
+WHERE     (ProductSubCategory.ProductSubCategoryID = @ProductSubCategory) AND (SalesOrderHeader.OrderDate &gt; @StartDate) AND 
+                      (SalesOrderHeader.OrderDate &lt; @EndDate) AND (ProductSubCategory.ProductCategoryID = @ProductCategory)
+GROUP BY Store.Name, ProductSubCategory.ProductSubCategoryID, ProductSubCategory.ProductCategoryID
+ORDER BY SUM(SalesOrderHeader.SubTotal) DESC</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductSubCategory">
+            <Value>=Parameters!ProductSubCategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="ProductSubCategories">
+      <Fields>
+        <Field Name="ProductSubCategoryID">
+          <DataField>ProductSubCategoryID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT     ProductSubCategoryID, ProductCategoryID, Name
+FROM         ProductSubCategory
+WHERE     (ProductCategoryID = @ProductCategory)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="wholelogolft_lowres">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="tires">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <LeftMargin>0.75in</LeftMargin>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <Description>Adventure Works top five sales people and stores. This report illustrates a dataset with queries containing the TOP clause. It also illustrates the use of tables, charts, parameters, calculated fields, and drillthrough links.</Description>
+  <rd:ReportID>8bb0f3dc-34b8-41e3-8f56-4cbe21b0c93f</rd:ReportID>
+  <PageFooter>
+    <ReportItems>
+      <Line Name="line1">
+        <ZIndex>3</ZIndex>
+        <Top>0.0625in</Top>
+        <Height>0in</Height>
+        <Width>6.875in</Width>
+        <Style>
+          <BorderColor>
+            <Default>Firebrick</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Left>0.0625in</Left>
+      </Line>
+      <Textbox Name="FooterURL">
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <Color>SlateBlue</Color>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Top>0.125in</Top>
+        <Height>0.25in</Height>
+        <Width>2.25in</Width>
+        <Action>
+          <Hyperlink>http://www.adventure-works.com</Hyperlink>
+        </Action>
+        <Value>www.adventure-works.com</Value>
+        <Left>2.375in</Left>
+      </Textbox>
+      <Textbox Name="FooterCompany">
+        <Style>
+          <Color>SlateBlue</Color>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Top>0.125in</Top>
+        <Height>0.25in</Height>
+        <Width>2.25in</Width>
+        <Value>Adventure Works Cycles</Value>
+        <Left>0.0625in</Left>
+      </Textbox>
+      <Textbox Name="FooterDate">
+        <Style>
+          <PaddingLeft>0in</PaddingLeft>
+          <Format>D</Format>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <TextAlign>Right</TextAlign>
+          <Color>SlateBlue</Color>
+          <PaddingBottom>0in</PaddingBottom>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingRight>0in</PaddingRight>
+        </Style>
+        <Top>0.125in</Top>
+        <Height>0.25in</Height>
+        <Width>2.25in</Width>
+        <Value>=Now()</Value>
+        <Left>4.6875in</Left>
+      </Textbox>
+    </ReportItems>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style />
+    <Height>0.5in</Height>
+  </PageFooter>
+  <BottomMargin>0.5in</BottomMargin>
+  <ReportParameters>
+    <ReportParameter Name="ProductCategory">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Category:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ProductCategories</DataSetName>
+          <ValueField>ProductCategoryID</ValueField>
+          <LabelField>Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ProductSubCategory">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Subcategory:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ProductSubCategories</DataSetName>
+          <ValueField>ProductSubCategoryID</ValueField>
+          <LabelField>Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2003-1-1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Start Date:</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2003-12-31</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>End Date:</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

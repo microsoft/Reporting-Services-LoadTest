@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Northwind</Name>
+  <DataSourceID>0f6dbb21-b9a0-4c37-81a0-73ee20ae4377</DataSourceID>
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>data source=SQLPOD009-13;initial catalog=Northwind</ConnectString>
+  </ConnectionProperties>
+</RptDataSource>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="rectangle1">
+        <Left>2.75in</Left>
+        <ReportItems>
+          <Rectangle Name="rectangle2">
+            <Left>0.25in</Left>
+            <ReportItems>
+              <Textbox Name="textbox4">
+                <Left>0.5in</Left>
+                <Top>0.375in</Top>
+                <rd:DefaultName>textbox4</rd:DefaultName>
+                <Width>1in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.25in</Height>
+                <Value>ddd</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.875in</Top>
+            <ZIndex>2</ZIndex>
+            <Width>1.875in</Width>
+            <Height>0.75in</Height>
+          </Rectangle>
+          <Textbox Name="textbox3">
+            <Left>1.375in</Left>
+            <Top>0.375in</Top>
+            <rd:DefaultName>textbox3</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>0.5in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>cdd</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Left>0.125in</Left>
+            <Top>0.375in</Top>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <Width>1in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>bcd</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.25in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>2.375in</Width>
+      </Rectangle>
+      <Textbox Name="textbox1">
+        <Left>1.25in</Left>
+        <Top>0.5in</Top>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>abc</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.125in</Height>
+  </Body>
+  <rd:ReportID>45fa04df-a878-4884-85ba-8a2b538c8444</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <Width>6.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>1in</TopMargin>
+</Report>

@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2009/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DS_SalesDataDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SqlMaps">
+      <DataSourceReference>DS_SqlMaps</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_SalesDatDemo">
+      <DataSourceReference>DS_SalesDataDemo</DataSourceReference>
+    </DataSource>
+    <DataSource Name="DS_Antartica">
+      <DataSourceReference>DS_Antartica</DataSourceReference>
+    </DataSource>
+<DataSource Name="DS_SqlSpatial">
+      <DataSourceReference>DS_SqlSpatial</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Top5">
+      <Fields>
+        <Field Name="CountryName">
+          <DataField>CountryName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CountryShortname">
+          <DataField>CountryShortname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SalesDataDemo</DataSourceName>
+        <CommandText>SELECT Top 6
+  SQLSales2008.CountryName
+  ,SQLSales2008.Sales
+,SQLSales2008.CountryShortname
+FROM
+  SQLSales2008</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="SalesByYear">
+      <Fields>
+        <Field Name="Year">
+          <DataField>Year</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalSales">
+          <DataField>TotalSales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SalesDataDemo</DataSourceName>
+        <CommandText>SELECT
+  YearlyTotal.[Year]
+  ,YearlyTotal.TotalSales
+FROM
+  YearlyTotal</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="YearlyTotal" ColumnName="Year" /><ColumnExpression ColumnOwner="YearlyTotal" ColumnName="TotalSales" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="WWMap">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShapeData">
+          <DataField>ShapeData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  GlobalNetworkShapes.id
+  ,GlobalNetworkShapes.Name
+  ,GlobalNetworkShapes.ShapeData
+FROM
+  GlobalNetworkShapes
+WHERE 
+  GlobalNetworkShapes.Name &lt;&gt; 'Antarctic'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="SQLSales">
+      <Fields>
+        <Field Name="CountryName">
+          <DataField>CountryName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Sales">
+          <DataField>Sales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CountryShortName">
+          <DataField>CountryShortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SalesDataDemo</DataSourceName>
+        <CommandText>SELECT
+  SQLSales2008.CountryName
+  ,SQLSales2008.Sales
+  ,SQLSales2008.CountryShortName
+FROM
+  SQLSales2008</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="CountryName" /><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="Sales" /><ColumnExpression ColumnOwner="SQLSales2008" ColumnName="CountryShortName" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="Paths">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PathData">
+          <DataField>PathData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="Layer">
+          <DataField>Layer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Width">
+          <DataField>Width</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BorderWidth">
+          <DataField>BorderWidth</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Text">
+          <DataField>Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Font">
+          <DataField>Font</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ToolTip">
+          <DataField>ToolTip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  GlobalNetworkPaths.id
+  ,GlobalNetworkPaths.Name
+  ,GlobalNetworkPaths.PathData
+  ,GlobalNetworkPaths.Layer
+  ,GlobalNetworkPaths.Color
+  ,GlobalNetworkPaths.Width
+  ,GlobalNetworkPaths.BorderWidth
+  ,GlobalNetworkPaths.Text
+  ,GlobalNetworkPaths.Font
+  ,GlobalNetworkPaths.ToolTip
+FROM
+  GlobalNetworkPaths</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="id" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Name" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="PathData" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Layer" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Color" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Width" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="BorderWidth" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Text" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="Font" /><ColumnExpression ColumnOwner="GlobalNetworkPaths" ColumnName="ToolTip" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="Symbols">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SymbolData">
+          <DataField>SymbolData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="Layer">
+          <DataField>Layer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BorderColor">
+          <DataField>BorderColor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BorderWidth">
+          <DataField>BorderWidth</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Color">
+          <DataField>Color</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TextColor">
+          <DataField>TextColor</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Text">
+          <DataField>Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Font">
+          <DataField>Font</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TextAlignment">
+          <DataField>TextAlignment</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ToolTip">
+          <DataField>ToolTip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Image">
+          <DataField>Image</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ImageResizeMode">
+          <DataField>ImageResizeMode</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  GlobalNetworkSymbols.id
+  ,GlobalNetworkSymbols.Name
+  ,GlobalNetworkSymbols.SymbolData
+  ,GlobalNetworkSymbols.Layer
+  ,GlobalNetworkSymbols.BorderColor
+  ,GlobalNetworkSymbols.BorderWidth
+  ,GlobalNetworkSymbols.Color
+  ,GlobalNetworkSymbols.TextColor
+  ,GlobalNetworkSymbols.Text
+  ,GlobalNetworkSymbols.Font
+  ,GlobalNetworkSymbols.TextAlignment
+  ,GlobalNetworkSymbols.ToolTip
+  ,GlobalNetworkSymbols.Image
+  ,GlobalNetworkSymbols.ImageResizeMode
+FROM
+  GlobalNetworkSymbols</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="id" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Name" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="SymbolData" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Layer" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="BorderColor" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="BorderWidth" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Color" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="TextColor" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Text" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Font" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="TextAlignment" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="ToolTip" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="Image" /><ColumnExpression ColumnOwner="GlobalNetworkSymbols" ColumnName="ImageResizeMode" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpatialData">
+          <DataField>SpatialData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="POP1997">
+          <DataField>POP1997</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MALES">
+          <DataField>MALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.Name
+  ,USA.SpatialData
+  ,USA.POP1997
+  ,USA.MALES
+  ,USA.id
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="SpatialData" /><ColumnExpression ColumnOwner="USA" ColumnName="POP1997" /><ColumnExpression ColumnOwner="USA" ColumnName="MALES" /><ColumnExpression ColumnOwner="USA" ColumnName="id" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="Counties">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STATE_NAME">
+          <DataField>STATE_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MALES">
+          <DataField>MALES</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="FEMALES">
+          <DataField>FEMALES</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="geom">
+          <DataField>geom</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlSpatial</DataSourceName>
+        <CommandText>SELECT
+  counties.ID
+  ,counties.NAME
+  ,counties.STATE_NAME
+  ,counties.MALES
+  ,counties.FEMALES
+  ,counties.geom
+FROM
+  counties</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="counties" ColumnName="ID" /><ColumnExpression ColumnOwner="counties" ColumnName="NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="STATE_NAME" /><ColumnExpression ColumnOwner="counties" ColumnName="MALES" /><ColumnExpression ColumnOwner="counties" ColumnName="FEMALES" /><ColumnExpression ColumnOwner="counties" ColumnName="geom" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+    <DataSet Name="USA">
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpatialData">
+          <DataField>SpatialData</DataField>
+          <rd:TypeName>Microsoft.SqlServer.Types.SqlGeometry, Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</rd:TypeName>
+        </Field>
+        <Field Name="POP1997">
+          <DataField>POP1997</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="MALES">
+          <DataField>MALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="FEMALES">
+          <DataField>FEMALES</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_SqlMaps</DataSourceName>
+        <CommandText>SELECT
+  USA.id
+  ,USA.Name
+  ,USA.SpatialData
+  ,USA.MALES
+  ,USA.FEMALES
+  ,USA.POP1997
+FROM
+  USA</CommandText>
+        <rd:RQDDesignerState><QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational"><SelectedColumns><ColumnExpression ColumnOwner="USA" ColumnName="id" /><ColumnExpression ColumnOwner="USA" ColumnName="Name" /><ColumnExpression ColumnOwner="USA" ColumnName="SpatialData" /><ColumnExpression ColumnOwner="USA" ColumnName="MALES" /><ColumnExpression ColumnOwner="USA" ColumnName="FEMALES" /><ColumnExpression ColumnOwner="USA" ColumnName="POP1997" /></SelectedColumns></QueryDefinition></rd:RQDDesignerState>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix5">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.93924in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.93924in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.93924in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>7.49479in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>1.89062in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox38">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Name</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox40">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>POP1997</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox42">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>MALES</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox42</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox44">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Map Column</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox44</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>5.27604in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Name">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Name.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Name</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="POP1997">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!POP1997.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>POP1997</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MALES">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!MALES.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>MALES</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Map Name="Map16">
+                          <MapViewport>
+                            <MapCoordinateSystem>Geographic</MapCoordinateSystem>
+                            <MapProjection>Mercator</MapProjection>
+                            <ProjectionCenterX>0</ProjectionCenterX>
+                            <ProjectionCenterY>0</ProjectionCenterY>
+                            <MapLimits>
+                              <MinimumX>NaN</MinimumX>
+                              <MinimumY>NaN</MinimumY>
+                              <MaximumX>NaN</MaximumX>
+                              <MaximumY>NaN</MaximumY>
+                            </MapLimits>
+                            <SimplificationResolution>0.01</SimplificationResolution>
+                            <MapCustomView>
+                              <Zoom>100</Zoom>
+                            </MapCustomView>
+                            <MapMeridians>
+                              <Style>
+                                <Border>
+                                  <Color>#c08080ff</Color>
+                                  <Style>None</Style>
+                                </Border>
+                                <Color>#c08080ff</Color>
+                              </Style>
+                              <Hidden>false</Hidden>
+                              <Interval>NaN</Interval>
+                              <ShowLabels>true</ShowLabels>
+                            </MapMeridians>
+                            <MapParallels>
+                              <Style>
+                                <Border>
+                                  <Color>#c08080ff</Color>
+                                  <Style>None</Style>
+                                </Border>
+                                <Color>#c08080ff</Color>
+                              </Style>
+                              <Hidden>false</Hidden>
+                              <Interval>NaN</Interval>
+                              <ShowLabels>true</ShowLabels>
+                            </MapParallels>
+                            <GridUnderContent>false</GridUnderContent>
+                            <Style>
+                              <Border>
+                                <Color>Gray</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                              <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                              <ShadowOffset>1pt</ShadowOffset>
+                            </Style>
+                            <LeftMargin>4pt</LeftMargin>
+                            <RightMargin>4pt</RightMargin>
+                            <TopMargin>4pt</TopMargin>
+                            <BottomMargin>4pt</BottomMargin>
+                          </MapViewport>
+                          <MapDataRegions>
+                            <MapDataRegion Name="Map16_PolygonLayer1_DataRegion">
+                              <DataSetName>DataSet1</DataSetName>
+                            </MapDataRegion>
+                          </MapDataRegions>
+                          <MapLayers>
+                            <MapPolygonLayer Name="PolygonLayer1">
+                              <MapPolygonTemplate>
+                                <CenterPointOffsetX>0</CenterPointOffsetX>
+                                <CenterPointOffsetY>0</CenterPointOffsetY>
+                                <Style>
+                                  <Border>
+                                    <Color>Gray</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>White</BackgroundColor>
+                                  <BackgroundGradientType>None</BackgroundGradientType>
+                                  <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                                </Style>
+                                <ActionInfo>
+                                  <Actions>
+                                    <Action>
+                                      <Drillthrough>
+                                        <ReportName>/MapinTablix_CountiesbyState</ReportName>
+                                      </Drillthrough>
+                                    </Action>
+                                  </Actions>
+                                </ActionInfo>
+                                <Hidden>false</Hidden>
+                                <OffsetX>0</OffsetX>
+                                <OffsetY>0</OffsetY>
+                                <Label>#NAME</Label>
+                                <ToolTip />
+                                <DataElementLabel />
+                              </MapPolygonTemplate>
+                              <MapPolygonRules>
+                                <MapColorRangeRule>
+                                  <ShowInColorScale>true</ShowInColorScale>
+                                  <DataValue>=Sum(Fields!MALES.Value)</DataValue>
+                                  <StartValue />
+                                  <EndValue />
+                                  <LegendName />
+                                  <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                                </MapColorRangeRule>
+                              </MapPolygonRules>
+                              <MapMarkerTemplate>
+                                <MapMarker>
+                                  <MapMarkerStyle>Circle</MapMarkerStyle>
+                                </MapMarker>
+                                <Style>
+                                  <Border>
+                                    <Color>Gray</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>#e0ffffff</BackgroundColor>
+                                  <BackgroundGradientType>None</BackgroundGradientType>
+                                  <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                                </Style>
+                                <Hidden>true</Hidden>
+                                <OffsetX>0</OffsetX>
+                                <OffsetY>0</OffsetY>
+                                <Label />
+                                <ToolTip />
+                                <DataElementLabel />
+                              </MapMarkerTemplate>
+                              <MapCenterPointRules>
+                                <MapColorRangeRule>
+                                  <ShowInColorScale>true</ShowInColorScale>
+                                  <DataValue>=Fields!Name.Value</DataValue>
+                                  <StartValue />
+                                  <EndValue />
+                                  <LegendName />
+                                  <LegendText>#FROMVALUE{N0} - #TOVALUE{N0}</LegendText>
+                                </MapColorRangeRule>
+                              </MapCenterPointRules>
+                              <MapDataRegionName>Map16_PolygonLayer1_DataRegion</MapDataRegionName>
+                              <MapFieldDefinitions>
+                                <MapFieldDefinition>
+                                  <Name>Name</Name>
+                                  <DataType>String</DataType>
+                                </MapFieldDefinition>
+                              </MapFieldDefinitions>
+                              <MapSpatialDataRegion>
+                                <VectorData>=Fields!SpatialData.Value</VectorData>
+                              </MapSpatialDataRegion>
+                              <Transparency>0</Transparency>
+                            </MapPolygonLayer>
+                          </MapLayers>
+                          <MapDistanceScale>
+                            <Position>RightBottom</Position>
+                            <DockOutsideViewport>false</DockOutsideViewport>
+                            <Hidden>true</Hidden>
+                            <ToolTip />
+                            <Style>
+                              <Border>
+                                <Color>Gray</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                              <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                              <ShadowOffset>1pt</ShadowOffset>
+                            </Style>
+                            <MapSize>
+                              <Width>80</Width>
+                              <Height>40</Height>
+                              <Unit>Point</Unit>
+                            </MapSize>
+                            <LeftMargin>4pt</LeftMargin>
+                            <RightMargin>4pt</RightMargin>
+                            <TopMargin>4pt</TopMargin>
+                            <BottomMargin>4pt</BottomMargin>
+                          </MapDistanceScale>
+                          <MapColorScale>
+                            <MapColorScaleTitle>
+                              <Style />
+                              <Caption />
+                            </MapColorScaleTitle>
+                            <LabelFormat>#,##0.##</LabelFormat>
+                            <HideEndLabels>false</HideEndLabels>
+                            <NoDataText>No data</NoDataText>
+                            <Position>LeftBottom</Position>
+                            <DockOutsideViewport>false</DockOutsideViewport>
+                            <Hidden>true</Hidden>
+                            <ToolTip />
+                            <Style>
+                              <Border>
+                                <Color>Gray</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
+                              <BackgroundGradientEndColor>LightGrey</BackgroundGradientEndColor>
+                              <ShadowOffset>1pt</ShadowOffset>
+                            </Style>
+                            <LeftMargin>4pt</LeftMargin>
+                            <RightMargin>4pt</RightMargin>
+                            <TopMargin>4pt</TopMargin>
+                            <BottomMargin>4pt</BottomMargin>
+                          </MapColorScale>
+                          <MapBorderSkin>
+                            <Style>
+                              <Border />
+                              <BackgroundColor>Gray</BackgroundColor>
+                              <BackgroundGradientType>None</BackgroundGradientType>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color>White</Color>
+                            </Style>
+                          </MapBorderSkin> 
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>/MSSQLSales</ReportName>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>Gray</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                          </Style>
+                        </Map>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.50917in</Top>
+            <Left>0.67583in</Left>
+            <Height>7.16666in</Height>
+            <Width>13.31251in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>7.67583in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>17.99875in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <rd:ReportID>4f871b37-5db6-4295-89b9-427de316c373</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

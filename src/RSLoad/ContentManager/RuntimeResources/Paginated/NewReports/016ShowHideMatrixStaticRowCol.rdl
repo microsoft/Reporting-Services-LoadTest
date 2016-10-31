@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Northwind">
+      <DataSourceReference>Northwind</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="ReportHeader">
+        <ReportItems>
+          <Textbox Name="Label8">
+            <Left>0.0416in</Left>
+            <Top>0.0416in</Top>
+            <ZIndex>1</ZIndex>
+            <Width>3.125in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>0in</PaddingLeft>
+              <LineHeight>17pt</LineHeight>
+              <PaddingBottom>0in</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>12pt</FontSize>
+              <BorderColor>
+                <Default>#000000</Default>
+              </BorderColor>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color>#000000</Color>
+              <PaddingRight>0in</PaddingRight>
+              <PaddingTop>0in</PaddingTop>
+            </Style>
+            <Height>0.25in</Height>
+            <Value>Alphabetical list of products</Value>
+          </Textbox>
+          <Textbox Name="Text1">
+            <Left>4.0416in</Left>
+            <Top>0.0416in</Top>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>0in</PaddingLeft>
+              <LineHeight>17pt</LineHeight>
+              <PaddingBottom>0in</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>12pt</FontSize>
+              <BorderColor>
+                <Default>#000000</Default>
+              </BorderColor>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color>#000000</Color>
+              <PaddingRight>0in</PaddingRight>
+              <PaddingTop>0in</PaddingTop>
+            </Style>
+            <Height>0.25in</Height>
+            <Value>=Sum(Fields!UnitsInStock.Value, "DataSet1")</Value>
+          </Textbox>
+        </ReportItems>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <BackgroundColor>#ffffff</BackgroundColor>
+        </Style>
+        <Height>0.3333in</Height>
+      </Rectangle>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>2.00529cm</Width>
+          </MatrixColumn>
+          <MatrixColumn>
+            <Width>2.00529cm</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>4.01587cm</Width>
+            <StaticRows>
+              <StaticRow>
+                <ReportItems>
+                  <Textbox Name="Text18">
+                    <ZIndex>9</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>StaticRow0</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticRow>
+              <StaticRow>
+                <ReportItems>
+                  <Textbox Name="Text19">
+                    <ZIndex>4</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>StaticRow1</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticRow>
+            </StaticRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>2.00529cm</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Text5">
+                  <ZIndex>8</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                  <Value>=Fields!CategoryName.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="Text6">
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>Sum(UnitsInStock)</Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <Visibility>
+                <ToggleItem>Text18</ToggleItem>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Grouping Name="MatrixRow1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!CategoryID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>2.03175cm</Width>
+            <DynamicRows>
+              <ReportItems>
+                <Textbox Name="Text14">
+                  <ZIndex>7</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                  <Value>=Fields!ProductName.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="Text15">
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>Sum(UnitsInStock)</Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <Grouping Name="MatrixRow2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ProductID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Text16">
+                  <ZIndex>15</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                  <Value>="ReorderLevel " &amp; Fields!ReorderLevel.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="Text17">
+                    <ZIndex>14</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>Sum(UnitsInStock)</Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <Grouping Name="MatrixColumn0">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ReorderLevel.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>1cm</Height>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <Height>1cm</Height>
+            <StaticColumns>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="Text9">
+                    <ZIndex>13</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>InStock</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+              <StaticColumn>
+                <ReportItems>
+                  <Textbox Name="Text10">
+                    <ZIndex>12</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>OnOrder</Value>
+                  </Textbox>
+                </ReportItems>
+              </StaticColumn>
+            </StaticColumns>
+          </ColumnGrouping>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <ReportItems>
+                <Textbox Name="Text3">
+                  <ZIndex>11</ZIndex>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                  </Style>
+                  <Value>="Supplier " &amp; Fields!SupplierID.Value</Value>
+                </Textbox>
+              </ReportItems>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="Text4">
+                    <ZIndex>10</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>Sum(UnitsInStock)</Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <Visibility>
+                <ToggleItem>Text16</ToggleItem>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Grouping Name="MatrixColumn1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SupplierID.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+            </DynamicColumns>
+            <Height>1.02646cm</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Top>1cm</Top>
+        <Width>16.07407cm</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="Text2">
+              <ZIndex>16</ZIndex>
+              <Style>
+                <BorderStyle>
+                  <Default>Inset</Default>
+                </BorderStyle>
+              </Style>
+              <Value>=CountRows()</Value>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>1cm</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Text12">
+                    <ZIndex>6</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>=Sum(Fields!UnitsInStock.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Text13">
+                    <ZIndex>5</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>=Sum(Fields!UnitsOnOrder.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+          <MatrixRow>
+            <Height>1cm</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Text20">
+                    <ZIndex>3</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>=Sum(Fields!UnitsInStock.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="Text21">
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                    </Style>
+                    <Value>=Sum(Fields!UnitsOnOrder.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+      </Matrix>
+    </ReportItems>
+    <Height>3.16042in</Height>
+  </Body>
+  <rd:ReportID>9da6e4f4-2963-475b-8e0a-80b5a49b85ec</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <CommandText>SELECT     TOP 15 ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued, 
+                      CategoryName
+FROM         [Alphabetical list of products]</CommandText>
+        <DataSourceName>Northwind</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ProductID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ProductID</DataField>
+        </Field>
+        <Field Name="ProductName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ProductName</DataField>
+        </Field>
+        <Field Name="SupplierID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SupplierID</DataField>
+        </Field>
+        <Field Name="CategoryID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CategoryID</DataField>
+        </Field>
+        <Field Name="QuantityPerUnit">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>QuantityPerUnit</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitsInStock">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsInStock</DataField>
+        </Field>
+        <Field Name="UnitsOnOrder">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>UnitsOnOrder</DataField>
+        </Field>
+        <Field Name="ReorderLevel">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>ReorderLevel</DataField>
+        </Field>
+        <Field Name="Discontinued">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>Discontinued</DataField>
+        </Field>
+        <Field Name="CategoryName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CategoryName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>9.1666in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+</Report>

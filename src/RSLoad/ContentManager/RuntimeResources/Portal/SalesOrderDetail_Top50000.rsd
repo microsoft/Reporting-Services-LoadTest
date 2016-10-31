@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>/MobileTest/AdventureWorks</DataSourceReference>
+      <CommandText>SELECT TOP 50000
+  Sales.SalesOrderDetail.SalesOrderID
+  ,Sales.SalesOrderDetail.SalesOrderDetailID
+  ,Sales.SalesOrderDetail.CarrierTrackingNumber
+  ,Sales.SalesOrderDetail.OrderQty
+  ,Sales.SalesOrderDetail.ProductID
+  ,Sales.SalesOrderDetail.SpecialOfferID
+  ,Sales.SalesOrderDetail.UnitPrice
+  ,Sales.SalesOrderDetail.UnitPriceDiscount
+  ,Sales.SalesOrderDetail.LineTotal
+  ,Sales.SalesOrderDetail.rowguid
+  ,Sales.SalesOrderDetail.ModifiedDate
+FROM
+  Sales.SalesOrderDetail</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="SalesOrderID">
+        <DataField>SalesOrderID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SalesOrderDetailID">
+        <DataField>SalesOrderDetailID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CarrierTrackingNumber">
+        <DataField>CarrierTrackingNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="OrderQty">
+        <DataField>OrderQty</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="ProductID">
+        <DataField>ProductID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SpecialOfferID">
+        <DataField>SpecialOfferID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="UnitPrice">
+        <DataField>UnitPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="UnitPriceDiscount">
+        <DataField>UnitPriceDiscount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="LineTotal">
+        <DataField>LineTotal</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="rowguid">
+        <DataField>rowguid</DataField>
+        <rd:TypeName>System.Guid</rd:TypeName>
+      </Field>
+      <Field Name="ModifiedDate">
+        <DataField>ModifiedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://dz-evlevy/ReportServer_THREEPOINTTHREE</rd:ReportServerUrl>
+</SharedDataSet>

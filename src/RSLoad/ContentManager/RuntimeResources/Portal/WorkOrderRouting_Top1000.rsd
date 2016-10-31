@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>/MobileTest/AdventureWorks</DataSourceReference>
+      <CommandText>SELECT TOP 1000 [WorkOrderID]
+      ,[ProductID]
+      ,[OperationSequence]
+      ,[LocationID]
+      ,[ScheduledStartDate]
+      ,[ScheduledEndDate]
+      ,[ActualStartDate]
+      ,[ActualEndDate]
+      ,[ActualResourceHrs]
+      ,[PlannedCost]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks].[Production].[WorkOrderRouting]</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="WorkOrderID">
+        <DataField>WorkOrderID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ProductID">
+        <DataField>ProductID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="OperationSequence">
+        <DataField>OperationSequence</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="LocationID">
+        <DataField>LocationID</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="ScheduledStartDate">
+        <DataField>ScheduledStartDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ScheduledEndDate">
+        <DataField>ScheduledEndDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ActualStartDate">
+        <DataField>ActualStartDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ActualEndDate">
+        <DataField>ActualEndDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ActualResourceHrs">
+        <DataField>ActualResourceHrs</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="ModifiedDate">
+        <DataField>ModifiedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="PlannedCost">
+        <DataField>PlannedCost</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="ActualCost">
+        <DataField>ActualCost</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+  <rd:ReportServerUrl>http://dz-evlevy/ReportServer_THREEPOINTTHREE</rd:ReportServerUrl>
+</SharedDataSet>
