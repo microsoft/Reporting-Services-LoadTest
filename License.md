@@ -1,3 +1,5 @@
+The MIT License (MIT)
+
 microsoft-reporting-services-load
 
 Copyright (c) Microsoft Corporation
