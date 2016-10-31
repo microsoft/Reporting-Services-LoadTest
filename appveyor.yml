@@ -1,0 +1,4 @@
+# See http://www.appveyor.com/docs/appveyor-yml for many more options
+
+before_build:
+ nuget restore
