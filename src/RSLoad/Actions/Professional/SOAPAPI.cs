@@ -39,6 +39,7 @@ namespace RSLoad
         /// Create a random report on given folder.
         /// We should keep track of newly created reports so we can use in other operations.
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndCreateReport()
         {
@@ -109,6 +110,7 @@ namespace RSLoad
         /// <summary>
         /// Delete a random report, report must exist.
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndDeleteReport()
         {
@@ -124,6 +126,7 @@ namespace RSLoad
         /// <summary>
         /// Simulate where user navigates through folders.
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndListChildren()
         {
@@ -138,6 +141,7 @@ namespace RSLoad
         /// <summary>
         /// Create a random folder
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndCreateFolder()
         {
@@ -156,6 +160,7 @@ namespace RSLoad
         /// <summary>
         /// Delete random folder (existing one)
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndDeleteFolder()
         {
@@ -171,6 +176,7 @@ namespace RSLoad
         /// <summary>
         /// Move Report (Rename)
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndMoveReport()
         {
@@ -200,6 +206,7 @@ namespace RSLoad
         /// We can use normal list for this one instead of temporary item list
         /// as it is readonly operaton
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void RndGetReportParameters()
         {
@@ -215,6 +222,7 @@ namespace RSLoad
         /// <summary>
         /// Get Item Property Method - get itm property on any given report.
         /// </summary>
+        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void GetItemProperties()
         {

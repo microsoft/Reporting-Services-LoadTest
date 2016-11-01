@@ -79,14 +79,19 @@ namespace RSLoad
 
             var context = this.ContentManager.PortalAccessorV1.CreateContext();
 
-            CredentialCache myCache = new CredentialCache();
-            Uri reportServerUri = new Uri(ReportServerInformation.DefaultInformation.ReportServerUrl);
-            myCache.Add(new Uri(reportServerUri.GetLeftPart(UriPartial.Authority)), "NTLM", new NetworkCredential(ReportServerInformation.DefaultInformation.ExecutionAccount, ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
-            var _executionCredentials = myCache;
-            
-            PowerBIReport pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
+            ICredentials executionCredentails = CredentialCache.DefaultNetworkCredentials;
+            if (!String.IsNullOrEmpty(ReportServerInformation.DefaultInformation.ExecutionAccount))
+            {
+                CredentialCache myCache = new CredentialCache();
+                Uri reportServerUri = new Uri(ReportServerInformation.DefaultInformation.ReportServerUrl);
+                myCache.Add(new Uri(reportServerUri.GetLeftPart(UriPartial.Authority)), "NTLM",
+                    new NetworkCredential(ReportServerInformation.DefaultInformation.ExecutionAccount,
+                        ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
+                executionCredentails = myCache;
+            }
 
-            PowerBIClient.SimulatePowerBIReportUsage(_executionCredentials, pbiReport);
+            PowerBIReport pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport);
         }
     }
 }

@@ -1,5 +1,4 @@
 TestResults/
-
 packages/
 .vs/
 *.suo
@@ -7,3 +6,4 @@ src/RSLoad/bin/
 src/RSLoad/obj/
 src/RSAccessor/obj/
 src/RSAccessor/bin/
+*.trx

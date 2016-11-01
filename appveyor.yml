@@ -3,4 +3,22 @@
 before_build:
  nuget restore
 
-test: off
+before_test:
+- ps: |
+    $ErrorActionPreference = 'Stop';
+    $url = 'https://download.microsoft.com/download/E/1/2/E12B3655-D817-49BA-B934-CEB9DAC0BAF3/SQLEXPRADV_x64_ENU.exe'
+    $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /RSINSTALLMODE=DefaultNativeMode"
+    $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016express"
+    if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
+    $fileFullPath = "$tempDir\SQLEXPR.exe"
+    (new-object net.webclient).DownloadFile($url , $fileFullPath)
+    Write-Host "Extracting..."
+    $extractPath = "$tempDir\SQLEXPR"
+    Start-Process "$fileFullPath" "/Q /x:`"$extractPath`"" -Wait
+    Write-Host "Installing SQL Server Express..."
+    $setupPath = "$extractPath\setup.exe"
+    Start-Process $setupPath "$silentArgs" -Wait
+    Write-Host "Installation completed"
+
+test_script:
+ TestForCI.cmd

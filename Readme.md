@@ -3,7 +3,8 @@
 SQL Server Reporting Services LoadTest 
 
 ## Synopsis
-This project contains a [Visual Studio Load Test](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute syntetic load for SQL Server Reporting Services 2016 
+This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute syntetic load for SQL Server Reporting Services 2016 
+It uses Visual Studio 2015 Enterprise
 
 ## Buid and Test
 In a Visual Studio Tools Command Prompt
