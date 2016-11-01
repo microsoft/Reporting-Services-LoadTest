@@ -1,4 +1,7 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
+environment:
+  downloadUrl:
+    secure: G5gLYjdBRn+xfm7Dgt+KLoD3w8LcDiTjl8mNSHUNxT3c7spx6VMmCckY6U4SK5Zz1OTEnUPkkyeY3awPsVguWd+4pI01JRWkaIVyxPKGvuaXNZSigf5r8Gma78qJbQVV
 
 before_build:
  nuget restore
@@ -6,19 +9,26 @@ before_build:
 before_test:
 - ps: |
     $ErrorActionPreference = 'Stop';
-    $url = 'https://download.microsoft.com/download/E/1/2/E12B3655-D817-49BA-B934-CEB9DAC0BAF3/SQLEXPRADV_x64_ENU.exe'
-    $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /RSINSTALLMODE=DefaultNativeMode"
-    $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016express"
+    (Get-Date).DateTime
+    $url = "$($env:downloadUrl)/SQLServer2016-x64-ENU.exe"
+    $urlBox = "$($env:downloadUrl)/SQLServer2016-x64-ENU.box"
+    $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /FEATURES=SQLEngine,RS /RSINSTALLMODE=DefaultNativeMode /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
+    $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
     if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
-    $fileFullPath = "$tempDir\SQLEXPR.exe"
+    $fileFullPath = "$tempDir\SQLServer.exe"
+    $fileFullPathBox = "$tempDir\SQLServer.box"
     (new-object net.webclient).DownloadFile($url , $fileFullPath)
+    (new-object net.webclient).DownloadFile($urlBox , $fileFullPathBox)
+    (Get-Date).DateTime
     Write-Host "Extracting..."
     $extractPath = "$tempDir\SQLEXPR"
     Start-Process "$fileFullPath" "/Q /x:`"$extractPath`"" -Wait
-    Write-Host "Installing SQL Server Express..."
+    (Get-Date).DateTime
+    Write-Host "Installing SQL Server..."
     $setupPath = "$extractPath\setup.exe"
     Start-Process $setupPath "$silentArgs" -Wait
     Write-Host "Installation completed"
+    (Get-Date).DateTime
 
 test_script:
  TestForCI.cmd
