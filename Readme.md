@@ -3,7 +3,7 @@
 SQL Server Reporting Services LoadTest 
 
 ## Synopsis
-This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute syntetic load for SQL Server Reporting Services 2016 
+This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute synthetic load for SQL Server Reporting Services 2016 
 It uses Visual Studio 2015 Enterprise
 
 ## Buid and Test
@@ -50,7 +50,7 @@ Update the file RSTest.Common.ReportServer.dll.Config with the Reporting Service
 ***In order to create a SQL Server Reporting Services Load enviroment in Azure see the section Create a SSRS Load Environment in Azure*** 
 
 ## 2. Increase the number of MaxActiveReqForOneUser
-This setting is defined in the rsreportserver.config file in the SSRS you are testing, the tests use only one Windows user to access the SSRS server and the default value is 20, if is not modified an aritifial throttling will affect the test results 
+This setting is defined in the rsreportserver.config file in the SSRS you are testing, the tests use only one Windows user to access the SSRS server and the default value is 20, if is not modified an artificial throttling will affect the test results 
 
 ## 2.1 Local Run with SQL Express LocalDb
 * Open the RSLoadTest.testsettings file (double click on the file) and select "Run tests using local computer or a test controller"
