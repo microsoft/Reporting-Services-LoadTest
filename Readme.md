@@ -1,4 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/github/microsoft/reporting-services-loadtest?branch=master&svg=true)](https://ci.appveyor.com/project/jtarquino/reporting-services-loadtest)
+
 # Reporting Services LoadTest
 SQL Server Reporting Services LoadTest 
 
