@@ -67,6 +67,7 @@ namespace RSLoad
             }
         }
 
+        [TestCategory("DependsOnDatasource")]
         [TestMethod]
         public void LoadMobileReports()
         {
