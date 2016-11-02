@@ -24,7 +24,12 @@ Included integration tests that requires a configured SQL Server Reporting Servi
 ```
 c:\repos\Reporting-Services-LoadTest>TestContentWithPBI.cmd
 ```
-## Code of Conduct
+
+You can also build and run the tests from Visual Studio 2015, in such case ensure is using RSLoadTest.testsettings
+
+* Visual Studio Menu > Test > Test Settings > Select Test Settings File
+
+# Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 

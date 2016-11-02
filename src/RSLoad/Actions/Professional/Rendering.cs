@@ -58,7 +58,6 @@ namespace RSLoad
         /// You can use the session ids to get more information for getting more stats, execution log data for example.
         /// Close to FirstPage case, but without loadreport and executioninfo 
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void FullReportRenderHTML()
         {
@@ -120,7 +119,6 @@ namespace RSLoad
         /// Should read all?
         /// Originally, we wrote the page to file.  I am changing it to just read to memory only.
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void PageByPageRenderAll()
         {
@@ -162,7 +160,6 @@ namespace RSLoad
         /// 2. Send first request with rs:PersistStreams=true
         /// 3. Send subsequent report with rs:GetNextStream=true
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void PrintReport()
         {

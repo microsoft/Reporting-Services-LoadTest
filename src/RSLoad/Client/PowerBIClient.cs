@@ -18,9 +18,9 @@ namespace RSLoad
     {
         private static string _endpoint = ReportServerInformation.DefaultInformation.PowerBIUrl;
 
-        private const string _modelsAndExplorationEndpoint = "{0}/modelsAndExploration";
-        private const string _conceptualSchemaEndpoint = "{0}/conceptualSchema";
-        private const string _queryDataEndpoint = "{0}/querydata";
+        private const string _modelsAndExplorationEndpoint = "/{0}/modelsAndExploration";
+        private const string _conceptualSchemaEndpoint = "/{0}/conceptualSchema";
+        private const string _queryDataEndpoint = "/{0}/querydata";
 
         public static void SimulatePowerBIReportUsage(ICredentials credentials, PowerBIReport report)
         {

@@ -41,7 +41,6 @@ namespace RSLoad
         /// <summary>
         /// Call the portal
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void NewPortal()
         {
