@@ -15,7 +15,6 @@ namespace RSLoad
         /// <summary>
         /// Export to PDF format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportPDF()
         {
@@ -25,7 +24,6 @@ namespace RSLoad
         /// <summary>
         /// Export to PPTX format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportPPTX()
         {
@@ -53,7 +51,6 @@ namespace RSLoad
         /// <summary>
         /// Export to WORD format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportWORD()
         {
@@ -63,7 +60,6 @@ namespace RSLoad
         /// <summary>
         /// Export to WORDOPENXML format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportWORDOPENXML()
         {
@@ -73,7 +69,6 @@ namespace RSLoad
         /// <summary>
         /// Export to EXCEL format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportEXCEL()
         {
@@ -92,7 +87,6 @@ namespace RSLoad
         /// <summary>
         /// Export to RGDI format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportRGDI()
         {
@@ -102,7 +96,6 @@ namespace RSLoad
         /// <summary>
         /// Export to EMF format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportEMF()
         {
@@ -148,7 +141,6 @@ namespace RSLoad
         /// <summary>
         /// Export to TIFF format
         /// </summary>
-        [TestCategory("RunInContinuousIntegration")]
         [TestMethod]
         public void UrlAccessLiveExportTIFF()
         {

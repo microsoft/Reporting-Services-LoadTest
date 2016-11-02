@@ -87,7 +87,6 @@ namespace RSLoad
             ValidateAllReportsRenderHTML5_UnitTest("Paginated_NewReports");
         }
 
-        [TestCategory("DependsOnDatasource")]
         [TestMethod]
         public void ValidatePaginated_NoDatasource()
         {

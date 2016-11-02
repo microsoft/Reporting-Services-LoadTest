@@ -6,4 +6,6 @@ src/RSLoad/bin/
 src/RSLoad/obj/
 src/RSAccessor/obj/
 src/RSAccessor/bin/
+src/RSLoad/RSTest.Common.ReportServer.dll.Config
+ArmTemplate/SSRS-MultiMachine/azuredeploy.parameters.json
 *.trx

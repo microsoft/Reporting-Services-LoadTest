@@ -9,7 +9,7 @@ namespace RSLoad
 {
     public partial class MobileActions : PSSActionBase
     {
-        [TestCategory("LongDuration")]
+        [TestCategory("LongDuration"), TestCategory("DependsOnDatasource")]
         [TestMethod]
         public void SmokeVerifyMobileReports()
         {
