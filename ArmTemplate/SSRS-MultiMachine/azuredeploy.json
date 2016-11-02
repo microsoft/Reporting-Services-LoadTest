@@ -245,7 +245,7 @@
     "publicIPAddressType": "Dynamic",
     "ssrspublicIPAddressName": "ssrsPublicIp",
     "datasourceLocalFolder": "F:\\PerfDatabase",
-    "datasourceDatabasesBlob": "https://rsload.blob.core.windows.net/perf/databases",
+    "datasourceDatabasesBlob": "https://rsload.blob.core.windows.net/load/databases",
     "scriptToRestoreDB": "createDatabase.sql",
     "copyAndAttachDbScript": "CopyAndattachDatabases.ps1",
     "copyAndAttachDbScriptUri": "https://rsload.blob.core.windows.net/azcopy/CopyAndattachDatabases.ps1",
