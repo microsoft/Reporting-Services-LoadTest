@@ -132,3 +132,7 @@ In every folder a set of shared datasources will be created (defined in Reportin
 * Paginated Reports Only 
   * ScaleReportsWeight.xml: Specifies how often a report will be used during the test execution (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\ScaleReportsWeight.xml)
   * BadCombinations.xml:  Specifies what combinatios of tests and reports shouldn't be used (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\BadCombinations.xml)
+
+
+# Tutorials
+[How to onboard a new Paginated Reports Scenario](Docs/OnboardPaginated.md)
