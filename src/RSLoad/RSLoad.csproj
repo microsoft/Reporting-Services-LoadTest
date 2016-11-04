@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Actions\Mobile\MobileActions.cs" />
     <Compile Include="Actions\Professional\ContentValidator.cs" />
+    <Compile Include="Actions\Professional\OnboardingContentValidation.cs" />
     <Compile Include="Client\MobileClient.cs" />
     <Compile Include="Actions\Mobile\Smoke.cs" />
     <Compile Include="Actions\Portal\PortalActions.cs" />
