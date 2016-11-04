@@ -16,13 +16,16 @@ For this tutorial , we will create a new scenario called **MyNewPaginated** whic
     * The credentials of the data source are SQL Credentials and those specified in RSTest.Common.ReportServer.dll.Config for the settings DatasourceSQLUser and DatasourceSQLPassword
 
 DataSources.xml should looks like this
-```
-<DataSource Name="BoringDatasource" Extension="SQL"  Database="AdventureWorks2000" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<DataSources>
+  <DataSource Name="BoringDatasource" Extension="SQL"  Database="AdventureWorks2000" UseWindowsCredential="false" Enabled="true" Prompt="" ImpersonateUser="false"></DataSource>
+</DataSources>
 ```
 
 ## Validating the new report and data source
 Now is time to test that the pipeline works correctly, the easiest way to do it is adding a content validation unit test, there is a class in the project ready for this RSLoad\Actions\Professional\OnboardingContentValidation.cs just edit few lines with **MyNewPaginated** and should look like this
-```
+```cs
 private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewPaginated" };
 [TestMethod]
 public void ValidateMyNewPaginate()
