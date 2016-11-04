@@ -135,4 +135,4 @@ In every folder a set of shared datasources will be created (defined in Reportin
 
 
 # Tutorials
-[How to onboard a new Paginated Reports Scenario](Docs/OnboardPaginated.md)
+[How to onboard a new Paginated Reports Scenario](../master/docs/OnboardPaginated.md)
