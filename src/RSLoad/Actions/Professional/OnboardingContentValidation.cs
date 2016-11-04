@@ -16,11 +16,11 @@ namespace RSLoad.Actions.Professional
     [TestClass]
     public class OnboardingContentValidation
     {
-        private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewPaginated" };
+        private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "Paginated_NoDatasource" };
         [TestMethod]
         public void ValidateMyNewPaginate()
         {
-            ValidateAllReportsRenderHTML5_UnitTest("MyNewPaginated");
+            ValidateAllReportsRenderHTML5_UnitTest("Paginated_NoDatasource");
         }
 
         private static bool _isUnitTest = false;
