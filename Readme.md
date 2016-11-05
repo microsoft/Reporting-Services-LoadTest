@@ -6,6 +6,7 @@ SQL Server Reporting Services LoadTest
 ## Synopsis
 This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute synthetic load for SQL Server Reporting Services 2016 
 It uses Visual Studio 2015 Enterprise
+
 The usage of the project requires a good understanding of Reporting Services and the different types of items (reports, datasets, data sources, mobile reports) that are available in SQL Server Reporting Services, it also make use of APIs and code that is not designed for typical user comsumption and can change in future versions of SQL Server Reporting Services
 
 ## Buid and Test
@@ -112,6 +113,7 @@ The deployment will take around 45 minutes. It sets up a Domain Controller, a RS
 
 # Tutorials
 [How to onboard a new Paginated Reports Scenario](../master/docs/OnboardPaginated.md)
+
 [How to onboard a new Mobile Reports Scenario](../master/docs/OnBoardMobile.md)
 
 # Advanced Configuration
