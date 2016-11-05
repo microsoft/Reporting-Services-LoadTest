@@ -1,33 +1,27 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
-
 before_build:
  nuget restore
 
 before_test:
 - ps: |
-    $encodedUrl="aHR0cHM6Ly9yc2xvYWQuYmxvYi5jb3JlLndpbmRvd3MubmV0L2ludGVncmF0aW9u"
-    $downloadUrl = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encodedUrl))
     $ErrorActionPreference = 'Stop';
-    (Get-Date).DateTime
-    $url = "$($downloadUrl)/SQLServer2016-x64-ENU.exe"
-    $urlBox = "$($downloadUrl)/SQLServer2016-x64-ENU.box"
+    $url = "$($env:downloadUrl)/SQLServer2016-x64-ENU.exe"
+    $urlBox = "$($env:downloadUrl)/SQLServer2016-x64-ENU.box"
     $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /FEATURES=SQLEngine,RS /RSINSTALLMODE=DefaultNativeMode /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
     $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
     if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
     $fileFullPath = "$tempDir\SQLServer.exe"
     $fileFullPathBox = "$tempDir\SQLServer.box"
+    Write-Host "Downloading..." (Get-Date).DateTime
     (new-object net.webclient).DownloadFile($url , $fileFullPath)
     (new-object net.webclient).DownloadFile($urlBox , $fileFullPathBox)
-    (Get-Date).DateTime
-    Write-Host "Extracting..."
+    Write-Host "Extracting..." (Get-Date).DateTime
     $extractPath = "$tempDir\SQLEXPR"
     Start-Process "$fileFullPath" "/Q /x:`"$extractPath`"" -Wait
-    (Get-Date).DateTime
-    Write-Host "Installing SQL Server..."
+    Write-Host "Installing SQL Server..." (Get-Date).DateTime
     $setupPath = "$extractPath\setup.exe"
     Start-Process $setupPath "$silentArgs" -Wait
-    Write-Host "Installation completed"
-    (Get-Date).DateTime
+    Write-Host "Installation completed" (Get-Date).DateTime
 
 test_script:
  TestForCI.cmd
