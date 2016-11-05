@@ -69,7 +69,7 @@ In order to deploy KPIs you need the KPI definition, a way to obtain it is exami
 http://yourServer/Reports/api/v1.0/catalogitems(4f5df151-9af6-46f5-bdc8-a9104152a18d)/Model.Folder/catalogitems/?$orderby=name%20ASC
 ```
 
-In the response look for the KPI definition and 
+In the response look for the KPI definition, it looks like this 
 
 ```js
 {
