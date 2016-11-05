@@ -7,6 +7,8 @@ SQL Server Reporting Services LoadTest
 This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute synthetic load for SQL Server Reporting Services 2016 
 It uses Visual Studio 2015 Enterprise
 
+The usage of the project requires a good understanding of Reporting Services and the different types of items (reports, datasets, data sources, mobile reports) that are available in SQL Server Reporting Services, it also make use of APIs and code that is not designed for typical user comsumption and can change in future versions of SQL Server Reporting Services
+
 ## Buid and Test
 In a Visual Studio Tools Command Prompt
 ```
@@ -56,7 +58,7 @@ Update the file RSTest.Common.ReportServer.dll.Config with the Reporting Service
 ***In order to create a SQL Server Reporting Services Load enviroment in Azure see the section Create a SSRS Load Environment in Azure*** 
 
 ## 2. Increase the number of MaxActiveReqForOneUser
-This setting is defined in the rsreportserver.config file in the SSRS you are testing, the tests use only one Windows user to access the SSRS server and the default value is 20, if is not modified an artificial throttling will affect the test results 
+This setting is defined in the rsreportserver.config file in the Reporting Services Server you are testing, the tests use only one Windows user to access the server and the default value is 20, if is not modified an artificial throttling will affect the test results 
 
 ## 2.1 Local Run with SQL Express LocalDb
 * Open the RSLoadTest.testsettings file (double click on the file) and select "Run tests using local computer or a test controller"
@@ -88,7 +90,7 @@ In case you need to store a large number of test results is recommended to use a
     * Double click in the result you want to see
 
 
-# Create a SSRS Load Environment in Azure 
+# Create a SQL Server Reporting Services Load Environment in Azure 
 * Install Azure Powershell (https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/)
 * Edit the \Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\azuredeploy.parameters.json
     * Provide a unique ssrsDNSPrefix
@@ -108,16 +110,17 @@ PS C:\repos\Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\> .\Deploy
 The deployment will take around 45 minutes. It sets up a Domain Controller, a RS Server, a SQL Server with Catalog DB and another SQL Server with a set o fdatabases that the tests uses.      
 
 
-
 # Tutorials
 [How to onboard a new Paginated Reports Scenario](../master/docs/OnboardPaginated.md)
+
+[How to onboard a new Mobile Reports Scenario](../master/docs/OnBoardMobile.md)
 
 # Advanced Configuration
 
 ### Reports and LoadTest (.loadtest)
 The LoadTest files contains a set of scenarios that will drive the load in the system, those are standard Visual Studio Load Test files and the details of the different settings can be found on [Editing Load Test Using the Load Test Editor](https://msdn.microsoft.com/en-us/library/ff406975(v=vs.140).aspx)
 
-However the SSRS Load tests also deploy a set of Reports, Data sources, Mobile Reports and KPIs during the initialization, those resources are stored under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources
+However the Load tests also deploy a set of Reports, Data sources, Mobile Reports and KPIs during the initialization, those resources are stored under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources
 The deployment is based on the name of the scenario , for example in MixedLoad.loadtest there are the following scenarios
 
 |Scenario|Files to Deploy to the Server|
@@ -127,12 +130,12 @@ The deployment is based on the name of the scenario , for example in MixedLoad.l
 |Paginated_Large|RuntimeResources\Paginated\Large|
 |Paginated_Small|RuntimeResources\Paginated\Small|
 
-The load test will create a folder in the SSRS Server with the scenario name and will deploy the SSRS items that are required by the tests.
-Each scenario requires a folder with the SSRS items to deploy.
+The load test will create a folder in the Server with the scenario name and will deploy the Reporting Services items that are required by the tests.
+Each scenario requires a folder with the Reporting Services items to deploy.
 In every folder a set of shared datasources will be created (defined in Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
 
 ### Configuration Files
-* DataSources.xml : Define the datasources that will be created in the SSRS Server during the test initialization (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
+* DataSources.xml : Define the datasources that will be created in the server during the test initialization (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
 * Paginated Reports Only 
   * ScaleReportsWeight.xml: Specifies how often a report will be used during the test execution (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\ScaleReportsWeight.xml)
   * BadCombinations.xml:  Specifies what combinatios of tests and reports shouldn't be used (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\Paginated\BadCombinations.xml)

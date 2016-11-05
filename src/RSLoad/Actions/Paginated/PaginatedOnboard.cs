@@ -1,6 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿// Copyright (c) 2016 Microsoft Corporation. All Rights Reserved.
+// Licensed under the MIT License (MIT)
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RSAccessor.SoapAccessor;
 using RSAccessor.Utilities;
+using RSLoad.Utilites;
 using RSLoad.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,16 +13,15 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using RSLoad.Utilites;
 
-namespace RSLoad.Actions.Professional
+namespace RSLoad
 {
     [TestClass]
-    public class OnboardingContentValidation
+    public class PaginatedOnboard
     {
         private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "Paginated_NoDatasource" };
         [TestMethod]
-        public void ValidateMyNewPaginate()
+        public void ValidateMyNewPaginated()
         {
             ValidateAllReportsRenderHTML5_UnitTest("Paginated_NoDatasource");
         }

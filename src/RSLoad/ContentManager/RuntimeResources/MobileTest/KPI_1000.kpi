@@ -1,5 +1,5 @@
 {
-  "@odata.context":"http://dz-evlevy/Reports_THREEPOINTTHREE_Preview/api/v1.0/$metadata#CatalogItems/$entity","@odata.type":"#Model.Kpi","Id":"bfc1ec76-93ae-4261-967d-a9fc8d7c23b5","Name":"KPI_1000","Description":"","Path":"/MobileTest/KPI_1000","Type":"Kpi","Hidden":false,"Size":0,"ModifiedBy":null,"ModifiedDate":"0001-01-01T00:00:00Z","CreatedBy":"NORTHAMERICA\\evlevy","CreatedDate":"2016-03-17T11:13:24.6041257-04:00","ParentFolderId":null,"ContentType":null,"Content":"","Properties":[
+  "@odata.context":"http://server/Reports_THREEPOINTTHREE_Preview/api/v1.0/$metadata#CatalogItems/$entity","@odata.type":"#Model.Kpi","Id":"bfc1ec76-93ae-4261-967d-a9fc8d7c23b5","Name":"KPI_1000","Description":"","Path":"/MobileTest/KPI_1000","Type":"Kpi","Hidden":false,"Size":0,"ModifiedBy":null,"ModifiedDate":"0001-01-01T00:00:00Z","CreatedBy":"NORTHAMERICA\\user","CreatedDate":"2016-03-17T11:13:24.6041257-04:00","ParentFolderId":null,"ContentType":null,"Content":"","Properties":[
     
   ],"IsFavorite":false,"ValueFormat":"General","Visualization":"Bar","DrillthroughTarget":null,"Currency":null,"Values":{
     "Value":"585013","Goal":null,"Status":0.0,"TrendSet":[

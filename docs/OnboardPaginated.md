@@ -1,6 +1,6 @@
 # How to onboard a new Paginated Reports Scenario
 
-For this tutorial , we will create a new scenario called **MyNewPaginated** which will contain a new set of your reports and the datasources
+For this tutorial, we will create a new scenario called **MyNewPaginated** which will contain a new set of your reports and the data sources
 
 * In the Visual Studio Solution add a new folder under RSLoad\ContentManager\RuntimeResources\MyNewPaginated
 * Add the reports to the new folder, it should look like this 
@@ -9,7 +9,7 @@ For this tutorial , we will create a new scenario called **MyNewPaginated** whic
 
 * Add the Data sources that the reports use in the file RSLoad\ContentManager\RuntimeResources\DataSources.xml 
 
-* Ensure the following conditions
+* Ensure the following conditions are met:
     * Your reports uses a shared data source 
     * The data source name in the report matches the one you have in the DataSources.xml 
     * The data source is in the same folder than the report
@@ -24,11 +24,11 @@ DataSources.xml should looks like this
 ```
 
 ## Validating the new report and data source
-Now is time to test that the pipeline works correctly, the easiest way to do it is adding a content validation unit test, there is a class in the project ready for this RSLoad\Actions\Professional\OnboardingContentValidation.cs just edit few lines with **MyNewPaginated** and should look like this
+Now is time to test that the pipeline works correctly, the easiest way to do it is adding a content validation unit test, there is a class in the project ready for this RSLoad\Actions\Professional\PaginatedOnboard.cs just edit few lines with **MyNewPaginated** and should look like this
 ```cs
 private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewPaginated" };
 [TestMethod]
-public void ValidateMyNewPaginate()
+public void ValidateMyNewPaginated()
 {
     ValidateAllReportsRenderHTML5_UnitTest("MyNewPaginated");
 }

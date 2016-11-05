@@ -75,21 +75,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\Mobile\MobileActions.cs" />
-    <Compile Include="Actions\Professional\ContentValidator.cs" />
-    <Compile Include="Actions\Professional\OnboardingContentValidation.cs" />
+    <Compile Include="Actions\Mobile\MobileOnboard.cs" />
+    <Compile Include="Actions\Paginated\ContentValidator.cs" />
+    <Compile Include="Actions\Paginated\PaginatedOnboard.cs" />
     <Compile Include="Client\MobileClient.cs" />
     <Compile Include="Actions\Mobile\Smoke.cs" />
     <Compile Include="Actions\Portal\PortalActions.cs" />
     <Compile Include="Actions\PowerBI\PowerBIActions.cs" />
     <Compile Include="Client\PowerBIClient.cs" />
-    <Compile Include="Actions\Professional\ExportLive.cs" />
-    <Compile Include="Actions\Professional\ExportWithSession.cs" />
-    <Compile Include="Actions\Professional\ExportWithSnapshot.cs" />
-    <Compile Include="Actions\Professional\ProfessionalActions.cs" />
-    <Compile Include="Actions\Professional\Rendering.cs" />
-    <Compile Include="Actions\Professional\Smoke.cs" />
-    <Compile Include="Actions\Professional\SOAPAPI.cs" />
-    <Compile Include="Actions\Professional\ViewerControl.cs" />
+    <Compile Include="Actions\Paginated\ExportLive.cs" />
+    <Compile Include="Actions\Paginated\ExportWithSession.cs" />
+    <Compile Include="Actions\Paginated\ExportWithSnapshot.cs" />
+    <Compile Include="Actions\Paginated\ProfessionalActions.cs" />
+    <Compile Include="Actions\Paginated\Rendering.cs" />
+    <Compile Include="Actions\Paginated\Smoke.cs" />
+    <Compile Include="Actions\Paginated\SOAPAPI.cs" />
+    <Compile Include="Actions\Paginated\ViewerControl.cs" />
     <Compile Include="Actions\PSSActionBase.cs" />
     <Compile Include="ContentManager\CollectionSelector.cs" />
     <Compile Include="ContentManager\Config\BadCombination.cs" />
