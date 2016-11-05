@@ -11,14 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using RSLoad.Utilites;
 
-namespace RSLoad.Actions.Professional
+namespace RSLoad.Actions.Paginated
 {
     [TestClass]
     public class OnboardingContentValidation
     {
         private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "Paginated_NoDatasource" };
         [TestMethod]
-        public void ValidateMyNewPaginate()
+        public void ValidateMyNewPaginated()
         {
             ValidateAllReportsRenderHTML5_UnitTest("Paginated_NoDatasource");
         }

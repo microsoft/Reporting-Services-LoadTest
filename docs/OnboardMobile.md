@@ -1,6 +1,6 @@
 # How to onboard a new Paginated Reports Scenario
 
-For this tutorial, we will create a new scenario called **MyNewPaginated** which will contain a new set of your reports and the data sources
+For this tutorial, we will create a new scenario called **MyNewPaginated** which will contain a new set of your reports and the datasources
 
 * In the Visual Studio Solution add a new folder under RSLoad\ContentManager\RuntimeResources\MyNewPaginated
 * Add the reports to the new folder, it should look like this 
@@ -28,7 +28,7 @@ Now is time to test that the pipeline works correctly, the easiest way to do it 
 ```cs
 private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewPaginated" };
 [TestMethod]
-public void ValidateMyNewPaginated()
+public void ValidateMyNewPaginate()
 {
     ValidateAllReportsRenderHTML5_UnitTest("MyNewPaginated");
 }
