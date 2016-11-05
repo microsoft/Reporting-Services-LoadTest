@@ -32,13 +32,13 @@ DataSources.xml should looks like this
 ## Validating the new mobile report, dataset and data source
 Now is time to test that the pipeline works correctly, the easiest way to do it is adding a content validation unit test, there is a class in the project ready for this RSLoad\Actions\Mobile\MobileOnboard.cs just edit few lines with **MyNewMobile** and should look like this
 ```cs
-        private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewMobile" };
-        [TestCategory("DependsOnDatasource")]
-        [TestMethod]
-        public void ValidateMyNewMobile()
-        {
-            LoadAllMobileReports();
-        }
+private static List<string> _loadTestScenariosToDeployInServer = new List<string>() { "MyNewMobile" };
+[TestCategory("DependsOnDatasource")]
+[TestMethod]
+public void ValidateMyNewMobile()
+{
+    LoadAllMobileReports();
+}
 ```
 Execute the test 
 
