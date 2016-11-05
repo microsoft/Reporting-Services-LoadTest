@@ -94,4 +94,5 @@ In the response look for the KPI definition and
 ```
 
 Copy that content into your **MyNewMobile** folder into a file with the .kpi extension (for example advancedKpi.kpi) and it will be deployed to the server with the mobile reports, the test that execute those is ListKpis
- 
+
+***Warning*** deploying KPIs using this method is not a typical scenario and can change in future versions of SQL Server Reporting Services without any notice
