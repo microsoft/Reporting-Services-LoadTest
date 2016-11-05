@@ -91,7 +91,18 @@ In case you need to store a large number of test results is recommended to use a
 
 
 # Create a SQL Server Reporting Services Load Environment in Azure 
-* Install Azure Powershell (https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/)
+You can use the UI
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FReporting-Services-LoadTest%2Fmaster%2FArmTemplate%2FSSRS-MultiMachine%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FReporting-Services-LoadTest%2Fmaster%2FArmTemplate%2FSSRS-MultiMachine%2Fazuredeploy.json" target="_blank">
+  <img src="http://armviz.io/visualizebutton.png"/>
+</a>
+
+or PowerShell
+
+* Install Azure PowerShell (https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/)
 * Edit the \Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\azuredeploy.parameters.json
     * Provide a unique ssrsDNSPrefix
     * Provide the passwords (this user and passwords need to be used on RSTest.Common.ReportServer.dll.Config)
@@ -107,7 +118,7 @@ PS C:\repos\Reporting-Services-LoadTest\ArmTemplate\SSRS-MultiMachine\> .\Deploy
 * Increase the number of MaxActiveReqForOneUser to at least 800 in rsreportserver.config (but this really depends on your load test configuration)
             <Add Key="MaxActiveReqForOneUser" Value="800" />       
 
-The deployment will take around 45 minutes. It sets up a Domain Controller, a RS Server, a SQL Server with Catalog DB and another SQL Server with a set o fdatabases that the tests uses.      
+The deployment will take around 30 minutes. It sets up a Domain Controller, a RS Server, a SQL Server with Catalog DB and another SQL Server with a set o fdatabases that the tests uses.      
 
 
 # Tutorials
