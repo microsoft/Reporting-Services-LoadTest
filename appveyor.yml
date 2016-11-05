@@ -7,14 +7,15 @@ before_test:
     $ErrorActionPreference = 'Stop';
     $url = "$($env:downloadUrl)/SQLServer2016-x64-ENU.exe"
     $urlBox = "$($env:downloadUrl)/SQLServer2016-x64-ENU.box"
+    # instance name express to be able to switch easy between express and eval
     $silentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /FEATURES=SQLEngine,RS /RSINSTALLMODE=DefaultNativeMode /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
     $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
     if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
     $fileFullPath = "$tempDir\SQLServer.exe"
     $fileFullPathBox = "$tempDir\SQLServer.box"
     Write-Host "Downloading..." (Get-Date).DateTime
-    (new-object net.webclient).DownloadFile($url , $fileFullPath)
-    (new-object net.webclient).DownloadFile($urlBox , $fileFullPathBox)
+    (New-Object Net.WebClient).DownloadFile($url , $fileFullPath)
+    (New-Object Net.WebClient).DownloadFile($urlBox , $fileFullPathBox)
     Write-Host "Extracting..." (Get-Date).DateTime
     $extractPath = "$tempDir\SQLEXPR"
     Start-Process "$fileFullPath" "/Q /x:`"$extractPath`"" -Wait
