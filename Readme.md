@@ -113,7 +113,7 @@ The deployment will take around 45 minutes. It sets up a Domain Controller, a RS
 # Tutorials
 [How to onboard a new Paginated Reports Scenario](../master/docs/OnboardPaginated.md)
 
-[How to onboard a new Mobile Reports Scenario](../master/docs/OnBoardMobile.md)
+[How to onboard a new Mobile Reports Scenario](../master/docs/OnboardMobile.md)
 
 # Advanced Configuration
 
