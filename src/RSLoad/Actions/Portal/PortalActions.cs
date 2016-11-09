@@ -157,7 +157,6 @@ namespace RSLoad
         [TestMethod]
         public void GetReportItemExpandReportHistorySnapshots()
         {
-            Assert.Fail();
             GetReportItemAndExpand("GetReportItemExpandCacheRefreshPlans", "ReportHistorySnapshots");
         }
 
