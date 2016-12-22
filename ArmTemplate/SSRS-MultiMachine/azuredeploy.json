@@ -163,7 +163,7 @@
       "type": "string",
       "defaultValue": "SQL2016-WS2016",
       "metadata": {
-        "description": "The SQL Iamge for the VM. This will pick a fully patched image of this given SQL Image"
+        "description": "The SQL Image for the VM. This will pick a fully patched image of this given SQL Image"
       }
     },
     "ssrsImageSKU": {
@@ -177,6 +177,13 @@
         "description": "The SQL SKU, for SQL CTP Versions the only available is evaluation"
       }
     },
+    "DCImageVersion": {
+      "type": "string",
+      "defaultValue": "2012-R2-Datacenter",
+      "metadata": {
+        "description": "The version of the OS for the Domain Controller"
+      }
+    },	
   },
   "variables": {
     "assetLocation": "[concat(parameters('baseURL'),'/dsc')]",
@@ -627,7 +634,10 @@
           },
           "domainName": {
             "value": "[parameters('domainName')]"
-          }
+          },
+          "DCImageVersion": {
+            "value": "[parameters('DCImageVersion')]"
+          }		  
         }
       }
     },
