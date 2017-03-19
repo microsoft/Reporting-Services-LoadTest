@@ -9,7 +9,7 @@ It uses Visual Studio 2015 Enterprise
 
 The usage of the project requires a good understanding of Reporting Services and the different types of items (reports, datasets, data sources, mobile reports) that are available in SQL Server Reporting Services, it also make use of APIs and code that is not designed for typical user comsumption and can change in future versions of SQL Server Reporting Services
 
-## Buid and Test
+## Build and Test
 In a Visual Studio Tools Command Prompt
 ```
 c:\repos\Reporting-Services-LoadTest>build.cmd
