@@ -22,7 +22,6 @@ namespace RSLoad
         private const string TestFolderName = "TestFolder_{0}";
         private const string RootPath = "/";
         private const string OrderByCaluse = "$orderby";
-        private bool isPbiPublished = false;
 
         private Dictionary<string, List<string>> _badMethodReportCombinations = null;
 
@@ -116,8 +115,7 @@ namespace RSLoad
         {
             GetExistingMobileReports();
             GetExistingKpis();
-            if (isPbiPublished)
-                GetExistingPowerBIReports();
+            GetExistingPowerBIReports();
             base.PopulateReportListFromServer();
         }
 
@@ -172,7 +170,6 @@ namespace RSLoad
 
                     case ".pbix":
                         ExistingPowerBIReports.Add(reportPath);
-                        isPbiPublished = true;
                         break;
                 }
             };
@@ -305,7 +302,7 @@ namespace RSLoad
                     return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    return PortalAccessorV1.AddToCatalogItems<PowerBIReport>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>(displayName, parentFolder, content);
 
                 default:
                     return null;
