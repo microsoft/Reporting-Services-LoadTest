@@ -11,6 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RSAccessor.PortalAccessor;
 using RSLoad.Utilities;
 using RSAccessor.PortalAccessor.OData.Model;
+using ODataV2Model = RSAccessor.PortalAccessor.OData.V2.Model;
 using RSAccessor.SoapAccessor;
 
 namespace RSLoad
@@ -302,7 +303,7 @@ namespace RSLoad
                     return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    return PortalAccessorV2.AddToCatalogItems<RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
 
                 default:
                     return null;
