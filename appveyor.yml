@@ -42,7 +42,7 @@ before_test:
     }
     # Configuring Power BI Report Server
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
-    if (!Test-Path $profile) {
+    if (!(Test-Path $profile)) {
         Write-Host "No profile found! Creating a profile!"
         new-item -path $profile -itemtype file -force
     }
