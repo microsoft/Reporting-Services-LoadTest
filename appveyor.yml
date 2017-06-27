@@ -42,7 +42,53 @@ before_test:
     }
     # Configuring Power BI Report Server
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
-    Invoke-Expression (Invoke-WebRequest https://aka.ms/rstools)
+    $rsToolsLocalpath = $(Join-Path -Path (Split-Path -Path $profile) -ChildPath '\Modules\ReportingServicesTools')
+    $rsToolsUrl = 'https://github.com/Microsoft/ReportingServicesTools/archive/master.zip'
+    $temp = (Get-Item $env:TEMP).FullName
+    $rsToolsZipfile = Join-Path (Get-Item $env:TEMP).FullName "ReportingServicesTools.zip"
+    if (!(Test-Path -Path $rsToolsLocalpath)) {
+        try {
+            Write-Host "Creating directory: $rsToolsLocalpath"
+            New-Item -Path $rsToolsLocalpath -ItemType Directory | Out-Null
+        } catch {
+            throw "Can't create $rsToolsLocalpath. You may need to Run as Administrator"
+        }
+    } else {
+        try {
+            Write-Host "Deleting previously installed module"
+            Remove-Item -Path "$rsToolsLocalpath\*" -Force -Recurse
+        } catch {
+            throw "Can't delete $rsToolsLocalpath. You may need to Run as Administrator"
+        }
+    }
+    Write-Host "Downloading archive from github"
+    try {
+        Invoke-WebRequest $rsToolsUrl -OutFile $rsToolsZipfile
+    } catch {
+        #try with default proxy and usersettings
+        Write-Host "Probably using a proxy for internet access, trying default proxy settings"
+        (New-Object System.Net.WebClient).Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+        Invoke-WebRequest $rsToolsUrl -OutFile $rsToolsZipfile
+    }
+    # Unblock if there's a block
+    Unblock-File $rsToolsZipfile -ErrorAction SilentlyContinue
+    Write-Host "Unzipping"
+
+    # Keep it backwards compatible
+    $shell = New-Object -COM Shell.Application
+    $zipPackage = $shell.NameSpace($rsToolsZipfile)
+    $destinationFolder = $shell.NameSpace($temp)
+    $destinationFolder.CopyHere($zipPackage.Items())
+
+    Write-Host "Cleaning up"
+    Move-Item -Path "$temp\ReportingServicesTools-master\*" $rsToolsLocalpath
+    Remove-Item -Path "$temp\ReportingServicesTools-master"
+    Remove-Item -Path $rsToolsZipfile
+
+    Write-Host "Done!"
+    if ((Get-Command -Module ReportingServicesTools).count -eq 0) { Import-Module "$path\src\ReportingServicesTools.psd1" -Force }
+    if ((Get-Command -Module ReportingServicesTools).count -eq 0) { throw 'Unable to import ReportingServicesTools Module' }
+
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
     Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion 14 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
