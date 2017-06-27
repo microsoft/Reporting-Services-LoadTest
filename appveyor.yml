@@ -42,6 +42,10 @@ before_test:
     }
     # Configuring Power BI Report Server
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
+    if (!Test-Path $profile) {
+        Write-Host "No profile found! Creating a profile!"
+        new-item -path $profile -itemtype file -force
+    }
     $rsToolsLocalpath = $(Join-Path -Path (Split-Path -Path $profile) -ChildPath '\Modules\ReportingServicesTools')
     $rsToolsUrl = 'https://github.com/Microsoft/ReportingServicesTools/archive/master.zip'
     $temp = (Get-Item $env:TEMP).FullName
