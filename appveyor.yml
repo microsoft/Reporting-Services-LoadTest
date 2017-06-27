@@ -24,16 +24,22 @@ before_test:
     Start-Process $setupPath "$sqlServerSilentArgs" -Wait
     Write-Host "SQL Server Installation completed" (Get-Date).DateTime
     # Downloading and installing Power BI Report Server
-    $pbiServerUrl = "$($env:pbirsDownloadUrl)"
+    $pbiServerUrl = $env:pbirsDownloadUrl
     $pbiServerTempDir = Join-Path (Get-Item $env:TEMP).FullName "PBIServer"
     if ((Test-Path $pbiServerTempDir) -eq $false) { New-Item -ItemType Directory -Path $pbiServerTempDir }
     $pbiServerFileFullPath = "$pbiServerTempDir\PowerBIReportServer.exe"
     $pbiServerSilentArgs = "/Q /NORESTART IACCEPTLICENSETERMS=true"
-    Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
-    (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
-    Write-Host "Installing Power BI Report Server..." (Get-Date).DateTime
-    Start-Process $pbiServerFileFullPath "$pbiServerSilentArgs" -Wait
-    Write-Host "Power BI Report Server Installation completed" (Get-Date).DateTime
+    try {
+        Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
+        (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
+        Write-Host "Installing Power BI Report Server..." (Get-Date).DateTime
+        
+        Start-Process $pbiServerFileFullPath "$pbiServerSilentArgs" -Wait
+        Write-Host "Power BI Report Server Installation completed" (Get-Date).DateTime
+    } catch {
+        Write-Error "Exception occurred while downloading Power BI Report Server: $_.Exception.Message"
+        throw
+    }
 
 test_script:
  TestForCI.cmd
