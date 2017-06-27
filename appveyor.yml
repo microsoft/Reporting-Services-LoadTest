@@ -40,6 +40,16 @@ before_test:
         Write-Error "Exception occurred while downloading Power BI Report Server: $_.Exception.Message"
         throw
     }
+    # Configuring Power BI Report Server
+    Invoke-Expression (Invoke-WebRequest https://aka.ms/rstools)
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion 14 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
+    $rsConfigObject = New-RsConfigurationSettingObject -ReportServerInstance PBIRS -ReportServerVersion 14
+    $rsConfigObject.SetVirtualDirectory('ReportServerWebService', 'ReportServer', 1033)
+    $rsConfigObject.ReserveUrl('ReportServerWebService', 'http://+:80', 1033)
+    $rsConfigObject.SetVirtualDirectory('ReportServerWebApp', 'Reports', 1033)
+    $rsConfigObject.ReserveUrl('ReportServerWebApp', 'http://+:80', 1033)
+    Stop-Service PowerBIReportServer
+    Start-Service PowerBIReportServer
 
 test_script:
  TestForCI.cmd
