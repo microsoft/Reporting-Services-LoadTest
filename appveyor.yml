@@ -46,10 +46,10 @@ before_test:
     Install-Module -Name ReportingServicesTools
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
-    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion 14 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
-    $rsConfigObject = New-RsConfigurationSettingObject -ReportServerInstance PBIRS -ReportServerVersion 14
+    $rsConfigObject = New-RsConfigurationSettingObject -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
     $rsConfigObject.SetVirtualDirectory('ReportServerWebService', 'ReportServer', 1033)
     $rsConfigObject.ReserveUrl('ReportServerWebService', 'http://+:80', 1033)
     Write-Host "Configuring Report Server URL for Portal..." (Get-Date).DateTime
