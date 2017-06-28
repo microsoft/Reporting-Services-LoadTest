@@ -23,6 +23,7 @@ before_test:
     $setupPath = "$extractPath\setup.exe"
     Start-Process $setupPath "$sqlServerSilentArgs" -Wait
     Write-Host "SQL Server Installation completed" (Get-Date).DateTime
+    # downloading and installing Power BI Report Server
     $pbiServerUrl = $env:pbirsDownloadUrl
     $pbiServerTempDir = Join-Path (Get-Item $env:TEMP).FullName "PBIServer"
     if ((Test-Path $pbiServerTempDir) -eq $false) { New-Item -ItemType Directory -Path $pbiServerTempDir }
@@ -31,18 +32,22 @@ before_test:
     try {
         Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
         (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
+
         Write-Host "Installing Power BI Report Server..." (Get-Date).DateTime
-        
         Start-Process $pbiServerFileFullPath "$pbiServerSilentArgs" -Wait
+
         Write-Host "Power BI Report Server Installation completed" (Get-Date).DateTime
     } catch {
         Write-Error "Exception occurred while downloading Power BI Report Server: $_.Exception.Message"
         throw
     }
+    # downloading Reporting Services Tools
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
     Install-Module -Name ReportingServicesTools
+    # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
     Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion 14 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
+    # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
     $rsConfigObject = New-RsConfigurationSettingObject -ReportServerInstance PBIRS -ReportServerVersion 14
     $rsConfigObject.SetVirtualDirectory('ReportServerWebService', 'ReportServer', 1033)
@@ -50,6 +55,7 @@ before_test:
     Write-Host "Configuring Report Server URL for Portal..." (Get-Date).DateTime
     $rsConfigObject.SetVirtualDirectory('ReportServerWebApp', 'Reports', 1033)
     $rsConfigObject.ReserveUrl('ReportServerWebApp', 'http://+:80', 1033)
+    # restarting Power BI Report Server
     Write-Host "Restarting Power BI Report Server Service..."(Get-Date).DateTime
     Stop-Service PowerBIReportServer
     Start-Service PowerBIReportServer
