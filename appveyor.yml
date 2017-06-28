@@ -43,11 +43,12 @@ before_test:
     }
     # creating a PowerShell profile
     if (!(Test-Path $profile)) {
+        Write-Host "Creating a new Windows PowerShell profile..."
         New-Item -Path $profile -ItemType File -Force
     }
     # downloading Reporting Services Tools
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
-    Invoke-Expression (Invoke-WebRequest https://aka.ms/rstools)
+    Invoke-Expression (Invoke-WebRequest https://raw.githubusercontent.com/Microsoft/ReportingServicesTools/EnhancedInstallationScript/Install.ps1)
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
     Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
