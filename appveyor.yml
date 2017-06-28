@@ -23,7 +23,6 @@ before_test:
     $setupPath = "$extractPath\setup.exe"
     Start-Process $setupPath "$sqlServerSilentArgs" -Wait
     Write-Host "SQL Server Installation completed" (Get-Date).DateTime
-    # Downloading and installing Power BI Report Server
     $pbiServerUrl = $env:pbirsDownloadUrl
     $pbiServerTempDir = Join-Path (Get-Item $env:TEMP).FullName "PBIServer"
     if ((Test-Path $pbiServerTempDir) -eq $false) { New-Item -ItemType Directory -Path $pbiServerTempDir }
@@ -40,7 +39,6 @@ before_test:
         Write-Error "Exception occurred while downloading Power BI Report Server: $_.Exception.Message"
         throw
     }
-    # Configuring Power BI Report Server
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
     Install-Module -Name ReportingServicesTools
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
