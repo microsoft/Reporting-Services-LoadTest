@@ -41,18 +41,26 @@ before_test:
         Write-Error "Exception occurred while downloading Power BI Report Server: $_.Exception.Message"
         throw
     }
+	
+	# Activate verbose on Powershell
+    $VerbosePreference = "continue" 
+
     # downloading Reporting Services Tools
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
     Install-Module ReportingServicesTools
+	
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
-    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Verbose
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName .\SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Verbose
+	
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
     Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -Verbose
+	
     # initializing Power BI Report Server
     Write-Host "Initialize Power BI Report Server..." (Get-Date).DateTime
     Initialize-Rs -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
+	
     # restarting Power BI Report Server
     Write-Host "Restarting Power BI Report Server Service..." (Get-Date).DateTime
     Stop-Service PowerBIReportServer
