@@ -8,7 +8,7 @@ before_test:
     $sqlServerUrl = "$($env:downloadUrl)/SQLServer2016-x64-ENU.exe"
     $sqlServerUrlBox = "$($env:downloadUrl)/SQLServer2016-x64-ENU.box"
     # instance name express to be able to switch easy between express and eval
-    $sqlServerSilentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE /FEATURES=SQLEngine /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
+    $sqlServerSilentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCENAME=MSSQLSERVER /UPDATEENABLED=FALSE /FEATURES=SQLEngine /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`"
     $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
     if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
     $fileFullPath = "$tempDir\SQLServer.exe"
@@ -57,7 +57,7 @@ before_test:
     
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
-    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName localhost\sqlexpress -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Confirm:$false
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName localhost -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Confirm:$false
     
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
