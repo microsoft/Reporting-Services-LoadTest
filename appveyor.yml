@@ -71,6 +71,7 @@ before_test:
     Write-Host "Restarting Power BI Report Server Service..." (Get-Date).DateTime
     Stop-Service PowerBIReportServer
     Start-Service PowerBIReportServer
+    Start-Sleep -s 10
     Write-Host "Power BI Report Server configured successfully..." (Get-Date).DateTime
 
 test_script:
