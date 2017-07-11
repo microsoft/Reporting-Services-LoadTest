@@ -46,20 +46,18 @@ before_test:
     Install-Module ReportingServicesTools
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
-    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Verbose
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
-    $rsConfigObject = New-RsConfigurationSettingObject -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
-    $rsConfigObject.SetVirtualDirectory('ReportServerWebService', 'ReportServer', 1033)
-    $rsConfigObject.ReserveUrl('ReportServerWebService', 'http://+:80', 1033)
-    Write-Host "Configuring Report Server URL for Portal..." (Get-Date).DateTime
-    $rsConfigObject.SetVirtualDirectory('ReportServerWebApp', 'Reports', 1033)
-    $rsConfigObject.ReserveUrl('ReportServerWebApp', 'http://+:80', 1033)
+    Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -Verbose
+    # initializing Power BI Report Server
+    Write-Host "Initialize Power BI Report Server..." (Get-Date).DateTime
+    Initialize-Rs -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
     # restarting Power BI Report Server
-    Write-Host "Restarting Power BI Report Server Service..."(Get-Date).DateTime
+    Write-Host "Restarting Power BI Report Server Service..." (Get-Date).DateTime
     Stop-Service PowerBIReportServer
     Start-Service PowerBIReportServer
-    Write-Host "Power BI Report Server configured successfully..."(Get-Date).DateTime
+    Write-Host "Power BI Report Server configured successfully..." (Get-Date).DateTime
 
 test_script:
  TestForCI.cmd
