@@ -29,6 +29,12 @@ before_test:
     if ((Test-Path $pbiServerTempDir) -eq $false) { New-Item -ItemType Directory -Path $pbiServerTempDir }
     $pbiServerFileFullPath = "$pbiServerTempDir\PowerBIReportServer.exe"
     $pbiServerSilentArgs = "/Q /NORESTART IACCEPTLICENSETERMS=true"
+
+    Write-Host "Importing SQLPS Module..." (Get-Date).DateTime
+    Import-Module "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\PowerShell\Modules\sqlps\sqlps.psd1"
+    Write-Host "SQLPS Module imported" (Get-Date).DateTime
+
+
     try {
         Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
         (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
