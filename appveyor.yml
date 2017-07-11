@@ -51,11 +51,11 @@ before_test:
     
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
-    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName .\SQLEXPRESS -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Verbose
+    Set-RsDatabase -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -DatabaseServerName localhost\sqlexpress -DatabaseName ReportServer -DatabaseCredentialType ServiceAccount -Confirm:$false
     
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
-    Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017 -Verbose
+    Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
     
     # initializing Power BI Report Server
     Write-Host "Initialize Power BI Report Server..." (Get-Date).DateTime
