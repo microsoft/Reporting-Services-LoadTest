@@ -240,23 +240,45 @@ namespace RSTest.Common.ReportServer.Information
         [XmlIgnore]
         public int ReportServerPort { get; set; }
 
-        private string _restApiUrl;
+        private string _restApiV1Url;
+
         /// <summary>
-        /// Gets Report Server Portal Url.
+        /// Gets Report Server Portal V1 Url.
         /// </summary>
-        public string RestApiUrl
+        public string RestApiV1Url
         {
             get
             {
-                if (String.IsNullOrEmpty(_restApiUrl))
+                if (String.IsNullOrEmpty(_restApiV1Url))
                 {
-                    _restApiUrl = string.Format("{0}/{1}", ReportPortalUrl, SharedConstants.ApiV1PostFix);
+                    _restApiV1Url = string.Format("{0}/{1}", ReportPortalUrl, SharedConstants.ApiV1PostFix);
                 }
-                return _restApiUrl;
+                return _restApiV1Url;
             }
             set
             {
-                _restApiUrl = value;
+                _restApiV1Url = value;
+            }
+        }
+
+        private string _restApiV2Url;
+
+        /// <summary>
+        /// Gets Report Server Portal V1 Url.
+        /// </summary>
+        public string RestApiV2Url
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(_restApiV2Url))
+                {
+                    _restApiV2Url = string.Format("{0}/{1}", ReportPortalUrl, SharedConstants.ApiV2PostFix);
+                }
+                return _restApiV2Url;
+            }
+            set
+            {
+                _restApiV2Url = value;
             }
         }
         #endregion

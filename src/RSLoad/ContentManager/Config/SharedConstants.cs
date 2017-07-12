@@ -25,6 +25,7 @@ namespace RSLoad
         public const string RuntimeResourcesFolder = @"RuntimeResources";
 
         public const string ApiV1PostFix = "api/v1.0";
+        public const string ApiV2PostFix = "api/v2.0";
         public const string PbiEndpoint = "powerbi/api/explore/reports";
     }
 }
