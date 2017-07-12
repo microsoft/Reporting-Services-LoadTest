@@ -140,9 +140,10 @@ The deployment is based on the name of the scenario , for example in MixedLoad.l
 |Scenario|Files to Deploy to the Server|
 |-------|-----------|
 |MobileTest|RuntimeResources\MobileTest|
-|Portal|RuntimeResources\Portal|
 |Paginated_Large|RuntimeResources\Paginated\Large|
 |Paginated_Small|RuntimeResources\Paginated\Small|
+|Portal|RuntimeResources\Portal|
+|PowerBI_Reports|RuntimeResources\PowerBI|
 
 The load test will create a folder in the Server with the scenario name and will deploy the Reporting Services items that are required by the tests.
 Each scenario requires a folder with the Reporting Services items to deploy.
