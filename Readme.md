@@ -49,11 +49,14 @@ Update the file RSTest.Common.ReportServer.dll.Config with the Reporting Service
   <ExecutionAccountPwd>ProvideAPassword</ExecutionAccountPwd>
   <DatasourceSQLUser>ProvideASQLUser</DatasourceSQLUser>
   <DatasourceSQLPassword>ProvideASQLPassword</DatasourceSQLPassword>
+  <ASWindowsUser>contoso\ProvideAUser</ASWindowsUser>
+  <ASWindowsPassword>ProvideAPassword</ASWindowsPassword>
 </Configuration>
 ```
 * ReportServerUrl, ReportPortalUrl should be updated to the correct location 
 * ExecutionAccount and ExecutionAccountPwd should be windows users that have administrator privileges in the Reporting Services Portal
-* DatasourceSQLUser and DatasourceSQLPassword should be SQL Logins with access to the databases specfied in the data sources
+* DatasourceSQLUser and DatasourceSQLPassword should be SQL Logins with access to the databases specified in the data sources
+* ASWindowsUser and ASWindowsPassword should be windows user that is able to connect to the Analysis Services databases specified in Power BI Reports
 
 ***In order to create a SQL Server Reporting Services Load enviroment in Azure see the section Create a SSRS Load Environment in Azure*** 
 
