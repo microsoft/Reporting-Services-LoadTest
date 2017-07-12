@@ -1052,12 +1052,12 @@ namespace RSLoad
             urlAcessor.ExecuteCredentials = _executionCredentials;
             this.URLAccessor = urlAcessor;
 
-            RSPortalAccessorV1 portalAcessor = new RSPortalAccessorV1(ReportServerInformation.DefaultInformation.RestApiUrl);
+            RSPortalAccessorV1 portalAcessor = new RSPortalAccessorV1(ReportServerInformation.DefaultInformation.RestApiV1Url);
             Logging.Log("InitializeReportServerAccesors PortalAccessor is null={0}", portalAcessor == null);
             portalAcessor.ExecuteCredentials = _executionCredentials;
             this.PortalAccessorV1 = portalAcessor;
 
-            RSPortalAccessorV2 portalAcessorV2 = new RSPortalAccessorV2(ReportServerInformation.DefaultInformation.RestApiUrl);
+            RSPortalAccessorV2 portalAcessorV2 = new RSPortalAccessorV2(ReportServerInformation.DefaultInformation.RestApiV2Url);
             Logging.Log("InitializeReportServerAccesors PortalAccessor is null={0}", portalAcessor == null);
             portalAcessorV2.ExecuteCredentials = _executionCredentials;
             this.PortalAccessorV2 = portalAcessorV2;
