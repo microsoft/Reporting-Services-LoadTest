@@ -311,7 +311,7 @@ namespace RSTest.Common.ReportServer.Information
         public bool IsExecutionAccountSpecified { get; set; }
 
         /// <summary>
-        /// Execution Account 
+        /// Execution Account able to connect to Portal
         /// </summary>
         public string ExecutionAccount { get; set; }
 
@@ -320,9 +320,25 @@ namespace RSTest.Common.ReportServer.Information
         /// </summary>
         public string ExecutionAccountPwd { get; set; }
 
+        /// <summary>
+        /// SQL User Account able to connect to SQL Server Database
+        /// </summary>
         public string DatasourceSQLUser { get; set; }
 
+        /// <summary>
+        /// Associated password for above account
+        /// </summary>
         public string DatasourceSQLPassword { get; set; }
+
+        /// <summary>
+        /// Windows User able to connect to SQL Server Analysis Services
+        /// </summary>
+        public string ASWindowsUser { get; set; }
+
+        /// <summary>
+        /// Associated password for above account
+        /// </summary>
+        public string ASWindowsPassword { get; set; }
 
         #endregion
     }

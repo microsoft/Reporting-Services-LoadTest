@@ -101,6 +101,41 @@ namespace RSAccessor.PortalAccessor
             return item.Path;
         }
 
+        public void UpdateDataSourceCredentials(
+            string path,
+            string username,
+            string password,
+            bool isWindowsCredentials)
+        {
+            var ctx = CreateContext();
+            var report = ctx.CatalogItemByPath(path).Expand("DataSources").GetValue();
+
+            var powerBiReport = report as PowerBIReport;
+            if (powerBiReport != null)
+            {
+                foreach (var dataSource in powerBiReport.DataSources)
+                {
+                    dataSource.CredentialRetrieval = CredentialRetrievalType.Store;
+
+                    var credentials = dataSource.CredentialsInServer;
+                    if (credentials == null)
+                    {
+                        dataSource.CredentialsInServer = credentials = new CredentialsStoredInServer();
+                    }
+
+                    credentials.UserName = username;
+                    credentials.Password = password;
+                    credentials.UseAsWindowsCredentials = isWindowsCredentials;
+                }
+
+                powerBiReport.UpdateItemDataSources(powerBiReport.DataSources).Execute();
+                ctx.SaveChanges();
+                return;
+            }
+
+            throw new ArgumentException(String.Format("No Power BI Report found at path: {0}", path));
+        }
+
         private static bool IsConflict(Exception ex)
         {
             if (ex.InnerException is DataServiceClientException && (ex.InnerException as DataServiceClientException).StatusCode == 409)
