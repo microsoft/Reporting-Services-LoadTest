@@ -11,6 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RSAccessor.PortalAccessor;
 using RSLoad.Utilities;
 using RSAccessor.PortalAccessor.OData.Model;
+using ODataV2Model = RSAccessor.PortalAccessor.OData.V2.Model;
 using RSAccessor.SoapAccessor;
 
 namespace RSLoad
@@ -22,7 +23,6 @@ namespace RSLoad
         private const string TestFolderName = "TestFolder_{0}";
         private const string RootPath = "/";
         private const string OrderByCaluse = "$orderby";
-        private bool isPbiPublished = false;
 
         private Dictionary<string, List<string>> _badMethodReportCombinations = null;
 
@@ -116,8 +116,7 @@ namespace RSLoad
         {
             GetExistingMobileReports();
             GetExistingKpis();
-            if (isPbiPublished)
-                GetExistingPowerBIReports();
+            GetExistingPowerBIReports();
             base.PopulateReportListFromServer();
         }
 
@@ -172,7 +171,6 @@ namespace RSLoad
 
                     case ".pbix":
                         ExistingPowerBIReports.Add(reportPath);
-                        isPbiPublished = true;
                         break;
                 }
             };
@@ -305,7 +303,7 @@ namespace RSLoad
                     return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    return PortalAccessorV1.AddToCatalogItems<PowerBIReport>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
 
                 default:
                     return null;
