@@ -49,11 +49,14 @@ Update the file RSTest.Common.ReportServer.dll.Config with the Reporting Service
   <ExecutionAccountPwd>ProvideAPassword</ExecutionAccountPwd>
   <DatasourceSQLUser>ProvideASQLUser</DatasourceSQLUser>
   <DatasourceSQLPassword>ProvideASQLPassword</DatasourceSQLPassword>
+  <ASWindowsUser>contoso\ProvideAUser</ASWindowsUser>
+  <ASWindowsPassword>ProvideAPassword</ASWindowsPassword>
 </Configuration>
 ```
 * ReportServerUrl, ReportPortalUrl should be updated to the correct location 
 * ExecutionAccount and ExecutionAccountPwd should be windows users that have administrator privileges in the Reporting Services Portal
-* DatasourceSQLUser and DatasourceSQLPassword should be SQL Logins with access to the databases specfied in the data sources
+* DatasourceSQLUser and DatasourceSQLPassword should be SQL Logins with access to the databases specified in the data sources
+* ASWindowsUser and ASWindowsPassword should be windows user that is able to connect to the Analysis Services databases specified in Power BI Reports
 
 ***In order to create a SQL Server Reporting Services Load enviroment in Azure see the section Create a SSRS Load Environment in Azure*** 
 
@@ -137,9 +140,10 @@ The deployment is based on the name of the scenario , for example in MixedLoad.l
 |Scenario|Files to Deploy to the Server|
 |-------|-----------|
 |MobileTest|RuntimeResources\MobileTest|
-|Portal|RuntimeResources\Portal|
 |Paginated_Large|RuntimeResources\Paginated\Large|
 |Paginated_Small|RuntimeResources\Paginated\Small|
+|Portal|RuntimeResources\Portal|
+|PowerBI_Reports|RuntimeResources\PowerBI|
 
 The load test will create a folder in the Server with the scenario name and will deploy the Reporting Services items that are required by the tests.
 Each scenario requires a folder with the Reporting Services items to deploy.

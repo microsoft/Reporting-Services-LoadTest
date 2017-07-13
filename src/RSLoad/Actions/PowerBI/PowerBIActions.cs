@@ -38,7 +38,7 @@ namespace RSLoad
         {
             if (!testContext.Properties.Contains(SharedConstants.IsLoadTest))
             {
-                var loadTestScenariosToDeployInServer = new List<string>() { "PowerBI_Reports", "Paginated_NoDatasource" };
+                var loadTestScenariosToDeployInServer = new List<string>() { "PowerBI_Reports" };
                 var contentPlugin = new InitContentPlugin();
                 var loadTestScenarioToUse = loadTestScenariosToDeployInServer[0];
 
@@ -84,9 +84,11 @@ namespace RSLoad
             {
                 CredentialCache myCache = new CredentialCache();
                 Uri reportServerUri = new Uri(ReportServerInformation.DefaultInformation.ReportServerUrl);
-                myCache.Add(new Uri(reportServerUri.GetLeftPart(UriPartial.Authority)), "NTLM",
-                    new NetworkCredential(ReportServerInformation.DefaultInformation.ExecutionAccount,
-                        ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
+                myCache.Add(new Uri(reportServerUri.GetLeftPart(UriPartial.Authority)),
+                            "NTLM",
+                            new NetworkCredential(
+                                ReportServerInformation.DefaultInformation.ExecutionAccount,
+                                ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
                 executionCredentails = myCache;
             }
 

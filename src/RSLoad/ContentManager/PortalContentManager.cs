@@ -13,6 +13,7 @@ using RSLoad.Utilities;
 using RSAccessor.PortalAccessor.OData.Model;
 using ODataV2Model = RSAccessor.PortalAccessor.OData.V2.Model;
 using RSAccessor.SoapAccessor;
+using RSTest.Common.ReportServer.Information;
 
 namespace RSLoad
 {
@@ -170,6 +171,7 @@ namespace RSLoad
                         break;
 
                     case ".pbix":
+                        UpdatePBIReportDataSourceCredentials(reportPath);
                         ExistingPowerBIReports.Add(reportPath);
                         break;
                 }
@@ -378,6 +380,14 @@ namespace RSLoad
                 .CatalogItems
                 .AddQueryOption(OrderByCaluse, "name ASC")
                 .OfType<T>();
+        }
+
+        private void UpdatePBIReportDataSourceCredentials(string path)
+        {
+            PortalAccessorV2.UpdateDataSourceCredentials(path,
+                ReportServerInformation.DefaultInformation.ASWindowsUser,
+                ReportServerInformation.DefaultInformation.ASWindowsPassword,
+                isWindowsCredentials: true);
         }
     }
 }
