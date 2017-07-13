@@ -107,29 +107,47 @@ namespace RSAccessor.PortalAccessor
             string password,
             bool isWindowsCredentials)
         {
+            if (String.IsNullOrEmpty(path))
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            if (String.IsNullOrEmpty(username))
+            {
+                throw new ArgumentNullException("username");
+            }
+
+            if (String.IsNullOrEmpty(password))
+            {
+                throw new ArgumentNullException("password");
+            }
+
             var ctx = CreateContext();
             var report = ctx.CatalogItemByPath(path).Expand("DataSources").GetValue();
 
             var powerBiReport = report as PowerBIReport;
             if (powerBiReport != null)
             {
-                foreach (var dataSource in powerBiReport.DataSources)
+                if (powerBiReport.DataSources != null)
                 {
-                    dataSource.CredentialRetrieval = CredentialRetrievalType.Store;
-
-                    var credentials = dataSource.CredentialsInServer;
-                    if (credentials == null)
+                    foreach (var dataSource in powerBiReport.DataSources)
                     {
-                        dataSource.CredentialsInServer = credentials = new CredentialsStoredInServer();
+                        dataSource.CredentialRetrieval = CredentialRetrievalType.Store;
+
+                        var credentials = dataSource.CredentialsInServer;
+                        if (credentials == null)
+                        {
+                            dataSource.CredentialsInServer = credentials = new CredentialsStoredInServer();
+                        }
+
+                        credentials.UserName = username;
+                        credentials.Password = password;
+                        credentials.UseAsWindowsCredentials = isWindowsCredentials;
                     }
 
-                    credentials.UserName = username;
-                    credentials.Password = password;
-                    credentials.UseAsWindowsCredentials = isWindowsCredentials;
+                    powerBiReport.UpdateItemDataSources(powerBiReport.DataSources).Execute();
                 }
 
-                powerBiReport.UpdateItemDataSources(powerBiReport.DataSources).Execute();
-                ctx.SaveChanges();
                 return;
             }
 

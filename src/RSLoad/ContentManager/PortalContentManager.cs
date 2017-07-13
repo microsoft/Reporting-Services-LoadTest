@@ -171,7 +171,7 @@ namespace RSLoad
                         break;
 
                     case ".pbix":
-                        UpdataPBIReportDataSourceCredentials(reportPath);
+                        UpdatePBIReportDataSourceCredentials(reportPath);
                         ExistingPowerBIReports.Add(reportPath);
                         break;
                 }
@@ -382,7 +382,7 @@ namespace RSLoad
                 .OfType<T>();
         }
 
-        private void UpdataPBIReportDataSourceCredentials(string path)
+        private void UpdatePBIReportDataSourceCredentials(string path)
         {
             PortalAccessorV2.UpdateDataSourceCredentials(path,
                 ReportServerInformation.DefaultInformation.ASWindowsUser,
