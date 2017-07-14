@@ -129,7 +129,7 @@
         "artifactsBaseUrl": "",
         "description": "URL to acquire other templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/Microsoft/Reporting-Services-LoadTest/master/ArmTemplate/Resources"
+      "defaultValue": "https://raw.githubusercontent.com/Microsoft/Reporting-Services-LoadTest/jtarquino/deploy/ArmTemplate/Resources"
     },
     "storageAccountType": {
       "type": "string",
@@ -281,7 +281,7 @@
     "domainJoinConfigurationFunction": "ConfigureDomainJoin.ps1\\ConfigureDomainJoin",
     "sqlPrepareModulesURL": "[concat(variables('assetLocation'),'/PrepareSqlServer.ps1.zip')]",
     "sqlPreparationFunction": "PrepareSqlServer.ps1\\PrepareSqlServer",
-    "ssrsPreparationFunction": "PrepareSsrsServer.ps1\\PrepareSsrsServer",
+    "ssrsPreparationFunction": "PrepareVmForDomain.ps1\\PrepareVmForDomain",
     "SettingUpSsrsIPUrl": "[concat(parameters('baseUrl'),'/publicip-new.json')]",
     "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount.json')]",
     "creatingPublicIPsUrl": "[concat(parameters('baseUrl'),'/creatingPublicIPs.json')]",
@@ -828,6 +828,9 @@
           },
           "vmImageSKU": {
             "value": "[parameters('ssrsImageVersion')]"
+          },
+          "DNSServerAddress": {
+            "value": "[parameters('adNicIPAddress')]"
           }
         }
       }
@@ -884,6 +887,9 @@
           },
           "vmImageSKU": {
             "value": "[parameters('ssrsImageVersion')]"
+          },
+          "DNSServerAddress": {
+            "value": "[parameters('adNicIPAddress')]"
           }
         }
       }
@@ -895,7 +901,8 @@
       "dependsOn": [
         "Microsoft.Resources/deployments/ProvisioningADDomainController",
         "Microsoft.Resources/deployments/ProvisioningSQLServerVM",
-        "Microsoft.Resources/deployments/ProvisioningSsrsVM"
+        "Microsoft.Resources/deployments/ProvisioningSsrsVM",
+        "Microsoft.Resources/deployments/ProvisioningSsrsVM2"
       ],
       "properties": {
         "mode": "Incremental",

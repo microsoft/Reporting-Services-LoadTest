@@ -9,22 +9,22 @@
       "value": "admin123"
     },
     "adminPassword": {
-      "value": "ProvideAPassword"
+      "value": "Conejo20002000"
     },
     "sqlServerServiceAccountUserName": {
       "value": "admin123sql"
     },
     "sqlServerServiceAccountPassword": {
-      "value": "ProvideAPassword"
+      "value": "Conejo20002000"
     },
     "sqlServerSAUserName": {
       "value": "performance"
     },
     "sqlServerSAPassword": {
-      "value": "ProvideAPassword"
+      "value": "Conejo20002000"
     },
     "ssrsDNSPrefix": {
-      "value": "ssrsrtm"
+      "value": "jaimetapbi5"
     },
     "adVMSize": {
       "value": "Standard_DS2_v2"
@@ -36,16 +36,13 @@
       "value": "Standard_DS4_v2"
     },
     "sqlImageVersion": {
-      "value": "SQL2016-WS2016"
+      "value": "SQL2016SP1-WS2016"
     },
     "sqlImageSKU": {
       "value": "Enterprise"
     },
     "ssrsImageVersion": {
-      "value": "SQL2016-WS2016"
-    },
-    "ssrsImageSKU": {
-      "value": "Enterprise"
+      "value": "2016-Datacenter"
     }
   }
 }
