@@ -161,23 +161,12 @@
     },
     "ssrsImageVersion": {
       "type": "string",
-      "defaultValue": "SQL2016-WS2016",
+      "defaultValue": "2016-Datacenter",
       "metadata": {
-        "description": "The SQL Image for the VM. This will pick a fully patched image of this given SQL Image"
+        "description": "The version of the OS for for PBIRS"
       }
     },
-    "ssrsImageSKU": {
-      "type": "string",
-      "defaultValue": "Enterprise",
-      "allowedValues": [
-        "Enterprise",
-        "Evaluation"
-      ],
-      "metadata": {
-        "description": "The SQL SKU, for SQL CTP Versions the only available is evaluation"
-      }
-    },
-    "DCImageVersion": {
+   "DCImageVersion": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
       "metadata": {
@@ -292,7 +281,7 @@
     "domainJoinConfigurationFunction": "ConfigureDomainJoin.ps1\\ConfigureDomainJoin",
     "sqlPrepareModulesURL": "[concat(variables('assetLocation'),'/PrepareSqlServer.ps1.zip')]",
     "sqlPreparationFunction": "PrepareSqlServer.ps1\\PrepareSqlServer",
-    "ssrsPreparationFunction": "PrepareSsrsServer.ps1\\PrepareSsrsServer",
+    "ssrsPreparationFunction": "PrepareVmForDomain.ps1\\PrepareVmForDomain",
     "SettingUpSsrsIPUrl": "[concat(parameters('baseUrl'),'/publicip-new.json')]",
     "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount.json')]",
     "creatingPublicIPsUrl": "[concat(parameters('baseUrl'),'/creatingPublicIPs.json')]",
@@ -796,20 +785,20 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[variables('ProvisioningSQLUrl')]",
+          "uri": "[variables('provisioningCleanMachineForPBIRS')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "location": {
             "value": "[resourceGroup().location]"
           },
-          "sqlVMName": {
+          "vmName": {
             "value": "[variables('ssrsVMName')]"
           },
-          "sqlVMSize": {
+          "vmSize": {
             "value": "[parameters('ssrsVMSize')]"
           },
-          "sqlAvailabilitySetName": {
+          "vmAvailabilitySetName": {
             "value": "[variables('ssrsAvailabilitySetName')]"
           },
           "adminUsername": {
@@ -821,26 +810,20 @@
           "storageAccountNamePrefix": {
             "value": "[variables('storageAccountName')]"
           },
-          "sqlDataDisk": {
+          "vmDataDisk": {
             "value": "[variables('ssrsDataDisk')]"
           },
-          "sqlDataDiskSize": {
-            "value": "[variables('ssrsDataDiskSize')]"
-          },
-          "sqlLogDisk": {
-            "value": "[variables('ssrsLogDisk')]"
-          },
-          "sqlLogDiskSize": {
-            "value": "[variables('ssrsLogDiskSize')]"
-          },
-          "sqlNicName": {
+          "vmNicName": {
             "value": "[variables('ssrsNicName')]"
           },
-          "sqlPrepareModulesURL": {
+          "vmModulesURL": {
             "value": "[variables('sqlPrepareModulesURL')]"
           },
-          "sqlPreparationFunction": {
+          "vmConfigurationFunction": {
             "value": "[variables('ssrsPreparationFunction')]"
+          },
+          "vmImageSKU": {
+            "value": "[parameters('ssrsImageVersion')]"
           },
           "DNSServerAddress": {
             "value": "[parameters('adNicIPAddress')]"
