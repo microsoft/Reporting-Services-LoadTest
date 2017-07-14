@@ -37,6 +37,9 @@
     },
     "vmImageSKU": {
       "type": "string"
+    },
+    "DNSServerAddress": {
+      "type": "string"
     }
   },
   "resources": [
@@ -99,39 +102,34 @@
           }
         }
       },
-      //"resources": [
-      //  {
-      //    "type": "Microsoft.Compute/virtualMachines/extensions",
-      //    "name": "[concat(parameters('vmName'),'/InstallPBIRs')]",
-      //    "apiVersion": "2015-06-15",
-      //    "location": "[parameters('location')]",
-      //    "dependsOn": [
-      //      "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
-      //    ],
-      //    "properties": {
-      //      "publisher": "Microsoft.Powershell",
-      //      "type": "DSC",
-      //      "typeHandlerVersion": "2.21",
-      //      "autoUpgradeMinorVersion": false,
-      //      "settings": {
-      //        "ModulesUrl": "[parameters('vmModulesURL')]",
-      //        "wmfVersion": "5.0",
-      //        "ConfigurationFunction": "[parameters('vmConfigurationFunction')]",
-      //        "Properties": {
-      //          "AdminCreds": {
-      //            "UserName": "[parameters('adminUserName')]",
-      //            "Password": "PrivateSettingsRef:AdminPassword"
-      //          }
-      //        }
-      //      },
-      //      "protectedSettings": {
-      //        "Items": {
-      //          "AdminPassword": "[parameters('adminPassword')]"
-      //        }
-      //      }
-      //    }
-      //  }
-      //]
+      "resources": [
+        {
+          "type": "Microsoft.Compute/virtualMachines/extensions",
+          "name": "[concat(parameters('vmName'),'/PrepareToJoinDomain')]",
+          "apiVersion": "2015-06-15",
+          "location": "[parameters('location')]",
+          "dependsOn": [
+            "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
+          ],
+          "tags": {
+            "displayName": "PrepareVMForDomain"
+          },
+          "properties": {
+            "publisher": "Microsoft.Powershell",
+            "type": "DSC",
+            "typeHandlerVersion": "2.21",
+            "autoUpgradeMinorVersion": true,
+            "settings": {
+              "ModulesUrl": "[parameters('vmModulesURL')]",
+              "wmfVersion": "5.0",
+              "ConfigurationFunction": "[parameters('vmConfigurationFunction')]",
+              "Properties": {
+                "DNSServer": "[parameters('DNSServerAddress')]"
+              }
+            }
+          }
+        }
+      ]
     }
   ],
   "outputs": {}
