@@ -179,10 +179,10 @@
               ],
               "loadBalancerInboundNatRules": [
                 {
-                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'))]"
+                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'),'2')]"
                 },
                 {
-                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'))]"
+                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'),'2')]"
                 }
               ]
             }

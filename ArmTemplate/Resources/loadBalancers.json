@@ -88,6 +88,30 @@
               "backendPort": 80,
               "enableFloatingIP": false
             }
+          },
+          {
+            "name": "[concat(parameters('RDPNAT'), '2')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          },
+          {
+            "name": "[concat(parameters('ssrsWebNAT'), '2')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 80,
+              "backendPort": 80,
+              "enableFloatingIP": false
+            }
           }
         ]
       }
