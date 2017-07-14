@@ -9,22 +9,22 @@
       "value": "admin123"
     },
     "adminPassword": {
-      "value": "Conejo20002000"
+      "value": "ProvideAPassword"
     },
     "sqlServerServiceAccountUserName": {
       "value": "admin123sql"
     },
     "sqlServerServiceAccountPassword": {
-      "value": "Conejo20002000"
+      "value": "ProvideAPassword"
     },
     "sqlServerSAUserName": {
       "value": "performance"
     },
     "sqlServerSAPassword": {
-      "value": "Conejo20002000"
+      "value": "ProvideAPassword"
     },
     "ssrsDNSPrefix": {
-      "value": "jaimetapbi8"
+      "value": "ssrsrtm"
     },
     "adVMSize": {
       "value": "Standard_DS2_v2"

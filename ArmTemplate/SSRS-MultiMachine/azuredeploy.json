@@ -292,6 +292,7 @@
     "creatingNICSUrl": "[concat(parameters('baseUrl'),'/creatingNICS.json')]",
     "ProvisioningADDomainControllerUrl": "[concat(parameters('baseUrl'),'/provisioningDomainController.json')]",
     "ProvisioningSQLUrl": "[concat(parameters('baseUrl'),'/provisioningSQL.json')]",
+    "provisioningCleanMachineForPBIRS": "[concat(parameters('baseUrl'),'/provisioningCleanMachineForPBIRS.json')]",
     "configuringSQLUrl": "[concat(parameters('baseUrl'),'/configuringSQL.json')]",
     "configuringSsrsUrl": "[concat(parameters('baseUrl'),'/configuringSsrs.json')]",
     "configuringDomainJoinUrl": "[concat(parameters('baseUrl'),'/joinDomainSQLVm.json')]",
@@ -827,12 +828,6 @@
           },
           "DNSServerAddress": {
             "value": "[parameters('adNicIPAddress')]"
-          },
-          "sqlImageVersion": {
-            "value": "[parameters('ssrsImageVersion')]"
-          },
-          "sqlImageSKU": {
-            "value": "[parameters('ssrsImageSKU')]"
           }
         }
       }
