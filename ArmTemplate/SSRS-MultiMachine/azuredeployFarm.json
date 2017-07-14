@@ -544,6 +544,9 @@
           "spNicName2": {
             "value": "[concat(variables('ssrsNicName'), '2')]"
           },
+          "spNicName3": {
+            "value": "[concat(variables('ssrsNicName'), '3')]"
+          },
           "spSubnetRef": {
             "value": "[variables('ssrsSubnetRef')]"
           },
@@ -895,6 +898,65 @@
       }
     },
     {
+      "name": "ProvisioningSsrsVM3",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/SettingUpStorageAccount",
+        "Microsoft.Resources/deployments/CreatingNetworkInterfaces",
+        "Microsoft.Resources/deployments/CreatingAvailabilitySets",
+        "Microsoft.Resources/deployments/SettingUpLoadBalancers"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('provisioningCleanMachineForPBIRS')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "location": {
+            "value": "[resourceGroup().location]"
+          },
+          "vmName": {
+            "value": "[concat(variables('ssrsVMName'), '3')]"
+          },
+          "vmSize": {
+            "value": "[parameters('ssrsVMSize')]"
+          },
+          "vmAvailabilitySetName": {
+            "value": "[variables('ssrsAvailabilitySetName')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "storageAccountNamePrefix": {
+            "value": "[variables('storageAccountName')]"
+          },
+          "vmDataDisk": {
+            "value": "[concat(variables('ssrsDataDisk'), '3')]"
+          },
+          "vmNicName": {
+            "value": "[concat(variables('ssrsNicName'), '3')]"
+          },
+          "vmModulesURL": {
+            "value": "[variables('sqlPrepareModulesURL')]"
+          },
+          "vmConfigurationFunction": {
+            "value": "[variables('ssrsPreparationFunction')]"
+          },
+          "vmImageSKU": {
+            "value": "[parameters('ssrsImageVersion')]"
+          },
+          "DNSServerAddress": {
+            "value": "[parameters('adNicIPAddress')]"
+          }
+        }
+      }
+    },
+    {
       "name": "UpdatingDNStoPrimaryADVM",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
@@ -902,7 +964,8 @@
         "Microsoft.Resources/deployments/ProvisioningADDomainController",
         "Microsoft.Resources/deployments/ProvisioningSQLServerVM",
         "Microsoft.Resources/deployments/ProvisioningSsrsVM",
-        "Microsoft.Resources/deployments/ProvisioningSsrsVM2"
+        "Microsoft.Resources/deployments/ProvisioningSsrsVM2",
+        "Microsoft.Resources/deployments/ProvisioningSsrsVM3"
       ],
       "properties": {
         "mode": "Incremental",
@@ -1085,6 +1148,44 @@
         "parameters": {
           "vmName": {
             "value": "[concat(variables('ssrsVMName'), '2')]"
+          },
+          "location": {
+            "value": "[resourceGroup().location]"
+          },
+          "domainJoinConfgureModulesURL": {
+            "value": "[variables('sqlConfigureModulesURL')]"
+          },
+          "domainJoinConfigurationFunction": {
+            "value": "[variables('domainJoinConfigurationFunction')]"
+          },
+          "domainName": {
+            "value": "[parameters('domainName')]"
+          },
+          "adminUserName": {
+            "value": "[parameters('adminUserName')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "DomainJoinSsrsVm3",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/ConfiguringSQLServerVM"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('configuringDomainJoinUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "vmName": {
+            "value": "[concat(variables('ssrsVMName'), '3')]"
           },
           "location": {
             "value": "[resourceGroup().location]"

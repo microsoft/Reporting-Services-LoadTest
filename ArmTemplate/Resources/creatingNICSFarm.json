@@ -38,6 +38,9 @@
     "spNicName2": {
       "type": "string"
     },
+    "spNicName3": {
+      "type": "string"
+    },
     "spSubnetRef": {
       "type": "string"
     },
@@ -145,14 +148,6 @@
                   "id": "[concat(parameters('splbResourceId'),'/backendAddressPools/',parameters('LBBE'))]"
                 }
               ]
-              //"loadBalancerInboundNatRules": [
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'))]"
-              //  },
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'))]"
-              //  }
-              //]
             }
           }
         ]
@@ -177,14 +172,30 @@
                   "id": "[concat(parameters('splbResourceId'),'/backendAddressPools/',parameters('LBBE'))]"
                 }
               ]
-              //"loadBalancerInboundNatRules": [
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'),'2')]"
-              //  },
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'),'2')]"
-              //  }
-              //]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "[parameters('spNicName3')]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[parameters('location')]",
+      "apiVersion": "2015-06-15",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[parameters('spSubnetRef')]"
+              },
+              "loadBalancerBackendAddressPools": [
+                {
+                  "id": "[concat(parameters('splbResourceId'),'/backendAddressPools/',parameters('LBBE'))]"
+                }
+              ]
             }
           }
         ]
