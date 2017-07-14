@@ -64,36 +64,29 @@
             "name": "[parameters('LBBE')]"
           }
         ],
-        "loadBalancingRules": [
+        "inboundNatRules": [
           {
-            "name": "HTTP",
+            "name": "[parameters('RDPNAT')]",
             "properties": {
               "frontendIPConfiguration": {
                 "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
               },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          },
+          {
+            "name": "[parameters('ssrsWebNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
               "frontendPort": 80,
               "backendPort": 80,
-              "enableFloatingIP": false,
-              "idleTimeoutInMinutes": 4,
-              "protocol": "Tcp",
-              "loadDistribution": "Default",
-              "backendAddressPool": {
-                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/backendAddressPools/',parameters('LBBE'))]"
-              },
-              "probe": {
-                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ssrslbName')), '/probes/','httpProbe')]"
-              }
-            }
-          }
-        ],
-        "probes": [
-          {
-            "name": "httpProbe",
-            "properties": {
-              "protocol": "Tcp",
-              "port": 80,
-              "intervalInSeconds": 5,
-              "numberOfProbes": 2
+              "enableFloatingIP": false
             }
           }
         ]

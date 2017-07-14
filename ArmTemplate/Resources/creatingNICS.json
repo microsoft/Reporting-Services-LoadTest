@@ -35,9 +35,6 @@
     "spNicName": {
       "type": "string"
     },
-    "spNicName2": {
-      "type": "string"
-    },
     "spSubnetRef": {
       "type": "string"
     },
@@ -144,47 +141,15 @@
                 {
                   "id": "[concat(parameters('splbResourceId'),'/backendAddressPools/',parameters('LBBE'))]"
                 }
-              ]
-              //"loadBalancerInboundNatRules": [
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'))]"
-              //  },
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'))]"
-              //  }
-              //]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "name": "[parameters('spNicName2')]",
-      "type": "Microsoft.Network/networkInterfaces",
-      "location": "[parameters('location')]",
-      "apiVersion": "2015-06-15",
-      "properties": {
-        "ipConfigurations": [
-          {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "subnet": {
-                "id": "[parameters('spSubnetRef')]"
-              },
-              "loadBalancerBackendAddressPools": [
+              ],
+              "loadBalancerInboundNatRules": [
                 {
-                  "id": "[concat(parameters('splbResourceId'),'/backendAddressPools/',parameters('LBBE'))]"
+                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'))]"
+                },
+                {
+                  "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'))]"
                 }
               ]
-              //"loadBalancerInboundNatRules": [
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('RDPNAT'),'2')]"
-              //  },
-              //  {
-              //    "id": "[concat(parameters('splbResourceId'),'/inboundNatRules/',parameters('spWebNAT'),'2')]"
-              //  }
-              //]
             }
           }
         ]
