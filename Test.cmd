@@ -1,1 +1,1 @@
-mstest /testcontainer:src\RSLoad\bin\debug\RSLoad.dll /testsettings:RSLoadTest.testsettings /Category:"!LongDuration&!MinutesDuration&!PBI&!DependsOnDatasource"
+REM mstest /testcontainer:src\RSLoad\bin\debug\RSLoad.dll /testsettings:RSLoadTest.testsettings /Category:"!LongDuration&!MinutesDuration&!PBI&!DependsOnDatasource"
