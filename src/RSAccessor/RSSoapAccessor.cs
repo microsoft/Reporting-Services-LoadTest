@@ -16,7 +16,7 @@ namespace RSAccessor.SoapAccessor
     {
         public RSEndPointInfo()
         {
-            Url = "http://localhost/ReportServer";
+            Url = "http://localhost/ReportServer"
             EndPoint = "ReportingServices2010";
         }
 
