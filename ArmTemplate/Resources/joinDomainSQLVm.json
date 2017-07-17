@@ -28,7 +28,7 @@
   "resources": [
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('vmName'),'/CreateSQLServer')]",
+      "name": "[concat(parameters('vmName'),'/JoinDomain')]",
       "apiVersion": "2015-06-15",
       "location": "[parameters('location')]",
       "properties": {

@@ -42,10 +42,7 @@
       "value": "Enterprise"
     },
     "ssrsImageVersion": {
-      "value": "SQL2016SP1-WS2016"
-    },
-    "ssrsImageSKU": {
-      "value": "Enterprise"
+      "value": "2016-Datacenter"
     }
   }
 }
