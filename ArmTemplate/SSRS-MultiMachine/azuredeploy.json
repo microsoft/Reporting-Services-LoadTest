@@ -840,7 +840,8 @@
       "dependsOn": [
         "Microsoft.Resources/deployments/ProvisioningADDomainController",
         "Microsoft.Resources/deployments/ProvisioningSQLServerVM",
-        "Microsoft.Resources/deployments/ProvisioningSsrsVM"
+        "Microsoft.Resources/deployments/ProvisioningSsrsVM",
+        "Microsoft.Resources/deployments/ProvisioningSQLDasourceServerVM"        
       ],
       "properties": {
         "mode": "Incremental",
@@ -924,7 +925,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "Microsoft.Resources/deployments/UpdatingDNStoPrimaryADVM"
+        "Microsoft.Resources/deployments/UpdatingDNStoPrimaryADVM",
+        "Microsoft.Resources/deployments/ConfiguringSQLServerVM"
       ],
       "properties": {
         "mode": "Incremental",
