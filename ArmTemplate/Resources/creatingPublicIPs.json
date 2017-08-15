@@ -47,8 +47,9 @@
       "location": "[parameters('location')]",
       "properties": {
         "publicIPAllocationMethod": "[parameters('publicIPAddressType')]"
-      },
-      {
+      }
+    },
+    {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[parameters('oospublicIPAddressName')]",
