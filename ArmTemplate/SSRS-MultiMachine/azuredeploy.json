@@ -44,6 +44,13 @@
       },
       "defaultValue": "10.0.3.0/24"
     },
+    "oosSubnet": {
+      "type": "string",
+      "metadata": {
+        "description": "The address range of the OOS subnet created in the new VNET"
+      },
+      "defaultValue": "10.0.4.0/24"
+    },
     "adNicIPAddress": {
       "type": "string",
       "metadata": {
@@ -81,6 +88,13 @@
       "type": "string",
       "metadata": {
         "description": "The size of the SSRS VM Created"
+      },
+      "defaultValue": "Standard_DS3"
+    },
+    "oosVMSize": {
+      "type": "string",
+      "metadata": {
+        "description": "The size of the OOS VM Created"
       },
       "defaultValue": "Standard_DS3"
     },
@@ -166,13 +180,13 @@
         "description": "The version of the OS for for PBIRS"
       }
     },
-   "DCImageVersion": {
+    "DCImageVersion": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
       "metadata": {
         "description": "The version of the OS for the Domain Controller"
       }
-    },	
+    }
   },
   "variables": {
     "assetLocation": "[concat(parameters('baseURL'),'/dsc')]",
@@ -180,6 +194,7 @@
     "catalogVMName": "ssrs-catalog",
     "datasourceVMName": "ssrs-datasource",
     "ssrsVMName": "ssrs-rs",
+    "oosVMName": "ssrs-oos",
     "LBFE": "LBFE",
     "LBBE": "LBBE",
     "RDPNAT": "RDP",
@@ -188,23 +203,28 @@
     "sqlSubnetName": "sqlSubnet",
     "sqldatasourceSubnetName": "sqldatasourceSubnet",
     "ssrsSubnetName": "ssrsSubnet",
+    "oosSubnetName": "oosSubnet",
     "adNicName": "adNic",
     "sqlNicName": "sqlNic",
     "ssrsNicName": "ssrsNic",
     "sqldatasourceNicName": "datasourceNic",
+    "oosNicName": "oosNic",
     "VnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
     "adSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('adSubnetName'))]",
     "sqlSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('sqlSubnetName'))]",
     "sqldatasourceSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('sqldatasourceSubnetName'))]",
     "ssrsSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('ssrsSubnetName'))]",
+    "oosSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('oosSubnetName'))]",
     "adNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('adNicName'))]",
     "sqlNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('sqlNicName'))]",
     "ssrsNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('ssrsNicName'))]",
     "sqldatasourceNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('sqldatasourceNicName'))]",
+    "oosNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('oosNicName'))]",
     "adLBName": "adLoadBalancer",
     "sqlLBName": "sqlLoadBalancer",
     "sqldatasourceLBName": "sqldatasourceLoadBalancer",
     "ssrsLBName": "ssrsLoadBalancer",
+    "oosLBName": "oosLoadBalancer",
     "adIPConfigID": "[concat(variables('adNicId'),'/ipConfigurations/ipconfig1')]",
     "adlbID": "[resourceId('Microsoft.Network/loadBalancers',variables('adLBName'))]",
     "adlbFEConfigID": "[concat(variables('adlbID'),'/frontendIPConfigurations/',variables('LBFE'))]",
@@ -219,6 +239,10 @@
     "sqldatasourceRDPNATRuleID": "[concat(variables('sqldatasourcelbID'),'/inboundNatRules/',variables('RDPNAT'))]",
     "sqldatasourceBEAddressPoolID": "[concat(variables('sqldatasourcelbID'),'/backendAddressPools/',variables('LBBE'))]",
     "ssrsIPConfigID": "[concat(variables('ssrsNicId'),'/ipConfigurations/ipconfig1')]",
+    "oosIPConfigID": "[concat(variables('oosNicId'),'/ipConfigurations/ipconfig1')]",
+    "ooslbID": "[resourceId('Microsoft.Network/loadBalancers',variables('oosLBName'))]",
+    "oosRDPNATRuleID": "[concat(variables('ooslbID'),'/inboundNatRules/',variables('RDPNAT'))]",
+    "oosBEAddressPoolID": "[concat(variables('ooslbID'),'/backendAddressPools/',variables('LBBE'))]",
     "adDataDisk": "ADDataDisk",
     "adDataDiskSize": 1000,
     "sqlDataDisk": "SQLDataDisk",
@@ -231,13 +255,17 @@
     "ssrsDataDiskSize": 100,
     "ssrsLogDisk": "SsrsLogDisk",
     "ssrsLogDiskSize": 100,
+    "oosDataDisk": "OOSDataDisk",
+    "oosDataDiskSize": 1000,
     "adpublicIPAddressName": "adpublicIP",
     "sqlpublicIPAddressName": "sqlpublicIP",
     "sqldatasourcepublicIPAddressName": "sqldatasourcepublicIP",
+    "oospublicIPAddressName": "oospublicIP",
     "ssrsAvailabilitySetName": "ssrsAvailabilitySet",
     "sqlAvailabilitySetName": "sqlAvailabilitySet",
     "sqldatasourceAvailabilitySetName": "sqldatasourceAvailabilitySet",
     "adAvailabilitySetName": "adAvailabilitySet",
+    "oosAvailabilitySetName": "oosAvailabilitySet",
     "publicIPAddressType": "Dynamic",
     "ssrspublicIPAddressName": "ssrsPublicIp",
     "datasourceLocalFolder": "F:\\PerfDatabase",
@@ -269,6 +297,12 @@
         "name": "[variables('sqldatasourceSubnetName')]",
         "properties": {
           "addressPrefix": "[parameters('sqldatasourceSubnet')]"
+        }
+      },
+      {
+        "name": "[variables('oosSubnetName')]",
+        "properties": {
+          "addressPrefix": "[parameters('oosSubnet')]"
         }
       }
     ],
@@ -345,6 +379,9 @@
           "sqldatasourcepublicIPAddressName": {
             "value": "[variables('sqldatasourcepublicIPAddressName')]"
           },
+          "oospublicIPAddressName": {
+            "value": "[variables('oospublicIPAddressName')]"
+          },
           "publicIPAddressType": {
             "value": "[variables('publicIPAddressType')]"
           }
@@ -376,6 +413,9 @@
           },
           "sqldatasourceAvailabilitySetName": {
             "value": "[variables('sqldatasourceAvailabilitySetName')]"
+          },
+          "oosAvailabilitySetName": {
+            "value": "[variables('oosAvailabilitySetName')]"
           }
         }
       }
@@ -462,6 +502,9 @@
           "sqldatasourcelbName": {
             "value": "[variables('sqldatasourceLBName')]"
           },
+          "ooslbName": {
+            "value": "[variables('oosLBName')]"
+          },
           "LBFE": {
             "value": "[variables('LBFE')]"
           },
@@ -488,6 +531,9 @@
           },
           "sqldatasourcePublicIpResourceId": {
             "value": "[reference('SettingUpPublicIPs').outputs.sqlPublicDatasourceIpResourceId.value]"
+          },
+          "oosPublicIpResourceId": {
+            "value": "[reference('SettingUpPublicIPs').outputs.oosPublicIpResourceId.value]"
           }
         }
       }
@@ -567,8 +613,19 @@
           },
           "sqldatasourceRDPNATRuleID": {
             "value": "[variables('sqldatasourceRDPNATRuleID')]"
+          },
+          "oosNicName": {
+            "value": "[variables('oosNicName')]"
+          },
+          "oosSubnetRef": {
+            "value": "[variables('oosSubnetRef')]"
+          },
+          "oosBEAddressPoolID": {
+            "value": "[variables('oosBEAddressPoolID')]"
+          },
+          "oosRDPNATRuleID": {
+            "value": "[variables('oosRDPNATRuleID')]"
           }
-
         }
       }
     },
@@ -627,7 +684,7 @@
           },
           "DCImageVersion": {
             "value": "[parameters('DCImageVersion')]"
-          }		  
+          }
         }
       }
     },
@@ -832,7 +889,65 @@
         }
       }
     },
-
+    {
+      "name": "ProvisioningOosVM",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/SettingUpStorageAccount",
+        "Microsoft.Resources/deployments/CreatingNetworkInterfaces",
+        "Microsoft.Resources/deployments/CreatingAvailabilitySets",
+        "Microsoft.Resources/deployments/SettingUpLoadBalancers"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('provisioningCleanMachineForPBIRS')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "location": {
+            "value": "[resourceGroup().location]"
+          },
+          "vmName": {
+            "value": "[variables('oosVMName')]"
+          },
+          "vmSize": {
+            "value": "[parameters('oosVMSize')]"
+          },
+          "vmAvailabilitySetName": {
+            "value": "[variables('oosAvailabilitySetName')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "storageAccountNamePrefix": {
+            "value": "[variables('storageAccountName')]"
+          },
+          "vmDataDisk": {
+            "value": "[variables('oosDataDisk')]"
+          },
+          "vmNicName": {
+            "value": "[variables('oosNicName')]"
+          },
+          "vmModulesURL": {
+            "value": "[variables('sqlPrepareModulesURL')]"
+          },
+          "vmConfigurationFunction": {
+            "value": "[variables('ssrsPreparationFunction')]"
+          },
+          "vmImageSKU": {
+            "value": "[parameters('ssrsImageVersion')]"
+          },
+          "DNSServerAddress": {
+            "value": "[parameters('adNicIPAddress')]"
+          }
+        }
+      }
+    },
     {
       "name": "UpdatingDNStoPrimaryADVM",
       "type": "Microsoft.Resources/deployments",
@@ -841,7 +956,7 @@
         "Microsoft.Resources/deployments/ProvisioningADDomainController",
         "Microsoft.Resources/deployments/ProvisioningSQLServerVM",
         "Microsoft.Resources/deployments/ProvisioningSsrsVM",
-        "Microsoft.Resources/deployments/ProvisioningSQLDasourceServerVM"        
+        "Microsoft.Resources/deployments/ProvisioningSQLDasourceServerVM"
       ],
       "properties": {
         "mode": "Incremental",

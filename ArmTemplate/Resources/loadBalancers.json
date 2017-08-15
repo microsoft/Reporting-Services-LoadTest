@@ -35,10 +35,16 @@
     "sqldatasourcelbName": {
       "type": "string"
     },
+    "ooslbName": {
+      "type": "string"
+    },
     "sqlPublicIpResourceId": {
       "type": "string"
     },
     "sqldatasourcePublicIpResourceId": {
+      "type": "string"
+    },
+    "oosPublicIpResourceId": {
       "type": "string"
     }
   },
@@ -202,6 +208,43 @@
           }
         ]
       }
+    },
+    {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('ooslbName')]",
+      "type": "Microsoft.Network/loadBalancers",
+      "location": "[parameters('location')]",
+      "properties": {
+        "frontendIPConfigurations": [
+          {
+            "name": "[parameters('LBFE')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('oosPublicIpResourceId')]"
+              }
+            }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "[parameters('LBBE')]"
+          }
+        ],
+        "inboundNatRules": [
+          {
+            "name": "[parameters('RDPNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ooslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 3389,
+              "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          }
+        ]
+      }
     }
   ],
   "outputs": {
@@ -219,6 +262,10 @@
     },
     "sqldatasourcelbID": {
       "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('sqldatasourcelbName'))]",
+      "type": "string"
+    },
+    "ooslbID": {
+      "value": "[resourceId('Microsoft.Network/loadBalancers',parameters('ooslbName'))]",
       "type": "string"
     }
   }

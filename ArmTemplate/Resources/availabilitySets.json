@@ -16,6 +16,9 @@
     },
     "sqldatasourceAvailabilitySetName": {
       "type": "string"
+    },
+    "oosAvailabilitySetName": {
+      "type": "string"
     }
   },
   "resources": [
@@ -40,6 +43,12 @@
     {
       "type": "Microsoft.Compute/availabilitySets",
       "name": "[parameters('sqldatasourceAvailabilitySetName')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]"
+    },
+    {
+      "type": "Microsoft.Compute/availabilitySets",
+      "name": "[parameters('oosAvailabilitySetName')]",
       "apiVersion": "2015-06-15",
       "location": "[parameters('location')]"
     }
