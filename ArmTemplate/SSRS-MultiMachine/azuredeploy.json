@@ -203,6 +203,7 @@
     "sqlSubnetName": "sqlSubnet",
     "sqldatasourceSubnetName": "sqldatasourceSubnet",
     "ssrsSubnetName": "ssrsSubnet",
+    "oosWebNAT": "oosWeb",
     "oosSubnetName": "oosSubnet",
     "adNicName": "adNic",
     "sqlNicName": "sqlNic",
@@ -532,6 +533,9 @@
           "sqldatasourcePublicIpResourceId": {
             "value": "[reference('SettingUpPublicIPs').outputs.sqlPublicDatasourceIpResourceId.value]"
           },
+          "oosWebNAT": {
+            "value": "[variables('oosWebNAT')]"
+          },
           "oosPublicIpResourceId": {
             "value": "[reference('SettingUpPublicIPs').outputs.oosPublicIpResourceId.value]"
           }
@@ -622,6 +626,9 @@
           },
           "oosBEAddressPoolID": {
             "value": "[variables('oosBEAddressPoolID')]"
+          },
+          "oosWebNAT": {
+            "value": "[variables('oosWebNAT')]"
           },
           "oosRDPNATRuleID": {
             "value": "[variables('oosRDPNATRuleID')]"

@@ -44,6 +44,9 @@
     "sqldatasourcePublicIpResourceId": {
       "type": "string"
     },
+    "oosWebNAT": {
+      "type": "string"
+    },
     "oosPublicIpResourceId": {
       "type": "string"
     }
@@ -240,6 +243,18 @@
               "protocol": "tcp",
               "frontendPort": 3389,
               "backendPort": 3389,
+              "enableFloatingIP": false
+            }
+          },
+          {
+            "name": "[parameters('oosWebNAT')]",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceid(resourceGroup().name,'Microsoft.Network/loadBalancers',parameters('ooslbName')), '/frontendIPConfigurations/',parameters('LBFE'))]"
+              },
+              "protocol": "tcp",
+              "frontendPort": 80,
+              "backendPort": 80,
               "enableFloatingIP": false
             }
           }

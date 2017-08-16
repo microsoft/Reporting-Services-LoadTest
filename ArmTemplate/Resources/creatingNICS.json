@@ -71,6 +71,9 @@
     "oosRDPNATRuleID": {
       "type": "string"
     },
+    "oosWebNAT": {
+      "type": "string"
+    },
     "oosSubnetRef": {
       "type": "string"
     }
@@ -218,6 +221,9 @@
               "loadBalancerInboundNatRules": [
                 {
                   "id": "[parameters('oosRDPNATRuleID')]"
+                },
+                {
+                  "id": "[parameters('oosWebNAT')]"
                 }
               ]
             }
