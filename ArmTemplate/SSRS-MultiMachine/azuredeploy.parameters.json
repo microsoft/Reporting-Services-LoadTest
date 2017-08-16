@@ -35,6 +35,9 @@
     "ssrsVMSize": {
       "value": "Standard_DS4_v2"
     },
+    "oosVMSize": {
+      "value": "Standard_DS4_v2"
+    },
     "sqlImageVersion": {
       "value": "SQL2016SP1-WS2016"
     },
