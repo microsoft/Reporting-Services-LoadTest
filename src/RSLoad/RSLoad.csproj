@@ -994,6 +994,18 @@
     <None Include="ConstantLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorksSalesEmbedded.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\CustomersEmbedded.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\MoviesEmbedded.pbix" />
     <None Include="MixedLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

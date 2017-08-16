@@ -16,7 +16,7 @@ namespace RSLoad
     public partial class PowerBIActions : PSSActionBase
     {
         private IContentManager _contentManager;
-
+        private const string _powerbiScenario = "PowerBI_Reports";
         /// <summary>
         /// This method is called before calling any tess.
         /// </summary>
@@ -38,7 +38,7 @@ namespace RSLoad
         {
             if (!testContext.Properties.Contains(SharedConstants.IsLoadTest))
             {
-                var loadTestScenariosToDeployInServer = new List<string>() { "PowerBI_Reports" };
+                var loadTestScenariosToDeployInServer = new List<string>() { _powerbiScenario };
                 var contentPlugin = new InitContentPlugin();
                 var loadTestScenarioToUse = loadTestScenariosToDeployInServer[0];
 
@@ -75,25 +75,74 @@ namespace RSLoad
         [TestMethod]
         public void UsePowerBIReports()
         {
-            string report = ContentManager.GetNextCatalogItem("PowerBIReport");
+            var report = ContentManager.GetNextCatalogItem("PowerBIReport");
 
             var context = this.ContentManager.PortalAccessorV1.CreateContext();
+            var executionCredentails = ExtractExecutionCredentails();
 
+            var pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, pbiReport.Name);
+        }
+
+        [TestCategory("PBI")]
+        [TestMethod]
+        public void UsePowerBIReportsEmbeddedReuseModel()
+        {
+            var report = ContentManager.GetNextCatalogItem("PowerBIReportEmbedded");
+
+            var context = this.ContentManager.PortalAccessorV1.CreateContext();
+            var executionCredentails = ExtractExecutionCredentails();
+
+            var pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, pbiReport.Name);
+        }
+
+        [TestCategory("PBI")]
+        [TestMethod]
+        public void UsePowerBIReportsEmbeddedStreamNewModel()
+        {
+            string originalReportName;
+            var reportOnServer = PublishUniqueReportOnServer(out originalReportName);
+            var context = this.ContentManager.PortalAccessorV1.CreateContext();
+            var executionCredentails = ExtractExecutionCredentails();
+
+            var pbiReport = context.CatalogItemByPath(reportOnServer).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, originalReportName);
+        }
+
+        private static ICredentials ExtractExecutionCredentails()
+        {
             ICredentials executionCredentails = CredentialCache.DefaultNetworkCredentials;
-            if (!String.IsNullOrEmpty(ReportServerInformation.DefaultInformation.ExecutionAccount))
+            if (!string.IsNullOrEmpty(ReportServerInformation.DefaultInformation.ExecutionAccount))
             {
-                CredentialCache myCache = new CredentialCache();
-                Uri reportServerUri = new Uri(ReportServerInformation.DefaultInformation.ReportServerUrl);
+                var myCache = new CredentialCache();
+                var reportServerUri = new Uri(ReportServerInformation.DefaultInformation.ReportServerUrl);
                 myCache.Add(new Uri(reportServerUri.GetLeftPart(UriPartial.Authority)),
-                            "NTLM",
-                            new NetworkCredential(
-                                ReportServerInformation.DefaultInformation.ExecutionAccount,
-                                ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
+                    "NTLM",
+                    new NetworkCredential(
+                        ReportServerInformation.DefaultInformation.ExecutionAccount,
+                        ReportServerInformation.DefaultInformation.ExecutionAccountPwd));
                 executionCredentails = myCache;
             }
+            return executionCredentails;
+        }
 
-            PowerBIReport pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
-            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport);
+        private string PublishUniqueReportOnServer(out string origFileName)
+        {
+            var scenarioAsFolder = _powerbiScenario.Replace("_", "\\");
+            var sourceFolder = Path.Combine(SharedConstants.RuntimeResourcesFolder, scenarioAsFolder);
+            var reportFolder = Path.Combine(Directory.GetCurrentDirectory(), sourceFolder);
+
+            var di = new DirectoryInfo(reportFolder);
+            var files = di.GetFiles("*Embedded.pbix");
+            var reportFile = ContentManager.ItemSelector.GetItem(files);
+
+            origFileName = reportFile.Name.Substring(0, reportFile.Name.IndexOf(reportFile.Extension, StringComparison.Ordinal));
+            var displayName = origFileName + DateTime.Now.ToFileTime();
+           
+            var reportOnDisk = Path.Combine(reportFolder, reportFile.Name);
+            var reportOnServer = ContentManager.PublishReport(reportOnDisk, displayName);
+            return reportOnServer;
         }
     }
 }

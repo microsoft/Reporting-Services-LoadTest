@@ -41,6 +41,7 @@ namespace RSLoad
             ExistingMobileReports = new List<string>();
             ExistingKpis = new List<string>();
             ExistingPowerBIReports = new List<string>();
+            ExistingEmbeddedPowerBIReports = new List<string>();
         }
 
         public override string CreateDataSource(string name, RSDataSourceDefinition dsDef, string parent)
@@ -171,8 +172,15 @@ namespace RSLoad
                         break;
 
                     case ".pbix":
-                        UpdatePBIReportDataSourceCredentials(reportPath);
-                        ExistingPowerBIReports.Add(reportPath);
+                        if (reportPath.ToLowerInvariant().Contains("embedded"))
+                        {
+                            ExistingEmbeddedPowerBIReports.Add(reportPath);
+                        }
+                        else
+                        {
+                            UpdatePBIReportDataSourceCredentials(reportPath);
+                            ExistingPowerBIReports.Add(reportPath);
+                        }
                         break;
                 }
             };
@@ -245,7 +253,14 @@ namespace RSLoad
             var reports = GetFolderContent(this.WorkingFolder).Where(x => x.Type == CatalogItemType.PowerBIReport);
             foreach (var report in reports)
             {
-                ExistingPowerBIReports.Add(report.Path);
+                if (report.Name.ToLowerInvariant().Contains("embedded"))
+                {
+                    ExistingEmbeddedPowerBIReports.Add(report.Path);
+                }
+                else
+                {
+                    ExistingPowerBIReports.Add(report.Path);
+                }
             }
         }
 

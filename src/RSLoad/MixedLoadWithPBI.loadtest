@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LoadTest Name="MixedLoadWithPBI" Description="" Owner="" storage="c:\users\jaimeta\source\repos\loadtest\src\rsload\mixedloadwithpbi.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="RS Portal_Classic load " Id="fa1f30a7-6143-4db4-a317-c61b18d0a97f" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+<LoadTest Name="MixedLoadWithPBI" Description="" Owner="" storage="d:\git\reporting-services-loadtest\src\rsload\mixedloadwithpbi.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="RS Portal_Classic load " Id="fa1f30a7-6143-4db4-a317-c61b18d0a97f" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Scenarios>
     <Scenario Name="PowerBI_Reports" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
       <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
       <LoadProfile Pattern="Step" InitialUsers="20" MaxUsers="500" StepUsers="10" StepDuration="900" StepRampTime="0" />
       <TestMix>
-        <TestProfile Name="UsePowerBIReports" Path="bin\debug\rsload.dll" Id="cac73835-6b03-ce97-d07b-6a00fb6294d0" Percentage="100" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReports" Path="bin\debug\rsload.dll" Id="cac73835-6b03-ce97-d07b-6a00fb6294d0" Percentage="34" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReportsEmbeddedReuseModel" Path="bin\debug\rsload.dll" Id="78953d39-c69d-0c9e-2601-1fef9ea8926a" Percentage="33" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReportsEmbeddedStreamNewModel" Path="bin\debug\rsload.dll" Id="5d79ed0b-4372-43e2-bfc2-30387c73a685" Percentage="33" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
       </TestMix>
       <NetworkMix>
         <NetworkProfile Percentage="100">
