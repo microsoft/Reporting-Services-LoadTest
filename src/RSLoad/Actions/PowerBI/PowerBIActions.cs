@@ -141,7 +141,7 @@ namespace RSLoad
             var displayName = origFileName + DateTime.Now.ToFileTime();
 
             var reportOnDisk = Path.Combine(reportFolder, reportFile.Name);
-            var reportOnServer = ContentManager.PublishReport(reportOnDisk, displayName);
+            var reportOnServer = ContentManager.PublishReport(reportOnDisk, displayName, "/ToBeDeleted");
             return (reportOnServer, origFileName);
         }
     }
