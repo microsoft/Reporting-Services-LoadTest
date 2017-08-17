@@ -84,7 +84,7 @@ namespace RSLoad
             PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, pbiReport.Name);
         }
 
-        [TestCategory("PBI")]
+        [TestCategory("PBIEmbedded")]
         [TestMethod]
         public void UsePowerBIReportsEmbeddedReuseModel()
         {
@@ -97,7 +97,7 @@ namespace RSLoad
             PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, pbiReport.Name);
         }
 
-        [TestCategory("PBI")]
+        [TestCategory("PBIEmbedded")]
         [TestMethod]
         public void UsePowerBIReportsEmbeddedStreamNewModel()
         {
