@@ -14,9 +14,6 @@
     "sqldatasourcepublicIPAddressName": {
       "type": "string"
     },
-    "oospublicIPAddressName": {
-      "type": "string"
-    },
     "publicIPAddressType": {
       "type": "string"
     }
@@ -48,15 +45,6 @@
       "properties": {
         "publicIPAllocationMethod": "[parameters('publicIPAddressType')]"
       }
-    },
-    {
-      "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[parameters('oospublicIPAddressName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "[parameters('publicIPAddressType')]"
-      }
     }
   ],
   "outputs": {
@@ -71,10 +59,6 @@
     "sqlPublicDatasourceIpResourceId": {
       "type": "string",
       "value": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('sqldatasourcepublicIPAddressName'))]"
-    },
-    "oosPublicIpResourceId": {
-      "type": "string",
-      "value": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('oospublicIPAddressName'))]"
     }
   }
 }

@@ -386,9 +386,6 @@
           "sqldatasourcepublicIPAddressName": {
             "value": "[variables('sqldatasourcepublicIPAddressName')]"
           },
-          "oospublicIPAddressName": {
-            "value": "[variables('oospublicIPAddressName')]"
-          },
           "publicIPAddressType": {
             "value": "[variables('publicIPAddressType')]"
           }
@@ -572,7 +569,7 @@
             "value": "[variables('oosWebNAT')]"
           },
           "oosPublicIpResourceId": {
-            "value": "[reference('SettingUpPublicIPs').outputs.oosPublicIpResourceId.value]"
+            "value": "[reference('SettingUpOosIP').outputs.publicIpId.value]"
           }
         }
       }
@@ -1207,7 +1204,7 @@
           }
         }
       }
-    },
+      },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(variables('datasourceVMName'),'/', 'setupLoadDBsExtension')]",
