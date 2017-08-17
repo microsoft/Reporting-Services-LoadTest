@@ -26,6 +26,9 @@
     "ssrsDNSPrefix": {
       "value": "ssrsrtm"
     },
+    "oosDNSPrefix": {
+      "value": "ssrsrtm-oos"
+    },
     "adVMSize": {
       "value": "Standard_DS2_v2"
     },

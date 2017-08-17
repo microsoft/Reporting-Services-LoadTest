@@ -137,6 +137,12 @@
         "description": "The DNS Prefix for the SSRS Public IP Address"
       }
     },
+    "oosDNSPrefix": {
+      "type": "string",
+      "metadata": {
+        "description": "The DNS Prefix for the OOS Public IP Address"
+      }
+    },
     "baseUrl": {
       "type": "string",
       "metadata": {
@@ -469,6 +475,35 @@
           },
           "dnsPrefix": {
             "value": "[parameters('ssrsDNSPrefix')]"
+          },
+          "publicIpRGName": {
+            "value": ""
+          }
+        }
+      }
+    },
+    {
+      "name": "SettingUpOosIP",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('SettingUpSsrsIPUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "location": {
+            "value": "[resourceGroup().location]"
+          },
+          "publicIpAddressName": {
+            "value": "[variables('oospublicIPAddressName')]"
+          },
+          "publicIPAddressType": {
+            "value": "[variables('publicIPAddressType')]"
+          },
+          "dnsPrefix": {
+            "value": "[parameters('oosDNSPrefix')]"
           },
           "publicIpRGName": {
             "value": ""
@@ -1156,6 +1191,10 @@
   "outputs": {
     "fqdn": {
       "value": "[reference('SettingUpSsrsIP').outputs.fqdn.value]",
+      "type": "string"
+    },
+    "fqdn-oos": {
+      "value": "[reference('SettingUpOosIP').outputs.fqdn.value]",
       "type": "string"
     }
   }
