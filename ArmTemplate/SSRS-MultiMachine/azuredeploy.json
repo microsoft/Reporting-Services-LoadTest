@@ -998,6 +998,7 @@
         "Microsoft.Resources/deployments/ProvisioningADDomainController",
         "Microsoft.Resources/deployments/ProvisioningSQLServerVM",
         "Microsoft.Resources/deployments/ProvisioningSsrsVM",
+        "Microsoft.Resources/deployments/ProvisioningOosVM",
         "Microsoft.Resources/deployments/ProvisioningSQLDasourceServerVM"
       ],
       "properties": {
@@ -1144,6 +1145,44 @@
         "parameters": {
           "vmName": {
             "value": "[variables('ssrsVMName')]"
+          },
+          "location": {
+            "value": "[resourceGroup().location]"
+          },
+          "domainJoinConfgureModulesURL": {
+            "value": "[variables('sqlConfigureModulesURL')]"
+          },
+          "domainJoinConfigurationFunction": {
+            "value": "[variables('domainJoinConfigurationFunction')]"
+          },
+          "domainName": {
+            "value": "[parameters('domainName')]"
+          },
+          "adminUserName": {
+            "value": "[parameters('adminUserName')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "DomainJoinOosVm",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/ConfiguringSQLServerVM"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('configuringDomainJoinUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "vmName": {
+            "value": "[variables('oosVMName')]"
           },
           "location": {
             "value": "[resourceGroup().location]"
