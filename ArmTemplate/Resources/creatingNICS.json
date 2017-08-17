@@ -76,6 +76,9 @@
     },
     "oosSubnetRef": {
       "type": "string"
+    },
+    "ooslbResourceId": {
+      "type": "string"
     }
   },
   "resources": [
@@ -223,7 +226,7 @@
                   "id": "[parameters('oosRDPNATRuleID')]"
                 },
                 {
-                  "id": "[parameters('oosWebNAT')]"
+                  "id": "[concat(parameters('ooslbResourceId'),'/inboundNatRules/',parameters('oosWebNAT'))]"
                 }
               ]
             }

@@ -667,6 +667,9 @@
           },
           "oosRDPNATRuleID": {
             "value": "[variables('oosRDPNATRuleID')]"
+          },
+          "ooslbResourceId": {
+            "value": "[reference('SettingUpLoadBalancers').outputs.ooslbID.value]"
           }
         }
       }
