@@ -146,7 +146,7 @@ namespace RSAccessor.PortalAccessor
                         credentials.UseAsWindowsCredentials = isWindowsCredentials;
                     }
 
-                    SendUpdateToServer(powerBiReport.DataSources, ctx.BaseUri, report.Id, ExecuteCredentials);
+                    UpdateReportDataSources(powerBiReport.DataSources, ctx.BaseUri, report.Id, ExecuteCredentials);
                 }
 
                 return;
@@ -155,7 +155,7 @@ namespace RSAccessor.PortalAccessor
             throw new ArgumentException(String.Format("No Power BI Report found at path: {0}", path));
         }
 
-        private static void SendUpdateToServer(DataServiceCollection<DataSource> dataSources, Uri serverUri, Guid reportId, ICredentials credentials)
+        private void UpdateReportDataSources(DataServiceCollection<DataSource> dataSources, Uri serverUri, Guid reportId, ICredentials credentials)
         {
             var updateDataSourceUri = new Uri(serverUri.AbsoluteUri + $"/catalogitems({reportId})/Model.PowerBIReport/DataSources");
 

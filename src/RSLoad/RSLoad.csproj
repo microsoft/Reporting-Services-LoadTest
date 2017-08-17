@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RSLoad</RootNamespace>
     <AssemblyName>RSLoad</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TestProjectType>WebTest</TestProjectType>
@@ -19,6 +19,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Services" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -464,36 +468,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ContentManager\RuntimeResources\Portal\WorkOrder_Top50000.rsd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_1.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_4.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_1.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_4.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorks_Sales.pbix">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\Inventory.pbix">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ContentManager\RuntimeResources\Paginated\Large\DeepM-Large.rdl">
@@ -994,22 +968,78 @@
     <None Include="ConstantLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_1.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_2.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_3.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_1.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_2.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_3.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_1.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_2.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_3.json" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorksSalesEmbedded.pbix" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\CustomersEmbedded.pbix" />
-    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\MoviesEmbedded.pbix" />
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorksSalesEmbedded\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\AdventureWorks_Sales\query_4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\CustomersEmbedded\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\Inventory\query_4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Queries\MoviesEmbedded\query_3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorksSalesEmbedded.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\AdventureWorks_Sales.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\CustomersEmbedded.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\Inventory.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\MoviesEmbedded.pbix">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="MixedLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MixedLoad.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
