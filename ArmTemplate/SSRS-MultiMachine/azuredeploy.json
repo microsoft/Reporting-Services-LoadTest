@@ -192,6 +192,13 @@
       "metadata": {
         "description": "The version of the OS for the Domain Controller"
       }
+    },
+    "oosImageVersion": {
+      "type": "string",
+      "defaultValue": "2012-R2-Datacenter",
+      "metadata": {
+        "description": "The version of the OS for the OOS"
+      }
     }
   },
   "variables": {
@@ -982,7 +989,7 @@
             "value": "[variables('ssrsPreparationFunction')]"
           },
           "vmImageSKU": {
-            "value": "[parameters('ssrsImageVersion')]"
+            "value": "[parameters('oosImageVersion')]"
           },
           "DNSServerAddress": {
             "value": "[parameters('adNicIPAddress')]"
@@ -1225,7 +1232,7 @@
           "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -file ',variables('copyAndAttachDbScript'),' -sqlFileToExecute ',variables('scriptToRestoreDB'),' -storageUrlSource ',variables('datasourceDatabasesBlob'),' -localFolder ',variables('datasourceLocalFolder'))]"
         }
       }
-    }
+      }
   ],
   "outputs": {
     "fqdn": {
