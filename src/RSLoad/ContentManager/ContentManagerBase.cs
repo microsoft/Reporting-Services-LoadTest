@@ -1108,6 +1108,9 @@ namespace RSLoad
                 case "powerbireport":
                     return ItemSelector.GetItem(this.ExistingPowerBIReports);
 
+                case "excelworkbook":
+                    return ItemSelector.GetItem(this.ExistingExcelWorkbooks);
+
                 default:
                     throw new Exception("Type {0} is not supported.");
             }
@@ -1234,6 +1237,8 @@ namespace RSLoad
         public List<string> ExistingKpis { get; internal set; }
 
         public List<string> ExistingPowerBIReports { get; internal set; }
+
+        public List<string> ExistingExcelWorkbooks { get; internal set; }
         #endregion
     }
 }

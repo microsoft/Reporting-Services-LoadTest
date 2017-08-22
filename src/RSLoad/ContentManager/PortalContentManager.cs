@@ -41,6 +41,7 @@ namespace RSLoad
             ExistingMobileReports = new List<string>();
             ExistingKpis = new List<string>();
             ExistingPowerBIReports = new List<string>();
+            ExistingExcelWorkbooks = new List<string>();
         }
 
         public override string CreateDataSource(string name, RSDataSourceDefinition dsDef, string parent)
@@ -118,6 +119,7 @@ namespace RSLoad
             GetExistingMobileReports();
             GetExistingKpis();
             GetExistingPowerBIReports();
+            GetExistingExcelWorkbooks();
             base.PopulateReportListFromServer();
         }
 
@@ -132,6 +134,7 @@ namespace RSLoad
                     case ".rsmobile":
                     case ".kpi":
                     case ".pbix":
+                    case ".xlsx":
                         return PublishItemToPortal(report, displayName, parentFolder, content);
                 }
             }
@@ -150,7 +153,8 @@ namespace RSLoad
             var files = di.GetFiles("*.rdl")
                 .Concat(di.GetFiles("*.rsmobile"))
                 .Concat(di.GetFiles("*.kpi"))
-                .Concat(di.GetFiles("*.pbix"));
+                .Concat(di.GetFiles("*.pbix"))
+                .Concat(di.GetFiles("*.xlsx"));
 
             foreach (FileInfo fi in files)
             {
@@ -173,6 +177,10 @@ namespace RSLoad
                     case ".pbix":
                         UpdatePBIReportDataSourceCredentials(reportPath);
                         ExistingPowerBIReports.Add(reportPath);
+                        break;
+
+                    case ".xlsx":
+                        ExistingExcelWorkbooks.Add(reportPath);
                         break;
                 }
             };
@@ -249,6 +257,15 @@ namespace RSLoad
             }
         }
 
+        private void GetExistingExcelWorkbooks()
+        {
+            var reports = GetFolderContent(this.WorkingFolder).Where(x => x.Type == CatalogItemType.ExcelWorkbook);
+            foreach (var report in reports)
+            {
+                ExistingExcelWorkbooks.Add(report.Path);
+            }
+        }
+
         private void GetExistingMobileReports()
         {
             var reports = GetFolderContent(this.WorkingFolder).Where(x => x.Type == CatalogItemType.MobileReport);
@@ -306,6 +323,9 @@ namespace RSLoad
 
                 case ".pbix":
                     return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
+
+                case ".xlsx":
+                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.ExcelWorkbook>(displayName, parentFolder, content);
 
                 default:
                     return null;

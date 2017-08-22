@@ -202,6 +202,11 @@ namespace RSTest.Common.ReportServer.Information
         /// </summary>
         public string PowerBIUrl { get; set; }
 
+        /// <summary>
+        /// Gets the root of OOS Url
+        /// </summary>
+        public string OosUrl { get; set; }
+
         #region Report Server
         public string DatasourceDatabaseServer { get; set; }
 
