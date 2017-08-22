@@ -13,14 +13,19 @@ namespace RSAccessor.PortalAccessor
     public static class ContextFactory
     {
         private const string MeRequest = "{0}/me";
-        private const string XsrfToken = "X-XSRF-Token";
+        public const string XsrfToken = "X-XSRF-Token";
         private const string CookieHeader = "Cookie";
 
         private readonly static CookieContainer _cookieContainer = new CookieContainer();
         private static string _reportServerPortalUrl;
         private static bool _isInitialized = false;
-        
-        public static void InitializeContainer(string reportServerPortalUrl, ICredentials credentials, DataServiceContext container) 
+
+        public static CookieContainer CookieContainer
+        {
+            get { return _cookieContainer; }
+        }
+
+        public static void InitializeContainer(string reportServerPortalUrl, ICredentials credentials, DataServiceContext container)
         {
             _reportServerPortalUrl = reportServerPortalUrl;
             var executeCredentials = credentials ?? CredentialCache.DefaultNetworkCredentials;
@@ -48,7 +53,7 @@ namespace RSAccessor.PortalAccessor
                     {
                         uriBuilder.Path += "/CatalogItemByPath(path=@path)";
                         uriBuilder.Query = string.Format("@path={0}", match.Groups[1].Value)
-                            + (string.IsNullOrEmpty(uri.Query) ? string.Empty : "&" + uri.Query.Substring(1));
+                                           + (string.IsNullOrEmpty(uri.Query) ? string.Empty : "&" + uri.Query.Substring(1));
                     }
                     e.RequestUri = uriBuilder.Uri;
                 }
@@ -87,7 +92,7 @@ namespace RSAccessor.PortalAccessor
             _isInitialized = true;
         }
 
-        private static string GetXsrfToken(Uri uri)
+        public static string GetXsrfToken(Uri uri)
         {
             var cookies = _cookieContainer.GetCookies(uri);
             var cookie = cookies["XSRF-TOKEN"];

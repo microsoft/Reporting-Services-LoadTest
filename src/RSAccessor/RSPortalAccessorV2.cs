@@ -2,12 +2,13 @@
 // Licensed under the MIT License (MIT)
 
 using System;
-using System.Collections.Specialized;
-using System.Globalization;
 using System.Net;
+using System.Net.Http;
 using System.Text;
-using System.Text.RegularExpressions;
+using System.Web;
 using Microsoft.OData.Client;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using RSAccessor.PortalAccessor.OData.V2.Model;
 
@@ -145,13 +146,48 @@ namespace RSAccessor.PortalAccessor
                         credentials.UseAsWindowsCredentials = isWindowsCredentials;
                     }
 
-                    powerBiReport.UpdateItemDataSources(powerBiReport.DataSources).Execute();
+                    UpdatePbiReportDataSources(powerBiReport.DataSources, ctx.BaseUri, report.Id, ExecuteCredentials);
                 }
 
                 return;
             }
 
             throw new ArgumentException(String.Format("No Power BI Report found at path: {0}", path));
+        }
+
+        private void UpdatePbiReportDataSources(DataServiceCollection<DataSource> dataSources, Uri serverUri, Guid reportId, ICredentials credentials)
+        {
+            var updateDataSourceUri = new Uri(serverUri.AbsoluteUri + $"/catalogitems({reportId})/Model.PowerBIReport/DataSources");
+
+            var handler = new HttpClientHandler()
+            {
+                Credentials = credentials,
+                CookieContainer = ContextFactory.CookieContainer
+            };
+
+            var client = new HttpClient(handler);
+
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new StringEnumConverter());
+            var payload = JsonConvert.SerializeObject(dataSources, settings);
+
+            // Newtonsoft serializer doesn't respect the OriginalNameAttribute from the enum which is lowercase
+            payload = payload.Replace("Store", "store");
+
+            var request = new HttpRequestMessage()
+            {
+                Method = HttpMethod.Put,
+                RequestUri = updateDataSourceUri,
+                Content = new StringContent(payload, Encoding.UTF8, "application/json")
+            };
+
+            request.Headers.Add(ContextFactory.XsrfToken, ContextFactory.GetXsrfToken(updateDataSourceUri));
+
+            var result = client.SendAsync(request).Result;
+            if (result.StatusCode != HttpStatusCode.OK && result.StatusCode != HttpStatusCode.NoContent)
+            {
+                throw new HttpException((int)result.StatusCode, result.ReasonPhrase);
+            }
         }
 
         private static bool IsConflict(Exception ex)
