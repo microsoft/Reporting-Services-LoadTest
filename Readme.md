@@ -129,7 +129,7 @@ The deployment will take around 30 minutes. It sets up a Domain Controller, a RS
 
 [How to onboard a new Mobile Reports Scenario](../master/docs/OnboardMobile.md)
 
-[How to onboard a new PowerBI Reports Scenario](../master/docs/OnboardPbi.md)
+[How to onboard a new PowerBI Reports](../master/docs/OnboardPbi.md)
 
 # Advanced Configuration
 
