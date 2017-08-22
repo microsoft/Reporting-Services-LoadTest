@@ -10,8 +10,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RSAccessor.PortalAccessor;
 using RSLoad.Utilities;
-using RSAccessor.PortalAccessor.OData.Model;
-using ODataV2Model = RSAccessor.PortalAccessor.OData.V2.Model;
+using RSAccessor.PortalAccessor.OData.V2.Model;
 using RSAccessor.SoapAccessor;
 using RSTest.Common.ReportServer.Information;
 
@@ -75,7 +74,7 @@ namespace RSLoad
 
             try
             {
-                PortalAccessorV1.AddToCatalogItems(dataSource);
+                PortalAccessorV2.AddToCatalogItems(dataSource);
             }
             catch (Exception ex)
             {
@@ -83,7 +82,7 @@ namespace RSLoad
                 throw;
             }
 
-            return RSPortalAccessorV1.CreateFullPath(parent, name);
+            return RSPortalAccessorV2.CreateFullPath(parent, name);
         }
 
         public override void CreateKnownDataSources()
@@ -193,7 +192,7 @@ namespace RSLoad
 
         private IOrderedQueryable<CatalogItem> GetFolderContent(string folderName)
         {
-            var ctx = PortalAccessorV1.CreateContext();
+            var ctx = PortalAccessorV2.CreateContext();
             var folder = ctx.CatalogItemByPath(folderName).GetValue();
             return ctx.CatalogItems
                 .ByKey(folder.Id)
@@ -227,9 +226,9 @@ namespace RSLoad
         {
             try
             {
-                var folder = RSPortalAccessorV1.CreateFullPath(parent, folderName);
+                var folder = RSPortalAccessorV2.CreateFullPath(parent, folderName);
                 var path = parent ?? RootPath;
-                PortalAccessorV1.AddToCatalogItems(new Folder { Name = folderName, Path = path });
+                PortalAccessorV2.AddToCatalogItems(new Folder { Name = folderName, Path = path });
                 return folder;
             }
             catch (Exception e)
@@ -304,28 +303,28 @@ namespace RSLoad
             switch (Path.GetExtension(report))
             {
                 case ".rdl":
-                    string path = RSPortalAccessorV1.CreateFullPath(parentFolder, displayName);
+                    string path = RSPortalAccessorV2.CreateFullPath(parentFolder, displayName);
                     var item = new Report
                     {
                         Name = displayName,
                         Path = path,
                         Content = content
                     };
-                    PortalAccessorV1.AddToCatalogItems(item);
+                    PortalAccessorV2.AddToCatalogItems(item);
                     return path;
 
                 case ".rsmobile":
-                    return PortalAccessorV1.AddToCatalogItems<MobileReport>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<MobileReport>(displayName, parentFolder, content);
 
                 case ".kpi":
                     string json = Encoding.UTF8.GetString(content);
-                    return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
+                    return PortalAccessorV2.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<PowerBIReport>(displayName, parentFolder, content);
 
                 case ".xlsx":
-                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.ExcelWorkbook>(displayName, parentFolder, content);
+                    return PortalAccessorV2.AddToCatalogItems<ExcelWorkbook>(displayName, parentFolder, content);
 
                 default:
                     return null;
@@ -339,7 +338,7 @@ namespace RSLoad
 
         public void GetCatalogItem(string path, string expand)
         {
-            var ctx = PortalAccessorV1.CreateContext();
+            var ctx = PortalAccessorV2.CreateContext();
             var item = ctx.CatalogItemByPath(path);
             if (expand == null)
                 item.GetValue();
@@ -349,7 +348,7 @@ namespace RSLoad
 
         public void GetDependentItems(string path)
         {
-            var ctx = PortalAccessorV1.CreateContext();
+            var ctx = PortalAccessorV2.CreateContext();
             var item = ctx.CatalogItemByPath(path).GetValue();
             ctx.CatalogItems
                 .ByKey(item.Id)
@@ -359,7 +358,7 @@ namespace RSLoad
 
         private IEnumerable<CatalogItem> GetFolderContent(string path, CatalogItemType type)
         {
-            var ctx = PortalAccessorV1.CreateContext();
+            var ctx = PortalAccessorV2.CreateContext();
             var folder = ctx.CatalogItemByPath(path).CastToFolder().GetValue();
 
             switch (type)
