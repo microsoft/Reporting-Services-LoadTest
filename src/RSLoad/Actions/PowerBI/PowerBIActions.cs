@@ -45,7 +45,7 @@ namespace RSLoad
                 if (classInit)
                 {
                     contentPlugin.Initialize(
-                        loadTestScenariosToDeployInServer, 
+                        loadTestScenariosToDeployInServer,
                         Path.Combine(SharedConstants.RuntimeResourcesFolder, @"Paginated\BadCombinations.xml"),
                         Path.Combine(SharedConstants.RuntimeResourcesFolder, @"Paginated\ScaleReportsWeight.xml"));
                 }
@@ -105,8 +105,8 @@ namespace RSLoad
             Container context = this.ContentManager.PortalAccessorV1.CreateContext();
             ICredentials executionCredentails = GetExecutionCredentails();
 
-            var pbiReport = context.CatalogItemByPath(report.reportPath).GetValue() as PowerBIReport;
-            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, report.originalFileName);
+            var pbiReport = context.CatalogItemByPath(report.ReportPath).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, report.OriginalFileName);
         }
 
         private ICredentials GetExecutionCredentails()
@@ -126,7 +126,13 @@ namespace RSLoad
             return executionCredentails;
         }
 
-        private (string reportPath, string originalFileName) PublishUniqueReportOnServer()
+        private class ReportProperties
+        {
+            public string ReportPath { get; set; }
+            public string OriginalFileName { get; set; }
+        }
+
+        private ReportProperties PublishUniqueReportOnServer()
         {
             var scenarioAsFolder = PowerBiScenario.Replace("_", "\\");
             var sourceFolder = Path.Combine(SharedConstants.RuntimeResourcesFolder, scenarioAsFolder);
@@ -142,7 +148,11 @@ namespace RSLoad
 
             var reportOnDisk = Path.Combine(reportFolder, reportFile.Name);
             var reportOnServer = ContentManager.PublishReport(reportOnDisk, displayName, "/ToBeDeleted");
-            return (reportOnServer, origFileName);
+            return new ReportProperties
+            {
+                ReportPath = reportOnServer,
+                OriginalFileName = origFileName
+            };
         }
     }
 }
