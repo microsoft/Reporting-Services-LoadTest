@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSLoad", "src\RSLoad\RSLoad.csproj", "{1DED968E-11DE-4A43-A9C0-B9865F7EE23E}"
 EndProject
@@ -34,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B75D6817-6B90-4D2B-9DA2-DE6C42057787} = {1D4B63F2-E146-4F36-8272-93B7EB8FB448}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2211F81C-22F5-4E7A-8F30-EEADB02AB874}
 	EndGlobalSection
 EndGlobal
