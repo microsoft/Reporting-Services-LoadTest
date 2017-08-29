@@ -76,7 +76,7 @@ before_test:
 
 on_failure:
 - ps: |
-    Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles" | Get-Content | Write-Host
+    Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles\*.log" | ForEach-Object { "$(write-host $_.Name -foregroundcolor magenta) `n$(Get-Content $_.FullName -Raw)"}
 
 test_script:
  TestForCI.cmd
