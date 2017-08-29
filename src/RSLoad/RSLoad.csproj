@@ -11,7 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RSLoad</RootNamespace>
     <AssemblyName>RSLoad</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TestProjectType>WebTest</TestProjectType>
@@ -40,31 +40,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.OData.Client, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Client.6.14.0\lib\net40\Microsoft.OData.Client.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.OData.Client.6.14.0\lib\net40\Microsoft.OData.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.OData.Core, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Core.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.OData.Core.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.OData.Edm, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.OData.Edm.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.OData.Edm.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.OData.Edm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Spatial, Version=6.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Spatial.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.Spatial.6.14.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.LoadTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.QualityTools.LoadTestFramework.15.0.26208\lib\Microsoft.VisualStudio.QualityTools.LoadTestFramework\Microsoft.VisualStudio.QualityTools.LoadTestFramework.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.QualityTools.LoadTestFramework.15.0.26208\lib\Microsoft.VisualStudio.QualityTools.LoadTestFramework\Microsoft.VisualStudio.QualityTools.LoadTestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.QualityTools.UnitTestFramework.Updated.15.0.26228\lib\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.QualityTools.UnitTestFramework.Updated.15.0.26228\lib\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.QualityTools.WebTestFramework.12.0.40629.1\lib\net40\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.QualityTools.WebTestFramework.12.0.40629.1\lib\net40\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
