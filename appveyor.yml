@@ -36,7 +36,7 @@ before_test:
 
 
     try {
-        Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
+        Write-Host "Downloading Power BI Report Server from $pbiServerUrl... " (Get-Date).DateTime
         (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
 
         Write-Host "Installing Power BI Report Server..." (Get-Date).DateTime
@@ -74,9 +74,6 @@ before_test:
     Start-Sleep -s 10
     Write-Host "Power BI Report Server configured successfully..." (Get-Date).DateTime
 
-after_test:
-- ps: |
-    Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles" | Get-Content | Write-Host
-
 test_script:
- TestForCI.cmd
+  - TestForCI.cmd
+  - ps: Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles" | Get-Content | Write-Host
