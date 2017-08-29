@@ -74,5 +74,9 @@ before_test:
     Start-Sleep -s 10
     Write-Host "Power BI Report Server configured successfully..." (Get-Date).DateTime
 
+after_test:
+- ps: |
+    Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles" | Get-Content | Write-Host
+
 test_script:
  TestForCI.cmd
