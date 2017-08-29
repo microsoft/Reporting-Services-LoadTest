@@ -22,11 +22,11 @@ namespace RSLoad
         private const string _conceptualSchemaEndpoint = "/{0}/conceptualSchema";
         private const string _queryDataEndpoint = "/{0}/querydata";
 
-        public static void SimulatePowerBIReportUsage(ICredentials credentials, PowerBIReport report)
+        public static void SimulatePowerBIReportUsage(ICredentials credentials, PowerBIReport report, string queryPayloadFolder)
         {
             var modelId = GetModelsAndExplorations(credentials, report);
             GetConceptualSchema(credentials, report, modelId);
-            RunQuerySet(credentials, report, modelId);
+            RunQuerySet(credentials, report, modelId, queryPayloadFolder);
         }
 
         private static string GetModelsAndExplorations(ICredentials credentials, PowerBIReport report)
@@ -72,9 +72,9 @@ namespace RSLoad
             WebResponse resp2 = request.GetResponse();
         }
 
-        private static void RunQuerySet(ICredentials credentials, PowerBIReport report, string modelId)
+        private static void RunQuerySet(ICredentials credentials, PowerBIReport report, string modelId, string queryPayloadFolder)
         {
-            var payloads = GetQueryPayload(report, modelId);
+            var payloads = GetQueryPayload(report, modelId, queryPayloadFolder);
 
             foreach (var payload in payloads)
             {
@@ -97,11 +97,11 @@ namespace RSLoad
             }
         }
 
-        private static List<JObject> GetQueryPayload(PowerBIReport report, string modelId)
+        private static List<JObject> GetQueryPayload(PowerBIReport report, string modelId, string queryPayloadFolder)
         {
             List<JObject> queries = new List<JObject>();
 
-            foreach (var file in Directory.GetFiles(string.Format(SharedConstants.RuntimeResourcesFolder + @"\PowerBI\Queries\{0}\", report.Name)))
+            foreach (var file in Directory.GetFiles(string.Format(SharedConstants.RuntimeResourcesFolder + @"\PowerBI\Queries\{0}\", queryPayloadFolder)))
             {
                 var query = JObject.Parse(File.ReadAllText(file));
                 query["modelId"] = modelId;

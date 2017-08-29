@@ -1,6 +1,8 @@
 # See http://www.appveyor.com/docs/appveyor-yml for many more options
+image: Visual Studio 2017
+
 before_build:
- nuget restore
+- nuget restore
 
 before_test:
 - ps: |
@@ -53,7 +55,7 @@ before_test:
 
     # downloading Reporting Services Tools
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
-    Install-Module ReportingServicesTools
+    Install-Module ReportingServicesTools -Force
     
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
