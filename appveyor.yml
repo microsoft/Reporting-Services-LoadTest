@@ -61,7 +61,7 @@ before_test:
     
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
-    Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
+    Set-PbiRsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
     
     # initializing Power BI Report Server
     Write-Host "Initialize Power BI Report Server..." (Get-Date).DateTime
