@@ -36,7 +36,7 @@ before_test:
 
 
     try {
-        Write-Host "Downloading Power BI Report Server..." (Get-Date).DateTime
+        Write-Host "Downloading Power BI Report Server from $pbiServerUrl ..." (Get-Date).DateTime
         (New-Object Net.WebClient).DownloadFile($pbiServerUrl , $pbiServerFileFullPath)
 
         Write-Host "Installing Power BI Report Server..." (Get-Date).DateTime
@@ -53,7 +53,7 @@ before_test:
 
     # downloading Reporting Services Tools
     Write-Host "Downloading Reporting Services tools..." (Get-Date).DateTime
-    Install-Module ReportingServicesTools
+    Install-Module ReportingServicesTools -Force
     
     # configuring Power BI Report Server Database
     Write-Host "Configuring Report Server database..." (Get-Date).DateTime
@@ -61,7 +61,7 @@ before_test:
     
     # configuring Power BI Report Server URLs
     Write-Host "Configuring Report Server URL for Server..." (Get-Date).DateTime
-    Set-RsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
+    Set-PbiRsUrlReservation -ReportServerInstance PBIRS -ReportServerVersion SQLServer2017
     
     # initializing Power BI Report Server
     Write-Host "Initialize Power BI Report Server..." (Get-Date).DateTime
@@ -73,6 +73,12 @@ before_test:
     Start-Service PowerBIReportServer
     Start-Sleep -s 10
     Write-Host "Power BI Report Server configured successfully..." (Get-Date).DateTime
+
+on_failure:
+- ps: |
+    Get-ChildItem "C:\Program Files\Microsoft Power BI Report Server\PBIRS\LogFiles\*.log" | ForEach-Object { "$(write-host $_.Name -foregroundcolor magenta) `n$(Get-Content $_.FullName -Raw)"}
+    Write-Host "Url Registration" -foregroundcolor magenta
+    netsh http show urlacl
 
 test_script:
  TestForCI.cmd
