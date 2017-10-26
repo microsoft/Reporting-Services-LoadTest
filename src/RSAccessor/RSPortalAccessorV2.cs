@@ -144,7 +144,7 @@ namespace RSAccessor.PortalAccessor
                         dataSource.DataModelDataSource.Secret = userDataSource.DataModelDataSource.Secret;
                     }
 
-                    UpdatePbiReportDataSources(powerBiReport.DataSources, ctx.BaseUri, report.Id, ExecuteCredentials);
+                    UpdatePbiReportDataSources(powerBiReport.DataSources, ctx.BaseUri, powerBiReport.Id, ExecuteCredentials);
                 }
 
                 return;
