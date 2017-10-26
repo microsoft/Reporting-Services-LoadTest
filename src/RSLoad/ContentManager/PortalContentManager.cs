@@ -321,7 +321,7 @@ namespace RSLoad
                 case ".pbix":
                     // TODO PASHAH Uncomment this when APIs have been updated
                     //return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
-                    return Path.Combine(parentFolder, displayName);
+                    return Path.Combine(parentFolder, displayName).Replace('\\', '/');
 
                 default:
                     return null;
