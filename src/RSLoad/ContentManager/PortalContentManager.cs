@@ -319,7 +319,9 @@ namespace RSLoad
                     return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
+                    // TODO PASHAH Uncomment this when APIs have been updated
+                    //return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
+                    return Path.Combine(parentFolder, displayName);
 
                 default:
                     return null;
