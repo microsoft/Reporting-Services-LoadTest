@@ -178,7 +178,6 @@ namespace RSLoad
                         }
                         else
                         {
-                            UpdatePBIReportDataSourceCredentials(reportPath);
                             ExistingPowerBIReports.Add(reportPath);
                         }
                         break;
@@ -397,12 +396,5 @@ namespace RSLoad
                 .OfType<T>();
         }
 
-        private void UpdatePBIReportDataSourceCredentials(string path)
-        {
-            PortalAccessorV2.UpdateDataSourceCredentials(path,
-                ReportServerInformation.DefaultInformation.ASWindowsUser,
-                ReportServerInformation.DefaultInformation.ASWindowsPassword,
-                isWindowsCredentials: true);
-        }
     }
 }

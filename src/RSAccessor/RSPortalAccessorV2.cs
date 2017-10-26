@@ -2,6 +2,8 @@
 // Licensed under the MIT License (MIT)
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -11,7 +13,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using RSAccessor.PortalAccessor.OData.V2.Model;
-
 
 namespace RSAccessor.PortalAccessor
 {
@@ -108,42 +109,39 @@ namespace RSAccessor.PortalAccessor
             string password,
             bool isWindowsCredentials)
         {
+            throw new InvalidOperationException();
+        }
+
+        public void SetDataModelDataSourceCredentials(
+            string path,
+            List<DataSource> userDataSources)
+        {
             if (String.IsNullOrEmpty(path))
             {
                 throw new ArgumentNullException("path");
             }
 
-            if (String.IsNullOrEmpty(username))
-            {
-                throw new ArgumentNullException("username");
-            }
-
-            if (String.IsNullOrEmpty(password))
-            {
-                throw new ArgumentNullException("password");
-            }
-
             var ctx = CreateContext();
-            var report = ctx.CatalogItemByPath(path).Expand("DataSources").GetValue();
-       
-            var powerBiReport = report as PowerBIReport;
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Path", path);
+            dictionary.Add("Random", "Value");
+
+            var powerBiReport = ctx.PowerBIReports.ByKey(dictionary).Expand("DataSources").GetValue();
             if (powerBiReport != null)
             {
                 if (powerBiReport.DataSources != null)
                 {
                     foreach (var dataSource in powerBiReport.DataSources)
                     {
-                        dataSource.CredentialRetrieval = CredentialRetrievalType.Store;
+                        var userDataSource = userDataSources.Where(ds =>
+                            String.Equals(ds.ConnectionString, dataSource.ConnectionString, StringComparison.OrdinalIgnoreCase) &&
+                            ds.DataModelDataSource != null &&
+                            dataSource.DataModelDataSource != null &&
+                            ds.DataModelDataSource.Kind == dataSource.DataModelDataSource.Kind).FirstOrDefault();
 
-                        var credentials = dataSource.CredentialsInServer;
-                        if (credentials == null)
-                        {
-                            dataSource.CredentialsInServer = credentials = new CredentialsStoredInServer();
-                        }
-
-                        credentials.UserName = username;
-                        credentials.Password = password;
-                        credentials.UseAsWindowsCredentials = isWindowsCredentials;
+                        dataSource.DataModelDataSource.AuthType = userDataSource.DataModelDataSource.AuthType;
+                        dataSource.DataModelDataSource.Username = userDataSource.DataModelDataSource.Username;
+                        dataSource.DataModelDataSource.Secret = userDataSource.DataModelDataSource.Secret;
                     }
 
                     UpdatePbiReportDataSources(powerBiReport.DataSources, ctx.BaseUri, report.Id, ExecuteCredentials);
@@ -157,7 +155,7 @@ namespace RSAccessor.PortalAccessor
 
         private void UpdatePbiReportDataSources(DataServiceCollection<DataSource> dataSources, Uri serverUri, Guid reportId, ICredentials credentials)
         {
-            var updateDataSourceUri = new Uri(serverUri.AbsoluteUri + $"/catalogitems({reportId})/Model.PowerBIReport/DataSources");
+            var updateDataSourceUri = new Uri(serverUri.AbsoluteUri + $"/PowerBIReports({reportId})/DataSources");
 
             var handler = new HttpClientHandler()
             {
@@ -171,12 +169,9 @@ namespace RSAccessor.PortalAccessor
             settings.Converters.Add(new StringEnumConverter());
             var payload = JsonConvert.SerializeObject(dataSources, settings);
 
-            // Newtonsoft serializer doesn't respect the OriginalNameAttribute from the enum which is lowercase
-            payload = payload.Replace("Store", "store");
-
             var request = new HttpRequestMessage()
             {
-                Method = HttpMethod.Put,
+                Method = new HttpMethod("PATCH"),
                 RequestUri = updateDataSourceUri,
                 Content = new StringContent(payload, Encoding.UTF8, "application/json")
             };
