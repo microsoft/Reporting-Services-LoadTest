@@ -150,8 +150,8 @@ namespace RSLoad
             var di = new DirectoryInfo(srcFolder);
             var files = di.GetFiles("*.rdl")
                 .Concat(di.GetFiles("*.rsmobile"))
-                .Concat(di.GetFiles("*.kpi"))
-                .Concat(di.GetFiles("*.pbix"));
+                .Concat(di.GetFiles("*.kpi"));
+                //.Concat(di.GetFiles("*.pbix"));
 
             foreach (FileInfo fi in files)
             {
@@ -319,9 +319,7 @@ namespace RSLoad
                     return PortalAccessorV1.AddToCatalogItems<Kpi>(displayName, parentFolder, json);
 
                 case ".pbix":
-                    // TODO PASHAH Uncomment this when APIs have been updated
-                    //return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
-                    return Path.Combine(parentFolder, displayName).Replace('\\', '/');
+                    return PortalAccessorV2.AddToCatalogItems<ODataV2Model.PowerBIReport>(displayName, parentFolder, content);
 
                 default:
                     return null;
