@@ -1111,6 +1111,9 @@ namespace RSLoad
                 case "powerbireportembedded":
                     return ItemSelector.GetItem(this.ExistingEmbeddedPowerBIReports);
 
+                case "powerbireportdirectquery":
+                    return ItemSelector.GetItem(this.ExistingDirectQueryPowerBIReports);
+
                 default:
                     throw new Exception("Type {0} is not supported.");
             }
@@ -1239,6 +1242,8 @@ namespace RSLoad
         public List<string> ExistingPowerBIReports { get; internal set; }
 
         public List<string> ExistingEmbeddedPowerBIReports { get; internal set; }
+
+        public List<string> ExistingDirectQueryPowerBIReports { get; internal set; }
         #endregion
     }
 }

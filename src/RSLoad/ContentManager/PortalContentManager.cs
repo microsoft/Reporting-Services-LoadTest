@@ -42,6 +42,7 @@ namespace RSLoad
             ExistingKpis = new List<string>();
             ExistingPowerBIReports = new List<string>();
             ExistingEmbeddedPowerBIReports = new List<string>();
+            ExistingDirectQueryPowerBIReports = new List<string>();
         }
 
         public override string CreateDataSource(string name, RSDataSourceDefinition dsDef, string parent)
@@ -174,7 +175,13 @@ namespace RSLoad
                     case ".pbix":
                         if (reportPath.ToLowerInvariant().Contains("embedded"))
                         {
+                            SetPbiReportCredentialsForEmbedded(reportPath);
                             ExistingEmbeddedPowerBIReports.Add(reportPath);
+                        }
+                        else if (reportPath.ToLowerInvariant().Contains("directquery"))
+                        {
+                            SetPbiReportCredentialsForEmbedded(reportPath);
+                            ExistingDirectQueryPowerBIReports.Add(reportPath);
                         }
                         else
                         {
@@ -191,6 +198,14 @@ namespace RSLoad
             PortalAccessorV2.SetDataModelDataSourceCredentials(reportPath,
                 ReportServerInformation.DefaultInformation.ASWindowsUser,
                 ReportServerInformation.DefaultInformation.ASWindowsPassword,
+                isWindowsCredentials: true);
+        }
+
+        private void SetPbiReportCredentialsForEmbedded(string reportPath)
+        {
+            PortalAccessorV2.SetDataModelDataSourceCredentials(reportPath,
+                ReportServerInformation.DefaultInformation.ExecutionAccount,
+                ReportServerInformation.DefaultInformation.ExecutionAccountPwd,
                 isWindowsCredentials: true);
         }
 
@@ -264,6 +279,10 @@ namespace RSLoad
                 if (report.Name.ToLowerInvariant().Contains("embedded"))
                 {
                     ExistingEmbeddedPowerBIReports.Add(report.Path);
+                }
+                else if (report.Name.ToLowerInvariant().Contains("directquery"))
+                {
+                    ExistingDirectQueryPowerBIReports.Add(report.Path);
                 }
                 else
                 {
