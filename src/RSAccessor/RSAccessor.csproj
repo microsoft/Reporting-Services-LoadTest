@@ -74,6 +74,7 @@
     <Compile Include="Proxy\v2\ODataClient.cs" />
     <Compile Include="Proxy\ReportExecutionService.cs" />
     <Compile Include="Proxy\ReportingService2010.cs" />
+    <Compile Include="PortalAccessor.cs" />
     <Compile Include="RSPortalAccessorV2.cs" />
     <Compile Include="RSPortalAccessorV1.cs" />
     <Compile Include="RSSoapAccessor.cs" />
