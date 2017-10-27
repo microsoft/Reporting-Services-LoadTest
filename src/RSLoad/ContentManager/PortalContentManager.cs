@@ -150,8 +150,8 @@ namespace RSLoad
             var di = new DirectoryInfo(srcFolder);
             var files = di.GetFiles("*.rdl")
                 .Concat(di.GetFiles("*.rsmobile"))
-                .Concat(di.GetFiles("*.kpi"));
-                //.Concat(di.GetFiles("*.pbix"));
+                .Concat(di.GetFiles("*.kpi"))
+                .Concat(di.GetFiles("*.pbix"));
 
             foreach (FileInfo fi in files)
             {
@@ -178,11 +178,20 @@ namespace RSLoad
                         }
                         else
                         {
+                            SetPbiReportCredentials(reportPath);
                             ExistingPowerBIReports.Add(reportPath);
                         }
                         break;
                 }
             };
+        }
+
+        private void SetPbiReportCredentials(string reportPath)
+        {
+            PortalAccessorV2.SetDataModelDataSourceCredentials(reportPath,
+                ReportServerInformation.DefaultInformation.ASWindowsUser,
+                ReportServerInformation.DefaultInformation.ASWindowsPassword,
+                isWindowsCredentials: true);
         }
 
         public override void PublishSharedDataSets()

@@ -103,13 +103,38 @@ namespace RSAccessor.PortalAccessor
             return item.Path;
         }
 
-        public void UpdateDataSourceCredentials(
+        public void SetDataModelDataSourceCredentials(
             string path,
             string username,
             string password,
             bool isWindowsCredentials)
         {
-            throw new InvalidOperationException();
+            if (String.IsNullOrEmpty(path))
+            {
+                throw new ArgumentNullException("path");
+            }
+
+            var ctx = CreateContext();
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Path", path);
+            dictionary.Add("Random", "Value");
+
+            var powerBiReport = ctx.PowerBIReports.ByKey(dictionary).Expand("DataSources").GetValue();
+            if (powerBiReport != null)
+            {
+                if (powerBiReport.DataSources != null)
+                {
+                    foreach (var dataSource in powerBiReport.DataSources)
+                    {
+                        dataSource.DataModelDataSource.AuthType = 
+                            isWindowsCredentials ? DataModelDataSourceAuthType.Windows : DataModelDataSourceAuthType.UsernamePassword;
+                        dataSource.DataModelDataSource.Username = username;
+                        dataSource.DataModelDataSource.Secret = password;
+                    }
+
+                    UpdatePbiReportDataSources(powerBiReport.DataSources, ctx.BaseUri, powerBiReport.Id, ExecuteCredentials);
+                }
+            }
         }
 
         public void SetDataModelDataSourceCredentials(
