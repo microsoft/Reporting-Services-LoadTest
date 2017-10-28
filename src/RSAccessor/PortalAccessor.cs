@@ -44,6 +44,7 @@ namespace RSAccessor.PortalAccessor
             webRequest.Method = "POST";
             webRequest.ContentType = "multipart/form-data; boundary=" + boundary;
             webRequest.Credentials = ExecuteCredentials ?? CredentialCache.DefaultNetworkCredentials;
+            webRequest.Timeout = 1000 * 1000;
 
             Stream requestStream = webRequest.GetRequestStream();
 
