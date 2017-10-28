@@ -11,28 +11,28 @@ namespace RSAccessor.PortalAccessor
 {
     public class PortalAccessor
     {
-        private readonly string _reportServerPortalUrl;
+        private readonly string _reportServerApiUrl;
 
         public PortalAccessor(string reportServerPortalUrl)
         {
-            _reportServerPortalUrl = reportServerPortalUrl;
+            _reportServerApiUrl = reportServerPortalUrl + "/api/v2.0";
         }
 
         public ICredentials ExecuteCredentials { get; set; }
 
-        public WebResponse DeleteFile(string path)
+        public HttpWebResponse DeleteFile(string path)
         {
             var query = string.Format("/CatalogItems(Path=%27{0}%27)", path); // TODO: path should be url encoded and single quotes should be doubled
 
-            var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerPortalUrl + query);
+            var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerApiUrl + query);
             webRequest.Method = "DELETE";
             webRequest.Credentials = ExecuteCredentials ?? CredentialCache.DefaultNetworkCredentials;
             webRequest.Timeout = 1000 * 1000;
 
-            return webRequest.GetResponse();
+            return (HttpWebResponse)webRequest.GetResponse();
         }
 
-        public WebResponse UploadLargeFile(string file, string type, string path)
+        public HttpWebResponse UploadLargeFile(string file, string type, string path)
         {
             var query = string.Format("/{0}s(Path=%27{1}%27)/Model.Upload", type, path); // TODO: path should be url encoded and single quotes should be doubled
             var filePartName = "File";
@@ -47,12 +47,12 @@ namespace RSAccessor.PortalAccessor
             return UploadFileMultipartFormData(query, file, filePartName, contentType, parts);
         }
 
-        private WebResponse UploadFileMultipartFormData(string query, string file, string filePartName, string contentType, Dictionary<string, string> parts)
+        private HttpWebResponse UploadFileMultipartFormData(string query, string file, string filePartName, string contentType, Dictionary<string, string> parts)
         {
             string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");
             byte[] boundarybytes = Encoding.ASCII.GetBytes("\r\n--" + boundary + "\r\n");
 
-            var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerPortalUrl + query);
+            var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerApiUrl + query);
             webRequest.Method = "POST";
             webRequest.ContentType = "multipart/form-data; boundary=" + boundary;
             webRequest.Credentials = ExecuteCredentials ?? CredentialCache.DefaultNetworkCredentials;
@@ -89,7 +89,7 @@ namespace RSAccessor.PortalAccessor
             requestStream.Write(trailer, 0, trailer.Length);
             requestStream.Close();
 
-            return webRequest.GetResponse();
+            return (HttpWebResponse)webRequest.GetResponse();
         }
     }
 }
