@@ -20,6 +20,18 @@ namespace RSAccessor.PortalAccessor
 
         public ICredentials ExecuteCredentials { get; set; }
 
+        public WebResponse DeleteFile(string path)
+        {
+            var query = string.Format("/CatalogItems(Path=%27{0}%27)", path); // TODO: path should be url encoded and single quotes should be doubled
+
+            var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerPortalUrl + query);
+            webRequest.Method = "DELETE";
+            webRequest.Credentials = ExecuteCredentials ?? CredentialCache.DefaultNetworkCredentials;
+            webRequest.Timeout = 1000 * 1000;
+
+            return webRequest.GetResponse();
+        }
+
         public WebResponse UploadLargeFile(string file, string type, string path)
         {
             var query = string.Format("/{0}s(Path=%27{1}%27)/Model.Upload", type, path); // TODO: path should be url encoded and single quotes should be doubled
