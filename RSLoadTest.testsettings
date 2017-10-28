@@ -4,6 +4,7 @@
   <Deployment>
     <DeploymentItem filename="src\RSLoad\RSTest.Common.ReportServer.dll.Config" />
     <DeploymentItem filename="src\RSLoad\ContentManager\RuntimeResources\" outputDirectory="RuntimeResources\" />
+    <DeploymentItem filename="src\RSLoad\ContentManager\LargeFiles\" outputDirectory="ContentManager\LargeFiles\" />
   </Deployment>
   <Execution hostProcessPlatform="MSIL">
     <TestTypeSpecific>
