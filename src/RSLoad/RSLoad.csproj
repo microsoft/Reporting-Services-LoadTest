@@ -1035,6 +1035,29 @@
     <Content Include="ContentManager\RuntimeResources\PowerBI\Reports\MoviesEmbedded.pbix">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_1\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_1\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_1\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_1\query_4.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_2\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_2\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_2\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_3\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_3\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\DataRefresh_embedded_3\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\OrdersDirectQuery\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\OrdersDirectQuery\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\OrdersDirectQuery\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\OrdersDirectQuery\query_4.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\Sales2008DirectQuery\query_1.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\Sales2008DirectQuery\query_2.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\Sales2008DirectQuery\query_3.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Queries\Sales2008DirectQuery\query_4.json" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\DataRefresh_embedded_1.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\DataRefresh_embedded_2.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\DataRefresh_embedded_3.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\OrdersDirectQuery.pbix" />
+    <None Include="ContentManager\RuntimeResources\PowerBI\Reports\Sales2008DirectQuery.pbix" />
     <Content Include="ContentManager\LargeFiles\1.pbix">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
