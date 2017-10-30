@@ -1633,8 +1633,8 @@
         <GeoLocation Location="West US" Percentage="100" />
       </LoadGeneratorLocations>
       <ContextParameters>
-        <ContextParameter Name="ReportsWeightFile" Value="RuntimeResources\Paginated\ScaleReportsWeight.xml" />
-        <ContextParameter Name="BadCombinationsFile" Value="RuntimeResources\Paginated\BadCombinations.xml" />
+        <ContextParameter Name="ReportsWeightFile" Value="ContentManager\RuntimeResources\Paginated\ScaleReportsWeight.xml" />
+        <ContextParameter Name="BadCombinationsFile" Value="ContentManager\RuntimeResources\Paginated\BadCombinations.xml" />
       </ContextParameters>
     </RunConfiguration>
   </RunConfigurations>

@@ -100,12 +100,12 @@
         </NetworkProfile>
       </NetworkMix>
     </Scenario>
-    <Scenario Name="Large_Files" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
+    <Scenario Name="LargeFiles" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
       <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
       <LoadProfile Pattern="Step" InitialUsers="2" MaxUsers="10" StepUsers="2" StepDuration="900" StepRampTime="0" />
       <TestMix>
-        <TestProfile Name="UploadAndDeleteLargeExcelWorkbook" Path="bin\debug\rsload.dll" Id="93e24092-35de-6642-c619-e72d7b73b29b" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-        <TestProfile Name="UploadAndDeleteLargePbix" Path="bin\debug\rsload.dll" Id="adb48bf1-b402-9287-efb3-feed360d1f16" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UploadAndDeleteLargeExcelWorkbook" Path="bin\debug\rsload.dll" Id="93e24092-35de-6642-c619-e72d7b73b29b" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UploadAndDeleteLargePbix" Path="bin\debug\rsload.dll" Id="adb48bf1-b402-9287-efb3-feed360d1f16" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
       </TestMix>
       <NetworkMix>
         <NetworkProfile Percentage="100">
@@ -180,7 +180,7 @@
             <Counter Name="Avg. Response Time" />
             <Counter Name="Avg. Connection Wait Time">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="LoadTest:Page" />
                     <RuleParameter Name="DependentCounter" Value="Avg. Page Time" />
@@ -245,7 +245,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -391,7 +391,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -718,7 +718,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -864,7 +864,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -1249,7 +1249,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -1534,7 +1534,7 @@
             <Counter Name="Current Bandwidth" RangeGroup="Network Bytes" />
             <Counter Name="Bytes Total/sec" RangeGroup="Network Bytes">
               <ThresholdRules>
-                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <ThresholdRule Classname="Microsoft.VisualStudio.TestTools.WebStress.Rules.ThresholdRuleCompareCounters, Microsoft.VisualStudio.QualityTools.LoadTest, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
                   <RuleParameters>
                     <RuleParameter Name="DependentCategory" Value="Network Interface" />
                     <RuleParameter Name="DependentCounter" Value="Current Bandwidth" />
@@ -1748,8 +1748,8 @@
         <GeoLocation Location="West US" Percentage="100" />
       </LoadGeneratorLocations>
       <ContextParameters>
-        <ContextParameter Name="ReportsWeightFile" Value="RuntimeResources\Paginated\ScaleReportsWeight.xml" />
-        <ContextParameter Name="BadCombinationsFile" Value="RuntimeResources\Paginated\BadCombinations.xml" />
+        <ContextParameter Name="ReportsWeightFile" Value="ContentManager\RuntimeResources\Paginated\ScaleReportsWeight.xml" />
+        <ContextParameter Name="BadCombinationsFile" Value="ContentManager\RuntimeResources\Paginated\BadCombinations.xml" />
       </ContextParameters>
     </RunConfiguration>
   </RunConfigurations>
