@@ -966,6 +966,9 @@
     <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\SimpleT-Massive.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="AllLoadStep.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ConstantLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1110,9 +1113,6 @@
     <Content Include="ContentManager\RuntimeResources\LargeFiles\1.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="MixedLoadWithPBI.loadtest">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
