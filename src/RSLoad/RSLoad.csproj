@@ -966,7 +966,7 @@
     <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\SimpleT-Massive.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="AllLoadStep.loadtest">
+    <None Include="AllLoad.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ConstantLoadWithPBI.loadtest">
@@ -1119,10 +1119,10 @@
     <None Include="MixedLoad.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="LargeFilesLoadTest.loadtest">
+    <None Include="LargeFilesLoad.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="PowerBILoadTest.loadtest">
+    <None Include="PowerBILoad.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="RSTest.Common.ReportServer.dll.Config">
