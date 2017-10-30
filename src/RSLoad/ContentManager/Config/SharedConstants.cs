@@ -23,8 +23,6 @@ namespace RSLoad
         public const string RuntimeResourcesSelectorKey = "RuntimeResourcesSelector";
         public const string IsLoadTest = "IsLoadTest";
         public const string RuntimeResourcesFolder = @"ContentManager\RuntimeResources";
-        public const string LargePbixPath = @"ContentManager\RuntimeResources\LargeFiles\1.pbix";
-        public const string LargeExcelWorkbookPath = @"ContentManager\RuntimeResources\LargeFiles\1.xlsx";
 
         public const string ApiV1PostFix = "api/v1.0";
         public const string ApiV2PostFix = "api/v2.0";
