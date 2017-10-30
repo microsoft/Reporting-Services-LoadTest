@@ -13,14 +13,41 @@ namespace RSLoad
     [TestClass]
     public class LargeFilesActions : PSSActionBase
     {
+        private static readonly Uri LargePbixUrl = new Uri("https://rsload.blob.core.windows.net/load/largefiles/1.pbix");
+        private static readonly Uri LargeExcelWorkbookUrl = new Uri("https://rsload.blob.core.windows.net/load/largefiles/1.xlsx");
+        private const string LargePbixPath = "1.pbix";
+        private const string LargeExcelWorkbookPath = "1.xlsx";
+
+        [ClassInitialize]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            using (var webClient = new WebClient())
+            {
+                webClient.DownloadFile(LargePbixUrl, LargePbixPath);
+                webClient.DownloadFile(LargeExcelWorkbookUrl, LargeExcelWorkbookPath);
+            }
+        }
+
+        [ClassCleanup]
+        public static void MyClassCleanup()
+        {
+            if (File.Exists(LargePbixPath))
+            {
+                File.Delete(LargePbixPath);
+            }
+
+            if (File.Exists(LargeExcelWorkbookPath))
+            {
+                File.Delete(LargeExcelWorkbookPath);
+            }
+        }
 
         [TestMethod]
         public void UploadAndDeleteLargePbix()
         {
-            string largePbixFile = SharedConstants.LargePbixPath;
             var newLargePbixFileName = Guid.NewGuid().ToString();
-            string newLargePbixFile = Path.Combine(Path.GetDirectoryName(largePbixFile), newLargePbixFileName + Path.GetExtension(largePbixFile));
-            File.Copy(largePbixFile, newLargePbixFile);
+            string newLargePbixFile = Path.Combine(Path.GetDirectoryName(LargePbixPath), newLargePbixFileName + Path.GetExtension(LargePbixPath));
+            File.Copy(LargePbixPath, newLargePbixFile);
 
             var targetPath = "/" + newLargePbixFileName;
 
@@ -49,12 +76,11 @@ namespace RSLoad
         [TestMethod]
         public void UploadAndDeleteLargeExcelWorkbook()
         {
-            string largeExcelWorkbookFile = SharedConstants.LargeExcelWorkbookPath;
             var newLargeExcelWorkbookFileName = Guid.NewGuid().ToString();
-            string newLargeExcelWorkbookFile = Path.Combine(Path.GetDirectoryName(largeExcelWorkbookFile), newLargeExcelWorkbookFileName + Path.GetExtension(largeExcelWorkbookFile));
-            File.Copy(largeExcelWorkbookFile, newLargeExcelWorkbookFile);
+            string newLargeExcelWorkbookFile = Path.Combine(Path.GetDirectoryName(LargeExcelWorkbookPath), newLargeExcelWorkbookFileName + Path.GetExtension(LargeExcelWorkbookPath));
+            File.Copy(LargeExcelWorkbookPath, newLargeExcelWorkbookFile);
 
-            var targetPath = "/" + newLargeExcelWorkbookFileName + Path.GetExtension(largeExcelWorkbookFile);
+            var targetPath = "/" + newLargeExcelWorkbookFileName + Path.GetExtension(LargeExcelWorkbookPath);
 
             try
             {
