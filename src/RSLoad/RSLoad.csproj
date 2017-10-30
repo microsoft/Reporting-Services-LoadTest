@@ -966,6 +966,9 @@
     <Content Include="ContentManager\RuntimeResources\Paginated\GeneralMassive\SimpleT-Massive.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="AllLoadStep.loadtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ConstantLoadWithPBI.loadtest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
