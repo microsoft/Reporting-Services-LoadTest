@@ -5,8 +5,8 @@ before_build:
 before_test:
 - ps: |
     $ErrorActionPreference = 'Stop';
-    $sqlServerUrl = "$($env:downloadUrl)/SQLServer2016-x64-ENU.exe"
-    $sqlServerUrlBox = "$($env:downloadUrl)/SQLServer2016-x64-ENU.box"
+    $sqlServerUrl = "$($env:downloadUrl)/SQLServer2017-x64-ENU.exe"
+    $sqlServerUrlBox = "$($env:downloadUrl)/SQLServer2017-x64-ENU.box"
     # instance name express to be able to switch easy between express and eval
     $sqlServerSilentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCENAME=MSSQLSERVER /UPDATEENABLED=FALSE /FEATURES=SQLEngine /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
     $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
