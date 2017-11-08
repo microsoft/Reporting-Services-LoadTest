@@ -27,5 +27,7 @@ namespace RSLoad
         public const string ApiV1PostFix = "api/v1.0";
         public const string ApiV2PostFix = "api/v2.0";
         public const string PbiEndpoint = "powerbi/api/explore/reports";
+
+        public static readonly string RsLoadBlobUrl = "https://rsload.blob.core.windows.net/load/";
     }
 }

@@ -2,8 +2,11 @@
 // Licensed under the MIT License (MIT)
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RSAccessor.PortalAccessor;
 using RSTest.Common.ReportServer.Information;
@@ -13,41 +16,50 @@ namespace RSLoad
     [TestClass]
     public class LargeFilesActions : PSSActionBase
     {
-        private static readonly Uri LargePbixUrl = new Uri("https://rsload.blob.core.windows.net/load/largefiles/1.pbix");
-        private static readonly Uri LargeExcelWorkbookUrl = new Uri("https://rsload.blob.core.windows.net/load/largefiles/1.xlsx");
-        private const string LargePbixPath = "1.pbix";
-        private const string LargeExcelWorkbookPath = "1.xlsx";
+        private static readonly Dictionary<Uri, string> PowerBITestResources;
+        private static readonly Dictionary<Uri, string> ExcelTestResources;
+
+        static LargeFilesActions()
+        {
+            PowerBITestResources = new Dictionary<Uri, string>()
+            {
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/1.pbix"), "1.pbix" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/large-5mil.pbix"), "large-5mil.pbix" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/large-15mil.pbix"), "large-15mil.pbix" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/large-25mil.pbix"), "large-25mil.pbix" }
+            };
+
+            ExcelTestResources = new Dictionary<Uri, string>()
+            {
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/1.xlsx"), "1.xlsx" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/output-5mil.csv"), "output-5mil.csv" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/output-10mil.csv"), "output-10mil.csv" },
+                { new Uri(SharedConstants.RsLoadBlobUrl + "largefiles/output-15mil.csv"), "output-15mil.csv" }
+            };
+        }
 
         [ClassInitialize]
         public static void MyClassInitialize(TestContext testContext)
         {
-            using (var webClient = new WebClient())
-            {
-                webClient.DownloadFile(LargePbixUrl, LargePbixPath);
-                webClient.DownloadFile(LargeExcelWorkbookUrl, LargeExcelWorkbookPath);
-            }
-        }
+            var downloadTasks = new List<Task>();
 
-        [ClassCleanup]
-        public static void MyClassCleanup()
-        {
-            if (File.Exists(LargePbixPath))
+            var testResources = PowerBITestResources.Union(ExcelTestResources);
+            foreach (var resource in testResources)
             {
-                File.Delete(LargePbixPath);
+                var webClient = new WebClient();
+                downloadTasks.Add(webClient.DownloadFileTaskAsync(resource.Key, resource.Value));
             }
 
-            if (File.Exists(LargeExcelWorkbookPath))
-            {
-                File.Delete(LargeExcelWorkbookPath);
-            }
+            Task.WaitAll(downloadTasks.ToArray());
         }
 
         [TestMethod]
         public void UploadAndDeleteLargePbix()
         {
             var newLargePbixFileName = Guid.NewGuid().ToString();
-            string newLargePbixFile = Path.Combine(Path.GetDirectoryName(LargePbixPath), newLargePbixFileName + Path.GetExtension(LargePbixPath));
-            File.Copy(LargePbixPath, newLargePbixFile);
+            var pbixPath = GetRandomMember(PowerBITestResources).Value;
+            string newLargePbixFile = Path.Combine(Path.GetDirectoryName(pbixPath), newLargePbixFileName + Path.GetExtension(pbixPath));
+            File.Copy(pbixPath, newLargePbixFile);
 
             var targetPath = "/" + newLargePbixFileName;
 
@@ -77,10 +89,11 @@ namespace RSLoad
         public void UploadAndDeleteLargeExcelWorkbook()
         {
             var newLargeExcelWorkbookFileName = Guid.NewGuid().ToString();
-            string newLargeExcelWorkbookFile = Path.Combine(Path.GetDirectoryName(LargeExcelWorkbookPath), newLargeExcelWorkbookFileName + Path.GetExtension(LargeExcelWorkbookPath));
-            File.Copy(LargeExcelWorkbookPath, newLargeExcelWorkbookFile);
+            var excelWorkbookPath = GetRandomMember(ExcelTestResources).Value;
+            string newLargeExcelWorkbookFile = Path.Combine(Path.GetDirectoryName(excelWorkbookPath), newLargeExcelWorkbookFileName + Path.GetExtension(excelWorkbookPath));
+            File.Copy(excelWorkbookPath, newLargeExcelWorkbookFile);
 
-            var targetPath = "/" + newLargeExcelWorkbookFileName + Path.GetExtension(LargeExcelWorkbookPath);
+            var targetPath = "/" + newLargeExcelWorkbookFileName + Path.GetExtension(excelWorkbookPath);
 
             try
             {
@@ -119,6 +132,12 @@ namespace RSLoad
                 executionCredentails = myCache;
             }
             return executionCredentails;
+        }
+
+        private KeyValuePair<Uri, string> GetRandomMember(Dictionary<Uri, string> dictionary)
+        {
+            var rand = new Random();
+            return dictionary.ElementAt(rand.Next(0, dictionary.Count - 1));
         }
     }
 }
