@@ -53,6 +53,7 @@ namespace RSLoad
             Task.WaitAll(downloadTasks.ToArray());
         }
 
+        [TestCategory("LongDuration")]
         [TestMethod]
         public void UploadAndDeleteLargePbix()
         {
@@ -85,6 +86,7 @@ namespace RSLoad
             }
         }
 
+        [TestCategory("LongDuration")]
         [TestMethod]
         public void UploadAndDeleteLargeExcelWorkbook()
         {
