@@ -22,7 +22,7 @@ namespace RSAccessor.PortalAccessor
 
         public HttpWebResponse DeleteFile(string path)
         {
-            var query = string.Format("/CatalogItems(Path=%27{0}%27)", path); // TODO: path should be url encoded and single quotes should be doubled
+            var query = string.Format("/CatalogItems(Path=%27{0}%27)", path);
 
             var webRequest = (HttpWebRequest)WebRequest.Create(_reportServerApiUrl + query);
             webRequest.Method = "DELETE";
@@ -34,7 +34,7 @@ namespace RSAccessor.PortalAccessor
 
         public HttpWebResponse UploadLargeFile(string file, string type, string path)
         {
-            var query = string.Format("/{0}s(Path=%27{1}%27)/Model.Upload", type, path); // TODO: path should be url encoded and single quotes should be doubled
+            var query = string.Format("/{0}s(Path=%27{1}%27)/Model.Upload", type, path);
             var filePartName = "File";
             var contentType = "application/octet-stream";
             var parts = new Dictionary<string, string>
