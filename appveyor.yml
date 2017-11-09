@@ -9,7 +9,7 @@ before_test:
     $sqlServerUrlBox = "$($env:downloadUrl)/SQLServer2017-x64-ENU.box"
     # instance name express to be able to switch easy between express and eval
     $sqlServerSilentArgs = "/IACCEPTSQLSERVERLICENSETERMS /Q /ACTION=install /INSTANCENAME=MSSQLSERVER /UPDATEENABLED=FALSE /FEATURES=SQLEngine /SQLSYSADMINACCOUNTS=`"BUILTIN\Administrators`""
-    $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2016Eval"
+    $tempDir = Join-Path (Get-Item $env:TEMP).FullName "sql2017"
     if ((Test-Path $tempDir) -eq $false) { New-Item -ItemType Directory -Path $tempDir}
     $fileFullPath = "$tempDir\SQLServer.exe"
     $fileFullPathBox = "$tempDir\SQLServer.box"
@@ -31,7 +31,7 @@ before_test:
     $pbiServerSilentArgs = "/Q /NORESTART IACCEPTLICENSETERMS=true"
 
     Write-Host "Importing SQLPS Module..." (Get-Date).DateTime
-    Import-Module "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\PowerShell\Modules\sqlps\sqlps.psd1"
+    Import-Module "C:\Program Files (x86)\Microsoft SQL Server\140\Tools\PowerShell\Modules\sqlps\sqlps.psd1"
     Write-Host "SQLPS Module imported" (Get-Date).DateTime
 
 
