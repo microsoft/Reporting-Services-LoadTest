@@ -133,10 +133,14 @@ The deployment will take around 30 minutes. It sets up a Domain Controller, a RS
 
 # Advanced Configuration
 
-### Reports and LoadTest (.loadtest)
+### LoadTest (.loadtest)
 The LoadTest files contains a set of scenarios that will drive the load in the system, those are standard Visual Studio Load Test files and the details of the different settings can be found on [Editing Load Test Using the Load Test Editor](https://msdn.microsoft.com/en-us/library/ff406975(v=vs.140).aspx)
 
-However the Load tests also deploy a set of Reports, Data sources, Mobile Reports and KPIs during the initialization, those resources are stored under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources
+### Test Resources and Databases
+The Load tests deploy a set of Reports, Data sources, Mobile Reports, KPIs, Power BI Reports, and Excel Workbooks during the initialization. Most of those resources can be founder under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources. The remaining of the resources are stored at https://rsload.blob.core.windows.net/load/largefiles. Due to GitHub restriction of a file size cannot exceed 100 MB, we had to store any resource that exceeded this size in public facing RSLoad blob.
+
+All the databases used in the tests can be found https://rsload.blob.core.windows.net/load/databases. In order to deploy them to your environment, you can run the CreateDataBase.sql script (located in that folder).
+
 The deployment is based on the name of the scenario , for example in MixedLoad.loadtest there are the following scenarios
 
 |Scenario|Files to Deploy to the Server|
