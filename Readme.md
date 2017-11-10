@@ -4,10 +4,9 @@
 SQL Server Reporting Services LoadTest 
 
 ## Synopsis
-This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute synthetic load for SQL Server Reporting Services 2016 
-It uses Visual Studio 2015 Enterprise
+This project contains a [Visual Studio Load Test 2015](https://www.visualstudio.com/en-us/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) solution to execute synthetic load for SQL Server Reporting Services 2016, SQL Server Reporting Services 2017 and Power BI Report Server. It uses Visual Studio 2015 Enterprise but you can also run them in Visual Studio 2017 Enterprise.
 
-The usage of the project requires a good understanding of Reporting Services and the different types of items (reports, datasets, data sources, mobile reports) that are available in SQL Server Reporting Services, it also make use of APIs and code that is not designed for typical user comsumption and can change in future versions of SQL Server Reporting Services
+The usage of the project requires a good understanding of Reporting Services and the different types of items (reports, datasets, data sources, mobile reports, Power BI reports, Excel workbooks) that are available in SQL Server Reporting Services/Power BI Report Server. There is an extensive use of APIs in this project, which is not designed for typical user comsumption and can change in future versions of SQL Server Reporting Services and/or Power BI Report Server.
 
 ## Build and Test
 In a Visual Studio Tools Command Prompt
@@ -137,23 +136,15 @@ The deployment will take around 30 minutes. It sets up a Domain Controller, a RS
 The LoadTest files contains a set of scenarios that will drive the load in the system, those are standard Visual Studio Load Test files and the details of the different settings can be found on [Editing Load Test Using the Load Test Editor](https://msdn.microsoft.com/en-us/library/ff406975(v=vs.140).aspx)
 
 ### Test Resources and Databases
-The Load tests deploy a set of Reports, Data sources, Mobile Reports, KPIs, Power BI Reports, and Excel Workbooks during the initialization. Most of those resources can be founder under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources. The remaining of the resources are stored at https://rsload.blob.core.windows.net/load/largefiles. Due to GitHub restriction of a file size cannot exceed 100 MB, we had to store any resource that exceeded this size in public facing RSLoad blob.
+The Load tests deploy a set of Reports, Data sources, Mobile Reports, KPIs, Power BI Reports, and Excel Workbooks during the initialization. Most of those resources can be found under Reporting-Services-LoadTest\src\RSLoad\ContentManager\RuntimeResources. The remaining of the resources are stored at https://rsload.blob.core.windows.net/load/largefiles. Due to GitHub restriction of a file size cannot exceed 100 MB, we had to store any resource that exceeded this size in the public facing RSLoad blob.
 
 All the databases used in the tests can be found https://rsload.blob.core.windows.net/load/databases. In order to deploy them to your environment, you can run the CreateDataBase.sql script (located in that folder).
 
-The deployment is based on the name of the scenario , for example in MixedLoad.loadtest there are the following scenarios
+### Test Execution
+The load test consists of several scenarios, which each require one or more resources. Prior to executing a scenarion, a folder will be created on the Report Server with the scenario's name. Then all the resources, required by the tests of that scenario, will be deploy on the Report Server. There will also be a set of shared data sources created in each folder. These data sources are defined in Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml.
 
-|Scenario|Files to Deploy to the Server|
-|-------|-----------|
-|MobileTest|RuntimeResources\MobileTest|
-|Paginated_Large|RuntimeResources\Paginated\Large|
-|Paginated_Small|RuntimeResources\Paginated\Small|
-|Portal|RuntimeResources\Portal|
-|PowerBI_Reports|RuntimeResources\PowerBI|
-
-The load test will create a folder in the Server with the scenario name and will deploy the Reporting Services items that are required by the tests.
-Each scenario requires a folder with the Reporting Services items to deploy.
-In every folder a set of shared datasources will be created (defined in Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
+### Subscriptions, Cache Refresh Plans and Schedule Data Refreshes
+None of the load tests create subscriptions, cache refresh plans or schedule data refreshes. Historically, this was done because the underlying code involved behind subscriptions and cache refresh plans was the same as rendering a paginated report. However, starting with the introduction of Power BI Reports with embedded models, we recommend you to create Schedule Data Refreshes prior to executing a load test. To learn more on how to create a schedule data refresh, please look at our [Documentation](https://powerbi.microsoft.com/en-us/documentation/reportserver-configure-scheduled-refresh/).
 
 ### Configuration Files
 * DataSources.xml : Define the datasources that will be created in the server during the test initialization (Located on Reporting-Services-LoadTest\src\RSLoad\ContentManager\DataSources.xml)
