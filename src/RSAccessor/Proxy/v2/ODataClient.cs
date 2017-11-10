@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 8/15/2017 9:24:15 AM
+// Generation date: 10/20/2017 12:12:47 PM
 namespace RSAccessor.PortalAccessor.OData.V2.Model
 {
     /// <summary>
@@ -39,22 +39,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
-            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Microsoft.ReportingServices.Editions", "Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions");
-            if ((resolvedType != null))
-            {
-                return resolvedType;
-            }
-            resolvedType = this.DefaultResolveType(typeName, "PowerBIIntegration", "Microsoft.ReportingServices.Portal.ODataClient.V2.PowerBIIntegration");
-            if ((resolvedType != null))
-            {
-                return resolvedType;
-            }
-            resolvedType = this.DefaultResolveType(typeName, "Model.V2", "RSAccessor.PortalAccessor.OData.V2.Model.V2");
-            if ((resolvedType != null))
-            {
-                return resolvedType;
-            }
-            resolvedType = this.DefaultResolveType(typeName, "Model", "RSAccessor.PortalAccessor.OData.V2.Model");
+            global::System.Type resolvedType = this.DefaultResolveType(typeName, "Model", "RSAccessor.PortalAccessor.OData.V2.Model");
             if ((resolvedType != null))
             {
                 return resolvedType;
@@ -70,30 +55,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         protected string ResolveNameFromType(global::System.Type clientType)
         {
             global::Microsoft.OData.Client.OriginalNameAttribute originalNameAttribute = (global::Microsoft.OData.Client.OriginalNameAttribute)global::System.Linq.Enumerable.SingleOrDefault(global::Microsoft.OData.Client.Utility.GetCustomAttributes(clientType, typeof(global::Microsoft.OData.Client.OriginalNameAttribute), true));
-            if (clientType.Namespace.Equals("Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions", global::System.StringComparison.Ordinal))
-            {
-                if (originalNameAttribute != null)
-                {
-                    return string.Concat("Microsoft.ReportingServices.Editions.", originalNameAttribute.OriginalName);
-                }
-                return string.Concat("Microsoft.ReportingServices.Editions.", clientType.Name);
-            }
-            if (clientType.Namespace.Equals("Microsoft.ReportingServices.Portal.ODataClient.V2.PowerBIIntegration", global::System.StringComparison.Ordinal))
-            {
-                if (originalNameAttribute != null)
-                {
-                    return string.Concat("PowerBIIntegration.", originalNameAttribute.OriginalName);
-                }
-                return string.Concat("PowerBIIntegration.", clientType.Name);
-            }
-            if (clientType.Namespace.Equals("RSAccessor.PortalAccessor.OData.V2.Model.V2", global::System.StringComparison.Ordinal))
-            {
-                if (originalNameAttribute != null)
-                {
-                    return string.Concat("Model.V2.", originalNameAttribute.OriginalName);
-                }
-                return string.Concat("Model.V2.", clientType.Name);
-            }
             if (clientType.Namespace.Equals("RSAccessor.PortalAccessor.OData.V2.Model", global::System.StringComparison.Ordinal))
             {
                 if (originalNameAttribute != null)
@@ -163,23 +124,23 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<CatalogItem> _CatalogItems;
         /// <summary>
-        /// There are no comments for ReportParameters in the schema.
+        /// There are no comments for ParameterDefinitions in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameters")]
-        public global::Microsoft.OData.Client.DataServiceQuery<ReportParameter> ReportParameters
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<ReportParameterDefinition> ParameterDefinitions
         {
             get
             {
-                if ((this._ReportParameters == null))
+                if ((this._ParameterDefinitions == null))
                 {
-                    this._ReportParameters = base.CreateQuery<ReportParameter>("ReportParameters");
+                    this._ParameterDefinitions = base.CreateQuery<ReportParameterDefinition>("ParameterDefinitions");
                 }
-                return this._ReportParameters;
+                return this._ParameterDefinitions;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<ReportParameter> _ReportParameters;
+        private global::Microsoft.OData.Client.DataServiceQuery<ReportParameterDefinition> _ParameterDefinitions;
         /// <summary>
         /// There are no comments for Comments in the schema.
         /// </summary>
@@ -217,6 +178,24 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<DataSet> _DataSets;
         /// <summary>
+        /// There are no comments for DataSetData in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSetData")]
+        public global::Microsoft.OData.Client.DataServiceQuery<DataSetRow> DataSetData
+        {
+            get
+            {
+                if ((this._DataSetData == null))
+                {
+                    this._DataSetData = base.CreateQuery<DataSetRow>("DataSetData");
+                }
+                return this._DataSetData;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<DataSetRow> _DataSetData;
+        /// <summary>
         /// There are no comments for DataSources in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -253,23 +232,23 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<ExcelWorkbook> _ExcelWorkbooks;
         /// <summary>
-        /// There are no comments for ExecutionLogEntries in the schema.
+        /// There are no comments for Extensions in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogEntries")]
-        public global::Microsoft.OData.Client.DataServiceQuery<ExecutionLogInfo> ExecutionLogEntries
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Extensions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<Extension> Extensions
         {
             get
             {
-                if ((this._ExecutionLogEntries == null))
+                if ((this._Extensions == null))
                 {
-                    this._ExecutionLogEntries = base.CreateQuery<ExecutionLogInfo>("ExecutionLogEntries");
+                    this._Extensions = base.CreateQuery<Extension>("Extensions");
                 }
-                return this._ExecutionLogEntries;
+                return this._Extensions;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<ExecutionLogInfo> _ExecutionLogEntries;
+        private global::Microsoft.OData.Client.DataServiceQuery<Extension> _Extensions;
         /// <summary>
         /// There are no comments for FavoriteItems in the schema.
         /// </summary>
@@ -400,38 +379,20 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for Reports in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("reports")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Reports")]
         public global::Microsoft.OData.Client.DataServiceQuery<Report> Reports
         {
             get
             {
                 if ((this._Reports == null))
                 {
-                    this._Reports = base.CreateQuery<Report>("reports");
+                    this._Reports = base.CreateQuery<Report>("Reports");
                 }
                 return this._Reports;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<Report> _Reports;
-        /// <summary>
-        /// There are no comments for Properties in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
-        public global::Microsoft.OData.Client.DataServiceQuery<Property> Properties
-        {
-            get
-            {
-                if ((this._Properties == null))
-                {
-                    this._Properties = base.CreateQuery<Property>("Properties");
-                }
-                return this._Properties;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<Property> _Properties;
         /// <summary>
         /// There are no comments for Resources in the schema.
         /// </summary>
@@ -565,12 +526,12 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             base.AddObject("CatalogItems", catalogItem);
         }
         /// <summary>
-        /// There are no comments for ReportParameters in the schema.
+        /// There are no comments for ParameterDefinitions in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public void AddToReportParameters(ReportParameter reportParameter)
+        public void AddToParameterDefinitions(ReportParameterDefinition reportParameterDefinition)
         {
-            base.AddObject("ReportParameters", reportParameter);
+            base.AddObject("ParameterDefinitions", reportParameterDefinition);
         }
         /// <summary>
         /// There are no comments for Comments in the schema.
@@ -589,6 +550,14 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             base.AddObject("DataSets", dataSet);
         }
         /// <summary>
+        /// There are no comments for DataSetData in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public void AddToDataSetData(DataSetRow dataSetRow)
+        {
+            base.AddObject("DataSetData", dataSetRow);
+        }
+        /// <summary>
         /// There are no comments for DataSources in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -605,12 +574,12 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             base.AddObject("ExcelWorkbooks", excelWorkbook);
         }
         /// <summary>
-        /// There are no comments for ExecutionLogEntries in the schema.
+        /// There are no comments for Extensions in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public void AddToExecutionLogEntries(ExecutionLogInfo executionLogInfo)
+        public void AddToExtensions(Extension extension)
         {
-            base.AddObject("ExecutionLogEntries", executionLogInfo);
+            base.AddObject("Extensions", extension);
         }
         /// <summary>
         /// There are no comments for FavoriteItems in the schema.
@@ -674,15 +643,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToReports(Report report)
         {
-            base.AddObject("reports", report);
-        }
-        /// <summary>
-        /// There are no comments for Properties in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public void AddToProperties(Property property)
-        {
-            base.AddObject("Properties", property);
+            base.AddObject("Reports", report);
         }
         /// <summary>
         /// There are no comments for Resources in the schema.
@@ -733,23 +694,23 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             base.AddObject("UserSettings", userSettings);
         }
         /// <summary>
-        /// There are no comments for ReportServerInfo in the schema.
+        /// There are no comments for System in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerInfo")]
-        public ReportServerInfoSingle ReportServerInfo
+        [global::Microsoft.OData.Client.OriginalNameAttribute("System")]
+        public SystemSingle System
         {
             get
             {
-                if ((this._ReportServerInfo == null))
+                if ((this._System == null))
                 {
-                    this._ReportServerInfo = new ReportServerInfoSingle(this, "ReportServerInfo");
+                    this._System = new SystemSingle(this, "System");
                 }
-                return this._ReportServerInfo;
+                return this._System;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private ReportServerInfoSingle _ReportServerInfo;
+        private SystemSingle _System;
         /// <summary>
         /// There are no comments for Me in the schema.
         /// </summary>
@@ -865,6 +826,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""CatalogItemPath"" Type=""Edm.String"" />
         <Property Name=""EventType"" Type=""Edm.String"" />
         <Property Name=""Schedule"" Type=""Model.ScheduleReference"" />
+        <Property Name=""ScheduleDescription"" Type=""Edm.String"" />
         <Property Name=""LastRunTime"" Type=""Edm.DateTimeOffset"" />
         <Property Name=""LastStatus"" Type=""Edm.String"" />
         <Property Name=""ModifiedBy"" Type=""Edm.String"" />
@@ -884,6 +846,14 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         </Key>
         <Property Name=""CatalogItemId"" Type=""Edm.Guid"" Nullable=""false"" />
         <Property Name=""HistorySnapshotsOptions"" Type=""Model.ReportHistorySnapshotsOptions"" />
+      </EntityType>
+      <EntityType Name=""CacheOptions"">
+        <Key>
+          <PropertyRef Name=""Id"" />
+        </Key>
+        <Property Name=""Id"" Type=""Edm.Guid"" Nullable=""false"" />
+        <Property Name=""ExecutionType"" Type=""Model.ItemExecutionType"" Nullable=""false"" />
+        <Property Name=""Expiration"" Type=""Model.ExpirationReference"" />
       </EntityType>
       <EntityType Name=""CatalogItem"" Abstract=""true"">
         <Key>
@@ -911,6 +881,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <NavigationProperty Name=""AlertSubscriptions"" Type=""Collection(Model.AlertSubscription)"" />
         <NavigationProperty Name=""AllowedActions"" Type=""Collection(Model.AllowedAction)"" />
         <NavigationProperty Name=""Policies"" Type=""Collection(Model.ItemPolicy)"" />
+        <NavigationProperty Name=""DependentItems"" Type=""Collection(Model.CatalogItem)"" />
         <Annotation Term=""OData.Community.Keys.V1.AlternateKeys"">
           <Collection>
             <Record Type=""OData.Community.Keys.V1.AlternateKey"">
@@ -930,6 +901,9 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""FailedOperations"" Type=""Collection(Edm.String)"" />
         <Property Name=""HasErrors"" Type=""Edm.Boolean"" Nullable=""false"" />
       </ComplexType>
+      <ComplexType Name=""CatalogItemAccessToken"">
+        <Property Name=""Token"" Type=""Edm.Binary"" />
+      </ComplexType>
       <EntityType Name=""ItemPolicy"">
         <Key>
           <PropertyRef Name=""Id"" />
@@ -938,7 +912,21 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""InheritParentPolicy"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""Policies"" Type=""Collection(Model.Policy)"" />
       </EntityType>
-      <EntityType Name=""ReportParameter"">
+      <EntityType Name=""Report"" BaseType=""Model.CatalogItem"">
+        <Property Name=""HasDataSources"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""HasSharedDataSets"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
+        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
+        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
+        <NavigationProperty Name=""SharedDataSets"" Type=""Collection(Model.DataSet)"" />
+        <NavigationProperty Name=""HistorySnapshotOptions"" Type=""Model.HistorySnapshotOptions"" />
+        <NavigationProperty Name=""ReportHistorySnapshots"" Type=""Collection(Model.ReportHistorySnapshot)"" />
+        <NavigationProperty Name=""HistorySnapshots"" Type=""Collection(Model.HistorySnapshot)"" />
+        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameterDefinition)"" />
+        <NavigationProperty Name=""CacheOptions"" Type=""Model.CacheOptions"" />
+      </EntityType>
+      <EntityType Name=""ReportParameterDefinition"">
         <Key>
           <PropertyRef Name=""Name"" />
         </Key>
@@ -961,82 +949,11 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""DefaultValuesIsNull"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""ErrorMessage"" Type=""Edm.String"" />
       </EntityType>
-      <EntityType Name=""Report"" BaseType=""Model.CatalogItem"">
-        <Property Name=""HasDataSources"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""HasSharedDataSets"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
-        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
-        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
-        <NavigationProperty Name=""SharedDataSets"" Type=""Collection(Model.DataSet)"" />
-        <NavigationProperty Name=""HistorySnapshotOptions"" Type=""Model.HistorySnapshotOptions"" />
-        <NavigationProperty Name=""ReportHistorySnapshots"" Type=""Collection(Model.ReportHistorySnapshot)"" />
-        <NavigationProperty Name=""HistorySnapshots"" Type=""Collection(Model.HistorySnapshot)"" />
-        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameter)"" />
-      </EntityType>
       <ComplexType Name=""ParameterValue"">
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""Value"" Type=""Edm.String"" />
         <Property Name=""IsValueFieldReference"" Type=""Edm.Boolean"" Nullable=""false"" />
       </ComplexType>
-      <ComplexType Name=""ReportParameterProperties"">
-        <Property Name=""ParameterName"" Type=""Edm.String"" />
-        <Property Name=""OverrideDefaultValues"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""DefaultValues"" Type=""Collection(Edm.String)"" />
-        <Property Name=""Prompt"" Type=""Edm.String"" />
-        <Property Name=""ParameterVisibility"" Type=""Model.ReportParameterVisibility"" Nullable=""false"" />
-      </ComplexType>
-      <EntityType Name=""DataSet"" BaseType=""Model.CatalogItem"">
-        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""QueryExecutionTimeOut"" Type=""Edm.Int32"" Nullable=""false"" />
-        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
-        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
-        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameter)"" />
-      </EntityType>
-      <ComplexType Name=""DataSetSchema"">
-        <Property Name=""Name"" Type=""Edm.String"" />
-        <Property Name=""Fields"" Type=""Collection(Model.DataSetField)"" />
-        <Property Name=""Parameters"" Type=""Collection(Model.DataSetParameterInfo)"" />
-      </ComplexType>
-      <ComplexType Name=""DataSourceCheckResult"">
-        <Property Name=""IsSuccessful"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""ErrorMessage"" Type=""Edm.String"" />
-      </ComplexType>
-      <EntityType Name=""DataSource"" BaseType=""Model.CatalogItem"">
-        <Property Name=""IsEnabled"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""ConnectionString"" Type=""Edm.String"" />
-        <Property Name=""DataSourceType"" Type=""Edm.String"" />
-        <Property Name=""IsOriginalConnectionStringExpressionBased"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""IsConnectionStringOverridden"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""CredentialRetrieval"" Type=""Model.CredentialRetrievalType"" Nullable=""false"" />
-        <Property Name=""CredentialsByUser"" Type=""Model.CredentialsSuppliedByUser"" />
-        <Property Name=""CredentialsInServer"" Type=""Model.CredentialsStoredInServer"" />
-        <Property Name=""IsReference"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""DSIDNum"" Type=""Edm.Int64"" />
-        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
-      </EntityType>
-      <ComplexType Name=""Query"">
-        <Property Name=""CommandText"" Type=""Edm.String"" />
-        <Property Name=""Timeout"" Type=""Edm.Int32"" />
-      </ComplexType>
-      <ComplexType Name=""CacheOptions"">
-        <Property Name=""ExecutionType"" Type=""Model.ItemExecutionType"" Nullable=""false"" />
-        <Property Name=""Expiration"" Type=""Model.ExpirationReference"" />
-      </ComplexType>
-      <EntityType Name=""LinkedReport"" BaseType=""Model.CatalogItem"">
-        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""Link"" Type=""Edm.String"" />
-        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
-        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
-        <NavigationProperty Name=""HistorySnapshotOptions"" Type=""Model.HistorySnapshotOptions"" />
-        <NavigationProperty Name=""ReportHistorySnapshots"" Type=""Collection(Model.ReportHistorySnapshot)"" />
-        <NavigationProperty Name=""HistorySnapshots"" Type=""Collection(Model.HistorySnapshot)"" />
-        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameter)"" />
-      </EntityType>
-      <EntityType Name=""PowerBIReport"" BaseType=""Model.CatalogItem"">
-        <Property Name=""HasDataSources"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
-      </EntityType>
       <EntityType Name=""Comment"">
         <Key>
           <PropertyRef Name=""Id"" />
@@ -1050,30 +967,71 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""CreatedDate"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
         <Property Name=""ModifiedDate"" Type=""Edm.DateTimeOffset"" />
       </EntityType>
-      <EntityType Name=""ExcelWorkbook"" BaseType=""Model.CatalogItem"" />
-      <EntityType Name=""ExecutionLogInfo"">
-        <Key>
-          <PropertyRef Name=""LogEntryId"" />
-        </Key>
-        <Property Name=""LogEntryId"" Type=""Edm.Int64"" Nullable=""false"" />
-        <Property Name=""CatalogItemId"" Type=""Edm.String"" />
-        <Property Name=""ItemPath"" Type=""Edm.String"" />
-        <Property Name=""StartTime"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
-        <Property Name=""EndTime"" Type=""Edm.DateTimeOffset"" Nullable=""false"" />
-        <Property Name=""Format"" Type=""Edm.String"" />
-        <Property Name=""Parameters"" Type=""Edm.String"" />
-        <Property Name=""Source"" Type=""Model.ExecutionLogExecType"" Nullable=""false"" />
-        <Property Name=""ExecutionLogLevel"" Type=""Model.ExecutionLogLevel"" Nullable=""false"" />
-        <Property Name=""Status"" Type=""Edm.Int64"" Nullable=""false"" />
-        <Property Name=""ByteCount"" Type=""Edm.Int64"" Nullable=""false"" />
-        <Property Name=""RowCount"" Type=""Edm.Int64"" Nullable=""false"" />
-        <Property Name=""ProcessingTime"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""RenderingTime"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""DataRetrievalTime"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""ExecutionId"" Type=""Edm.String"" />
-        <Property Name=""EventType"" Type=""Model.ExecutionLogEventType"" Nullable=""false"" />
-        <Property Name=""AdditionalInfo"" Type=""Edm.String"" />
+      <EntityType Name=""DataSet"" BaseType=""Model.CatalogItem"">
+        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""QueryExecutionTimeOut"" Type=""Edm.Int32"" Nullable=""false"" />
+        <NavigationProperty Name=""Data"" Type=""Collection(Model.DataSetRow)"" />
+        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
+        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
+        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameterDefinition)"" />
+        <NavigationProperty Name=""CacheOptions"" Type=""Model.CacheOptions"" />
       </EntityType>
+      <ComplexType Name=""DataSetSchema"">
+        <Property Name=""Name"" Type=""Edm.String"" />
+        <Property Name=""Fields"" Type=""Collection(Model.DataSetField)"" />
+        <Property Name=""Parameters"" Type=""Collection(Model.DataSetParameterInfo)"" />
+      </ComplexType>
+      <EntityType Name=""DataSetRow"" OpenType=""true"">
+        <Key>
+          <PropertyRef Name=""Id"" />
+        </Key>
+        <Property Name=""Id"" Type=""Edm.Guid"" Nullable=""false"" />
+      </EntityType>
+      <EntityType Name=""DataSource"" BaseType=""Model.CatalogItem"">
+        <Property Name=""IsEnabled"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ConnectionString"" Type=""Edm.String"" />
+        <Property Name=""DataSourceType"" Type=""Edm.String"" />
+        <Property Name=""IsOriginalConnectionStringExpressionBased"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""IsConnectionStringOverridden"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""CredentialRetrieval"" Type=""Model.CredentialRetrievalType"" Nullable=""false"" />
+        <Property Name=""CredentialsByUser"" Type=""Model.CredentialsSuppliedByUser"" />
+        <Property Name=""CredentialsInServer"" Type=""Model.CredentialsStoredInServer"" />
+        <Property Name=""IsReference"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""DataSourceSubType"" Type=""Edm.String"" />
+        <Property Name=""DataModelDataSource"" Type=""Model.DataModelDataSource"" />
+        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
+      </EntityType>
+      <ComplexType Name=""DataSourceCheckResult"">
+        <Property Name=""IsSuccessful"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ErrorMessage"" Type=""Edm.String"" />
+      </ComplexType>
+      <ComplexType Name=""Query"">
+        <Property Name=""CommandText"" Type=""Edm.String"" />
+        <Property Name=""Timeout"" Type=""Edm.Int32"" />
+      </ComplexType>
+      <EntityType Name=""ExcelWorkbook"" BaseType=""Model.CatalogItem"" />
+      <EntityType Name=""Extension"">
+        <Key>
+          <PropertyRef Name=""Name"" />
+        </Key>
+        <Property Name=""ExtensionType"" Type=""Model.ExtensionType"" Nullable=""false"" />
+        <Property Name=""Name"" Type=""Edm.String"" Nullable=""false"" />
+        <Property Name=""LocalizedName"" Type=""Edm.String"" />
+        <Property Name=""Visible"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""Parameters"" Type=""Collection(Model.ExtensionParameter)"" />
+      </EntityType>
+      <ComplexType Name=""ExtensionParameter"">
+        <Property Name=""Name"" Type=""Edm.String"" />
+        <Property Name=""DisplayName"" Type=""Edm.String"" />
+        <Property Name=""Required"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ReadOnly"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""Value"" Type=""Edm.String"" />
+        <Property Name=""Error"" Type=""Edm.String"" />
+        <Property Name=""Encrypted"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""IsPassword"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ValidValues"" Type=""Collection(Model.ValidValue)"" />
+        <Property Name=""ValidValuesIsNull"" Type=""Edm.Boolean"" Nullable=""false"" />
+      </ComplexType>
       <EntityType Name=""FavoriteItem"">
         <Key>
           <PropertyRef Name=""Id"" />
@@ -1092,6 +1050,17 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""Values"" Type=""Model.KpiValues"" />
         <Property Name=""Data"" Type=""Model.KpiData"" />
       </EntityType>
+      <EntityType Name=""LinkedReport"" BaseType=""Model.CatalogItem"">
+        <Property Name=""HasParameters"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""Link"" Type=""Edm.String"" />
+        <NavigationProperty Name=""Subscriptions"" Type=""Collection(Model.Subscription)"" />
+        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
+        <NavigationProperty Name=""HistorySnapshotOptions"" Type=""Model.HistorySnapshotOptions"" />
+        <NavigationProperty Name=""ReportHistorySnapshots"" Type=""Collection(Model.ReportHistorySnapshot)"" />
+        <NavigationProperty Name=""HistorySnapshots"" Type=""Collection(Model.HistorySnapshot)"" />
+        <NavigationProperty Name=""ParameterDefinitions"" Type=""Collection(Model.ReportParameterDefinition)"" />
+        <NavigationProperty Name=""CacheOptions"" Type=""Model.CacheOptions"" />
+      </EntityType>
       <EntityType Name=""MobileReport"" BaseType=""Model.CatalogItem"">
         <Property Name=""AllowCaching"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""Manifest"" Type=""Model.MobileReportManifest"" />
@@ -1105,16 +1074,27 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""Id"" Type=""Edm.Guid"" Nullable=""false"" />
         <Property Name=""IssueType"" Type=""Model.IssueType"" Nullable=""false"" />
       </EntityType>
-      <EntityType Name=""ReportServerInfo"">
+      <EntityType Name=""PowerBIReport"" BaseType=""Model.CatalogItem"">
+        <Property Name=""HasDataSources"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <NavigationProperty Name=""DataSources"" Type=""Collection(Model.DataSource)"" />
+        <NavigationProperty Name=""CacheRefreshPlans"" Type=""Collection(Model.CacheRefreshPlan)"" />
+      </EntityType>
+      <EntityType Name=""System"">
         <Key>
           <PropertyRef Name=""Id"" />
         </Key>
         <Property Name=""Id"" Type=""Edm.Guid"" Nullable=""false"" />
-        <Property Name=""ReportServerUrl"" Type=""Edm.String"" />
-        <Property Name=""VirtualDirectory"" Type=""Edm.String"" />
-        <Property Name=""WebAppUrl"" Type=""Edm.String"" />
+        <Property Name=""ReportServerAbsoluteUrl"" Type=""Edm.String"" />
+        <Property Name=""ReportServerRelativeUrl"" Type=""Edm.String"" />
+        <Property Name=""WebPortalRelativeUrl"" Type=""Edm.String"" />
+        <Property Name=""ProductName"" Type=""Edm.String"" />
+        <Property Name=""ProductVersion"" Type=""Edm.String"" />
+        <Property Name=""TimeZone"" Type=""Edm.String"" />
+        <Property Name=""ProductType"" Type=""Model.ProductType"" Nullable=""false"" />
         <Property Name=""Roles"" Type=""Collection(Model.Role)"" />
+        <NavigationProperty Name=""AllowedActions"" Type=""Collection(Model.AllowedAction)"" />
         <NavigationProperty Name=""Policies"" Type=""Collection(Model.SystemPolicy)"" />
+        <NavigationProperty Name=""Properties"" Type=""Collection(Model.Property)"" />
       </EntityType>
       <EntityType Name=""SystemPolicy"">
         <Key>
@@ -1123,24 +1103,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""Id"" Type=""Edm.Guid"" Nullable=""false"" />
         <Property Name=""Policies"" Type=""Collection(Model.Policy)"" />
       </EntityType>
-      <ComplexType Name=""Extension"">
-        <Property Name=""ExtensionType"" Type=""Model.ExtensionType"" Nullable=""false"" />
-        <Property Name=""Name"" Type=""Edm.String"" />
-        <Property Name=""LocalizedName"" Type=""Edm.String"" />
-        <Property Name=""Visible"" Type=""Edm.Boolean"" Nullable=""false"" />
-      </ComplexType>
-      <ComplexType Name=""ExtensionParameter"">
-        <Property Name=""Name"" Type=""Edm.String"" />
-        <Property Name=""DisplayName"" Type=""Edm.String"" />
-        <Property Name=""Required"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""ReadOnly"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""Value"" Type=""Edm.String"" />
-        <Property Name=""Error"" Type=""Edm.String"" />
-        <Property Name=""Encrypted"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""IsPassword"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""ValidValues"" Type=""Collection(Model.ValidValue)"" />
-        <Property Name=""ValidValuesIsNull"" Type=""Edm.Boolean"" Nullable=""false"" />
-      </ComplexType>
       <EntityType Name=""Resource"" BaseType=""Model.CatalogItem"" />
       <EntityType Name=""Schedule"">
         <Key>
@@ -1241,6 +1203,16 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""Key"" Type=""Edm.String"" />
         <NavigationProperty Name=""ItemContent"" Type=""Model.CatalogItem"" />
       </EntityType>
+      <ComplexType Name=""ServiceState"">
+        <Property Name=""IsAvailable"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""RestrictedFeatures"" Type=""Collection(Edm.String)"" />
+        <Property Name=""AllowedSystemActions"" Type=""Collection(Edm.String)"" />
+        <Property Name=""TimeZone"" Type=""Edm.String"" />
+        <Property Name=""UserHasFavorites"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""AcceptLanguage"" Type=""Edm.String"" />
+        <Property Name=""RequireIntune"" Type=""Edm.Boolean"" Nullable=""false"" />
+        <Property Name=""ProductType"" Type=""Model.ProductType"" Nullable=""false"" />
+      </ComplexType>
       <EntityType Name=""UserSettings"">
         <Key>
           <PropertyRef Name=""Id"" />
@@ -1304,6 +1276,10 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""SystemLimit"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Schedule"" Type=""Model.ScheduleReference"" />
       </ComplexType>
+      <ComplexType Name=""ExpirationReference"">
+        <Property Name=""Minutes"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""Schedule"" Type=""Model.ScheduleReference"" />
+      </ComplexType>
       <EntityType Name=""AllowedAction"">
         <Key>
           <PropertyRef Name=""Action"" />
@@ -1327,6 +1303,15 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""Password"" Type=""Edm.String"" />
         <Property Name=""UseAsWindowsCredentials"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""ImpersonateAuthenticatedUser"" Type=""Edm.Boolean"" Nullable=""false"" />
+      </ComplexType>
+      <ComplexType Name=""DataModelDataSource"">
+        <Property Name=""Type"" Type=""Model.DataModelDataSourceType"" Nullable=""false"" />
+        <Property Name=""Kind"" Type=""Model.DataModelDataSourceKind"" Nullable=""false"" />
+        <Property Name=""AuthType"" Type=""Model.DataModelDataSourceAuthType"" Nullable=""false"" />
+        <Property Name=""SupportedAuthTypes"" Type=""Collection(Model.DataModelDataSourceAuthType)"" Nullable=""false"" />
+        <Property Name=""Username"" Type=""Edm.String"" />
+        <Property Name=""Secret"" Type=""Edm.String"" />
+        <Property Name=""ModelConnectionName"" Type=""Edm.String"" />
       </ComplexType>
       <ComplexType Name=""ExtensionSettings"">
         <Property Name=""Extension"" Type=""Edm.String"" />
@@ -1422,14 +1407,10 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Property Name=""IsExpression"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""IsMultiValued"" Type=""Edm.Boolean"" Nullable=""false"" />
       </ComplexType>
-      <ComplexType Name=""ExpirationReference"">
-        <Property Name=""Minutes"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""Schedule"" Type=""Model.ScheduleReference"" />
-      </ComplexType>
-      <ComplexType Name=""DeliveryExtension"" BaseType=""Model.Extension"">
+      <EntityType Name=""DeliveryExtension"" BaseType=""Model.Extension"">
         <Property Name=""IsImmutable"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""DefaultDeliveryExtension"" Type=""Edm.Boolean"" Nullable=""false"" />
-      </ComplexType>
+      </EntityType>
       <EntityType Name=""SystemResourcePackage"" BaseType=""Model.SystemResource"">
         <Property Name=""Content"" Type=""Edm.Binary"" />
         <Property Name=""PackageFileName"" Type=""Edm.String"" />
@@ -1500,11 +1481,64 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Member Name=""FourthWeek"" Value=""3"" />
         <Member Name=""LastWeek"" Value=""4"" />
       </EnumType>
+      <EnumType Name=""ItemExecutionType"">
+        <Member Name=""Live"" Value=""0"" />
+        <Member Name=""Cache"" Value=""1"" />
+        <Member Name=""Snapshot"" Value=""2"" />
+      </EnumType>
       <EnumType Name=""CredentialRetrievalType"">
         <Member Name=""prompt"" Value=""0"" />
         <Member Name=""store"" Value=""1"" />
         <Member Name=""integrated"" Value=""2"" />
         <Member Name=""none"" Value=""3"" />
+      </EnumType>
+      <EnumType Name=""DataModelDataSourceType"">
+        <Member Name=""Unknown"" Value=""0"" />
+        <Member Name=""Live"" Value=""1"" />
+        <Member Name=""DirectQuery"" Value=""2"" />
+        <Member Name=""Import"" Value=""3"" />
+      </EnumType>
+      <EnumType Name=""DataModelDataSourceKind"">
+        <Member Name=""UnknownFunction"" Value=""0"" />
+        <Member Name=""ActiveDirectory"" Value=""1"" />
+        <Member Name=""AnalysisServices"" Value=""2"" />
+        <Member Name=""AzureBlobs"" Value=""3"" />
+        <Member Name=""AzureTables"" Value=""4"" />
+        <Member Name=""CurrentWorkbook"" Value=""5"" />
+        <Member Name=""DataMarket"" Value=""6"" />
+        <Member Name=""DB2"" Value=""7"" />
+        <Member Name=""Exchange"" Value=""8"" />
+        <Member Name=""Facebook"" Value=""9"" />
+        <Member Name=""File"" Value=""10"" />
+        <Member Name=""Folder"" Value=""11"" />
+        <Member Name=""GoogleAnalytics"" Value=""12"" />
+        <Member Name=""Hdfs"" Value=""13"" />
+        <Member Name=""HDInsight"" Value=""14"" />
+        <Member Name=""Informix"" Value=""15"" />
+        <Member Name=""MQ"" Value=""16"" />
+        <Member Name=""MySql"" Value=""17"" />
+        <Member Name=""OData"" Value=""18"" />
+        <Member Name=""Odbc"" Value=""19"" />
+        <Member Name=""Oracle"" Value=""20"" />
+        <Member Name=""PostgreSQL"" Value=""21"" />
+        <Member Name=""Salesforce"" Value=""22"" />
+        <Member Name=""SapBusinessObjects"" Value=""23"" />
+        <Member Name=""SapBusinessWarehouse"" Value=""24"" />
+        <Member Name=""SapHana"" Value=""25"" />
+        <Member Name=""SharePoint"" Value=""26"" />
+        <Member Name=""SQL"" Value=""27"" />
+        <Member Name=""Sybase"" Value=""28"" />
+        <Member Name=""Teradata"" Value=""29"" />
+        <Member Name=""Web"" Value=""30"" />
+      </EnumType>
+      <EnumType Name=""DataModelDataSourceAuthType"">
+        <Member Name=""Unknown"" Value=""0"" />
+        <Member Name=""Anonymous"" Value=""1"" />
+        <Member Name=""Integrated"" Value=""2"" />
+        <Member Name=""Windows"" Value=""3"" />
+        <Member Name=""UsernamePassword"" Value=""4"" />
+        <Member Name=""Key"" Value=""5"" />
+        <Member Name=""Impersonate"" Value=""6"" />
       </EnumType>
       <EnumType Name=""ReportParameterType"">
         <Member Name=""Boolean"" Value=""0"" />
@@ -1555,51 +1589,21 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Member Name=""Landscape"" Value=""1"" />
         <Member Name=""Portrait"" Value=""2"" />
       </EnumType>
-      <EnumType Name=""ItemExecutionType"">
-        <Member Name=""Live"" Value=""0"" />
-        <Member Name=""Cache"" Value=""1"" />
-        <Member Name=""Snapshot"" Value=""2"" />
-      </EnumType>
-      <EnumType Name=""ExecutionLogExecType"">
-        <Member Name=""Live"" Value=""1"" />
-        <Member Name=""Cache"" Value=""2"" />
-        <Member Name=""Snapshot"" Value=""3"" />
-        <Member Name=""History"" Value=""4"" />
-        <Member Name=""AdHoc"" Value=""5"" />
-        <Member Name=""Session"" Value=""6"" />
-        <Member Name=""Rdce"" Value=""7"" />
-      </EnumType>
-      <EnumType Name=""ExecutionLogLevel"">
-        <Member Name=""Normal"" Value=""0"" />
-        <Member Name=""Verbose"" Value=""1"" />
-      </EnumType>
-      <EnumType Name=""ExecutionLogEventType"">
-        <Member Name=""Render"" Value=""1"" />
-        <Member Name=""BookmarkNavigation"" Value=""2"" />
-        <Member Name=""DocumentMapNavigation"" Value=""3"" />
-        <Member Name=""DrillThrough"" Value=""4"" />
-        <Member Name=""FindString"" Value=""5"" />
-        <Member Name=""GetDocumentMap"" Value=""6"" />
-        <Member Name=""Toggle"" Value=""7"" />
-        <Member Name=""Sort"" Value=""8"" />
-        <Member Name=""Execute"" Value=""9"" />
-        <Member Name=""RenderEdit"" Value=""10"" />
-        <Member Name=""ExecuteDataShapeQuery"" Value=""11"" />
-        <Member Name=""RenderMobileReport"" Value=""12"" />
-        <Member Name=""ConceptualSchema"" Value=""13"" />
-        <Member Name=""QueryData"" Value=""14"" />
-        <Member Name=""ASModelStream"" Value=""15"" />
-      </EnumType>
-      <EnumType Name=""IssueType"">
-        <Member Name=""PowerBITokenNeeded"" Value=""0"" />
-        <Member Name=""PowerBITokenNeedsRenewal"" Value=""1"" />
-      </EnumType>
       <EnumType Name=""ExtensionType"">
         <Member Name=""Delivery"" Value=""0"" />
         <Member Name=""DeliveryUI"" Value=""1"" />
         <Member Name=""Render"" Value=""2"" />
         <Member Name=""Data"" Value=""3"" />
         <Member Name=""All"" Value=""4"" />
+      </EnumType>
+      <EnumType Name=""IssueType"">
+        <Member Name=""PowerBITokenNeeded"" Value=""0"" />
+        <Member Name=""PowerBITokenNeedsRenewal"" Value=""1"" />
+      </EnumType>
+      <EnumType Name=""ProductType"">
+        <Member Name=""None"" Value=""0"" />
+        <Member Name=""SqlServerReportingServices"" Value=""1"" />
+        <Member Name=""PowerBiReportServer"" Value=""2"" />
       </EnumType>
       <EnumType Name=""ScheduleStateEnum"">
         <Member Name=""Ready"" Value=""0"" />
@@ -1616,15 +1620,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
       <Action Name=""Execute"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.CacheRefreshPlan"" />
       </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
-        <ReturnType Type=""Collection(Model.CatalogItem)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.CatalogItem)"" />
-      </Function>
       <Action Name=""DeleteItems"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Collection(Model.CatalogItem)"" />
         <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
@@ -1638,20 +1633,24 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
       </Action>
       <Function Name=""AccessToken"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
-        <ReturnType Type=""Model.V2.CatalogItemAccessToken"" />
+        <ReturnType Type=""Model.CatalogItemAccessToken"" />
       </Function>
       <Action Name=""GetParameters"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
         <Parameter Name=""ParameterValues"" Type=""Collection(Model.ParameterValue)"" />
-        <ReturnType Type=""Collection(Model.ReportParameter)"" />
+        <ReturnType Type=""Collection(Model.ReportParameterDefinition)"" />
       </Action>
-      <Action Name=""SetParameterProperties"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <Parameter Name=""ParameterProperties"" Type=""Collection(Model.ReportParameterProperties)"" />
+      <Action Name=""GetContentTrusted"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
+        <Parameter Name=""TrustedProcessToken"" Type=""Edm.String"" Unicode=""false"" />
+        <ReturnType Type=""Edm.String"" Unicode=""false"" />
       </Action>
-      <Action Name=""UpdateExecutionSnapshot"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <ReturnType Type=""Edm.Boolean"" Nullable=""false"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.DataSet)"" />
+        <ReturnType Type=""Model.DataSet"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
       </Action>
       <Function Name=""GetSchema"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
@@ -1674,10 +1673,12 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Parameter Name=""Parameters"" Type=""Collection(Model.DataSetParameter)"" />
         <ReturnType Type=""Edm.String"" Unicode=""false"" />
       </Action>
-      <Action Name=""CheckDataSourceConnection"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <Parameter Name=""DataSourceName"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Model.DataSourceCheckResult"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.DataSource)"" />
+        <ReturnType Type=""Model.DataSource"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.DataSource"" />
       </Action>
       <Action Name=""CheckConnection"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.DataSource"" />
@@ -1695,240 +1696,90 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         <Parameter Name=""subscriptionId"" Type=""Edm.String"" Unicode=""false"" />
         <ReturnType Type=""Collection(Edm.String)"" Unicode=""false"" />
       </Action>
-      <Function Name=""GetCacheOptions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <ReturnType Type=""Model.CacheOptions"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.ExcelWorkbook)"" />
+        <ReturnType Type=""Model.ExcelWorkbook"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.ExcelWorkbook"" />
+      </Action>
+      <Action Name=""ValidateExtensionSettings"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.Extension)"" />
+        <Parameter Name=""ParameterValues"" Type=""Collection(Model.ParameterValue)"" />
+        <Parameter Name=""ExtensionName"" Type=""Edm.String"" Unicode=""false"" />
+        <ReturnType Type=""Collection(Model.ExtensionParameter)"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.Folder)"" />
+        <ReturnType Type=""Model.Folder"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Folder"" />
+      </Action>
+      <Function Name=""SearchItems"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Folder"" />
+        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
+        <ReturnType Type=""Collection(Model.CatalogItem)"" />
       </Function>
-      <Function Name=""GetCacheOptions"" IsBound=""true"">
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.Kpi)"" />
+        <ReturnType Type=""Model.Kpi"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Kpi"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.LinkedReport)"" />
+        <ReturnType Type=""Model.LinkedReport"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.LinkedReport"" />
-        <ReturnType Type=""Model.CacheOptions"" />
-      </Function>
-      <Function Name=""GetCacheOptions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
-        <ReturnType Type=""Model.CacheOptions"" />
-      </Function>
-      <Action Name=""SetCacheOptions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <Parameter Name=""cacheOptions"" Type=""Model.CacheOptions"" />
       </Action>
-      <Action Name=""SetCacheOptions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.LinkedReport"" />
-        <Parameter Name=""cacheOptions"" Type=""Model.CacheOptions"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.MobileReport)"" />
+        <ReturnType Type=""Model.MobileReport"" />
       </Action>
-      <Action Name=""SetCacheOptions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
-        <Parameter Name=""cacheOptions"" Type=""Model.CacheOptions"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.MobileReport"" />
       </Action>
-      <Action Name=""UpdateReportDataSets"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <Parameter Name=""dataSets"" Type=""Collection(Model.DataSet)"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Collection(Model.PowerBIReport)"" />
+        <ReturnType Type=""Model.PowerBIReport"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIReport"" />
       </Action>
       <Action Name=""CheckDataSourceConnection"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.PowerBIReport"" />
         <Parameter Name=""DataSourceName"" Type=""Edm.String"" Unicode=""false"" />
         <ReturnType Type=""Model.DataSourceCheckResult"" />
       </Action>
-      <Action Name=""GetContentTrusted"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
-        <Parameter Name=""TrustedProcessToken"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Edm.String"" Unicode=""false"" />
-      </Action>
-      <Function Name=""GetAlertSubscriptionID"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.CatalogItem"" />
-        <Parameter Name=""AlertType"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Edm.Int64"" Nullable=""false"" />
-      </Function>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
-        <ReturnType Type=""Collection(Model.DataSet)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSet"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.DataSet)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.DataSet)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSource"" />
-        <ReturnType Type=""Collection(Model.DataSource)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.DataSource"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.DataSource)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.DataSource)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ExcelWorkbook"" />
-        <ReturnType Type=""Collection(Model.ExcelWorkbook)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ExcelWorkbook"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.ExcelWorkbook)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.ExcelWorkbook)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Folder"" />
-        <ReturnType Type=""Collection(Model.Folder)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Folder"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.Folder)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.Folder)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Kpi"" />
-        <ReturnType Type=""Collection(Model.Kpi)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Kpi"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.Kpi)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.Kpi)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.LinkedReport"" />
-        <ReturnType Type=""Collection(Model.LinkedReport)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.LinkedReport"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.LinkedReport)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.LinkedReport)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.MobileReport"" />
-        <ReturnType Type=""Collection(Model.MobileReport)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.MobileReport"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.MobileReport)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.MobileReport)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIReport"" />
-        <ReturnType Type=""Collection(Model.PowerBIReport)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIReport"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.PowerBIReport)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Collection(Model.PowerBIReport)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
-      </Action>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <ReturnType Type=""Collection(Model.Report)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.Report)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
+      <Action Name=""Upload"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Collection(Model.Report)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
+        <ReturnType Type=""Model.Report"" />
       </Action>
-      <Function Name=""DeliveryExtensions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Extension)"" />
-      </Function>
-      <Function Name=""DeliveryUIExtensions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Extension)"" />
-      </Function>
-      <Function Name=""DataExtensions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Extension)"" />
-      </Function>
-      <Function Name=""RenderingExtensions"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Extension)"" />
-      </Function>
-      <Function Name=""ExtensionParameters"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <Parameter Name=""ExtensionName"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.ExtensionParameter)"" />
-      </Function>
-      <Action Name=""ValidateExtensionSettings"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <Parameter Name=""ParameterValues"" Type=""Collection(Model.ParameterValue)"" />
-        <Parameter Name=""ExtensionName"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.ExtensionParameter)"" />
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
       </Action>
-      <Function Name=""RestrictedSettings"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Property)"" />
-      </Function>
-      <Function Name=""Settings"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Property)"" />
-      </Function>
-      <Function Name=""ServerProductInfo"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Property)"" />
-      </Function>
-      <Function Name=""SiteName"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Edm.String"" Unicode=""false"" />
-      </Function>
-      <Action Name=""UpdateSettings"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <Parameter Name=""PropertyValues"" Type=""Collection(Model.Property)"" />
+      <Action Name=""UpdateCacheSnapshot"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
         <ReturnType Type=""Edm.Boolean"" Nullable=""false"" />
       </Action>
-      <Function Name=""PowerBISettings"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.ReportServerInfo"" />
-        <ReturnType Type=""Collection(Model.Property)"" />
-      </Function>
-      <Function Name=""GetDependentItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Resource"" />
-        <ReturnType Type=""Collection(Model.Resource)"" />
-      </Function>
-      <Function Name=""SearchItems"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.Resource"" />
-        <Parameter Name=""SearchText"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Collection(Model.Resource)"" />
-      </Function>
-      <Action Name=""DeleteItems"" IsBound=""true"">
+      <Action Name=""CheckDataSourceConnection"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
+        <Parameter Name=""DataSourceName"" Type=""Edm.String"" Unicode=""false"" />
+        <ReturnType Type=""Model.DataSourceCheckResult"" />
+      </Action>
+      <Action Name=""UpdateReportDataSets"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Report"" />
+        <Parameter Name=""dataSets"" Type=""Collection(Model.DataSet)"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Collection(Model.Resource)"" />
-        <Parameter Name=""CatalogItemPaths"" Type=""Collection(Edm.String)"" Unicode=""false"" />
-        <ReturnType Type=""Model.BulkOperationsResult"" />
+        <ReturnType Type=""Model.Resource"" />
+      </Action>
+      <Action Name=""Upload"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.Resource"" />
       </Action>
       <Action Name=""Pause"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.Schedule"" />
@@ -1949,124 +1800,135 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
       <Action Name=""Execute"" IsBound=""true"">
         <Parameter Name=""bindingParameter"" Type=""Model.Subscription"" />
       </Action>
-      <Function Name=""CatalogItemByPath"">
-        <Parameter Name=""path"" Type=""Edm.String"" Unicode=""false"" />
-        <ReturnType Type=""Model.CatalogItem"" />
-      </Function>
       <Function Name=""ServiceState"">
-        <ReturnType Type=""Model.V2.ServiceState"" />
+        <ReturnType Type=""Model.ServiceState"" />
+      </Function>
+      <Function Name=""AllowedActions"">
+        <Parameter Name=""path"" Type=""Edm.String"" Unicode=""false"" />
+        <ReturnType Type=""Collection(Edm.String)"" Unicode=""false"" />
       </Function>
       <Function Name=""SafeGetSystemResourceContent"">
         <Parameter Name=""type"" Type=""Edm.String"" Unicode=""false"" />
         <Parameter Name=""key"" Type=""Edm.String"" Unicode=""false"" />
         <ReturnType Type=""Edm.Binary"" />
       </Function>
+      <Action Name=""Logout"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIUserInfo"" />
+      </Action>
+      <Function Name=""IsEnabled"" IsBound=""true"">
+        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIUserInfo"" />
+        <ReturnType Type=""Edm.Boolean"" Nullable=""false"" />
+      </Function>
       <EntityContainer Name=""Container"">
         <EntitySet Name=""AlertSubscriptions"" EntityType=""Model.AlertSubscription"" />
         <EntitySet Name=""CacheRefreshPlans"" EntityType=""Model.CacheRefreshPlan"" />
         <EntitySet Name=""CatalogItems"" EntityType=""Model.CatalogItem"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""Model.Report/Subscriptions"" Target=""Subscriptions"" />
           <NavigationPropertyBinding Path=""Model.Report/CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
           <NavigationPropertyBinding Path=""Model.Report/DataSources"" Target=""DataSources"" />
           <NavigationPropertyBinding Path=""Model.Report/SharedDataSets"" Target=""DataSets"" />
-          <NavigationPropertyBinding Path=""Model.Report/ParameterDefinitions"" Target=""ReportParameters"" />
+          <NavigationPropertyBinding Path=""Model.Report/ParameterDefinitions"" Target=""ParameterDefinitions"" />
+          <NavigationPropertyBinding Path=""Model.DataSet/Data"" Target=""DataSetData"" />
           <NavigationPropertyBinding Path=""Model.DataSet/DataSources"" Target=""DataSources"" />
           <NavigationPropertyBinding Path=""Model.DataSet/CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
-          <NavigationPropertyBinding Path=""Model.DataSet/ParameterDefinitions"" Target=""ReportParameters"" />
+          <NavigationPropertyBinding Path=""Model.DataSet/ParameterDefinitions"" Target=""ParameterDefinitions"" />
           <NavigationPropertyBinding Path=""Model.DataSource/Subscriptions"" Target=""Subscriptions"" />
+          <NavigationPropertyBinding Path=""Model.Folder/CatalogItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""Model.LinkedReport/Subscriptions"" Target=""Subscriptions"" />
           <NavigationPropertyBinding Path=""Model.LinkedReport/CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
-          <NavigationPropertyBinding Path=""Model.LinkedReport/ParameterDefinitions"" Target=""ReportParameters"" />
-          <NavigationPropertyBinding Path=""Model.PowerBIReport/DataSources"" Target=""DataSources"" />
-          <NavigationPropertyBinding Path=""Model.Folder/CatalogItems"" Target=""CatalogItems"" />
+          <NavigationPropertyBinding Path=""Model.LinkedReport/ParameterDefinitions"" Target=""ParameterDefinitions"" />
           <NavigationPropertyBinding Path=""Model.MobileReport/SharedDataSets"" Target=""DataSets"" />
+          <NavigationPropertyBinding Path=""Model.PowerBIReport/DataSources"" Target=""DataSources"" />
+          <NavigationPropertyBinding Path=""Model.PowerBIReport/CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
         </EntitySet>
-        <EntitySet Name=""ReportParameters"" EntityType=""Model.ReportParameter"" />
+        <EntitySet Name=""ParameterDefinitions"" EntityType=""Model.ReportParameterDefinition"" />
         <EntitySet Name=""Comments"" EntityType=""Model.Comment"" />
         <EntitySet Name=""DataSets"" EntityType=""Model.DataSet"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
+          <NavigationPropertyBinding Path=""Data"" Target=""DataSetData"" />
           <NavigationPropertyBinding Path=""DataSources"" Target=""DataSources"" />
           <NavigationPropertyBinding Path=""CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
-          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ReportParameters"" />
+          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ParameterDefinitions"" />
         </EntitySet>
+        <EntitySet Name=""DataSetData"" EntityType=""Model.DataSetRow"" />
         <EntitySet Name=""DataSources"" EntityType=""Model.DataSource"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""Subscriptions"" Target=""Subscriptions"" />
         </EntitySet>
         <EntitySet Name=""ExcelWorkbooks"" EntityType=""Model.ExcelWorkbook"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
         </EntitySet>
-        <EntitySet Name=""ExecutionLogEntries"" EntityType=""Model.ExecutionLogInfo"" />
+        <EntitySet Name=""Extensions"" EntityType=""Model.Extension"" />
         <EntitySet Name=""FavoriteItems"" EntityType=""Model.FavoriteItem"">
           <NavigationPropertyBinding Path=""Item"" Target=""CatalogItems"" />
         </EntitySet>
         <EntitySet Name=""Folders"" EntityType=""Model.Folder"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""CatalogItems"" Target=""CatalogItems"" />
         </EntitySet>
         <EntitySet Name=""Kpis"" EntityType=""Model.Kpi"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
         </EntitySet>
         <EntitySet Name=""LinkedReports"" EntityType=""Model.LinkedReport"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""Subscriptions"" Target=""Subscriptions"" />
           <NavigationPropertyBinding Path=""CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
-          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ReportParameters"" />
+          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ParameterDefinitions"" />
         </EntitySet>
         <EntitySet Name=""MobileReports"" EntityType=""Model.MobileReport"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""SharedDataSets"" Target=""DataSets"" />
         </EntitySet>
         <EntitySet Name=""Notifications"" EntityType=""Model.Notification"" />
         <EntitySet Name=""PowerBIReports"" EntityType=""Model.PowerBIReport"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""DataSources"" Target=""DataSources"" />
+          <NavigationPropertyBinding Path=""CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
         </EntitySet>
-        <EntitySet Name=""reports"" EntityType=""Model.Report"">
+        <EntitySet Name=""Reports"" EntityType=""Model.Report"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
           <NavigationPropertyBinding Path=""Subscriptions"" Target=""Subscriptions"" />
           <NavigationPropertyBinding Path=""CacheRefreshPlans"" Target=""CacheRefreshPlans"" />
           <NavigationPropertyBinding Path=""DataSources"" Target=""DataSources"" />
           <NavigationPropertyBinding Path=""SharedDataSets"" Target=""DataSets"" />
-          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ReportParameters"" />
+          <NavigationPropertyBinding Path=""ParameterDefinitions"" Target=""ParameterDefinitions"" />
         </EntitySet>
-        <EntitySet Name=""Properties"" EntityType=""Model.Property"" />
         <EntitySet Name=""Resources"" EntityType=""Model.Resource"">
           <NavigationPropertyBinding Path=""ParentFolder"" Target=""Folders"" />
-          <NavigationPropertyBinding Path=""Properties"" Target=""Properties"" />
           <NavigationPropertyBinding Path=""Comments"" Target=""Comments"" />
           <NavigationPropertyBinding Path=""AlertSubscriptions"" Target=""AlertSubscriptions"" />
+          <NavigationPropertyBinding Path=""DependentItems"" Target=""CatalogItems"" />
         </EntitySet>
         <EntitySet Name=""Schedules"" EntityType=""Model.Schedule"" />
         <EntitySet Name=""Subscriptions"" EntityType=""Model.Subscription"">
@@ -2080,45 +1942,14 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
           <NavigationPropertyBinding Path=""ItemContent"" Target=""CatalogItems"" />
         </EntitySet>
         <EntitySet Name=""UserSettings"" EntityType=""Model.UserSettings"" />
-        <Singleton Name=""ReportServerInfo"" Type=""Model.ReportServerInfo"" />
+        <Singleton Name=""System"" Type=""Model.System"" />
         <Singleton Name=""Me"" Type=""Model.User"" />
         <Singleton Name=""Telemetry"" Type=""Model.Telemetry"" />
         <Singleton Name=""PowerBIIntegration"" Type=""Model.PowerBIUserInfo"" />
-        <FunctionImport Name=""CatalogItemByPath"" Function=""Model.CatalogItemByPath"" EntitySet=""CatalogItems"" IncludeInServiceDocument=""true"" />
         <FunctionImport Name=""ServiceState"" Function=""Model.ServiceState"" IncludeInServiceDocument=""true"" />
+        <FunctionImport Name=""AllowedActions"" Function=""Model.AllowedActions"" IncludeInServiceDocument=""true"" />
         <FunctionImport Name=""SafeGetSystemResourceContent"" Function=""Model.SafeGetSystemResourceContent"" IncludeInServiceDocument=""true"" />
       </EntityContainer>
-    </Schema>
-    <Schema Namespace=""Model.V2"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
-      <ComplexType Name=""CatalogItemAccessToken"">
-        <Property Name=""Token"" Type=""Edm.Binary"" />
-      </ComplexType>
-      <ComplexType Name=""ServiceState"">
-        <Property Name=""IsAvailable"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""RestrictedFeatures"" Type=""Collection(Edm.String)"" />
-        <Property Name=""AllowedSystemActions"" Type=""Collection(Edm.String)"" />
-        <Property Name=""TimeZone"" Type=""Edm.String"" />
-        <Property Name=""UserHasFavorites"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""AcceptLanguage"" Type=""Edm.String"" />
-        <Property Name=""RequireIntune"" Type=""Edm.Boolean"" Nullable=""false"" />
-        <Property Name=""ProductType"" Type=""Microsoft.ReportingServices.Editions.ProductType"" Nullable=""false"" />
-      </ComplexType>
-    </Schema>
-    <Schema Namespace=""Microsoft.ReportingServices.Editions"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
-      <EnumType Name=""ProductType"">
-        <Member Name=""None"" Value=""0"" />
-        <Member Name=""SqlServerReportingServices"" Value=""1"" />
-        <Member Name=""PowerBiReportServer"" Value=""2"" />
-      </EnumType>
-    </Schema>
-    <Schema Namespace=""PowerBIIntegration"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
-      <Action Name=""Logout"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIUserInfo"" />
-      </Action>
-      <Function Name=""IsEnabled"" IsBound=""true"">
-        <Parameter Name=""bindingParameter"" Type=""Model.PowerBIUserInfo"" />
-        <ReturnType Type=""Edm.Boolean"" Nullable=""false"" />
-      </Function>
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>";
@@ -2147,20 +1978,20 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
         }
         /// <summary>
-        /// There are no comments for CatalogItemByPath in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CatalogItemByPath")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemSingle CatalogItemByPath(string path)
-        {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemSingle(this.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("", "CatalogItemByPath", false, new global::Microsoft.OData.Client.UriOperationParameter("path", path)));
-        }
-        /// <summary>
         /// There are no comments for ServiceState in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("ServiceState")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.ServiceState> ServiceState()
+        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ServiceState> ServiceState()
         {
-            return this.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.ServiceState>("", "ServiceState", false);
+            return this.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ServiceState>("", "ServiceState", false);
+        }
+        /// <summary>
+        /// There are no comments for AllowedActions in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<string> AllowedActions(string path)
+        {
+            return this.CreateFunctionQuery<string>("", "AllowedActions", false, new global::Microsoft.OData.Client.UriOperationParameter("path", path));
         }
         /// <summary>
         /// There are no comments for SafeGetSystemResourceContent in the schema.
@@ -3088,6 +2919,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnScheduleChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference value);
         partial void OnScheduleChanged();
         /// <summary>
+        /// There are no comments for Property ScheduleDescription in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ScheduleDescription")]
+        public string ScheduleDescription
+        {
+            get
+            {
+                return this._ScheduleDescription;
+            }
+            set
+            {
+                this.OnScheduleDescriptionChanging(value);
+                this._ScheduleDescription = value;
+                this.OnScheduleDescriptionChanged();
+                this.OnPropertyChanged("ScheduleDescription");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _ScheduleDescription;
+        partial void OnScheduleDescriptionChanging(string value);
+        partial void OnScheduleDescriptionChanged();
+        /// <summary>
         /// There are no comments for Property LastRunTime in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -3266,7 +3120,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
     /// Name
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Name")]
-    [global::Microsoft.OData.Client.EntitySet("Properties")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("Property")]
     public partial class Property : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -3456,6 +3309,141 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
+    /// There are no comments for CacheOptionsSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptionsSingle")]
+    public partial class CacheOptionsSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<CacheOptions>
+    {
+        /// <summary>
+        /// Initialize a new CacheOptionsSingle object.
+        /// </summary>
+        public CacheOptionsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new CacheOptionsSingle object.
+        /// </summary>
+        public CacheOptionsSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new CacheOptionsSingle object.
+        /// </summary>
+        public CacheOptionsSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<CacheOptions> query)
+            : base(query) { }
+
+    }
+    /// <summary>
+    /// There are no comments for CacheOptions in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+    public partial class CacheOptions : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new CacheOptions object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="executionType">Initial value of ExecutionType.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static CacheOptions CreateCacheOptions(global::System.Guid ID, global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType executionType)
+        {
+            CacheOptions cacheOptions = new CacheOptions();
+            cacheOptions.Id = ID;
+            cacheOptions.ExecutionType = executionType;
+            return cacheOptions;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        public global::System.Guid Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property ExecutionType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionType")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType ExecutionType
+        {
+            get
+            {
+                return this._ExecutionType;
+            }
+            set
+            {
+                this.OnExecutionTypeChanging(value);
+                this._ExecutionType = value;
+                this.OnExecutionTypeChanged();
+                this.OnPropertyChanged("ExecutionType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType _ExecutionType;
+        partial void OnExecutionTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType value);
+        partial void OnExecutionTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Expiration in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Expiration")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference Expiration
+        {
+            get
+            {
+                return this._Expiration;
+            }
+            set
+            {
+                this.OnExpirationChanging(value);
+                this._Expiration = value;
+                this.OnExpirationChanged();
+                this.OnPropertyChanged("Expiration");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference _Expiration;
+        partial void OnExpirationChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference value);
+        partial void OnExpirationChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for CatalogItemSingle in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("CatalogItemSingle")]
@@ -3611,6 +3599,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for CatalogItem in the schema.
@@ -4130,6 +4140,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnPoliciesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> value);
         partial void OnPoliciesChanged();
         /// <summary>
+        /// There are no comments for Property DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                return this._DependentItems;
+            }
+            set
+            {
+                this.OnDependentItemsChanging(value);
+                this._DependentItems = value;
+                this.OnDependentItemsChanged();
+                this.OnPropertyChanged("DependentItems");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnDependentItemsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> value);
+        partial void OnDependentItemsChanged();
+        /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -4147,46 +4180,15 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
         }
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken()
+        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken()
         {
             global::System.Uri requestUri;
             Context.TryGetUri(this, out requestUri);
 
-            return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.AccessToken", false);
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(string AlertType)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-
-            return this.Context.CreateFunctionQuerySingle<long>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
+            return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for GetContentTrusted in the schema.
@@ -4266,6 +4268,53 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         private bool _HasErrors;
         partial void OnHasErrorsChanging(bool value);
         partial void OnHasErrorsChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for CatalogItemAccessToken in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CatalogItemAccessToken")]
+    public partial class CatalogItemAccessToken : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// There are no comments for Property Token in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Token")]
+        public byte[] Token
+        {
+            get
+            {
+                return this._Token;
+            }
+            set
+            {
+                this.OnTokenChanging(value);
+                this._Token = value;
+                this.OnTokenChanged();
+                this.OnPropertyChanged("Token");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private byte[] _Token;
+        partial void OnTokenChanging(byte[] value);
+        partial void OnTokenChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -4420,43 +4469,816 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for ReportParameterSingle in the schema.
+    /// There are no comments for ReportSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameterSingle")]
-    public partial class ReportParameterSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ReportParameter>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportSingle")]
+    public partial class ReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Report>
     {
         /// <summary>
-        /// Initialize a new ReportParameterSingle object.
+        /// Initialize a new ReportSingle object.
         /// </summary>
-        public ReportParameterSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public ReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) { }
 
         /// <summary>
-        /// Initialize a new ReportParameterSingle object.
+        /// Initialize a new ReportSingle object.
         /// </summary>
-        public ReportParameterSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public ReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) { }
 
         /// <summary>
-        /// Initialize a new ReportParameterSingle object.
+        /// Initialize a new ReportSingle object.
         /// </summary>
-        public ReportParameterSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ReportParameter> query)
+        public ReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Report> query)
+            : base(query) { }
+
+        /// <summary>
+        /// There are no comments for Subscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Subscriptions == null))
+                {
+                    this._Subscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(GetPath("Subscriptions"));
+                }
+                return this._Subscriptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions;
+        /// <summary>
+        /// There are no comments for CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheRefreshPlans == null))
+                {
+                    this._CacheRefreshPlans = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(GetPath("CacheRefreshPlans"));
+                }
+                return this._CacheRefreshPlans;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans;
+        /// <summary>
+        /// There are no comments for DataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DataSources == null))
+                {
+                    this._DataSources = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(GetPath("DataSources"));
+                }
+                return this._DataSources;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources;
+        /// <summary>
+        /// There are no comments for SharedDataSets in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SharedDataSets")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> SharedDataSets
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._SharedDataSets == null))
+                {
+                    this._SharedDataSets = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(GetPath("SharedDataSets"));
+                }
+                return this._SharedDataSets;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> _SharedDataSets;
+        /// <summary>
+        /// There are no comments for HistorySnapshotOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle HistorySnapshotOptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._HistorySnapshotOptions == null))
+                {
+                    this._HistorySnapshotOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle(this.Context, GetPath("HistorySnapshotOptions"));
+                }
+                return this._HistorySnapshotOptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle _HistorySnapshotOptions;
+        /// <summary>
+        /// There are no comments for ReportHistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ReportHistorySnapshots == null))
+                {
+                    this._ReportHistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(GetPath("ReportHistorySnapshots"));
+                }
+                return this._ReportHistorySnapshots;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots;
+        /// <summary>
+        /// There are no comments for HistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._HistorySnapshots == null))
+                {
+                    this._HistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(GetPath("HistorySnapshots"));
+                }
+                return this._HistorySnapshots;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots;
+        /// <summary>
+        /// There are no comments for ParameterDefinitions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ParameterDefinitions == null))
+                {
+                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(GetPath("ParameterDefinitions"));
+                }
+                return this._ParameterDefinitions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions;
+        /// <summary>
+        /// There are no comments for CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle CacheOptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheOptions == null))
+                {
+                    this._CacheOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle(this.Context, GetPath("CacheOptions"));
+                }
+                return this._CacheOptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle _CacheOptions;
+        /// <summary>
+        /// There are no comments for ParentFolder in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ParentFolder == null))
+                {
+                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
+                }
+                return this._ParentFolder;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
+        /// <summary>
+        /// There are no comments for Properties in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Properties == null))
+                {
+                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
+                }
+                return this._Properties;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
+        /// <summary>
+        /// There are no comments for Comments in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Comments == null))
+                {
+                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
+                }
+                return this._Comments;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
+        /// <summary>
+        /// There are no comments for AlertSubscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AlertSubscriptions == null))
+                {
+                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
+                }
+                return this._AlertSubscriptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
+        /// <summary>
+        /// There are no comments for AllowedActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AllowedActions == null))
+                {
+                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
+                }
+                return this._AllowedActions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
+        /// <summary>
+        /// There are no comments for Policies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Policies == null))
+                {
+                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
+                }
+                return this._Policies;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
+    }
+    /// <summary>
+    /// There are no comments for Report in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("Reports")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Report")]
+    public partial class Report : CatalogItem
+    {
+        /// <summary>
+        /// Create a new Report object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="hidden">Initial value of Hidden.</param>
+        /// <param name="size">Initial value of Size.</param>
+        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
+        /// <param name="createdDate">Initial value of CreatedDate.</param>
+        /// <param name="isFavorite">Initial value of IsFavorite.</param>
+        /// <param name="hasDataSources">Initial value of HasDataSources.</param>
+        /// <param name="hasSharedDataSets">Initial value of HasSharedDataSets.</param>
+        /// <param name="hasParameters">Initial value of HasParameters.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static Report CreateReport(global::System.Guid ID,
+                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
+                    bool hidden,
+                    long size,
+                    global::System.DateTimeOffset modifiedDate,
+                    global::System.DateTimeOffset createdDate,
+                    bool isFavorite,
+                    bool hasDataSources,
+                    bool hasSharedDataSets,
+                    bool hasParameters)
+        {
+            Report report = new Report();
+            report.Id = ID;
+            report.Type = type;
+            report.Hidden = hidden;
+            report.Size = size;
+            report.ModifiedDate = modifiedDate;
+            report.CreatedDate = createdDate;
+            report.IsFavorite = isFavorite;
+            report.HasDataSources = hasDataSources;
+            report.HasSharedDataSets = hasSharedDataSets;
+            report.HasParameters = hasParameters;
+            return report;
+        }
+        /// <summary>
+        /// There are no comments for Property HasDataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDataSources")]
+        public bool HasDataSources
+        {
+            get
+            {
+                return this._HasDataSources;
+            }
+            set
+            {
+                this.OnHasDataSourcesChanging(value);
+                this._HasDataSources = value;
+                this.OnHasDataSourcesChanged();
+                this.OnPropertyChanged("HasDataSources");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _HasDataSources;
+        partial void OnHasDataSourcesChanging(bool value);
+        partial void OnHasDataSourcesChanged();
+        /// <summary>
+        /// There are no comments for Property HasSharedDataSets in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasSharedDataSets")]
+        public bool HasSharedDataSets
+        {
+            get
+            {
+                return this._HasSharedDataSets;
+            }
+            set
+            {
+                this.OnHasSharedDataSetsChanging(value);
+                this._HasSharedDataSets = value;
+                this.OnHasSharedDataSetsChanged();
+                this.OnPropertyChanged("HasSharedDataSets");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _HasSharedDataSets;
+        partial void OnHasSharedDataSetsChanging(bool value);
+        partial void OnHasSharedDataSetsChanged();
+        /// <summary>
+        /// There are no comments for Property HasParameters in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasParameters")]
+        public bool HasParameters
+        {
+            get
+            {
+                return this._HasParameters;
+            }
+            set
+            {
+                this.OnHasParametersChanging(value);
+                this._HasParameters = value;
+                this.OnHasParametersChanged();
+                this.OnPropertyChanged("HasParameters");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _HasParameters;
+        partial void OnHasParametersChanging(bool value);
+        partial void OnHasParametersChanged();
+        /// <summary>
+        /// There are no comments for Property Subscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
+        {
+            get
+            {
+                return this._Subscriptions;
+            }
+            set
+            {
+                this.OnSubscriptionsChanging(value);
+                this._Subscriptions = value;
+                this.OnSubscriptionsChanged();
+                this.OnPropertyChanged("Subscriptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnSubscriptionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> value);
+        partial void OnSubscriptionsChanged();
+        /// <summary>
+        /// There are no comments for Property CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                return this._CacheRefreshPlans;
+            }
+            set
+            {
+                this.OnCacheRefreshPlansChanging(value);
+                this._CacheRefreshPlans = value;
+                this.OnCacheRefreshPlansChanged();
+                this.OnPropertyChanged("CacheRefreshPlans");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCacheRefreshPlansChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> value);
+        partial void OnCacheRefreshPlansChanged();
+        /// <summary>
+        /// There are no comments for Property DataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
+        {
+            get
+            {
+                return this._DataSources;
+            }
+            set
+            {
+                this.OnDataSourcesChanging(value);
+                this._DataSources = value;
+                this.OnDataSourcesChanged();
+                this.OnPropertyChanged("DataSources");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnDataSourcesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> value);
+        partial void OnDataSourcesChanged();
+        /// <summary>
+        /// There are no comments for Property SharedDataSets in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SharedDataSets")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> SharedDataSets
+        {
+            get
+            {
+                return this._SharedDataSets;
+            }
+            set
+            {
+                this.OnSharedDataSetsChanging(value);
+                this._SharedDataSets = value;
+                this.OnSharedDataSetsChanged();
+                this.OnPropertyChanged("SharedDataSets");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> _SharedDataSets = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnSharedDataSetsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> value);
+        partial void OnSharedDataSetsChanged();
+        /// <summary>
+        /// There are no comments for Property HistorySnapshotOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions HistorySnapshotOptions
+        {
+            get
+            {
+                return this._HistorySnapshotOptions;
+            }
+            set
+            {
+                this.OnHistorySnapshotOptionsChanging(value);
+                this._HistorySnapshotOptions = value;
+                this.OnHistorySnapshotOptionsChanged();
+                this.OnPropertyChanged("HistorySnapshotOptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions _HistorySnapshotOptions;
+        partial void OnHistorySnapshotOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions value);
+        partial void OnHistorySnapshotOptionsChanged();
+        /// <summary>
+        /// There are no comments for Property ReportHistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
+        {
+            get
+            {
+                return this._ReportHistorySnapshots;
+            }
+            set
+            {
+                this.OnReportHistorySnapshotsChanging(value);
+                this._ReportHistorySnapshots = value;
+                this.OnReportHistorySnapshotsChanged();
+                this.OnPropertyChanged("ReportHistorySnapshots");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnReportHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> value);
+        partial void OnReportHistorySnapshotsChanged();
+        /// <summary>
+        /// There are no comments for Property HistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
+        {
+            get
+            {
+                return this._HistorySnapshots;
+            }
+            set
+            {
+                this.OnHistorySnapshotsChanging(value);
+                this._HistorySnapshots = value;
+                this.OnHistorySnapshotsChanged();
+                this.OnPropertyChanged("HistorySnapshots");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> value);
+        partial void OnHistorySnapshotsChanged();
+        /// <summary>
+        /// There are no comments for Property ParameterDefinitions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
+        {
+            get
+            {
+                return this._ParameterDefinitions;
+            }
+            set
+            {
+                this.OnParameterDefinitionsChanging(value);
+                this._ParameterDefinitions = value;
+                this.OnParameterDefinitionsChanged();
+                this.OnPropertyChanged("ParameterDefinitions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> value);
+        partial void OnParameterDefinitionsChanged();
+        /// <summary>
+        /// There are no comments for Property CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions CacheOptions
+        {
+            get
+            {
+                return this._CacheOptions;
+            }
+            set
+            {
+                this.OnCacheOptionsChanging(value);
+                this._CacheOptions = value;
+                this.OnCacheOptionsChanged();
+                this.OnPropertyChanged("CacheOptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions _CacheOptions;
+        partial void OnCacheOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions value);
+        partial void OnCacheOptionsChanged();
+        /// <summary>
+        /// There are no comments for GetParameters in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetParameters")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> GetParameters(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues)
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.GetParameters", new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
+        }
+        /// <summary>
+        /// There are no comments for UpdateCacheSnapshot in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateCacheSnapshot")]
+        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateCacheSnapshot()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.UpdateCacheSnapshot");
+        }
+        /// <summary>
+        /// There are no comments for CheckDataSourceConnection in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
+        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(string DataSourceName)
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.CheckDataSourceConnection", new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
+        }
+        /// <summary>
+        /// There are no comments for UpdateReportDataSets in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateReportDataSets")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery UpdateReportDataSets(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> dataSets)
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.UpdateReportDataSets", new global::Microsoft.OData.Client.BodyOperationParameter("dataSets", dataSets));
+        }
+    }
+    /// <summary>
+    /// There are no comments for ReportParameterDefinitionSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameterDefinitionSingle")]
+    public partial class ReportParameterDefinitionSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ReportParameterDefinition>
+    {
+        /// <summary>
+        /// Initialize a new ReportParameterDefinitionSingle object.
+        /// </summary>
+        public ReportParameterDefinitionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new ReportParameterDefinitionSingle object.
+        /// </summary>
+        public ReportParameterDefinitionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new ReportParameterDefinitionSingle object.
+        /// </summary>
+        public ReportParameterDefinitionSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ReportParameterDefinition> query)
             : base(query) { }
 
     }
     /// <summary>
-    /// There are no comments for ReportParameter in the schema.
+    /// There are no comments for ReportParameterDefinition in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Name
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Name")]
-    [global::Microsoft.OData.Client.EntitySet("ReportParameters")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameter")]
-    public partial class ReportParameter : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.EntitySet("ParameterDefinitions")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameterDefinition")]
+    public partial class ReportParameterDefinition : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new ReportParameter object.
+        /// Create a new ReportParameterDefinition object.
         /// </summary>
         /// <param name="name">Initial value of Name.</param>
         /// <param name="parameterType">Initial value of ParameterType.</param>
@@ -4472,7 +5294,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// <param name="validValuesQueryBased">Initial value of ValidValuesQueryBased.</param>
         /// <param name="defaultValuesIsNull">Initial value of DefaultValuesIsNull.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ReportParameter CreateReportParameter(string name,
+        public static ReportParameterDefinition CreateReportParameterDefinition(string name,
                     global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterType parameterType,
                     global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterVisibility parameterVisibility,
                     global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterState parameterState,
@@ -4486,21 +5308,21 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
                     bool validValuesQueryBased,
                     bool defaultValuesIsNull)
         {
-            ReportParameter reportParameter = new ReportParameter();
-            reportParameter.Name = name;
-            reportParameter.ParameterType = parameterType;
-            reportParameter.ParameterVisibility = parameterVisibility;
-            reportParameter.ParameterState = parameterState;
-            reportParameter.ValidValuesIsNull = validValuesIsNull;
-            reportParameter.Nullable = nullable;
-            reportParameter.AllowBlank = allowBlank;
-            reportParameter.MultiValue = multiValue;
-            reportParameter.PromptUser = promptUser;
-            reportParameter.QueryParameter = queryParameter;
-            reportParameter.DefaultValuesQueryBased = defaultValuesQueryBased;
-            reportParameter.ValidValuesQueryBased = validValuesQueryBased;
-            reportParameter.DefaultValuesIsNull = defaultValuesIsNull;
-            return reportParameter;
+            ReportParameterDefinition reportParameterDefinition = new ReportParameterDefinition();
+            reportParameterDefinition.Name = name;
+            reportParameterDefinition.ParameterType = parameterType;
+            reportParameterDefinition.ParameterVisibility = parameterVisibility;
+            reportParameterDefinition.ParameterState = parameterState;
+            reportParameterDefinition.ValidValuesIsNull = validValuesIsNull;
+            reportParameterDefinition.Nullable = nullable;
+            reportParameterDefinition.AllowBlank = allowBlank;
+            reportParameterDefinition.MultiValue = multiValue;
+            reportParameterDefinition.PromptUser = promptUser;
+            reportParameterDefinition.QueryParameter = queryParameter;
+            reportParameterDefinition.DefaultValuesQueryBased = defaultValuesQueryBased;
+            reportParameterDefinition.ValidValuesQueryBased = validValuesQueryBased;
+            reportParameterDefinition.DefaultValuesIsNull = defaultValuesIsNull;
+            return reportParameterDefinition;
         }
         /// <summary>
         /// There are no comments for Property Name in the schema.
@@ -4935,757 +5757,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for ReportSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportSingle")]
-    public partial class ReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Report>
-    {
-        /// <summary>
-        /// Initialize a new ReportSingle object.
-        /// </summary>
-        public ReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
-
-        /// <summary>
-        /// Initialize a new ReportSingle object.
-        /// </summary>
-        public ReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
-
-        /// <summary>
-        /// Initialize a new ReportSingle object.
-        /// </summary>
-        public ReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Report> query)
-            : base(query) { }
-
-        /// <summary>
-        /// There are no comments for Subscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Subscriptions == null))
-                {
-                    this._Subscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(GetPath("Subscriptions"));
-                }
-                return this._Subscriptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions;
-        /// <summary>
-        /// There are no comments for CacheRefreshPlans in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._CacheRefreshPlans == null))
-                {
-                    this._CacheRefreshPlans = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(GetPath("CacheRefreshPlans"));
-                }
-                return this._CacheRefreshPlans;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans;
-        /// <summary>
-        /// There are no comments for DataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._DataSources == null))
-                {
-                    this._DataSources = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(GetPath("DataSources"));
-                }
-                return this._DataSources;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources;
-        /// <summary>
-        /// There are no comments for SharedDataSets in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SharedDataSets")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> SharedDataSets
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._SharedDataSets == null))
-                {
-                    this._SharedDataSets = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(GetPath("SharedDataSets"));
-                }
-                return this._SharedDataSets;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> _SharedDataSets;
-        /// <summary>
-        /// There are no comments for HistorySnapshotOptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle HistorySnapshotOptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._HistorySnapshotOptions == null))
-                {
-                    this._HistorySnapshotOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle(this.Context, GetPath("HistorySnapshotOptions"));
-                }
-                return this._HistorySnapshotOptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle _HistorySnapshotOptions;
-        /// <summary>
-        /// There are no comments for ReportHistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ReportHistorySnapshots == null))
-                {
-                    this._ReportHistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(GetPath("ReportHistorySnapshots"));
-                }
-                return this._ReportHistorySnapshots;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots;
-        /// <summary>
-        /// There are no comments for HistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._HistorySnapshots == null))
-                {
-                    this._HistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(GetPath("HistorySnapshots"));
-                }
-                return this._HistorySnapshots;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots;
-        /// <summary>
-        /// There are no comments for ParameterDefinitions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ParameterDefinitions == null))
-                {
-                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(GetPath("ParameterDefinitions"));
-                }
-                return this._ParameterDefinitions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions;
-        /// <summary>
-        /// There are no comments for ParentFolder in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ParentFolder == null))
-                {
-                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
-                }
-                return this._ParentFolder;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
-        /// <summary>
-        /// There are no comments for Properties in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Properties == null))
-                {
-                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
-                }
-                return this._Properties;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
-        /// <summary>
-        /// There are no comments for Comments in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Comments == null))
-                {
-                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
-                }
-                return this._Comments;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
-        /// <summary>
-        /// There are no comments for AlertSubscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AlertSubscriptions == null))
-                {
-                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
-                }
-                return this._AlertSubscriptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
-        /// <summary>
-        /// There are no comments for AllowedActions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AllowedActions == null))
-                {
-                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
-                }
-                return this._AllowedActions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
-        /// <summary>
-        /// There are no comments for Policies in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Policies == null))
-                {
-                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
-                }
-                return this._Policies;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
-    }
-    /// <summary>
-    /// There are no comments for Report in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.EntitySet("reports")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Report")]
-    public partial class Report : CatalogItem
-    {
-        /// <summary>
-        /// Create a new Report object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="hidden">Initial value of Hidden.</param>
-        /// <param name="size">Initial value of Size.</param>
-        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
-        /// <param name="createdDate">Initial value of CreatedDate.</param>
-        /// <param name="isFavorite">Initial value of IsFavorite.</param>
-        /// <param name="hasDataSources">Initial value of HasDataSources.</param>
-        /// <param name="hasSharedDataSets">Initial value of HasSharedDataSets.</param>
-        /// <param name="hasParameters">Initial value of HasParameters.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static Report CreateReport(global::System.Guid ID,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
-                    bool hidden,
-                    long size,
-                    global::System.DateTimeOffset modifiedDate,
-                    global::System.DateTimeOffset createdDate,
-                    bool isFavorite,
-                    bool hasDataSources,
-                    bool hasSharedDataSets,
-                    bool hasParameters)
-        {
-            Report report = new Report();
-            report.Id = ID;
-            report.Type = type;
-            report.Hidden = hidden;
-            report.Size = size;
-            report.ModifiedDate = modifiedDate;
-            report.CreatedDate = createdDate;
-            report.IsFavorite = isFavorite;
-            report.HasDataSources = hasDataSources;
-            report.HasSharedDataSets = hasSharedDataSets;
-            report.HasParameters = hasParameters;
-            return report;
-        }
-        /// <summary>
-        /// There are no comments for Property HasDataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDataSources")]
-        public bool HasDataSources
-        {
-            get
-            {
-                return this._HasDataSources;
-            }
-            set
-            {
-                this.OnHasDataSourcesChanging(value);
-                this._HasDataSources = value;
-                this.OnHasDataSourcesChanged();
-                this.OnPropertyChanged("HasDataSources");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _HasDataSources;
-        partial void OnHasDataSourcesChanging(bool value);
-        partial void OnHasDataSourcesChanged();
-        /// <summary>
-        /// There are no comments for Property HasSharedDataSets in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HasSharedDataSets")]
-        public bool HasSharedDataSets
-        {
-            get
-            {
-                return this._HasSharedDataSets;
-            }
-            set
-            {
-                this.OnHasSharedDataSetsChanging(value);
-                this._HasSharedDataSets = value;
-                this.OnHasSharedDataSetsChanged();
-                this.OnPropertyChanged("HasSharedDataSets");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _HasSharedDataSets;
-        partial void OnHasSharedDataSetsChanging(bool value);
-        partial void OnHasSharedDataSetsChanged();
-        /// <summary>
-        /// There are no comments for Property HasParameters in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HasParameters")]
-        public bool HasParameters
-        {
-            get
-            {
-                return this._HasParameters;
-            }
-            set
-            {
-                this.OnHasParametersChanging(value);
-                this._HasParameters = value;
-                this.OnHasParametersChanged();
-                this.OnPropertyChanged("HasParameters");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _HasParameters;
-        partial void OnHasParametersChanging(bool value);
-        partial void OnHasParametersChanged();
-        /// <summary>
-        /// There are no comments for Property Subscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
-        {
-            get
-            {
-                return this._Subscriptions;
-            }
-            set
-            {
-                this.OnSubscriptionsChanging(value);
-                this._Subscriptions = value;
-                this.OnSubscriptionsChanged();
-                this.OnPropertyChanged("Subscriptions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnSubscriptionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> value);
-        partial void OnSubscriptionsChanged();
-        /// <summary>
-        /// There are no comments for Property CacheRefreshPlans in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
-        {
-            get
-            {
-                return this._CacheRefreshPlans;
-            }
-            set
-            {
-                this.OnCacheRefreshPlansChanging(value);
-                this._CacheRefreshPlans = value;
-                this.OnCacheRefreshPlansChanged();
-                this.OnPropertyChanged("CacheRefreshPlans");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnCacheRefreshPlansChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> value);
-        partial void OnCacheRefreshPlansChanged();
-        /// <summary>
-        /// There are no comments for Property DataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
-        {
-            get
-            {
-                return this._DataSources;
-            }
-            set
-            {
-                this.OnDataSourcesChanging(value);
-                this._DataSources = value;
-                this.OnDataSourcesChanged();
-                this.OnPropertyChanged("DataSources");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnDataSourcesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> value);
-        partial void OnDataSourcesChanged();
-        /// <summary>
-        /// There are no comments for Property SharedDataSets in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SharedDataSets")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> SharedDataSets
-        {
-            get
-            {
-                return this._SharedDataSets;
-            }
-            set
-            {
-                this.OnSharedDataSetsChanging(value);
-                this._SharedDataSets = value;
-                this.OnSharedDataSetsChanged();
-                this.OnPropertyChanged("SharedDataSets");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> _SharedDataSets = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnSharedDataSetsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> value);
-        partial void OnSharedDataSetsChanged();
-        /// <summary>
-        /// There are no comments for Property HistorySnapshotOptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions HistorySnapshotOptions
-        {
-            get
-            {
-                return this._HistorySnapshotOptions;
-            }
-            set
-            {
-                this.OnHistorySnapshotOptionsChanging(value);
-                this._HistorySnapshotOptions = value;
-                this.OnHistorySnapshotOptionsChanged();
-                this.OnPropertyChanged("HistorySnapshotOptions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions _HistorySnapshotOptions;
-        partial void OnHistorySnapshotOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions value);
-        partial void OnHistorySnapshotOptionsChanged();
-        /// <summary>
-        /// There are no comments for Property ReportHistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
-        {
-            get
-            {
-                return this._ReportHistorySnapshots;
-            }
-            set
-            {
-                this.OnReportHistorySnapshotsChanging(value);
-                this._ReportHistorySnapshots = value;
-                this.OnReportHistorySnapshotsChanged();
-                this.OnPropertyChanged("ReportHistorySnapshots");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnReportHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> value);
-        partial void OnReportHistorySnapshotsChanged();
-        /// <summary>
-        /// There are no comments for Property HistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
-        {
-            get
-            {
-                return this._HistorySnapshots;
-            }
-            set
-            {
-                this.OnHistorySnapshotsChanging(value);
-                this._HistorySnapshots = value;
-                this.OnHistorySnapshotsChanged();
-                this.OnPropertyChanged("HistorySnapshots");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> value);
-        partial void OnHistorySnapshotsChanged();
-        /// <summary>
-        /// There are no comments for Property ParameterDefinitions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
-        {
-            get
-            {
-                return this._ParameterDefinitions;
-            }
-            set
-            {
-                this.OnParameterDefinitionsChanging(value);
-                this._ParameterDefinitions = value;
-                this.OnParameterDefinitionsChanged();
-                this.OnPropertyChanged("ParameterDefinitions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> value);
-        partial void OnParameterDefinitionsChanged();
-        /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-
-            return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Report>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Report>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for GetParameters in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetParameters")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> GetParameters(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.GetParameters", new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues));
-        }
-        /// <summary>
-        /// There are no comments for SetParameterProperties in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetParameterProperties")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery SetParameterProperties(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterProperties> ParameterProperties)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.SetParameterProperties", new global::Microsoft.OData.Client.BodyOperationParameter("ParameterProperties", ParameterProperties));
-        }
-        /// <summary>
-        /// There are no comments for UpdateExecutionSnapshot in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateExecutionSnapshot")]
-        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateExecutionSnapshot()
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.UpdateExecutionSnapshot");
-        }
-        /// <summary>
-        /// There are no comments for CheckDataSourceConnection in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
-        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(string DataSourceName)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.CheckDataSourceConnection", new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
-        }
-        /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.SetCacheOptions", new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
-        }
-        /// <summary>
-        /// There are no comments for UpdateReportDataSets in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateReportDataSets")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery UpdateReportDataSets(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> dataSets)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.UpdateReportDataSets", new global::Microsoft.OData.Client.BodyOperationParameter("dataSets", dataSets));
-        }
-    }
-    /// <summary>
     /// There are no comments for ParameterValue in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterValue")]
@@ -5790,139 +5861,242 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for ReportParameterProperties in the schema.
+    /// There are no comments for CommentSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportParameterProperties")]
-    public partial class ReportParameterProperties : global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CommentSingle")]
+    public partial class CommentSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Comment>
     {
         /// <summary>
-        /// Create a new ReportParameterProperties object.
+        /// Initialize a new CommentSingle object.
         /// </summary>
-        /// <param name="overrideDefaultValues">Initial value of OverrideDefaultValues.</param>
-        /// <param name="parameterVisibility">Initial value of ParameterVisibility.</param>
+        public CommentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new CommentSingle object.
+        /// </summary>
+        public CommentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new CommentSingle object.
+        /// </summary>
+        public CommentSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Comment> query)
+            : base(query) { }
+
+    }
+    /// <summary>
+    /// There are no comments for Comment in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("Comments")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Comment")]
+    public partial class Comment : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Comment object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="itemId">Initial value of ItemId.</param>
+        /// <param name="text">Initial value of Text.</param>
+        /// <param name="createdDate">Initial value of CreatedDate.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ReportParameterProperties CreateReportParameterProperties(bool overrideDefaultValues, global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterVisibility parameterVisibility)
+        public static Comment CreateComment(long ID, global::System.Guid itemId, string text, global::System.DateTimeOffset createdDate)
         {
-            ReportParameterProperties reportParameterProperties = new ReportParameterProperties();
-            reportParameterProperties.OverrideDefaultValues = overrideDefaultValues;
-            reportParameterProperties.ParameterVisibility = parameterVisibility;
-            return reportParameterProperties;
+            Comment comment = new Comment();
+            comment.Id = ID;
+            comment.ItemId = itemId;
+            comment.Text = text;
+            comment.CreatedDate = createdDate;
+            return comment;
         }
         /// <summary>
-        /// There are no comments for Property ParameterName in the schema.
+        /// There are no comments for Property Id in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterName")]
-        public string ParameterName
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        public long Id
         {
             get
             {
-                return this._ParameterName;
+                return this._Id;
             }
             set
             {
-                this.OnParameterNameChanging(value);
-                this._ParameterName = value;
-                this.OnParameterNameChanged();
-                this.OnPropertyChanged("ParameterName");
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _ParameterName;
-        partial void OnParameterNameChanging(string value);
-        partial void OnParameterNameChanged();
+        private long _Id;
+        partial void OnIdChanging(long value);
+        partial void OnIdChanged();
         /// <summary>
-        /// There are no comments for Property OverrideDefaultValues in the schema.
+        /// There are no comments for Property ItemId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("OverrideDefaultValues")]
-        public bool OverrideDefaultValues
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ItemId")]
+        public global::System.Guid ItemId
         {
             get
             {
-                return this._OverrideDefaultValues;
+                return this._ItemId;
             }
             set
             {
-                this.OnOverrideDefaultValuesChanging(value);
-                this._OverrideDefaultValues = value;
-                this.OnOverrideDefaultValuesChanged();
-                this.OnPropertyChanged("OverrideDefaultValues");
+                this.OnItemIdChanging(value);
+                this._ItemId = value;
+                this.OnItemIdChanged();
+                this.OnPropertyChanged("ItemId");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _OverrideDefaultValues;
-        partial void OnOverrideDefaultValuesChanging(bool value);
-        partial void OnOverrideDefaultValuesChanged();
+        private global::System.Guid _ItemId;
+        partial void OnItemIdChanging(global::System.Guid value);
+        partial void OnItemIdChanged();
         /// <summary>
-        /// There are no comments for Property DefaultValues in the schema.
+        /// There are no comments for Property UserName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DefaultValues")]
-        public global::System.Collections.ObjectModel.ObservableCollection<string> DefaultValues
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UserName")]
+        public string UserName
         {
             get
             {
-                return this._DefaultValues;
+                return this._UserName;
             }
             set
             {
-                this.OnDefaultValuesChanging(value);
-                this._DefaultValues = value;
-                this.OnDefaultValuesChanged();
-                this.OnPropertyChanged("DefaultValues");
+                this.OnUserNameChanging(value);
+                this._UserName = value;
+                this.OnUserNameChanged();
+                this.OnPropertyChanged("UserName");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<string> _DefaultValues = new global::System.Collections.ObjectModel.ObservableCollection<string>();
-        partial void OnDefaultValuesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
-        partial void OnDefaultValuesChanged();
+        private string _UserName;
+        partial void OnUserNameChanging(string value);
+        partial void OnUserNameChanged();
         /// <summary>
-        /// There are no comments for Property Prompt in the schema.
+        /// There are no comments for Property ThreadId in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Prompt")]
-        public string Prompt
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ThreadId")]
+        public global::System.Nullable<long> ThreadId
         {
             get
             {
-                return this._Prompt;
+                return this._ThreadId;
             }
             set
             {
-                this.OnPromptChanging(value);
-                this._Prompt = value;
-                this.OnPromptChanged();
-                this.OnPropertyChanged("Prompt");
+                this.OnThreadIdChanging(value);
+                this._ThreadId = value;
+                this.OnThreadIdChanged();
+                this.OnPropertyChanged("ThreadId");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Prompt;
-        partial void OnPromptChanging(string value);
-        partial void OnPromptChanged();
+        private global::System.Nullable<long> _ThreadId;
+        partial void OnThreadIdChanging(global::System.Nullable<long> value);
+        partial void OnThreadIdChanged();
         /// <summary>
-        /// There are no comments for Property ParameterVisibility in the schema.
+        /// There are no comments for Property AttachmentPath in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterVisibility")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterVisibility ParameterVisibility
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AttachmentPath")]
+        public string AttachmentPath
         {
             get
             {
-                return this._ParameterVisibility;
+                return this._AttachmentPath;
             }
             set
             {
-                this.OnParameterVisibilityChanging(value);
-                this._ParameterVisibility = value;
-                this.OnParameterVisibilityChanged();
-                this.OnPropertyChanged("ParameterVisibility");
+                this.OnAttachmentPathChanging(value);
+                this._AttachmentPath = value;
+                this.OnAttachmentPathChanged();
+                this.OnPropertyChanged("AttachmentPath");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterVisibility _ParameterVisibility;
-        partial void OnParameterVisibilityChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterVisibility value);
-        partial void OnParameterVisibilityChanged();
+        private string _AttachmentPath;
+        partial void OnAttachmentPathChanging(string value);
+        partial void OnAttachmentPathChanged();
+        /// <summary>
+        /// There are no comments for Property Text in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Text")]
+        public string Text
+        {
+            get
+            {
+                return this._Text;
+            }
+            set
+            {
+                this.OnTextChanging(value);
+                this._Text = value;
+                this.OnTextChanged();
+                this.OnPropertyChanged("Text");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _Text;
+        partial void OnTextChanging(string value);
+        partial void OnTextChanged();
+        /// <summary>
+        /// There are no comments for Property CreatedDate in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CreatedDate")]
+        public global::System.DateTimeOffset CreatedDate
+        {
+            get
+            {
+                return this._CreatedDate;
+            }
+            set
+            {
+                this.OnCreatedDateChanging(value);
+                this._CreatedDate = value;
+                this.OnCreatedDateChanged();
+                this.OnPropertyChanged("CreatedDate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.DateTimeOffset _CreatedDate;
+        partial void OnCreatedDateChanging(global::System.DateTimeOffset value);
+        partial void OnCreatedDateChanged();
+        /// <summary>
+        /// There are no comments for Property ModifiedDate in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ModifiedDate")]
+        public global::System.Nullable<global::System.DateTimeOffset> ModifiedDate
+        {
+            get
+            {
+                return this._ModifiedDate;
+            }
+            set
+            {
+                this.OnModifiedDateChanging(value);
+                this._ModifiedDate = value;
+                this.OnModifiedDateChanged();
+                this.OnPropertyChanged("ModifiedDate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Nullable<global::System.DateTimeOffset> _ModifiedDate;
+        partial void OnModifiedDateChanging(global::System.Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedDateChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -5965,6 +6139,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         public DataSetSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<DataSet> query)
             : base(query) { }
 
+        /// <summary>
+        /// There are no comments for Data in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Data")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> Data
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Data == null))
+                {
+                    this._Data = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow>(GetPath("Data"));
+                }
+                return this._Data;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> _Data;
         /// <summary>
         /// There are no comments for DataSources in the schema.
         /// </summary>
@@ -6014,7 +6210,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
         {
             get
             {
@@ -6024,13 +6220,35 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
                 }
                 if ((this._ParameterDefinitions == null))
                 {
-                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(GetPath("ParameterDefinitions"));
+                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(GetPath("ParameterDefinitions"));
                 }
                 return this._ParameterDefinitions;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions;
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions;
+        /// <summary>
+        /// There are no comments for CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle CacheOptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheOptions == null))
+                {
+                    this._CacheOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle(this.Context, GetPath("CacheOptions"));
+                }
+                return this._CacheOptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle _CacheOptions;
         /// <summary>
         /// There are no comments for ParentFolder in the schema.
         /// </summary>
@@ -6163,6 +6381,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for DataSet in the schema.
@@ -6257,6 +6497,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnQueryExecutionTimeOutChanging(int value);
         partial void OnQueryExecutionTimeOutChanged();
         /// <summary>
+        /// There are no comments for Property Data in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Data")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> Data
+        {
+            get
+            {
+                return this._Data;
+            }
+            set
+            {
+                this.OnDataChanging(value);
+                this._Data = value;
+                this.OnDataChanged();
+                this.OnPropertyChanged("Data");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> _Data = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnDataChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> value);
+        partial void OnDataChanged();
+        /// <summary>
         /// There are no comments for Property DataSources in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -6307,7 +6570,7 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
         {
             get
             {
@@ -6322,9 +6585,32 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> value);
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> value);
         partial void OnParameterDefinitionsChanged();
+        /// <summary>
+        /// There are no comments for Property CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions CacheOptions
+        {
+            get
+            {
+                return this._CacheOptions;
+            }
+            set
+            {
+                this.OnCacheOptionsChanging(value);
+                this._CacheOptions = value;
+                this.OnCacheOptionsChanged();
+                this.OnPropertyChanged("CacheOptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions _CacheOptions;
+        partial void OnCacheOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions value);
+        partial void OnCacheOptionsChanged();
         /// <summary>
         /// There are no comments for GetSchema in the schema.
         /// </summary>
@@ -6337,35 +6623,18 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetSchema>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetSchema", false);
         }
         /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
 
-            return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
         /// <summary>
         /// There are no comments for GetData in the schema.
@@ -6410,20 +6679,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
 
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.GetAggregatedValue", new global::Microsoft.OData.Client.BodyOperationParameter("Parameters", Parameters));
-        }
-        /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.SetCacheOptions", new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
         }
     }
     /// <summary>
@@ -6520,68 +6775,75 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for DataSourceCheckResult in the schema.
+    /// There are no comments for DataSetRowSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("DataSourceCheckResult")]
-    public partial class DataSourceCheckResult : global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataSetRowSingle")]
+    public partial class DataSetRowSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<DataSetRow>
     {
         /// <summary>
-        /// Create a new DataSourceCheckResult object.
+        /// Initialize a new DataSetRowSingle object.
         /// </summary>
-        /// <param name="isSuccessful">Initial value of IsSuccessful.</param>
+        public DataSetRowSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new DataSetRowSingle object.
+        /// </summary>
+        public DataSetRowSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new DataSetRowSingle object.
+        /// </summary>
+        public DataSetRowSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<DataSetRow> query)
+            : base(query) { }
+
+    }
+    /// <summary>
+    /// There are no comments for DataSetRow in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("DataSetData")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataSetRow")]
+    public partial class DataSetRow : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new DataSetRow object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static DataSourceCheckResult CreateDataSourceCheckResult(bool isSuccessful)
+        public static DataSetRow CreateDataSetRow(global::System.Guid ID)
         {
-            DataSourceCheckResult dataSourceCheckResult = new DataSourceCheckResult();
-            dataSourceCheckResult.IsSuccessful = isSuccessful;
-            return dataSourceCheckResult;
+            DataSetRow dataSetRow = new DataSetRow();
+            dataSetRow.Id = ID;
+            return dataSetRow;
         }
         /// <summary>
-        /// There are no comments for Property IsSuccessful in the schema.
+        /// There are no comments for Property Id in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("IsSuccessful")]
-        public bool IsSuccessful
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        public global::System.Guid Id
         {
             get
             {
-                return this._IsSuccessful;
+                return this._Id;
             }
             set
             {
-                this.OnIsSuccessfulChanging(value);
-                this._IsSuccessful = value;
-                this.OnIsSuccessfulChanged();
-                this.OnPropertyChanged("IsSuccessful");
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _IsSuccessful;
-        partial void OnIsSuccessfulChanging(bool value);
-        partial void OnIsSuccessfulChanged();
-        /// <summary>
-        /// There are no comments for Property ErrorMessage in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ErrorMessage")]
-        public string ErrorMessage
-        {
-            get
-            {
-                return this._ErrorMessage;
-            }
-            set
-            {
-                this.OnErrorMessageChanging(value);
-                this._ErrorMessage = value;
-                this.OnErrorMessageChanged();
-                this.OnPropertyChanged("ErrorMessage");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _ErrorMessage;
-        partial void OnErrorMessageChanging(string value);
-        partial void OnErrorMessageChanged();
+        private global::System.Guid _Id;
+        partial void OnIdChanging(global::System.Guid value);
+        partial void OnIdChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -6778,6 +7040,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for DataSource in the schema.
@@ -7042,28 +7326,51 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnIsReferenceChanging(bool value);
         partial void OnIsReferenceChanged();
         /// <summary>
-        /// There are no comments for Property DSIDNum in the schema.
+        /// There are no comments for Property DataSourceSubType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DSIDNum")]
-        public global::System.Nullable<long> DSIDNum
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSourceSubType")]
+        public string DataSourceSubType
         {
             get
             {
-                return this._DSIDNum;
+                return this._DataSourceSubType;
             }
             set
             {
-                this.OnDSIDNumChanging(value);
-                this._DSIDNum = value;
-                this.OnDSIDNumChanged();
-                this.OnPropertyChanged("DSIDNum");
+                this.OnDataSourceSubTypeChanging(value);
+                this._DataSourceSubType = value;
+                this.OnDataSourceSubTypeChanged();
+                this.OnPropertyChanged("DataSourceSubType");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Nullable<long> _DSIDNum;
-        partial void OnDSIDNumChanging(global::System.Nullable<long> value);
-        partial void OnDSIDNumChanged();
+        private string _DataSourceSubType;
+        partial void OnDataSourceSubTypeChanging(string value);
+        partial void OnDataSourceSubTypeChanged();
+        /// <summary>
+        /// There are no comments for Property DataModelDataSource in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataModelDataSource")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSource DataModelDataSource
+        {
+            get
+            {
+                return this._DataModelDataSource;
+            }
+            set
+            {
+                this.OnDataModelDataSourceChanging(value);
+                this._DataModelDataSource = value;
+                this.OnDataModelDataSourceChanged();
+                this.OnPropertyChanged("DataModelDataSource");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSource _DataModelDataSource;
+        partial void OnDataModelDataSourceChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSource value);
+        partial void OnDataModelDataSourceChanged();
         /// <summary>
         /// There are no comments for Property Subscriptions in the schema.
         /// </summary>
@@ -7088,24 +7395,18 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnSubscriptionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> value);
         partial void OnSubscriptionsChanged();
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> GetDependentItems()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
         /// <summary>
         /// There are no comments for CheckConnection in the schema.
@@ -7120,6 +7421,87 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
 
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.CheckConnection");
+        }
+    }
+    /// <summary>
+    /// There are no comments for DataSourceCheckResult in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataSourceCheckResult")]
+    public partial class DataSourceCheckResult : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new DataSourceCheckResult object.
+        /// </summary>
+        /// <param name="isSuccessful">Initial value of IsSuccessful.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static DataSourceCheckResult CreateDataSourceCheckResult(bool isSuccessful)
+        {
+            DataSourceCheckResult dataSourceCheckResult = new DataSourceCheckResult();
+            dataSourceCheckResult.IsSuccessful = isSuccessful;
+            return dataSourceCheckResult;
+        }
+        /// <summary>
+        /// There are no comments for Property IsSuccessful in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsSuccessful")]
+        public bool IsSuccessful
+        {
+            get
+            {
+                return this._IsSuccessful;
+            }
+            set
+            {
+                this.OnIsSuccessfulChanging(value);
+                this._IsSuccessful = value;
+                this.OnIsSuccessfulChanged();
+                this.OnPropertyChanged("IsSuccessful");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _IsSuccessful;
+        partial void OnIsSuccessfulChanging(bool value);
+        partial void OnIsSuccessfulChanged();
+        /// <summary>
+        /// There are no comments for Property ErrorMessage in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ErrorMessage")]
+        public string ErrorMessage
+        {
+            get
+            {
+                return this._ErrorMessage;
+            }
+            set
+            {
+                this.OnErrorMessageChanging(value);
+                this._ErrorMessage = value;
+                this.OnErrorMessageChanged();
+                this.OnPropertyChanged("ErrorMessage");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _ErrorMessage;
+        partial void OnErrorMessageChanging(string value);
+        partial void OnErrorMessageChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
         }
     }
     /// <summary>
@@ -7174,1207 +7556,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         private global::System.Nullable<int> _Timeout;
         partial void OnTimeoutChanging(global::System.Nullable<int> value);
         partial void OnTimeoutChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for CacheOptions in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
-    public partial class CacheOptions : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new CacheOptions object.
-        /// </summary>
-        /// <param name="executionType">Initial value of ExecutionType.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static CacheOptions CreateCacheOptions(global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType executionType)
-        {
-            CacheOptions cacheOptions = new CacheOptions();
-            cacheOptions.ExecutionType = executionType;
-            return cacheOptions;
-        }
-        /// <summary>
-        /// There are no comments for Property ExecutionType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionType")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType ExecutionType
-        {
-            get
-            {
-                return this._ExecutionType;
-            }
-            set
-            {
-                this.OnExecutionTypeChanging(value);
-                this._ExecutionType = value;
-                this.OnExecutionTypeChanged();
-                this.OnPropertyChanged("ExecutionType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType _ExecutionType;
-        partial void OnExecutionTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ItemExecutionType value);
-        partial void OnExecutionTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Expiration in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Expiration")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference Expiration
-        {
-            get
-            {
-                return this._Expiration;
-            }
-            set
-            {
-                this.OnExpirationChanging(value);
-                this._Expiration = value;
-                this.OnExpirationChanged();
-                this.OnPropertyChanged("Expiration");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference _Expiration;
-        partial void OnExpirationChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExpirationReference value);
-        partial void OnExpirationChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for LinkedReportSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("LinkedReportSingle")]
-    public partial class LinkedReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<LinkedReport>
-    {
-        /// <summary>
-        /// Initialize a new LinkedReportSingle object.
-        /// </summary>
-        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
-
-        /// <summary>
-        /// Initialize a new LinkedReportSingle object.
-        /// </summary>
-        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
-
-        /// <summary>
-        /// Initialize a new LinkedReportSingle object.
-        /// </summary>
-        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<LinkedReport> query)
-            : base(query) { }
-
-        /// <summary>
-        /// There are no comments for Subscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Subscriptions == null))
-                {
-                    this._Subscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(GetPath("Subscriptions"));
-                }
-                return this._Subscriptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions;
-        /// <summary>
-        /// There are no comments for CacheRefreshPlans in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._CacheRefreshPlans == null))
-                {
-                    this._CacheRefreshPlans = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(GetPath("CacheRefreshPlans"));
-                }
-                return this._CacheRefreshPlans;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans;
-        /// <summary>
-        /// There are no comments for HistorySnapshotOptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle HistorySnapshotOptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._HistorySnapshotOptions == null))
-                {
-                    this._HistorySnapshotOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle(this.Context, GetPath("HistorySnapshotOptions"));
-                }
-                return this._HistorySnapshotOptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle _HistorySnapshotOptions;
-        /// <summary>
-        /// There are no comments for ReportHistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ReportHistorySnapshots == null))
-                {
-                    this._ReportHistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(GetPath("ReportHistorySnapshots"));
-                }
-                return this._ReportHistorySnapshots;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots;
-        /// <summary>
-        /// There are no comments for HistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._HistorySnapshots == null))
-                {
-                    this._HistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(GetPath("HistorySnapshots"));
-                }
-                return this._HistorySnapshots;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots;
-        /// <summary>
-        /// There are no comments for ParameterDefinitions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ParameterDefinitions == null))
-                {
-                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(GetPath("ParameterDefinitions"));
-                }
-                return this._ParameterDefinitions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions;
-        /// <summary>
-        /// There are no comments for ParentFolder in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ParentFolder == null))
-                {
-                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
-                }
-                return this._ParentFolder;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
-        /// <summary>
-        /// There are no comments for Properties in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Properties == null))
-                {
-                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
-                }
-                return this._Properties;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
-        /// <summary>
-        /// There are no comments for Comments in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Comments == null))
-                {
-                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
-                }
-                return this._Comments;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
-        /// <summary>
-        /// There are no comments for AlertSubscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AlertSubscriptions == null))
-                {
-                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
-                }
-                return this._AlertSubscriptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
-        /// <summary>
-        /// There are no comments for AllowedActions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AllowedActions == null))
-                {
-                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
-                }
-                return this._AllowedActions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
-        /// <summary>
-        /// There are no comments for Policies in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Policies == null))
-                {
-                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
-                }
-                return this._Policies;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
-    }
-    /// <summary>
-    /// There are no comments for LinkedReport in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.EntitySet("LinkedReports")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("LinkedReport")]
-    public partial class LinkedReport : CatalogItem
-    {
-        /// <summary>
-        /// Create a new LinkedReport object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="hidden">Initial value of Hidden.</param>
-        /// <param name="size">Initial value of Size.</param>
-        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
-        /// <param name="createdDate">Initial value of CreatedDate.</param>
-        /// <param name="isFavorite">Initial value of IsFavorite.</param>
-        /// <param name="hasParameters">Initial value of HasParameters.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static LinkedReport CreateLinkedReport(global::System.Guid ID,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
-                    bool hidden,
-                    long size,
-                    global::System.DateTimeOffset modifiedDate,
-                    global::System.DateTimeOffset createdDate,
-                    bool isFavorite,
-                    bool hasParameters)
-        {
-            LinkedReport linkedReport = new LinkedReport();
-            linkedReport.Id = ID;
-            linkedReport.Type = type;
-            linkedReport.Hidden = hidden;
-            linkedReport.Size = size;
-            linkedReport.ModifiedDate = modifiedDate;
-            linkedReport.CreatedDate = createdDate;
-            linkedReport.IsFavorite = isFavorite;
-            linkedReport.HasParameters = hasParameters;
-            return linkedReport;
-        }
-        /// <summary>
-        /// There are no comments for Property HasParameters in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HasParameters")]
-        public bool HasParameters
-        {
-            get
-            {
-                return this._HasParameters;
-            }
-            set
-            {
-                this.OnHasParametersChanging(value);
-                this._HasParameters = value;
-                this.OnHasParametersChanged();
-                this.OnPropertyChanged("HasParameters");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _HasParameters;
-        partial void OnHasParametersChanging(bool value);
-        partial void OnHasParametersChanged();
-        /// <summary>
-        /// There are no comments for Property Link in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Link")]
-        public string Link
-        {
-            get
-            {
-                return this._Link;
-            }
-            set
-            {
-                this.OnLinkChanging(value);
-                this._Link = value;
-                this.OnLinkChanged();
-                this.OnPropertyChanged("Link");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Link;
-        partial void OnLinkChanging(string value);
-        partial void OnLinkChanged();
-        /// <summary>
-        /// There are no comments for Property Subscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
-        {
-            get
-            {
-                return this._Subscriptions;
-            }
-            set
-            {
-                this.OnSubscriptionsChanging(value);
-                this._Subscriptions = value;
-                this.OnSubscriptionsChanged();
-                this.OnPropertyChanged("Subscriptions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnSubscriptionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> value);
-        partial void OnSubscriptionsChanged();
-        /// <summary>
-        /// There are no comments for Property CacheRefreshPlans in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
-        {
-            get
-            {
-                return this._CacheRefreshPlans;
-            }
-            set
-            {
-                this.OnCacheRefreshPlansChanging(value);
-                this._CacheRefreshPlans = value;
-                this.OnCacheRefreshPlansChanged();
-                this.OnPropertyChanged("CacheRefreshPlans");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnCacheRefreshPlansChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> value);
-        partial void OnCacheRefreshPlansChanged();
-        /// <summary>
-        /// There are no comments for Property HistorySnapshotOptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions HistorySnapshotOptions
-        {
-            get
-            {
-                return this._HistorySnapshotOptions;
-            }
-            set
-            {
-                this.OnHistorySnapshotOptionsChanging(value);
-                this._HistorySnapshotOptions = value;
-                this.OnHistorySnapshotOptionsChanged();
-                this.OnPropertyChanged("HistorySnapshotOptions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions _HistorySnapshotOptions;
-        partial void OnHistorySnapshotOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions value);
-        partial void OnHistorySnapshotOptionsChanged();
-        /// <summary>
-        /// There are no comments for Property ReportHistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
-        {
-            get
-            {
-                return this._ReportHistorySnapshots;
-            }
-            set
-            {
-                this.OnReportHistorySnapshotsChanging(value);
-                this._ReportHistorySnapshots = value;
-                this.OnReportHistorySnapshotsChanged();
-                this.OnPropertyChanged("ReportHistorySnapshots");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnReportHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> value);
-        partial void OnReportHistorySnapshotsChanged();
-        /// <summary>
-        /// There are no comments for Property HistorySnapshots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
-        {
-            get
-            {
-                return this._HistorySnapshots;
-            }
-            set
-            {
-                this.OnHistorySnapshotsChanging(value);
-                this._HistorySnapshots = value;
-                this.OnHistorySnapshotsChanged();
-                this.OnPropertyChanged("HistorySnapshots");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> value);
-        partial void OnHistorySnapshotsChanged();
-        /// <summary>
-        /// There are no comments for Property ParameterDefinitions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> ParameterDefinitions
-        {
-            get
-            {
-                return this._ParameterDefinitions;
-            }
-            set
-            {
-                this.OnParameterDefinitionsChanging(value);
-                this._ParameterDefinitions = value;
-                this.OnParameterDefinitionsChanged();
-                this.OnPropertyChanged("ParameterDefinitions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> value);
-        partial void OnParameterDefinitionsChanged();
-        /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-
-            return this.Context.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.SetCacheOptions", new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
-        }
-    }
-    /// <summary>
-    /// There are no comments for PowerBIReportSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBIReportSingle")]
-    public partial class PowerBIReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<PowerBIReport>
-    {
-        /// <summary>
-        /// Initialize a new PowerBIReportSingle object.
-        /// </summary>
-        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
-
-        /// <summary>
-        /// Initialize a new PowerBIReportSingle object.
-        /// </summary>
-        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
-
-        /// <summary>
-        /// Initialize a new PowerBIReportSingle object.
-        /// </summary>
-        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<PowerBIReport> query)
-            : base(query) { }
-
-        /// <summary>
-        /// There are no comments for DataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._DataSources == null))
-                {
-                    this._DataSources = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(GetPath("DataSources"));
-                }
-                return this._DataSources;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources;
-        /// <summary>
-        /// There are no comments for ParentFolder in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._ParentFolder == null))
-                {
-                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
-                }
-                return this._ParentFolder;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
-        /// <summary>
-        /// There are no comments for Properties in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Properties == null))
-                {
-                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
-                }
-                return this._Properties;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
-        /// <summary>
-        /// There are no comments for Comments in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Comments == null))
-                {
-                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
-                }
-                return this._Comments;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
-        /// <summary>
-        /// There are no comments for AlertSubscriptions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AlertSubscriptions == null))
-                {
-                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
-                }
-                return this._AlertSubscriptions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
-        /// <summary>
-        /// There are no comments for AllowedActions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._AllowedActions == null))
-                {
-                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
-                }
-                return this._AllowedActions;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
-        /// <summary>
-        /// There are no comments for Policies in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
-        {
-            get
-            {
-                if (!this.IsComposable)
-                {
-                    throw new global::System.NotSupportedException("The previous function is not composable.");
-                }
-                if ((this._Policies == null))
-                {
-                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
-                }
-                return this._Policies;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
-    }
-    /// <summary>
-    /// There are no comments for PowerBIReport in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.EntitySet("PowerBIReports")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBIReport")]
-    public partial class PowerBIReport : CatalogItem
-    {
-        /// <summary>
-        /// Create a new PowerBIReport object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="type">Initial value of Type.</param>
-        /// <param name="hidden">Initial value of Hidden.</param>
-        /// <param name="size">Initial value of Size.</param>
-        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
-        /// <param name="createdDate">Initial value of CreatedDate.</param>
-        /// <param name="isFavorite">Initial value of IsFavorite.</param>
-        /// <param name="hasDataSources">Initial value of HasDataSources.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static PowerBIReport CreatePowerBIReport(global::System.Guid ID,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
-                    bool hidden,
-                    long size,
-                    global::System.DateTimeOffset modifiedDate,
-                    global::System.DateTimeOffset createdDate,
-                    bool isFavorite,
-                    bool hasDataSources)
-        {
-            PowerBIReport powerBIReport = new PowerBIReport();
-            powerBIReport.Id = ID;
-            powerBIReport.Type = type;
-            powerBIReport.Hidden = hidden;
-            powerBIReport.Size = size;
-            powerBIReport.ModifiedDate = modifiedDate;
-            powerBIReport.CreatedDate = createdDate;
-            powerBIReport.IsFavorite = isFavorite;
-            powerBIReport.HasDataSources = hasDataSources;
-            return powerBIReport;
-        }
-        /// <summary>
-        /// There are no comments for Property HasDataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDataSources")]
-        public bool HasDataSources
-        {
-            get
-            {
-                return this._HasDataSources;
-            }
-            set
-            {
-                this.OnHasDataSourcesChanging(value);
-                this._HasDataSources = value;
-                this.OnHasDataSourcesChanged();
-                this.OnPropertyChanged("HasDataSources");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _HasDataSources;
-        partial void OnHasDataSourcesChanging(bool value);
-        partial void OnHasDataSourcesChanged();
-        /// <summary>
-        /// There are no comments for Property DataSources in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
-        {
-            get
-            {
-                return this._DataSources;
-            }
-            set
-            {
-                this.OnDataSourcesChanging(value);
-                this._DataSources = value;
-                this.OnDataSourcesChanged();
-                this.OnPropertyChanged("DataSources");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnDataSourcesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> value);
-        partial void OnDataSourcesChanged();
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for CheckDataSourceConnection in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
-        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(string DataSourceName)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.CheckDataSourceConnection", new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
-        }
-    }
-    /// <summary>
-    /// There are no comments for CommentSingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("CommentSingle")]
-    public partial class CommentSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Comment>
-    {
-        /// <summary>
-        /// Initialize a new CommentSingle object.
-        /// </summary>
-        public CommentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) { }
-
-        /// <summary>
-        /// Initialize a new CommentSingle object.
-        /// </summary>
-        public CommentSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) { }
-
-        /// <summary>
-        /// Initialize a new CommentSingle object.
-        /// </summary>
-        public CommentSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Comment> query)
-            : base(query) { }
-
-    }
-    /// <summary>
-    /// There are no comments for Comment in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.EntitySet("Comments")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Comment")]
-    public partial class Comment : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Comment object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="itemId">Initial value of ItemId.</param>
-        /// <param name="text">Initial value of Text.</param>
-        /// <param name="createdDate">Initial value of CreatedDate.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static Comment CreateComment(long ID, global::System.Guid itemId, string text, global::System.DateTimeOffset createdDate)
-        {
-            Comment comment = new Comment();
-            comment.Id = ID;
-            comment.ItemId = itemId;
-            comment.Text = text;
-            comment.CreatedDate = createdDate;
-            return comment;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
-        public long Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private long _Id;
-        partial void OnIdChanging(long value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property ItemId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ItemId")]
-        public global::System.Guid ItemId
-        {
-            get
-            {
-                return this._ItemId;
-            }
-            set
-            {
-                this.OnItemIdChanging(value);
-                this._ItemId = value;
-                this.OnItemIdChanged();
-                this.OnPropertyChanged("ItemId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Guid _ItemId;
-        partial void OnItemIdChanging(global::System.Guid value);
-        partial void OnItemIdChanged();
-        /// <summary>
-        /// There are no comments for Property UserName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UserName")]
-        public string UserName
-        {
-            get
-            {
-                return this._UserName;
-            }
-            set
-            {
-                this.OnUserNameChanging(value);
-                this._UserName = value;
-                this.OnUserNameChanged();
-                this.OnPropertyChanged("UserName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _UserName;
-        partial void OnUserNameChanging(string value);
-        partial void OnUserNameChanged();
-        /// <summary>
-        /// There are no comments for Property ThreadId in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ThreadId")]
-        public global::System.Nullable<long> ThreadId
-        {
-            get
-            {
-                return this._ThreadId;
-            }
-            set
-            {
-                this.OnThreadIdChanging(value);
-                this._ThreadId = value;
-                this.OnThreadIdChanged();
-                this.OnPropertyChanged("ThreadId");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Nullable<long> _ThreadId;
-        partial void OnThreadIdChanging(global::System.Nullable<long> value);
-        partial void OnThreadIdChanged();
-        /// <summary>
-        /// There are no comments for Property AttachmentPath in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AttachmentPath")]
-        public string AttachmentPath
-        {
-            get
-            {
-                return this._AttachmentPath;
-            }
-            set
-            {
-                this.OnAttachmentPathChanging(value);
-                this._AttachmentPath = value;
-                this.OnAttachmentPathChanged();
-                this.OnPropertyChanged("AttachmentPath");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _AttachmentPath;
-        partial void OnAttachmentPathChanging(string value);
-        partial void OnAttachmentPathChanged();
-        /// <summary>
-        /// There are no comments for Property Text in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Text")]
-        public string Text
-        {
-            get
-            {
-                return this._Text;
-            }
-            set
-            {
-                this.OnTextChanging(value);
-                this._Text = value;
-                this.OnTextChanged();
-                this.OnPropertyChanged("Text");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Text;
-        partial void OnTextChanging(string value);
-        partial void OnTextChanged();
-        /// <summary>
-        /// There are no comments for Property CreatedDate in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CreatedDate")]
-        public global::System.DateTimeOffset CreatedDate
-        {
-            get
-            {
-                return this._CreatedDate;
-            }
-            set
-            {
-                this.OnCreatedDateChanging(value);
-                this._CreatedDate = value;
-                this.OnCreatedDateChanged();
-                this.OnPropertyChanged("CreatedDate");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.DateTimeOffset _CreatedDate;
-        partial void OnCreatedDateChanging(global::System.DateTimeOffset value);
-        partial void OnCreatedDateChanged();
-        /// <summary>
-        /// There are no comments for Property ModifiedDate in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ModifiedDate")]
-        public global::System.Nullable<global::System.DateTimeOffset> ModifiedDate
-        {
-            get
-            {
-                return this._ModifiedDate;
-            }
-            set
-            {
-                this.OnModifiedDateChanging(value);
-                this._ModifiedDate = value;
-                this.OnModifiedDateChanged();
-                this.OnPropertyChanged("ModifiedDate");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Nullable<global::System.DateTimeOffset> _ModifiedDate;
-        partial void OnModifiedDateChanging(global::System.Nullable<global::System.DateTimeOffset> value);
-        partial void OnModifiedDateChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -8549,6 +7730,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for ExcelWorkbook in the schema.
@@ -8591,250 +7794,169 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return excelWorkbook;
         }
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> GetDependentItems()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
     }
     /// <summary>
-    /// There are no comments for ExecutionLogInfoSingle in the schema.
+    /// There are no comments for ExtensionSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogInfoSingle")]
-    public partial class ExecutionLogInfoSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ExecutionLogInfo>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionSingle")]
+    public partial class ExtensionSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Extension>
     {
         /// <summary>
-        /// Initialize a new ExecutionLogInfoSingle object.
+        /// Initialize a new ExtensionSingle object.
         /// </summary>
-        public ExecutionLogInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public ExtensionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) { }
 
         /// <summary>
-        /// Initialize a new ExecutionLogInfoSingle object.
+        /// Initialize a new ExtensionSingle object.
         /// </summary>
-        public ExecutionLogInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public ExtensionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) { }
 
         /// <summary>
-        /// Initialize a new ExecutionLogInfoSingle object.
+        /// Initialize a new ExtensionSingle object.
         /// </summary>
-        public ExecutionLogInfoSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ExecutionLogInfo> query)
+        public ExtensionSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<Extension> query)
             : base(query) { }
 
     }
     /// <summary>
-    /// There are no comments for ExecutionLogInfo in the schema.
+    /// There are no comments for Extension in the schema.
     /// </summary>
     /// <KeyProperties>
-    /// LogEntryId
+    /// Name
     /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("LogEntryId")]
-    [global::Microsoft.OData.Client.EntitySet("ExecutionLogEntries")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogInfo")]
-    public partial class ExecutionLogInfo : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.Key("Name")]
+    [global::Microsoft.OData.Client.EntitySet("Extensions")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Extension")]
+    public partial class Extension : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new ExecutionLogInfo object.
+        /// Create a new Extension object.
         /// </summary>
-        /// <param name="logEntryId">Initial value of LogEntryId.</param>
-        /// <param name="startTime">Initial value of StartTime.</param>
-        /// <param name="endTime">Initial value of EndTime.</param>
-        /// <param name="source">Initial value of Source.</param>
-        /// <param name="executionLogLevel">Initial value of ExecutionLogLevel.</param>
-        /// <param name="status">Initial value of Status.</param>
-        /// <param name="byteCount">Initial value of ByteCount.</param>
-        /// <param name="rowCount">Initial value of RowCount.</param>
-        /// <param name="processingTime">Initial value of ProcessingTime.</param>
-        /// <param name="renderingTime">Initial value of RenderingTime.</param>
-        /// <param name="dataRetrievalTime">Initial value of DataRetrievalTime.</param>
-        /// <param name="eventType">Initial value of EventType.</param>
+        /// <param name="extensionType">Initial value of ExtensionType.</param>
+        /// <param name="name">Initial value of Name.</param>
+        /// <param name="visible">Initial value of Visible.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ExecutionLogInfo CreateExecutionLogInfo(long logEntryId,
-                    global::System.DateTimeOffset startTime,
-                    global::System.DateTimeOffset endTime,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogExecType source,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogLevel executionLogLevel,
-                    long status,
-                    long byteCount,
-                    long rowCount,
-                    int processingTime,
-                    int renderingTime,
-                    int dataRetrievalTime,
-                    global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogEventType eventType)
+        public static Extension CreateExtension(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType extensionType, string name, bool visible)
         {
-            ExecutionLogInfo executionLogInfo = new ExecutionLogInfo();
-            executionLogInfo.LogEntryId = logEntryId;
-            executionLogInfo.StartTime = startTime;
-            executionLogInfo.EndTime = endTime;
-            executionLogInfo.Source = source;
-            executionLogInfo.ExecutionLogLevel = executionLogLevel;
-            executionLogInfo.Status = status;
-            executionLogInfo.ByteCount = byteCount;
-            executionLogInfo.RowCount = rowCount;
-            executionLogInfo.ProcessingTime = processingTime;
-            executionLogInfo.RenderingTime = renderingTime;
-            executionLogInfo.DataRetrievalTime = dataRetrievalTime;
-            executionLogInfo.EventType = eventType;
-            return executionLogInfo;
+            Extension extension = new Extension();
+            extension.ExtensionType = extensionType;
+            extension.Name = name;
+            extension.Visible = visible;
+            return extension;
         }
         /// <summary>
-        /// There are no comments for Property LogEntryId in the schema.
+        /// There are no comments for Property ExtensionType in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("LogEntryId")]
-        public long LogEntryId
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionType")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType ExtensionType
         {
             get
             {
-                return this._LogEntryId;
+                return this._ExtensionType;
             }
             set
             {
-                this.OnLogEntryIdChanging(value);
-                this._LogEntryId = value;
-                this.OnLogEntryIdChanged();
-                this.OnPropertyChanged("LogEntryId");
+                this.OnExtensionTypeChanging(value);
+                this._ExtensionType = value;
+                this.OnExtensionTypeChanged();
+                this.OnPropertyChanged("ExtensionType");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private long _LogEntryId;
-        partial void OnLogEntryIdChanging(long value);
-        partial void OnLogEntryIdChanged();
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType _ExtensionType;
+        partial void OnExtensionTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType value);
+        partial void OnExtensionTypeChanged();
         /// <summary>
-        /// There are no comments for Property CatalogItemId in the schema.
+        /// There are no comments for Property Name in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CatalogItemId")]
-        public string CatalogItemId
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
+        public string Name
         {
             get
             {
-                return this._CatalogItemId;
+                return this._Name;
             }
             set
             {
-                this.OnCatalogItemIdChanging(value);
-                this._CatalogItemId = value;
-                this.OnCatalogItemIdChanged();
-                this.OnPropertyChanged("CatalogItemId");
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _CatalogItemId;
-        partial void OnCatalogItemIdChanging(string value);
-        partial void OnCatalogItemIdChanged();
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
         /// <summary>
-        /// There are no comments for Property ItemPath in the schema.
+        /// There are no comments for Property LocalizedName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ItemPath")]
-        public string ItemPath
+        [global::Microsoft.OData.Client.OriginalNameAttribute("LocalizedName")]
+        public string LocalizedName
         {
             get
             {
-                return this._ItemPath;
+                return this._LocalizedName;
             }
             set
             {
-                this.OnItemPathChanging(value);
-                this._ItemPath = value;
-                this.OnItemPathChanged();
-                this.OnPropertyChanged("ItemPath");
+                this.OnLocalizedNameChanging(value);
+                this._LocalizedName = value;
+                this.OnLocalizedNameChanged();
+                this.OnPropertyChanged("LocalizedName");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _ItemPath;
-        partial void OnItemPathChanging(string value);
-        partial void OnItemPathChanged();
+        private string _LocalizedName;
+        partial void OnLocalizedNameChanging(string value);
+        partial void OnLocalizedNameChanged();
         /// <summary>
-        /// There are no comments for Property StartTime in the schema.
+        /// There are no comments for Property Visible in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("StartTime")]
-        public global::System.DateTimeOffset StartTime
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Visible")]
+        public bool Visible
         {
             get
             {
-                return this._StartTime;
+                return this._Visible;
             }
             set
             {
-                this.OnStartTimeChanging(value);
-                this._StartTime = value;
-                this.OnStartTimeChanged();
-                this.OnPropertyChanged("StartTime");
+                this.OnVisibleChanging(value);
+                this._Visible = value;
+                this.OnVisibleChanged();
+                this.OnPropertyChanged("Visible");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.DateTimeOffset _StartTime;
-        partial void OnStartTimeChanging(global::System.DateTimeOffset value);
-        partial void OnStartTimeChanged();
-        /// <summary>
-        /// There are no comments for Property EndTime in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EndTime")]
-        public global::System.DateTimeOffset EndTime
-        {
-            get
-            {
-                return this._EndTime;
-            }
-            set
-            {
-                this.OnEndTimeChanging(value);
-                this._EndTime = value;
-                this.OnEndTimeChanged();
-                this.OnPropertyChanged("EndTime");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.DateTimeOffset _EndTime;
-        partial void OnEndTimeChanging(global::System.DateTimeOffset value);
-        partial void OnEndTimeChanged();
-        /// <summary>
-        /// There are no comments for Property Format in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Format")]
-        public string Format
-        {
-            get
-            {
-                return this._Format;
-            }
-            set
-            {
-                this.OnFormatChanging(value);
-                this._Format = value;
-                this.OnFormatChanged();
-                this.OnPropertyChanged("Format");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Format;
-        partial void OnFormatChanging(string value);
-        partial void OnFormatChanged();
+        private bool _Visible;
+        partial void OnVisibleChanging(bool value);
+        partial void OnVisibleChanged();
         /// <summary>
         /// There are no comments for Property Parameters in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Parameters")]
-        public string Parameters
+        public global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> Parameters
         {
             get
             {
@@ -8849,262 +7971,282 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Parameters;
-        partial void OnParametersChanging(string value);
+        private global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> _Parameters = new global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>();
+        partial void OnParametersChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> value);
         partial void OnParametersChanged();
         /// <summary>
-        /// There are no comments for Property Source in the schema.
+        /// This event is raised when the value of the property is changed
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Source")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogExecType Source
-        {
-            get
-            {
-                return this._Source;
-            }
-            set
-            {
-                this.OnSourceChanging(value);
-                this._Source = value;
-                this.OnSourceChanged();
-                this.OnPropertyChanged("Source");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogExecType _Source;
-        partial void OnSourceChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogExecType value);
-        partial void OnSourceChanged();
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
-        /// There are no comments for Property ExecutionLogLevel in the schema.
+        /// The value of the property is changed
         /// </summary>
+        /// <param name="property">property name</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogLevel")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogLevel ExecutionLogLevel
+        protected virtual void OnPropertyChanged(string property)
         {
-            get
+            if ((this.PropertyChanged != null))
             {
-                return this._ExecutionLogLevel;
-            }
-            set
-            {
-                this.OnExecutionLogLevelChanging(value);
-                this._ExecutionLogLevel = value;
-                this.OnExecutionLogLevelChanged();
-                this.OnPropertyChanged("ExecutionLogLevel");
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogLevel _ExecutionLogLevel;
-        partial void OnExecutionLogLevelChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogLevel value);
-        partial void OnExecutionLogLevelChanged();
+    }
+    /// <summary>
+    /// There are no comments for ExtensionParameter in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionParameter")]
+    public partial class ExtensionParameter : global::System.ComponentModel.INotifyPropertyChanged
+    {
         /// <summary>
-        /// There are no comments for Property Status in the schema.
+        /// Create a new ExtensionParameter object.
         /// </summary>
+        /// <param name="required">Initial value of Required.</param>
+        /// <param name="readOnly">Initial value of ReadOnly.</param>
+        /// <param name="encrypted">Initial value of Encrypted.</param>
+        /// <param name="isPassword">Initial value of IsPassword.</param>
+        /// <param name="validValuesIsNull">Initial value of ValidValuesIsNull.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Status")]
-        public long Status
+        public static ExtensionParameter CreateExtensionParameter(bool required, bool readOnly, bool encrypted, bool isPassword, bool validValuesIsNull)
         {
-            get
-            {
-                return this._Status;
-            }
-            set
-            {
-                this.OnStatusChanging(value);
-                this._Status = value;
-                this.OnStatusChanged();
-                this.OnPropertyChanged("Status");
-            }
+            ExtensionParameter extensionParameter = new ExtensionParameter();
+            extensionParameter.Required = required;
+            extensionParameter.ReadOnly = readOnly;
+            extensionParameter.Encrypted = encrypted;
+            extensionParameter.IsPassword = isPassword;
+            extensionParameter.ValidValuesIsNull = validValuesIsNull;
+            return extensionParameter;
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private long _Status;
-        partial void OnStatusChanging(long value);
-        partial void OnStatusChanged();
         /// <summary>
-        /// There are no comments for Property ByteCount in the schema.
+        /// There are no comments for Property Name in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ByteCount")]
-        public long ByteCount
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
+        public string Name
         {
             get
             {
-                return this._ByteCount;
+                return this._Name;
             }
             set
             {
-                this.OnByteCountChanging(value);
-                this._ByteCount = value;
-                this.OnByteCountChanged();
-                this.OnPropertyChanged("ByteCount");
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private long _ByteCount;
-        partial void OnByteCountChanging(long value);
-        partial void OnByteCountChanged();
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
         /// <summary>
-        /// There are no comments for Property RowCount in the schema.
+        /// There are no comments for Property DisplayName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RowCount")]
-        public long RowCount
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DisplayName")]
+        public string DisplayName
         {
             get
             {
-                return this._RowCount;
+                return this._DisplayName;
             }
             set
             {
-                this.OnRowCountChanging(value);
-                this._RowCount = value;
-                this.OnRowCountChanged();
-                this.OnPropertyChanged("RowCount");
+                this.OnDisplayNameChanging(value);
+                this._DisplayName = value;
+                this.OnDisplayNameChanged();
+                this.OnPropertyChanged("DisplayName");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private long _RowCount;
-        partial void OnRowCountChanging(long value);
-        partial void OnRowCountChanged();
+        private string _DisplayName;
+        partial void OnDisplayNameChanging(string value);
+        partial void OnDisplayNameChanged();
         /// <summary>
-        /// There are no comments for Property ProcessingTime in the schema.
+        /// There are no comments for Property Required in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ProcessingTime")]
-        public int ProcessingTime
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Required")]
+        public bool Required
         {
             get
             {
-                return this._ProcessingTime;
+                return this._Required;
             }
             set
             {
-                this.OnProcessingTimeChanging(value);
-                this._ProcessingTime = value;
-                this.OnProcessingTimeChanged();
-                this.OnPropertyChanged("ProcessingTime");
+                this.OnRequiredChanging(value);
+                this._Required = value;
+                this.OnRequiredChanged();
+                this.OnPropertyChanged("Required");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private int _ProcessingTime;
-        partial void OnProcessingTimeChanging(int value);
-        partial void OnProcessingTimeChanged();
+        private bool _Required;
+        partial void OnRequiredChanging(bool value);
+        partial void OnRequiredChanged();
         /// <summary>
-        /// There are no comments for Property RenderingTime in the schema.
+        /// There are no comments for Property ReadOnly in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RenderingTime")]
-        public int RenderingTime
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReadOnly")]
+        public bool ReadOnly
         {
             get
             {
-                return this._RenderingTime;
+                return this._ReadOnly;
             }
             set
             {
-                this.OnRenderingTimeChanging(value);
-                this._RenderingTime = value;
-                this.OnRenderingTimeChanged();
-                this.OnPropertyChanged("RenderingTime");
+                this.OnReadOnlyChanging(value);
+                this._ReadOnly = value;
+                this.OnReadOnlyChanged();
+                this.OnPropertyChanged("ReadOnly");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private int _RenderingTime;
-        partial void OnRenderingTimeChanging(int value);
-        partial void OnRenderingTimeChanged();
+        private bool _ReadOnly;
+        partial void OnReadOnlyChanging(bool value);
+        partial void OnReadOnlyChanged();
         /// <summary>
-        /// There are no comments for Property DataRetrievalTime in the schema.
+        /// There are no comments for Property Value in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataRetrievalTime")]
-        public int DataRetrievalTime
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Value")]
+        public string Value
         {
             get
             {
-                return this._DataRetrievalTime;
+                return this._Value;
             }
             set
             {
-                this.OnDataRetrievalTimeChanging(value);
-                this._DataRetrievalTime = value;
-                this.OnDataRetrievalTimeChanged();
-                this.OnPropertyChanged("DataRetrievalTime");
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private int _DataRetrievalTime;
-        partial void OnDataRetrievalTimeChanging(int value);
-        partial void OnDataRetrievalTimeChanged();
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
         /// <summary>
-        /// There are no comments for Property ExecutionId in the schema.
+        /// There are no comments for Property Error in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionId")]
-        public string ExecutionId
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Error")]
+        public string Error
         {
             get
             {
-                return this._ExecutionId;
+                return this._Error;
             }
             set
             {
-                this.OnExecutionIdChanging(value);
-                this._ExecutionId = value;
-                this.OnExecutionIdChanged();
-                this.OnPropertyChanged("ExecutionId");
+                this.OnErrorChanging(value);
+                this._Error = value;
+                this.OnErrorChanged();
+                this.OnPropertyChanged("Error");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _ExecutionId;
-        partial void OnExecutionIdChanging(string value);
-        partial void OnExecutionIdChanged();
+        private string _Error;
+        partial void OnErrorChanging(string value);
+        partial void OnErrorChanged();
         /// <summary>
-        /// There are no comments for Property EventType in the schema.
+        /// There are no comments for Property Encrypted in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("EventType")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogEventType EventType
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Encrypted")]
+        public bool Encrypted
         {
             get
             {
-                return this._EventType;
+                return this._Encrypted;
             }
             set
             {
-                this.OnEventTypeChanging(value);
-                this._EventType = value;
-                this.OnEventTypeChanged();
-                this.OnPropertyChanged("EventType");
+                this.OnEncryptedChanging(value);
+                this._Encrypted = value;
+                this.OnEncryptedChanged();
+                this.OnPropertyChanged("Encrypted");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogEventType _EventType;
-        partial void OnEventTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogEventType value);
-        partial void OnEventTypeChanged();
+        private bool _Encrypted;
+        partial void OnEncryptedChanging(bool value);
+        partial void OnEncryptedChanged();
         /// <summary>
-        /// There are no comments for Property AdditionalInfo in the schema.
+        /// There are no comments for Property IsPassword in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AdditionalInfo")]
-        public string AdditionalInfo
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsPassword")]
+        public bool IsPassword
         {
             get
             {
-                return this._AdditionalInfo;
+                return this._IsPassword;
             }
             set
             {
-                this.OnAdditionalInfoChanging(value);
-                this._AdditionalInfo = value;
-                this.OnAdditionalInfoChanged();
-                this.OnPropertyChanged("AdditionalInfo");
+                this.OnIsPasswordChanging(value);
+                this._IsPassword = value;
+                this.OnIsPasswordChanged();
+                this.OnPropertyChanged("IsPassword");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _AdditionalInfo;
-        partial void OnAdditionalInfoChanging(string value);
-        partial void OnAdditionalInfoChanged();
+        private bool _IsPassword;
+        partial void OnIsPasswordChanging(bool value);
+        partial void OnIsPasswordChanged();
+        /// <summary>
+        /// There are no comments for Property ValidValues in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidValues")]
+        public global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> ValidValues
+        {
+            get
+            {
+                return this._ValidValues;
+            }
+            set
+            {
+                this.OnValidValuesChanging(value);
+                this._ValidValues = value;
+                this.OnValidValuesChanged();
+                this.OnPropertyChanged("ValidValues");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> _ValidValues = new global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue>();
+        partial void OnValidValuesChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> value);
+        partial void OnValidValuesChanged();
+        /// <summary>
+        /// There are no comments for Property ValidValuesIsNull in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidValuesIsNull")]
+        public bool ValidValuesIsNull
+        {
+            get
+            {
+                return this._ValidValuesIsNull;
+            }
+            set
+            {
+                this.OnValidValuesIsNullChanging(value);
+                this._ValidValuesIsNull = value;
+                this.OnValidValuesIsNullChanged();
+                this.OnPropertyChanged("ValidValuesIsNull");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _ValidValuesIsNull;
+        partial void OnValidValuesIsNullChanging(bool value);
+        partial void OnValidValuesIsNullChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -9434,6 +8576,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for Folder in the schema.
@@ -9499,24 +8663,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnCatalogItemsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> value);
         partial void OnCatalogItemsChanged();
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> GetDependentItems()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
         /// There are no comments for SearchItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> SearchItems(string SearchText)
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(string SearchText)
         {
             global::System.Uri requestUri;
             Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
     }
     /// <summary>
@@ -9675,6 +8843,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for Kpi in the schema.
@@ -9861,24 +9051,616 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnDataChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.KpiData value);
         partial void OnDataChanged();
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> GetDependentItems()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
+        }
+    }
+    /// <summary>
+    /// There are no comments for LinkedReportSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("LinkedReportSingle")]
+    public partial class LinkedReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<LinkedReport>
+    {
+        /// <summary>
+        /// Initialize a new LinkedReportSingle object.
+        /// </summary>
+        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new LinkedReportSingle object.
+        /// </summary>
+        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new LinkedReportSingle object.
+        /// </summary>
+        public LinkedReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<LinkedReport> query)
+            : base(query) { }
+
+        /// <summary>
+        /// There are no comments for Subscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Subscriptions == null))
+                {
+                    this._Subscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(GetPath("Subscriptions"));
+                }
+                return this._Subscriptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions;
+        /// <summary>
+        /// There are no comments for CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheRefreshPlans == null))
+                {
+                    this._CacheRefreshPlans = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(GetPath("CacheRefreshPlans"));
+                }
+                return this._CacheRefreshPlans;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans;
+        /// <summary>
+        /// There are no comments for HistorySnapshotOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle HistorySnapshotOptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._HistorySnapshotOptions == null))
+                {
+                    this._HistorySnapshotOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle(this.Context, GetPath("HistorySnapshotOptions"));
+                }
+                return this._HistorySnapshotOptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle _HistorySnapshotOptions;
+        /// <summary>
+        /// There are no comments for ReportHistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ReportHistorySnapshots == null))
+                {
+                    this._ReportHistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(GetPath("ReportHistorySnapshots"));
+                }
+                return this._ReportHistorySnapshots;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots;
+        /// <summary>
+        /// There are no comments for HistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._HistorySnapshots == null))
+                {
+                    this._HistorySnapshots = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(GetPath("HistorySnapshots"));
+                }
+                return this._HistorySnapshots;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots;
+        /// <summary>
+        /// There are no comments for ParameterDefinitions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ParameterDefinitions == null))
+                {
+                    this._ParameterDefinitions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(GetPath("ParameterDefinitions"));
+                }
+                return this._ParameterDefinitions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions;
+        /// <summary>
+        /// There are no comments for CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle CacheOptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheOptions == null))
+                {
+                    this._CacheOptions = new global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle(this.Context, GetPath("CacheOptions"));
+                }
+                return this._CacheOptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle _CacheOptions;
+        /// <summary>
+        /// There are no comments for ParentFolder in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ParentFolder == null))
+                {
+                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
+                }
+                return this._ParentFolder;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
+        /// <summary>
+        /// There are no comments for Properties in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Properties == null))
+                {
+                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
+                }
+                return this._Properties;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
+        /// <summary>
+        /// There are no comments for Comments in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Comments == null))
+                {
+                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
+                }
+                return this._Comments;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
+        /// <summary>
+        /// There are no comments for AlertSubscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AlertSubscriptions == null))
+                {
+                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
+                }
+                return this._AlertSubscriptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
+        /// <summary>
+        /// There are no comments for AllowedActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AllowedActions == null))
+                {
+                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
+                }
+                return this._AllowedActions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
+        /// <summary>
+        /// There are no comments for Policies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Policies == null))
+                {
+                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
+                }
+                return this._Policies;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
+    }
+    /// <summary>
+    /// There are no comments for LinkedReport in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("LinkedReports")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("LinkedReport")]
+    public partial class LinkedReport : CatalogItem
+    {
+        /// <summary>
+        /// Create a new LinkedReport object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="hidden">Initial value of Hidden.</param>
+        /// <param name="size">Initial value of Size.</param>
+        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
+        /// <param name="createdDate">Initial value of CreatedDate.</param>
+        /// <param name="isFavorite">Initial value of IsFavorite.</param>
+        /// <param name="hasParameters">Initial value of HasParameters.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static LinkedReport CreateLinkedReport(global::System.Guid ID,
+                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
+                    bool hidden,
+                    long size,
+                    global::System.DateTimeOffset modifiedDate,
+                    global::System.DateTimeOffset createdDate,
+                    bool isFavorite,
+                    bool hasParameters)
+        {
+            LinkedReport linkedReport = new LinkedReport();
+            linkedReport.Id = ID;
+            linkedReport.Type = type;
+            linkedReport.Hidden = hidden;
+            linkedReport.Size = size;
+            linkedReport.ModifiedDate = modifiedDate;
+            linkedReport.CreatedDate = createdDate;
+            linkedReport.IsFavorite = isFavorite;
+            linkedReport.HasParameters = hasParameters;
+            return linkedReport;
         }
         /// <summary>
-        /// There are no comments for SearchItems in the schema.
+        /// There are no comments for Property HasParameters in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> SearchItems(string SearchText)
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasParameters")]
+        public bool HasParameters
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            get
+            {
+                return this._HasParameters;
+            }
+            set
+            {
+                this.OnHasParametersChanging(value);
+                this._HasParameters = value;
+                this.OnHasParametersChanged();
+                this.OnPropertyChanged("HasParameters");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _HasParameters;
+        partial void OnHasParametersChanging(bool value);
+        partial void OnHasParametersChanged();
+        /// <summary>
+        /// There are no comments for Property Link in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Link")]
+        public string Link
+        {
+            get
+            {
+                return this._Link;
+            }
+            set
+            {
+                this.OnLinkChanging(value);
+                this._Link = value;
+                this.OnLinkChanged();
+                this.OnPropertyChanged("Link");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _Link;
+        partial void OnLinkChanging(string value);
+        partial void OnLinkChanged();
+        /// <summary>
+        /// There are no comments for Property Subscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Subscriptions")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> Subscriptions
+        {
+            get
+            {
+                return this._Subscriptions;
+            }
+            set
+            {
+                this.OnSubscriptionsChanging(value);
+                this._Subscriptions = value;
+                this.OnSubscriptionsChanged();
+                this.OnPropertyChanged("Subscriptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> _Subscriptions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnSubscriptionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Subscription> value);
+        partial void OnSubscriptionsChanged();
+        /// <summary>
+        /// There are no comments for Property CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                return this._CacheRefreshPlans;
+            }
+            set
+            {
+                this.OnCacheRefreshPlansChanging(value);
+                this._CacheRefreshPlans = value;
+                this.OnCacheRefreshPlansChanged();
+                this.OnPropertyChanged("CacheRefreshPlans");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCacheRefreshPlansChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> value);
+        partial void OnCacheRefreshPlansChanged();
+        /// <summary>
+        /// There are no comments for Property HistorySnapshotOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshotOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions HistorySnapshotOptions
+        {
+            get
+            {
+                return this._HistorySnapshotOptions;
+            }
+            set
+            {
+                this.OnHistorySnapshotOptionsChanging(value);
+                this._HistorySnapshotOptions = value;
+                this.OnHistorySnapshotOptionsChanged();
+                this.OnPropertyChanged("HistorySnapshotOptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions _HistorySnapshotOptions;
+        partial void OnHistorySnapshotOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptions value);
+        partial void OnHistorySnapshotOptionsChanged();
+        /// <summary>
+        /// There are no comments for Property ReportHistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportHistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> ReportHistorySnapshots
+        {
+            get
+            {
+                return this._ReportHistorySnapshots;
+            }
+            set
+            {
+                this.OnReportHistorySnapshotsChanging(value);
+                this._ReportHistorySnapshots = value;
+                this.OnReportHistorySnapshotsChanged();
+                this.OnPropertyChanged("ReportHistorySnapshots");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> _ReportHistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnReportHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportHistorySnapshot> value);
+        partial void OnReportHistorySnapshotsChanged();
+        /// <summary>
+        /// There are no comments for Property HistorySnapshots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HistorySnapshots")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> HistorySnapshots
+        {
+            get
+            {
+                return this._HistorySnapshots;
+            }
+            set
+            {
+                this.OnHistorySnapshotsChanging(value);
+                this._HistorySnapshots = value;
+                this.OnHistorySnapshotsChanged();
+                this.OnPropertyChanged("HistorySnapshots");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> _HistorySnapshots = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnHistorySnapshotsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshot> value);
+        partial void OnHistorySnapshotsChanged();
+        /// <summary>
+        /// There are no comments for Property ParameterDefinitions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParameterDefinitions")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> ParameterDefinitions
+        {
+            get
+            {
+                return this._ParameterDefinitions;
+            }
+            set
+            {
+                this.OnParameterDefinitionsChanging(value);
+                this._ParameterDefinitions = value;
+                this.OnParameterDefinitionsChanged();
+                this.OnPropertyChanged("ParameterDefinitions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> _ParameterDefinitions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnParameterDefinitionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> value);
+        partial void OnParameterDefinitionsChanged();
+        /// <summary>
+        /// There are no comments for Property CacheOptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheOptions")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions CacheOptions
+        {
+            get
+            {
+                return this._CacheOptions;
+            }
+            set
+            {
+                this.OnCacheOptionsChanging(value);
+                this._CacheOptions = value;
+                this.OnCacheOptionsChanged();
+                this.OnPropertyChanged("CacheOptions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions _CacheOptions;
+        partial void OnCacheOptionsChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions value);
+        partial void OnCacheOptionsChanged();
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
     }
     /// <summary>
@@ -10059,6 +9841,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for MobileReport in the schema.
@@ -10199,24 +10003,18 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnSharedDataSetsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> value);
         partial void OnSharedDataSetsChanged();
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> GetDependentItems()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
     }
     /// <summary>
@@ -10333,29 +10131,415 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for ReportServerInfoSingle in the schema.
+    /// There are no comments for PowerBIReportSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerInfoSingle")]
-    public partial class ReportServerInfoSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ReportServerInfo>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBIReportSingle")]
+    public partial class PowerBIReportSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<PowerBIReport>
     {
         /// <summary>
-        /// Initialize a new ReportServerInfoSingle object.
+        /// Initialize a new PowerBIReportSingle object.
         /// </summary>
-        public ReportServerInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) { }
 
         /// <summary>
-        /// Initialize a new ReportServerInfoSingle object.
+        /// Initialize a new PowerBIReportSingle object.
         /// </summary>
-        public ReportServerInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) { }
 
         /// <summary>
-        /// Initialize a new ReportServerInfoSingle object.
+        /// Initialize a new PowerBIReportSingle object.
         /// </summary>
-        public ReportServerInfoSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ReportServerInfo> query)
+        public PowerBIReportSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<PowerBIReport> query)
             : base(query) { }
 
+        /// <summary>
+        /// There are no comments for DataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DataSources == null))
+                {
+                    this._DataSources = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(GetPath("DataSources"));
+                }
+                return this._DataSources;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources;
+        /// <summary>
+        /// There are no comments for CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._CacheRefreshPlans == null))
+                {
+                    this._CacheRefreshPlans = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(GetPath("CacheRefreshPlans"));
+                }
+                return this._CacheRefreshPlans;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans;
+        /// <summary>
+        /// There are no comments for ParentFolder in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ParentFolder")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle ParentFolder
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ParentFolder == null))
+                {
+                    this._ParentFolder = new global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle(this.Context, GetPath("ParentFolder"));
+                }
+                return this._ParentFolder;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.FolderSingle _ParentFolder;
+        /// <summary>
+        /// There are no comments for Properties in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Properties == null))
+                {
+                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
+                }
+                return this._Properties;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
+        /// <summary>
+        /// There are no comments for Comments in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Comments")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> Comments
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Comments == null))
+                {
+                    this._Comments = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment>(GetPath("Comments"));
+                }
+                return this._Comments;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> _Comments;
+        /// <summary>
+        /// There are no comments for AlertSubscriptions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AlertSubscriptions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> AlertSubscriptions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AlertSubscriptions == null))
+                {
+                    this._AlertSubscriptions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription>(GetPath("AlertSubscriptions"));
+                }
+                return this._AlertSubscriptions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AlertSubscription> _AlertSubscriptions;
+        /// <summary>
+        /// There are no comments for AllowedActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AllowedActions == null))
+                {
+                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
+                }
+                return this._AllowedActions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
+        /// <summary>
+        /// There are no comments for Policies in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Policies")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> Policies
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Policies == null))
+                {
+                    this._Policies = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy>(GetPath("Policies"));
+                }
+                return this._Policies;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
+    }
+    /// <summary>
+    /// There are no comments for PowerBIReport in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.EntitySet("PowerBIReports")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBIReport")]
+    public partial class PowerBIReport : CatalogItem
+    {
+        /// <summary>
+        /// Create a new PowerBIReport object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="hidden">Initial value of Hidden.</param>
+        /// <param name="size">Initial value of Size.</param>
+        /// <param name="modifiedDate">Initial value of ModifiedDate.</param>
+        /// <param name="createdDate">Initial value of CreatedDate.</param>
+        /// <param name="isFavorite">Initial value of IsFavorite.</param>
+        /// <param name="hasDataSources">Initial value of HasDataSources.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static PowerBIReport CreatePowerBIReport(global::System.Guid ID,
+                    global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemType type,
+                    bool hidden,
+                    long size,
+                    global::System.DateTimeOffset modifiedDate,
+                    global::System.DateTimeOffset createdDate,
+                    bool isFavorite,
+                    bool hasDataSources)
+        {
+            PowerBIReport powerBIReport = new PowerBIReport();
+            powerBIReport.Id = ID;
+            powerBIReport.Type = type;
+            powerBIReport.Hidden = hidden;
+            powerBIReport.Size = size;
+            powerBIReport.ModifiedDate = modifiedDate;
+            powerBIReport.CreatedDate = createdDate;
+            powerBIReport.IsFavorite = isFavorite;
+            powerBIReport.HasDataSources = hasDataSources;
+            return powerBIReport;
+        }
+        /// <summary>
+        /// There are no comments for Property HasDataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HasDataSources")]
+        public bool HasDataSources
+        {
+            get
+            {
+                return this._HasDataSources;
+            }
+            set
+            {
+                this.OnHasDataSourcesChanging(value);
+                this._HasDataSources = value;
+                this.OnHasDataSourcesChanged();
+                this.OnPropertyChanged("HasDataSources");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _HasDataSources;
+        partial void OnHasDataSourcesChanging(bool value);
+        partial void OnHasDataSourcesChanged();
+        /// <summary>
+        /// There are no comments for Property DataSources in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataSources")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> DataSources
+        {
+            get
+            {
+                return this._DataSources;
+            }
+            set
+            {
+                this.OnDataSourcesChanging(value);
+                this._DataSources = value;
+                this.OnDataSourcesChanged();
+                this.OnPropertyChanged("DataSources");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> _DataSources = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnDataSourcesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> value);
+        partial void OnDataSourcesChanged();
+        /// <summary>
+        /// There are no comments for Property CacheRefreshPlans in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CacheRefreshPlans")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> CacheRefreshPlans
+        {
+            get
+            {
+                return this._CacheRefreshPlans;
+            }
+            set
+            {
+                this.OnCacheRefreshPlansChanging(value);
+                this._CacheRefreshPlans = value;
+                this.OnCacheRefreshPlansChanged();
+                this.OnPropertyChanged("CacheRefreshPlans");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> _CacheRefreshPlans = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCacheRefreshPlansChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheRefreshPlan> value);
+        partial void OnCacheRefreshPlansChanged();
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
+        }
+        /// <summary>
+        /// There are no comments for CheckDataSourceConnection in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
+        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(string DataSourceName)
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.CheckDataSourceConnection", new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
+        }
+    }
+    /// <summary>
+    /// There are no comments for SystemSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("SystemSingle")]
+    public partial class SystemSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<System>
+    {
+        /// <summary>
+        /// Initialize a new SystemSingle object.
+        /// </summary>
+        public SystemSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
+        /// <summary>
+        /// Initialize a new SystemSingle object.
+        /// </summary>
+        public SystemSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
+        /// <summary>
+        /// Initialize a new SystemSingle object.
+        /// </summary>
+        public SystemSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<System> query)
+            : base(query) { }
+
+        /// <summary>
+        /// There are no comments for AllowedActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._AllowedActions == null))
+                {
+                    this._AllowedActions = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(GetPath("AllowedActions"));
+                }
+                return this._AllowedActions;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions;
         /// <summary>
         /// There are no comments for Policies in the schema.
         /// </summary>
@@ -10378,27 +10562,51 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.SystemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for Properties in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Properties == null))
+                {
+                    this._Properties = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(GetPath("Properties"));
+                }
+                return this._Properties;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties;
     }
     /// <summary>
-    /// There are no comments for ReportServerInfo in the schema.
+    /// There are no comments for System in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerInfo")]
-    public partial class ReportServerInfo : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.OriginalNameAttribute("System")]
+    public partial class System : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new ReportServerInfo object.
+        /// Create a new System object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
+        /// <param name="productType">Initial value of ProductType.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ReportServerInfo CreateReportServerInfo(global::System.Guid ID)
+        public static System CreateSystem(global::System.Guid ID, global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType productType)
         {
-            ReportServerInfo reportServerInfo = new ReportServerInfo();
-            reportServerInfo.Id = ID;
-            return reportServerInfo;
+            System system = new System();
+            system.Id = ID;
+            system.ProductType = productType;
+            return system;
         }
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -10424,74 +10632,166 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnIdChanging(global::System.Guid value);
         partial void OnIdChanged();
         /// <summary>
-        /// There are no comments for Property ReportServerUrl in the schema.
+        /// There are no comments for Property ReportServerAbsoluteUrl in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerUrl")]
-        public string ReportServerUrl
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerAbsoluteUrl")]
+        public string ReportServerAbsoluteUrl
         {
             get
             {
-                return this._ReportServerUrl;
+                return this._ReportServerAbsoluteUrl;
             }
             set
             {
-                this.OnReportServerUrlChanging(value);
-                this._ReportServerUrl = value;
-                this.OnReportServerUrlChanged();
-                this.OnPropertyChanged("ReportServerUrl");
+                this.OnReportServerAbsoluteUrlChanging(value);
+                this._ReportServerAbsoluteUrl = value;
+                this.OnReportServerAbsoluteUrlChanged();
+                this.OnPropertyChanged("ReportServerAbsoluteUrl");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _ReportServerUrl;
-        partial void OnReportServerUrlChanging(string value);
-        partial void OnReportServerUrlChanged();
+        private string _ReportServerAbsoluteUrl;
+        partial void OnReportServerAbsoluteUrlChanging(string value);
+        partial void OnReportServerAbsoluteUrlChanged();
         /// <summary>
-        /// There are no comments for Property VirtualDirectory in the schema.
+        /// There are no comments for Property ReportServerRelativeUrl in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("VirtualDirectory")]
-        public string VirtualDirectory
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ReportServerRelativeUrl")]
+        public string ReportServerRelativeUrl
         {
             get
             {
-                return this._VirtualDirectory;
+                return this._ReportServerRelativeUrl;
             }
             set
             {
-                this.OnVirtualDirectoryChanging(value);
-                this._VirtualDirectory = value;
-                this.OnVirtualDirectoryChanged();
-                this.OnPropertyChanged("VirtualDirectory");
+                this.OnReportServerRelativeUrlChanging(value);
+                this._ReportServerRelativeUrl = value;
+                this.OnReportServerRelativeUrlChanged();
+                this.OnPropertyChanged("ReportServerRelativeUrl");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _VirtualDirectory;
-        partial void OnVirtualDirectoryChanging(string value);
-        partial void OnVirtualDirectoryChanged();
+        private string _ReportServerRelativeUrl;
+        partial void OnReportServerRelativeUrlChanging(string value);
+        partial void OnReportServerRelativeUrlChanged();
         /// <summary>
-        /// There are no comments for Property WebAppUrl in the schema.
+        /// There are no comments for Property WebPortalRelativeUrl in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("WebAppUrl")]
-        public string WebAppUrl
+        [global::Microsoft.OData.Client.OriginalNameAttribute("WebPortalRelativeUrl")]
+        public string WebPortalRelativeUrl
         {
             get
             {
-                return this._WebAppUrl;
+                return this._WebPortalRelativeUrl;
             }
             set
             {
-                this.OnWebAppUrlChanging(value);
-                this._WebAppUrl = value;
-                this.OnWebAppUrlChanged();
-                this.OnPropertyChanged("WebAppUrl");
+                this.OnWebPortalRelativeUrlChanging(value);
+                this._WebPortalRelativeUrl = value;
+                this.OnWebPortalRelativeUrlChanged();
+                this.OnPropertyChanged("WebPortalRelativeUrl");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _WebAppUrl;
-        partial void OnWebAppUrlChanging(string value);
-        partial void OnWebAppUrlChanged();
+        private string _WebPortalRelativeUrl;
+        partial void OnWebPortalRelativeUrlChanging(string value);
+        partial void OnWebPortalRelativeUrlChanged();
+        /// <summary>
+        /// There are no comments for Property ProductName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ProductName")]
+        public string ProductName
+        {
+            get
+            {
+                return this._ProductName;
+            }
+            set
+            {
+                this.OnProductNameChanging(value);
+                this._ProductName = value;
+                this.OnProductNameChanged();
+                this.OnPropertyChanged("ProductName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _ProductName;
+        partial void OnProductNameChanging(string value);
+        partial void OnProductNameChanged();
+        /// <summary>
+        /// There are no comments for Property ProductVersion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ProductVersion")]
+        public string ProductVersion
+        {
+            get
+            {
+                return this._ProductVersion;
+            }
+            set
+            {
+                this.OnProductVersionChanging(value);
+                this._ProductVersion = value;
+                this.OnProductVersionChanged();
+                this.OnPropertyChanged("ProductVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _ProductVersion;
+        partial void OnProductVersionChanging(string value);
+        partial void OnProductVersionChanged();
+        /// <summary>
+        /// There are no comments for Property TimeZone in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("TimeZone")]
+        public string TimeZone
+        {
+            get
+            {
+                return this._TimeZone;
+            }
+            set
+            {
+                this.OnTimeZoneChanging(value);
+                this._TimeZone = value;
+                this.OnTimeZoneChanged();
+                this.OnPropertyChanged("TimeZone");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _TimeZone;
+        partial void OnTimeZoneChanging(string value);
+        partial void OnTimeZoneChanged();
+        /// <summary>
+        /// There are no comments for Property ProductType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ProductType")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                this.OnProductTypeChanging(value);
+                this._ProductType = value;
+                this.OnProductTypeChanged();
+                this.OnPropertyChanged("ProductType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType _ProductType;
+        partial void OnProductTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType value);
+        partial void OnProductTypeChanged();
         /// <summary>
         /// There are no comments for Property Roles in the schema.
         /// </summary>
@@ -10516,6 +10816,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnRolesChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Role> value);
         partial void OnRolesChanged();
         /// <summary>
+        /// There are no comments for Property AllowedActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActions")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> AllowedActions
+        {
+            get
+            {
+                return this._AllowedActions;
+            }
+            set
+            {
+                this.OnAllowedActionsChanging(value);
+                this._AllowedActions = value;
+                this.OnAllowedActionsChanged();
+                this.OnPropertyChanged("AllowedActions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> _AllowedActions = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnAllowedActionsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.AllowedAction> value);
+        partial void OnAllowedActionsChanged();
+        /// <summary>
         /// There are no comments for Property Policies in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -10539,6 +10862,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         partial void OnPoliciesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.SystemPolicy> value);
         partial void OnPoliciesChanged();
         /// <summary>
+        /// There are no comments for Property Properties in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Properties")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Properties
+        {
+            get
+            {
+                return this._Properties;
+            }
+            set
+            {
+                this.OnPropertiesChanging(value);
+                this._Properties = value;
+                this.OnPropertiesChanged();
+                this.OnPropertyChanged("Properties");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> _Properties = new global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnPropertiesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> value);
+        partial void OnPropertiesChanged();
+        /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -10554,136 +10900,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             {
                 this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
             }
-        }
-        /// <summary>
-        /// There are no comments for DeliveryExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryExtensions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DeliveryExtensions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.DeliveryExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for DeliveryUIExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryUIExtensions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DeliveryUIExtensions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.DeliveryUIExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for DataExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataExtensions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DataExtensions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.DataExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for RenderingExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RenderingExtensions")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> RenderingExtensions()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.RenderingExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for ExtensionParameters in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionParameters")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ExtensionParameters(string ExtensionName)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.ExtensionParameters", false, new global::Microsoft.OData.Client.UriOperationParameter("ExtensionName", ExtensionName));
-        }
-        /// <summary>
-        /// There are no comments for RestrictedSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RestrictedSettings")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> RestrictedSettings()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.RestrictedSettings", false);
-        }
-        /// <summary>
-        /// There are no comments for Settings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Settings")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Settings()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.Settings", false);
-        }
-        /// <summary>
-        /// There are no comments for ServerProductInfo in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ServerProductInfo")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> ServerProductInfo()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.ServerProductInfo", false);
-        }
-        /// <summary>
-        /// There are no comments for SiteName in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SiteName")]
-        public global::Microsoft.OData.Client.DataServiceQuerySingle<string> SiteName()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-
-            return this.Context.CreateFunctionQuerySingle<string>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SiteName", false);
-        }
-        /// <summary>
-        /// There are no comments for PowerBISettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBISettings")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> PowerBISettings()
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.PowerBISettings", false);
-        }
-        /// <summary>
-        /// There are no comments for ValidateExtensionSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidateExtensionSettings")]
-        public global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ValidateExtensionSettings(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues, string ExtensionName)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.ValidateExtensionSettings", new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues),
-                    new global::Microsoft.OData.Client.BodyOperationParameter("ExtensionName", ExtensionName));
-        }
-        /// <summary>
-        /// There are no comments for UpdateSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateSettings")]
-        public global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateSettings(global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> PropertyValues)
-        {
-            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
-            if (resource == null)
-            {
-                throw new global::System.Exception("cannot find entity");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.UpdateSettings", new global::Microsoft.OData.Client.BodyOperationParameter("PropertyValues", PropertyValues));
         }
     }
     /// <summary>
@@ -10778,408 +10994,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         private global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Policy> _Policies = new global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Policy>();
         partial void OnPoliciesChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Policy> value);
         partial void OnPoliciesChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for Extension in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Extension")]
-    public partial class Extension : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new Extension object.
-        /// </summary>
-        /// <param name="extensionType">Initial value of ExtensionType.</param>
-        /// <param name="visible">Initial value of Visible.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static Extension CreateExtension(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType extensionType, bool visible)
-        {
-            Extension extension = new Extension();
-            extension.ExtensionType = extensionType;
-            extension.Visible = visible;
-            return extension;
-        }
-        /// <summary>
-        /// There are no comments for Property ExtensionType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionType")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType ExtensionType
-        {
-            get
-            {
-                return this._ExtensionType;
-            }
-            set
-            {
-                this.OnExtensionTypeChanging(value);
-                this._ExtensionType = value;
-                this.OnExtensionTypeChanged();
-                this.OnPropertyChanged("ExtensionType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType _ExtensionType;
-        partial void OnExtensionTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType value);
-        partial void OnExtensionTypeChanged();
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property LocalizedName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("LocalizedName")]
-        public string LocalizedName
-        {
-            get
-            {
-                return this._LocalizedName;
-            }
-            set
-            {
-                this.OnLocalizedNameChanging(value);
-                this._LocalizedName = value;
-                this.OnLocalizedNameChanged();
-                this.OnPropertyChanged("LocalizedName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _LocalizedName;
-        partial void OnLocalizedNameChanging(string value);
-        partial void OnLocalizedNameChanged();
-        /// <summary>
-        /// There are no comments for Property Visible in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Visible")]
-        public bool Visible
-        {
-            get
-            {
-                return this._Visible;
-            }
-            set
-            {
-                this.OnVisibleChanging(value);
-                this._Visible = value;
-                this.OnVisibleChanged();
-                this.OnPropertyChanged("Visible");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _Visible;
-        partial void OnVisibleChanging(bool value);
-        partial void OnVisibleChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for ExtensionParameter in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionParameter")]
-    public partial class ExtensionParameter : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ExtensionParameter object.
-        /// </summary>
-        /// <param name="required">Initial value of Required.</param>
-        /// <param name="readOnly">Initial value of ReadOnly.</param>
-        /// <param name="encrypted">Initial value of Encrypted.</param>
-        /// <param name="isPassword">Initial value of IsPassword.</param>
-        /// <param name="validValuesIsNull">Initial value of ValidValuesIsNull.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ExtensionParameter CreateExtensionParameter(bool required, bool readOnly, bool encrypted, bool isPassword, bool validValuesIsNull)
-        {
-            ExtensionParameter extensionParameter = new ExtensionParameter();
-            extensionParameter.Required = required;
-            extensionParameter.ReadOnly = readOnly;
-            extensionParameter.Encrypted = encrypted;
-            extensionParameter.IsPassword = isPassword;
-            extensionParameter.ValidValuesIsNull = validValuesIsNull;
-            return extensionParameter;
-        }
-        /// <summary>
-        /// There are no comments for Property Name in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
-        public string Name
-        {
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this.OnNameChanging(value);
-                this._Name = value;
-                this.OnNameChanged();
-                this.OnPropertyChanged("Name");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Name;
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-        /// <summary>
-        /// There are no comments for Property DisplayName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DisplayName")]
-        public string DisplayName
-        {
-            get
-            {
-                return this._DisplayName;
-            }
-            set
-            {
-                this.OnDisplayNameChanging(value);
-                this._DisplayName = value;
-                this.OnDisplayNameChanged();
-                this.OnPropertyChanged("DisplayName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _DisplayName;
-        partial void OnDisplayNameChanging(string value);
-        partial void OnDisplayNameChanged();
-        /// <summary>
-        /// There are no comments for Property Required in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Required")]
-        public bool Required
-        {
-            get
-            {
-                return this._Required;
-            }
-            set
-            {
-                this.OnRequiredChanging(value);
-                this._Required = value;
-                this.OnRequiredChanged();
-                this.OnPropertyChanged("Required");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _Required;
-        partial void OnRequiredChanging(bool value);
-        partial void OnRequiredChanged();
-        /// <summary>
-        /// There are no comments for Property ReadOnly in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ReadOnly")]
-        public bool ReadOnly
-        {
-            get
-            {
-                return this._ReadOnly;
-            }
-            set
-            {
-                this.OnReadOnlyChanging(value);
-                this._ReadOnly = value;
-                this.OnReadOnlyChanged();
-                this.OnPropertyChanged("ReadOnly");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _ReadOnly;
-        partial void OnReadOnlyChanging(bool value);
-        partial void OnReadOnlyChanged();
-        /// <summary>
-        /// There are no comments for Property Value in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Value")]
-        public string Value
-        {
-            get
-            {
-                return this._Value;
-            }
-            set
-            {
-                this.OnValueChanging(value);
-                this._Value = value;
-                this.OnValueChanged();
-                this.OnPropertyChanged("Value");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Value;
-        partial void OnValueChanging(string value);
-        partial void OnValueChanged();
-        /// <summary>
-        /// There are no comments for Property Error in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Error")]
-        public string Error
-        {
-            get
-            {
-                return this._Error;
-            }
-            set
-            {
-                this.OnErrorChanging(value);
-                this._Error = value;
-                this.OnErrorChanged();
-                this.OnPropertyChanged("Error");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _Error;
-        partial void OnErrorChanging(string value);
-        partial void OnErrorChanged();
-        /// <summary>
-        /// There are no comments for Property Encrypted in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Encrypted")]
-        public bool Encrypted
-        {
-            get
-            {
-                return this._Encrypted;
-            }
-            set
-            {
-                this.OnEncryptedChanging(value);
-                this._Encrypted = value;
-                this.OnEncryptedChanged();
-                this.OnPropertyChanged("Encrypted");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _Encrypted;
-        partial void OnEncryptedChanging(bool value);
-        partial void OnEncryptedChanged();
-        /// <summary>
-        /// There are no comments for Property IsPassword in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("IsPassword")]
-        public bool IsPassword
-        {
-            get
-            {
-                return this._IsPassword;
-            }
-            set
-            {
-                this.OnIsPasswordChanging(value);
-                this._IsPassword = value;
-                this.OnIsPasswordChanged();
-                this.OnPropertyChanged("IsPassword");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _IsPassword;
-        partial void OnIsPasswordChanging(bool value);
-        partial void OnIsPasswordChanged();
-        /// <summary>
-        /// There are no comments for Property ValidValues in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidValues")]
-        public global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> ValidValues
-        {
-            get
-            {
-                return this._ValidValues;
-            }
-            set
-            {
-                this.OnValidValuesChanging(value);
-                this._ValidValues = value;
-                this.OnValidValuesChanged();
-                this.OnPropertyChanged("ValidValues");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> _ValidValues = new global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue>();
-        partial void OnValidValuesChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ValidValue> value);
-        partial void OnValidValuesChanged();
-        /// <summary>
-        /// There are no comments for Property ValidValuesIsNull in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidValuesIsNull")]
-        public bool ValidValuesIsNull
-        {
-            get
-            {
-                return this._ValidValuesIsNull;
-            }
-            set
-            {
-                this.OnValidValuesIsNullChanging(value);
-                this._ValidValuesIsNull = value;
-                this.OnValidValuesIsNullChanged();
-                this.OnPropertyChanged("ValidValuesIsNull");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _ValidValuesIsNull;
-        partial void OnValidValuesIsNullChanging(bool value);
-        partial void OnValidValuesIsNullChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -11354,6 +11168,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for Resource in the schema.
@@ -11396,24 +11232,18 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return resource;
         }
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> GetDependentItems()
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Upload()
         {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public new global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> SearchItems(string SearchText)
-        {
-            global::System.Uri requestUri;
-            Context.TryGetUri(this, out requestUri);
-            return this.Context.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Upload");
         }
     }
     /// <summary>
@@ -13565,6 +13395,231 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
+    /// There are no comments for ServiceState in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ServiceState")]
+    public partial class ServiceState : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ServiceState object.
+        /// </summary>
+        /// <param name="isAvailable">Initial value of IsAvailable.</param>
+        /// <param name="userHasFavorites">Initial value of UserHasFavorites.</param>
+        /// <param name="requireIntune">Initial value of RequireIntune.</param>
+        /// <param name="productType">Initial value of ProductType.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static ServiceState CreateServiceState(bool isAvailable, bool userHasFavorites, bool requireIntune, global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType productType)
+        {
+            ServiceState serviceState = new ServiceState();
+            serviceState.IsAvailable = isAvailable;
+            serviceState.UserHasFavorites = userHasFavorites;
+            serviceState.RequireIntune = requireIntune;
+            serviceState.ProductType = productType;
+            return serviceState;
+        }
+        /// <summary>
+        /// There are no comments for Property IsAvailable in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsAvailable")]
+        public bool IsAvailable
+        {
+            get
+            {
+                return this._IsAvailable;
+            }
+            set
+            {
+                this.OnIsAvailableChanging(value);
+                this._IsAvailable = value;
+                this.OnIsAvailableChanged();
+                this.OnPropertyChanged("IsAvailable");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _IsAvailable;
+        partial void OnIsAvailableChanging(bool value);
+        partial void OnIsAvailableChanged();
+        /// <summary>
+        /// There are no comments for Property RestrictedFeatures in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("RestrictedFeatures")]
+        public global::System.Collections.ObjectModel.ObservableCollection<string> RestrictedFeatures
+        {
+            get
+            {
+                return this._RestrictedFeatures;
+            }
+            set
+            {
+                this.OnRestrictedFeaturesChanging(value);
+                this._RestrictedFeatures = value;
+                this.OnRestrictedFeaturesChanged();
+                this.OnPropertyChanged("RestrictedFeatures");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _RestrictedFeatures = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnRestrictedFeaturesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnRestrictedFeaturesChanged();
+        /// <summary>
+        /// There are no comments for Property AllowedSystemActions in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedSystemActions")]
+        public global::System.Collections.ObjectModel.ObservableCollection<string> AllowedSystemActions
+        {
+            get
+            {
+                return this._AllowedSystemActions;
+            }
+            set
+            {
+                this.OnAllowedSystemActionsChanging(value);
+                this._AllowedSystemActions = value;
+                this.OnAllowedSystemActionsChanged();
+                this.OnPropertyChanged("AllowedSystemActions");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<string> _AllowedSystemActions = new global::System.Collections.ObjectModel.ObservableCollection<string>();
+        partial void OnAllowedSystemActionsChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
+        partial void OnAllowedSystemActionsChanged();
+        /// <summary>
+        /// There are no comments for Property TimeZone in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("TimeZone")]
+        public string TimeZone
+        {
+            get
+            {
+                return this._TimeZone;
+            }
+            set
+            {
+                this.OnTimeZoneChanging(value);
+                this._TimeZone = value;
+                this.OnTimeZoneChanged();
+                this.OnPropertyChanged("TimeZone");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _TimeZone;
+        partial void OnTimeZoneChanging(string value);
+        partial void OnTimeZoneChanged();
+        /// <summary>
+        /// There are no comments for Property UserHasFavorites in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UserHasFavorites")]
+        public bool UserHasFavorites
+        {
+            get
+            {
+                return this._UserHasFavorites;
+            }
+            set
+            {
+                this.OnUserHasFavoritesChanging(value);
+                this._UserHasFavorites = value;
+                this.OnUserHasFavoritesChanged();
+                this.OnPropertyChanged("UserHasFavorites");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _UserHasFavorites;
+        partial void OnUserHasFavoritesChanging(bool value);
+        partial void OnUserHasFavoritesChanged();
+        /// <summary>
+        /// There are no comments for Property AcceptLanguage in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AcceptLanguage")]
+        public string AcceptLanguage
+        {
+            get
+            {
+                return this._AcceptLanguage;
+            }
+            set
+            {
+                this.OnAcceptLanguageChanging(value);
+                this._AcceptLanguage = value;
+                this.OnAcceptLanguageChanged();
+                this.OnPropertyChanged("AcceptLanguage");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _AcceptLanguage;
+        partial void OnAcceptLanguageChanging(string value);
+        partial void OnAcceptLanguageChanged();
+        /// <summary>
+        /// There are no comments for Property RequireIntune in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("RequireIntune")]
+        public bool RequireIntune
+        {
+            get
+            {
+                return this._RequireIntune;
+            }
+            set
+            {
+                this.OnRequireIntuneChanging(value);
+                this._RequireIntune = value;
+                this.OnRequireIntuneChanged();
+                this.OnPropertyChanged("RequireIntune");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private bool _RequireIntune;
+        partial void OnRequireIntuneChanging(bool value);
+        partial void OnRequireIntuneChanged();
+        /// <summary>
+        /// There are no comments for Property ProductType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ProductType")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                this.OnProductTypeChanging(value);
+                this._ProductType = value;
+                this.OnProductTypeChanged();
+                this.OnPropertyChanged("ProductType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType _ProductType;
+        partial void OnProductTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ProductType value);
+        partial void OnProductTypeChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for UserSettingsSingle in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("UserSettingsSingle")]
@@ -14099,6 +14154,31 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             {
                 this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
             }
+        }
+        /// <summary>
+        /// There are no comments for IsEnabled in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsEnabled")]
+        public global::Microsoft.OData.Client.DataServiceQuerySingle<bool> IsEnabled()
+        {
+            global::System.Uri requestUri;
+            Context.TryGetUri(this, out requestUri);
+
+            return this.Context.CreateFunctionQuerySingle<bool>(string.Join("/", global::System.Linq.Enumerable.Select(global::System.Linq.Enumerable.Skip(requestUri.Segments, this.Context.BaseUri.Segments.Length), s => s.Trim('/'))), "Model.IsEnabled", false);
+        }
+        /// <summary>
+        /// There are no comments for Logout in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Logout")]
+        public global::Microsoft.OData.Client.DataServiceActionQuery Logout()
+        {
+            global::Microsoft.OData.Client.EntityDescriptor resource = Context.EntityTracker.TryGetEntityDescriptor(this);
+            if (resource == null)
+            {
+                throw new global::System.Exception("cannot find entity");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(this.Context, resource.EditLink.OriginalString.Trim('/') + "/Model.Logout");
         }
     }
     /// <summary>
@@ -14841,6 +14921,87 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
+    /// There are no comments for ExpirationReference in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ExpirationReference")]
+    public partial class ExpirationReference : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ExpirationReference object.
+        /// </summary>
+        /// <param name="minutes">Initial value of Minutes.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static ExpirationReference CreateExpirationReference(int minutes)
+        {
+            ExpirationReference expirationReference = new ExpirationReference();
+            expirationReference.Minutes = minutes;
+            return expirationReference;
+        }
+        /// <summary>
+        /// There are no comments for Property Minutes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Minutes")]
+        public int Minutes
+        {
+            get
+            {
+                return this._Minutes;
+            }
+            set
+            {
+                this.OnMinutesChanging(value);
+                this._Minutes = value;
+                this.OnMinutesChanged();
+                this.OnPropertyChanged("Minutes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _Minutes;
+        partial void OnMinutesChanging(int value);
+        partial void OnMinutesChanged();
+        /// <summary>
+        /// There are no comments for Property Schedule in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Schedule")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference Schedule
+        {
+            get
+            {
+                return this._Schedule;
+            }
+            set
+            {
+                this.OnScheduleChanging(value);
+                this._Schedule = value;
+                this.OnScheduleChanged();
+                this.OnPropertyChanged("Schedule");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference _Schedule;
+        partial void OnScheduleChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference value);
+        partial void OnScheduleChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for AllowedActionSingle in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedActionSingle")]
@@ -15278,6 +15439,206 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
+    /// There are no comments for DataModelDataSource in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataModelDataSource")]
+    public partial class DataModelDataSource : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new DataModelDataSource object.
+        /// </summary>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="kind">Initial value of Kind.</param>
+        /// <param name="authType">Initial value of AuthType.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public static DataModelDataSource CreateDataModelDataSource(global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceType type, global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceKind kind, global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType authType)
+        {
+            DataModelDataSource dataModelDataSource = new DataModelDataSource();
+            dataModelDataSource.Type = type;
+            dataModelDataSource.Kind = kind;
+            dataModelDataSource.AuthType = authType;
+            return dataModelDataSource;
+        }
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Type")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceType Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceType _Type;
+        partial void OnTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceType value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Kind in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Kind")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceKind Kind
+        {
+            get
+            {
+                return this._Kind;
+            }
+            set
+            {
+                this.OnKindChanging(value);
+                this._Kind = value;
+                this.OnKindChanged();
+                this.OnPropertyChanged("Kind");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceKind _Kind;
+        partial void OnKindChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceKind value);
+        partial void OnKindChanged();
+        /// <summary>
+        /// There are no comments for Property AuthType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AuthType")]
+        public global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType AuthType
+        {
+            get
+            {
+                return this._AuthType;
+            }
+            set
+            {
+                this.OnAuthTypeChanging(value);
+                this._AuthType = value;
+                this.OnAuthTypeChanged();
+                this.OnPropertyChanged("AuthType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType _AuthType;
+        partial void OnAuthTypeChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType value);
+        partial void OnAuthTypeChanged();
+        /// <summary>
+        /// There are no comments for Property SupportedAuthTypes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SupportedAuthTypes")]
+        public global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType> SupportedAuthTypes
+        {
+            get
+            {
+                return this._SupportedAuthTypes;
+            }
+            set
+            {
+                this.OnSupportedAuthTypesChanging(value);
+                this._SupportedAuthTypes = value;
+                this.OnSupportedAuthTypesChanged();
+                this.OnPropertyChanged("SupportedAuthTypes");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType> _SupportedAuthTypes = new global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType>();
+        partial void OnSupportedAuthTypesChanging(global::System.Collections.ObjectModel.ObservableCollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataModelDataSourceAuthType> value);
+        partial void OnSupportedAuthTypesChanged();
+        /// <summary>
+        /// There are no comments for Property Username in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Username")]
+        public string Username
+        {
+            get
+            {
+                return this._Username;
+            }
+            set
+            {
+                this.OnUsernameChanging(value);
+                this._Username = value;
+                this.OnUsernameChanged();
+                this.OnPropertyChanged("Username");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _Username;
+        partial void OnUsernameChanging(string value);
+        partial void OnUsernameChanged();
+        /// <summary>
+        /// There are no comments for Property Secret in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Secret")]
+        public string Secret
+        {
+            get
+            {
+                return this._Secret;
+            }
+            set
+            {
+                this.OnSecretChanging(value);
+                this._Secret = value;
+                this.OnSecretChanged();
+                this.OnPropertyChanged("Secret");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _Secret;
+        partial void OnSecretChanging(string value);
+        partial void OnSecretChanged();
+        /// <summary>
+        /// There are no comments for Property ModelConnectionName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ModelConnectionName")]
+        public string ModelConnectionName
+        {
+            get
+            {
+                return this._ModelConnectionName;
+            }
+            set
+            {
+                this.OnModelConnectionNameChanging(value);
+                this._ModelConnectionName = value;
+                this.OnModelConnectionNameChanged();
+                this.OnPropertyChanged("ModelConnectionName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _ModelConnectionName;
+        partial void OnModelConnectionNameChanging(string value);
+        partial void OnModelConnectionNameChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for ExtensionSettings in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionSettings")]
@@ -15525,6 +15886,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for ReportModel in the schema.
@@ -15763,6 +16146,28 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicy> _Policies;
+        /// <summary>
+        /// There are no comments for DependentItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DependentItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> DependentItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._DependentItems == null))
+                {
+                    this._DependentItems = Context.CreateQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>(GetPath("DependentItems"));
+                }
+                return this._DependentItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> _DependentItems;
     }
     /// <summary>
     /// There are no comments for Component in the schema.
@@ -17536,89 +17941,37 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         }
     }
     /// <summary>
-    /// There are no comments for ExpirationReference in the schema.
+    /// There are no comments for DeliveryExtensionSingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExpirationReference")]
-    public partial class ExpirationReference : global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryExtensionSingle")]
+    public partial class DeliveryExtensionSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<DeliveryExtension>
     {
         /// <summary>
-        /// Create a new ExpirationReference object.
+        /// Initialize a new DeliveryExtensionSingle object.
         /// </summary>
-        /// <param name="minutes">Initial value of Minutes.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ExpirationReference CreateExpirationReference(int minutes)
-        {
-            ExpirationReference expirationReference = new ExpirationReference();
-            expirationReference.Minutes = minutes;
-            return expirationReference;
-        }
+        public DeliveryExtensionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) { }
+
         /// <summary>
-        /// There are no comments for Property Minutes in the schema.
+        /// Initialize a new DeliveryExtensionSingle object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Minutes")]
-        public int Minutes
-        {
-            get
-            {
-                return this._Minutes;
-            }
-            set
-            {
-                this.OnMinutesChanging(value);
-                this._Minutes = value;
-                this.OnMinutesChanged();
-                this.OnPropertyChanged("Minutes");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private int _Minutes;
-        partial void OnMinutesChanging(int value);
-        partial void OnMinutesChanged();
+        public DeliveryExtensionSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) { }
+
         /// <summary>
-        /// There are no comments for Property Schedule in the schema.
+        /// Initialize a new DeliveryExtensionSingle object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Schedule")]
-        public global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference Schedule
-        {
-            get
-            {
-                return this._Schedule;
-            }
-            set
-            {
-                this.OnScheduleChanging(value);
-                this._Schedule = value;
-                this.OnScheduleChanged();
-                this.OnPropertyChanged("Schedule");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference _Schedule;
-        partial void OnScheduleChanging(global::RSAccessor.PortalAccessor.OData.V2.Model.ScheduleReference value);
-        partial void OnScheduleChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
+        public DeliveryExtensionSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<DeliveryExtension> query)
+            : base(query) { }
+
     }
     /// <summary>
     /// There are no comments for DeliveryExtension in the schema.
     /// </summary>
+    /// <KeyProperties>
+    /// Name
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Name")]
     [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryExtension")]
     public partial class DeliveryExtension : Extension
     {
@@ -17626,14 +17979,16 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// Create a new DeliveryExtension object.
         /// </summary>
         /// <param name="extensionType">Initial value of ExtensionType.</param>
+        /// <param name="name">Initial value of Name.</param>
         /// <param name="visible">Initial value of Visible.</param>
         /// <param name="isImmutable">Initial value of IsImmutable.</param>
         /// <param name="defaultDeliveryExtension">Initial value of DefaultDeliveryExtension.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static DeliveryExtension CreateDeliveryExtension(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType extensionType, bool visible, bool isImmutable, bool defaultDeliveryExtension)
+        public static DeliveryExtension CreateDeliveryExtension(global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionType extensionType, string name, bool visible, bool isImmutable, bool defaultDeliveryExtension)
         {
             DeliveryExtension deliveryExtension = new DeliveryExtension();
             deliveryExtension.ExtensionType = extensionType;
+            deliveryExtension.Name = name;
             deliveryExtension.Visible = visible;
             deliveryExtension.IsImmutable = isImmutable;
             deliveryExtension.DefaultDeliveryExtension = defaultDeliveryExtension;
@@ -18435,6 +18790,19 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         LastWeek = 4
     }
     /// <summary>
+    /// There are no comments for ItemExecutionType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ItemExecutionType")]
+    public enum ItemExecutionType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Live")]
+        Live = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Cache")]
+        Cache = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Snapshot")]
+        Snapshot = 2
+    }
+    /// <summary>
     /// There are no comments for CredentialRetrievalType in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("CredentialRetrievalType")]
@@ -18448,6 +18816,113 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         Integrated = 2,
         [global::Microsoft.OData.Client.OriginalNameAttribute("none")]
         None = 3
+    }
+    /// <summary>
+    /// There are no comments for DataModelDataSourceType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataModelDataSourceType")]
+    public enum DataModelDataSourceType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Unknown")]
+        Unknown = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Live")]
+        Live = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DirectQuery")]
+        DirectQuery = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Import")]
+        Import = 3
+    }
+    /// <summary>
+    /// There are no comments for DataModelDataSourceKind in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataModelDataSourceKind")]
+    public enum DataModelDataSourceKind
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UnknownFunction")]
+        UnknownFunction = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ActiveDirectory")]
+        ActiveDirectory = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AnalysisServices")]
+        AnalysisServices = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AzureBlobs")]
+        AzureBlobs = 3,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AzureTables")]
+        AzureTables = 4,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CurrentWorkbook")]
+        CurrentWorkbook = 5,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DataMarket")]
+        DataMarket = 6,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DB2")]
+        DB2 = 7,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Exchange")]
+        Exchange = 8,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Facebook")]
+        Facebook = 9,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("File")]
+        File = 10,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Folder")]
+        Folder = 11,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GoogleAnalytics")]
+        GoogleAnalytics = 12,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Hdfs")]
+        Hdfs = 13,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("HDInsight")]
+        HDInsight = 14,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Informix")]
+        Informix = 15,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MQ")]
+        MQ = 16,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MySql")]
+        MySql = 17,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("OData")]
+        OData = 18,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Odbc")]
+        Odbc = 19,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("OleDb")]
+        OleDb = 20,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Oracle")]
+        Oracle = 21,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("PostgreSQL")]
+        PostgreSQL = 22,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Salesforce")]
+        Salesforce = 23,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SapBusinessObjects")]
+        SapBusinessObjects = 24,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SapBusinessWarehouse")]
+        SapBusinessWarehouse = 25,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SapHana")]
+        SapHana = 26,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SharePoint")]
+        SharePoint = 27,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SQL")]
+        SQL = 28,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Sybase")]
+        Sybase = 29,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Teradata")]
+        Teradata = 30,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Web")]
+        Web = 31
+    }
+    /// <summary>
+    /// There are no comments for DataModelDataSourceAuthType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("DataModelDataSourceAuthType")]
+    public enum DataModelDataSourceAuthType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Unknown")]
+        Unknown = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Anonymous")]
+        Anonymous = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Integrated")]
+        Integrated = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Windows")]
+        Windows = 3,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UsernamePassword")]
+        UsernamePassword = 4,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Key")]
+        Key = 5,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Impersonate")]
+        Impersonate = 6
     }
     /// <summary>
     /// There are no comments for ReportParameterType in the schema.
@@ -18572,99 +19047,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         Portrait = 2
     }
     /// <summary>
-    /// There are no comments for ItemExecutionType in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ItemExecutionType")]
-    public enum ItemExecutionType
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Live")]
-        Live = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Cache")]
-        Cache = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Snapshot")]
-        Snapshot = 2
-    }
-    /// <summary>
-    /// There are no comments for ExecutionLogExecType in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogExecType")]
-    public enum ExecutionLogExecType
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Live")]
-        Live = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Cache")]
-        Cache = 2,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Snapshot")]
-        Snapshot = 3,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("History")]
-        History = 4,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AdHoc")]
-        AdHoc = 5,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Session")]
-        Session = 6,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Rdce")]
-        Rdce = 7
-    }
-    /// <summary>
-    /// There are no comments for ExecutionLogLevel in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogLevel")]
-    public enum ExecutionLogLevel
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Normal")]
-        Normal = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Verbose")]
-        Verbose = 1
-    }
-    /// <summary>
-    /// There are no comments for ExecutionLogEventType in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ExecutionLogEventType")]
-    public enum ExecutionLogEventType
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Render")]
-        Render = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("BookmarkNavigation")]
-        BookmarkNavigation = 2,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DocumentMapNavigation")]
-        DocumentMapNavigation = 3,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DrillThrough")]
-        DrillThrough = 4,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("FindString")]
-        FindString = 5,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDocumentMap")]
-        GetDocumentMap = 6,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Toggle")]
-        Toggle = 7,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Sort")]
-        Sort = 8,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Execute")]
-        Execute = 9,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RenderEdit")]
-        RenderEdit = 10,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExecuteDataShapeQuery")]
-        ExecuteDataShapeQuery = 11,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RenderMobileReport")]
-        RenderMobileReport = 12,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ConceptualSchema")]
-        ConceptualSchema = 13,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("QueryData")]
-        QueryData = 14,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ASModelStream")]
-        ASModelStream = 15
-    }
-    /// <summary>
-    /// There are no comments for IssueType in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("IssueType")]
-    public enum IssueType
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBITokenNeeded")]
-        PowerBITokenNeeded = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBITokenNeedsRenewal")]
-        PowerBITokenNeedsRenewal = 1
-    }
-    /// <summary>
     /// There are no comments for ExtensionType in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionType")]
@@ -18680,6 +19062,30 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         Data = 3,
         [global::Microsoft.OData.Client.OriginalNameAttribute("All")]
         All = 4
+    }
+    /// <summary>
+    /// There are no comments for IssueType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("IssueType")]
+    public enum IssueType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBITokenNeeded")]
+        PowerBITokenNeeded = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBITokenNeedsRenewal")]
+        PowerBITokenNeedsRenewal = 1
+    }
+    /// <summary>
+    /// There are no comments for ProductType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ProductType")]
+    public enum ProductType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("None")]
+        None = 0,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SqlServerReportingServices")]
+        SqlServerReportingServices = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBiReportServer")]
+        PowerBiReportServer = 2
     }
     /// <summary>
     /// There are no comments for ScheduleStateEnum in the schema.
@@ -18809,6 +19215,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotOptionsSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions as global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions as global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> source,
+            global::System.Guid id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptionsSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem as global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -18855,29 +19284,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.ItemPolicySingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="name">The value of name</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> source,
-            string name)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "Name", name }
-            };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Report as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -18908,6 +19314,52 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         {
             global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.Report>();
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportSingle(source.Context, query.GetPath(null));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="name">The value of name</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> source,
+            string name)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Name", name }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinitionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Comment as global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Comment as global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> source,
+            long id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet as global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetSingle specified by key from an entity set
@@ -18942,6 +19394,29 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetSingle(source.Context, query.GetPath(null));
         }
         /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow as global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow as global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRow> source,
+            global::System.Guid id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetRowSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource as global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -18972,93 +19447,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         {
             global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>();
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceSingle(source.Context, query.GetPath(null));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport as global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport as global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="id">The value of id</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source,
-            global::System.Guid id)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "Id", id }
-            };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Cast an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem to its derived type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport
-        /// </summary>
-        /// <param name="source">source entity</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle CastToLinkedReport(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
-        {
-            global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport>();
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, query.GetPath(null));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport as global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport as global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="id">The value of id</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source,
-            global::System.Guid id)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "Id", id }
-            };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Cast an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem to its derived type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport
-        /// </summary>
-        /// <param name="source">source entity</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle CastToPowerBIReport(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
-        {
-            global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>();
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, query.GetPath(null));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Comment as global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> source, global::System.Collections.Generic.Dictionary<string, object> keys)
-        {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
-        }
-        /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Comment as global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle specified by key from an entity set
-        /// </summary>
-        /// <param name="source">source entity set</param>
-        /// <param name="id">The value of id</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Comment> source,
-            long id)
-        {
-            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
-            {
-                { "Id", id }
-            };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.CommentSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook as global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbookSingle specified by key from an entity set
@@ -19093,27 +19481,27 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbookSingle(source.Context, query.GetPath(null));
         }
         /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfo as global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle specified by key from an entity set
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Extension as global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfo> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> source, global::System.Collections.Generic.Dictionary<string, object> keys)
         {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfo as global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle specified by key from an entity set
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Extension as global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
-        /// <param name="logEntryId">The value of logEntryId</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfo> source,
-            long logEntryId)
+        /// <param name="name">The value of name</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> source,
+            string name)
         {
             global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
-                { "LogEntryId", logEntryId }
+                { "Name", name }
             };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ExecutionLogInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.FavoriteItem as global::RSAccessor.PortalAccessor.OData.V2.Model.FavoriteItemSingle specified by key from an entity set
@@ -19203,6 +19591,38 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.KpiSingle(source.Context, query.GetPath(null));
         }
         /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport as global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport as global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source,
+            global::System.Guid id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Cast an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem to its derived type global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport
+        /// </summary>
+        /// <param name="source">source entity</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle CastToLinkedReport(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
+        {
+            global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport>();
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReportSingle(source.Context, query.GetPath(null));
+        }
+        /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport as global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReportSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -19258,27 +19678,59 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.NotificationSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle specified by key from an entity set
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport as global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, global::System.Collections.Generic.Dictionary<string, object> keys)
         {
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo as global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle specified by key from an entity set
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport as global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="id">The value of id</param>
-        public static global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source,
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source,
             global::System.Guid id)
         {
             global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
                 { "Id", id }
             };
-            return new global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Cast an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem to its derived type global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport
+        /// </summary>
+        /// <param name="source">source entity</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle CastToPowerBIReport(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
+        {
+            global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>();
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReportSingle(source.Context, query.GetPath(null));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.System as global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.System> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.System as global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.System> source,
+            global::System.Guid id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.SystemSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.SystemPolicy as global::RSAccessor.PortalAccessor.OData.V2.Model.SystemPolicySingle specified by key from an entity set
@@ -19671,6 +20123,38 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.HistorySnapshotSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension as global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension as global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="name">The value of name</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension> source,
+            string name)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Name", name }
+            };
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Cast an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.Extension to its derived type global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension
+        /// </summary>
+        /// <param name="source">source entity</param>
+        public static global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle CastToDeliveryExtension(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> source)
+        {
+            global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension> query = source.CastTo<global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension>();
+            return new global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtensionSingle(source.Context, query.GetPath(null));
+        }
+        /// <summary>
         /// Get an entity of type global::RSAccessor.PortalAccessor.OData.V2.Model.SystemResourcePackage as global::RSAccessor.PortalAccessor.OData.V2.Model.SystemResourcePackageSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -19703,433 +20187,147 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::RSAccessor.PortalAccessor.OData.V2.Model.SystemResourcePackageSingle(source.Context, query.GetPath(null));
         }
         /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
+        /// There are no comments for AccessToken in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for AccessToken in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source)
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
-        }
-        /// <summary>
-        /// There are no comments for AccessToken in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AccessToken")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken> AccessToken(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.V2.CatalogItemAccessToken>("Model.AccessToken", false);
+            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItemAccessToken>("Model.AccessToken", false);
         }
         /// <summary>
         /// There are no comments for GetSchema in the schema.
@@ -20145,368 +20343,30 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSetSchema>("Model.GetSchema", false);
         }
         /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>("Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>("Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetCacheOptions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions> GetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions>("Model.GetCacheOptions", false);
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetAlertSubscriptionID in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetAlertSubscriptionID")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<long> GetAlertSubscriptionID(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source, string AlertType)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<long>("Model.GetAlertSubscriptionID", false, new global::Microsoft.OData.Client.UriOperationParameter("AlertType", AlertType));
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportModel> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>("Model.GetDependentItems", false);
-        }
-        /// <summary>
         /// There are no comments for SearchItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportModel> source, string SearchText)
+        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source, string SearchText)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
         }
         /// <summary>
-        /// There are no comments for DeliveryExtensions in the schema.
+        /// There are no comments for IsEnabled in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryExtensions")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DeliveryExtensions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("IsEnabled")]
+        public static global::Microsoft.OData.Client.DataServiceQuerySingle<bool> IsEnabled(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIUserInfo> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>("Model.DeliveryExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for DeliveryUIExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeliveryUIExtensions")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DeliveryUIExtensions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>("Model.DeliveryUIExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for DataExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DataExtensions")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> DataExtensions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>("Model.DataExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for RenderingExtensions in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RenderingExtensions")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> RenderingExtensions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension>("Model.RenderingExtensions", false);
-        }
-        /// <summary>
-        /// There are no comments for ExtensionParameters in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ExtensionParameters")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ExtensionParameters(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source, string ExtensionName)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>("Model.ExtensionParameters", false, new global::Microsoft.OData.Client.UriOperationParameter("ExtensionName", ExtensionName));
-        }
-        /// <summary>
-        /// There are no comments for RestrictedSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RestrictedSettings")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> RestrictedSettings(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>("Model.RestrictedSettings", false);
-        }
-        /// <summary>
-        /// There are no comments for Settings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Settings")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> Settings(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>("Model.Settings", false);
-        }
-        /// <summary>
-        /// There are no comments for ServerProductInfo in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ServerProductInfo")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> ServerProductInfo(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>("Model.ServerProductInfo", false);
-        }
-        /// <summary>
-        /// There are no comments for SiteName in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SiteName")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<string> SiteName(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<string>("Model.SiteName", false);
-        }
-        /// <summary>
-        /// There are no comments for PowerBISettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBISettings")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> PowerBISettings(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Property>("Model.PowerBISettings", false);
-        }
-        /// <summary>
-        /// There are no comments for GetDependentItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetDependentItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> GetDependentItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Component> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>("Model.GetDependentItems", false);
-        }
-        /// <summary>
-        /// There are no comments for SearchItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SearchItems")]
-        public static global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> SearchItems(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Component> source, string SearchText)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>("Model.SearchItems", false, new global::Microsoft.OData.Client.UriOperationParameter("SearchText", SearchText));
+            return source.CreateFunctionQuerySingle<bool>("Model.IsEnabled", false);
         }
         /// <summary>
         /// There are no comments for Execute in the schema.
@@ -20577,32 +20437,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for DeleteItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
-        }
-        /// <summary>
-        /// There are no comments for DeleteItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
-        }
-        /// <summary>
-        /// There are no comments for DeleteItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
         public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
         {
             if (!source.IsComposable)
@@ -20642,7 +20476,33 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for DeleteItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
+        }
+        /// <summary>
+        /// There are no comments for DeleteItems in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
         public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
+        }
+        /// <summary>
+        /// There are no comments for DeleteItems in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
         {
             if (!source.IsComposable)
             {
@@ -20724,34 +20584,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for MoveItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.MoveItems"), new global::Microsoft.OData.Client.BodyOperationParameter("TargetPath", TargetPath),
-                    new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
-        }
-        /// <summary>
-        /// There are no comments for MoveItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.MoveItems"), new global::Microsoft.OData.Client.BodyOperationParameter("TargetPath", TargetPath),
-                    new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
-        }
-        /// <summary>
-        /// There are no comments for MoveItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
         public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
         {
             if (!source.IsComposable)
@@ -20794,7 +20626,35 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for MoveItems in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.MoveItems"), new global::Microsoft.OData.Client.BodyOperationParameter("TargetPath", TargetPath),
+                    new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
+        }
+        /// <summary>
+        /// There are no comments for MoveItems in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
         public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.MoveItems"), new global::Microsoft.OData.Client.BodyOperationParameter("TargetPath", TargetPath),
+                    new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
+        }
+        /// <summary>
+        /// There are no comments for MoveItems in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MoveItems")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> MoveItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string TargetPath, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
         {
             if (!source.IsComposable)
             {
@@ -20822,40 +20682,183 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
         /// There are no comments for GetParameters in the schema.
         /// </summary>
         [global::Microsoft.OData.Client.OriginalNameAttribute("GetParameters")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter> GetParameters(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues)
+        public static global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition> GetParameters(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameter>(source.Context, source.AppendRequestUri("Model.GetParameters"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterDefinition>(source.Context, source.AppendRequestUri("Model.GetParameters"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues));
         }
         /// <summary>
-        /// There are no comments for SetParameterProperties in the schema.
+        /// There are no comments for GetContentTrusted in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetParameterProperties")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery SetParameterProperties(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportParameterProperties> ParameterProperties)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source, string TrustedProcessToken)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.SetParameterProperties"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterProperties", ParameterProperties));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
         }
         /// <summary>
-        /// There are no comments for UpdateExecutionSnapshot in the schema.
+        /// There are no comments for GetContentTrusted in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateExecutionSnapshot")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateExecutionSnapshot(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string TrustedProcessToken)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(source.Context, source.AppendRequestUri("Model.UpdateExecutionSnapshot"));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for GetContentTrusted in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source, string TrustedProcessToken)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
         /// There are no comments for GetData in the schema.
@@ -20899,17 +20902,56 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetAggregatedValue"), new global::Microsoft.OData.Client.BodyOperationParameter("Parameters", Parameters));
         }
         /// <summary>
-        /// There are no comments for CheckDataSourceConnection in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string DataSourceName)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(source.Context, source.AppendRequestUri("Model.CheckDataSourceConnection"), new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportModel> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportModel> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
         /// There are no comments for CheckConnection in the schema.
@@ -20994,56 +21036,188 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
                     new global::Microsoft.OData.Client.BodyOperationParameter("subscriptionId", subscriptionId));
         }
         /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.SetCacheOptions"), new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook>(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.SetCacheOptions"), new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for SetCacheOptions in the schema.
+        /// There are no comments for ValidateExtensionSettings in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SetCacheOptions")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery SetCacheOptions(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source, global::RSAccessor.PortalAccessor.OData.V2.Model.CacheOptions cacheOptions)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidateExtensionSettings")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ValidateExtensionSettings(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Extension> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues, string ExtensionName)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.SetCacheOptions"), new global::Microsoft.OData.Client.BodyOperationParameter("cacheOptions", cacheOptions));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>(source.Context, source.AppendRequestUri("Model.ValidateExtensionSettings"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues),
+                    new global::Microsoft.OData.Client.BodyOperationParameter("ExtensionName", ExtensionName));
         }
         /// <summary>
-        /// There are no comments for UpdateReportDataSets in the schema.
+        /// There are no comments for ValidateExtensionSettings in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateReportDataSets")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery UpdateReportDataSets(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> dataSets)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidateExtensionSettings")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ValidateExtensionSettings(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.DeliveryExtension> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues, string ExtensionName)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.UpdateReportDataSets"), new global::Microsoft.OData.Client.BodyOperationParameter("dataSets", dataSets));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>(source.Context, source.AppendRequestUri("Model.ValidateExtensionSettings"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues),
+                    new global::Microsoft.OData.Client.BodyOperationParameter("ExtensionName", ExtensionName));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport>(source.Context, source.AppendRequestUri("Model.Upload"));
+        }
+        /// <summary>
+        /// There are no comments for Upload in the schema.
+        /// </summary>
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source)
+        {
+            if (!source.IsComposable)
+            {
+                throw new global::System.NotSupportedException("The previous function is not composable.");
+            }
+
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
         /// There are no comments for CheckDataSourceConnection in the schema.
@@ -21059,200 +21233,121 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
             return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(source.Context, source.AppendRequestUri("Model.CheckDataSourceConnection"), new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.CatalogItem> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report>(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for UpdateCacheSnapshot in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateCacheSnapshot")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateCacheSnapshot(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(source.Context, source.AppendRequestUri("Model.UpdateCacheSnapshot"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for CheckDataSourceConnection in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSource> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("CheckDataSourceConnection")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult> CheckDataSourceConnection(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, string DataSourceName)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSourceCheckResult>(source.Context, source.AppendRequestUri("Model.CheckDataSourceConnection"), new global::Microsoft.OData.Client.BodyOperationParameter("DataSourceName", DataSourceName));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for UpdateReportDataSets in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.LinkedReport> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateReportDataSets")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery UpdateReportDataSets(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Report> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.DataSet> dataSets)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.UpdateReportDataSets"), new global::Microsoft.OData.Client.BodyOperationParameter("dataSets", dataSets));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIReport> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ExcelWorkbook> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> Upload(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Component> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource>(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Folder> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
+        /// There are no comments for Upload in the schema.
         /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Kpi> source, string TrustedProcessToken)
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Upload")]
+        public static global::Microsoft.OData.Client.DataServiceActionQuery Upload(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Component> source)
         {
             if (!source.IsComposable)
             {
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
-        }
-        /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.MobileReport> source, string TrustedProcessToken)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
-        }
-        /// <summary>
-        /// There are no comments for GetContentTrusted in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("GetContentTrusted")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<string> GetContentTrusted(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.Resource> source, string TrustedProcessToken)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<string>(source.Context, source.AppendRequestUri("Model.GetContentTrusted"), new global::Microsoft.OData.Client.BodyOperationParameter("TrustedProcessToken", TrustedProcessToken));
-        }
-        /// <summary>
-        /// There are no comments for DeleteItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportModel> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
-        }
-        /// <summary>
-        /// There are no comments for ValidateExtensionSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ValidateExtensionSettings")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter> ValidateExtensionSettings(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.ParameterValue> ParameterValues, string ExtensionName)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.ExtensionParameter>(source.Context, source.AppendRequestUri("Model.ValidateExtensionSettings"), new global::Microsoft.OData.Client.BodyOperationParameter("ParameterValues", ParameterValues),
-                    new global::Microsoft.OData.Client.BodyOperationParameter("ExtensionName", ExtensionName));
-        }
-        /// <summary>
-        /// There are no comments for UpdateSettings in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UpdateSettings")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool> UpdateSettings(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.ReportServerInfo> source, global::System.Collections.Generic.ICollection<global::RSAccessor.PortalAccessor.OData.V2.Model.Property> PropertyValues)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<bool>(source.Context, source.AppendRequestUri("Model.UpdateSettings"), new global::Microsoft.OData.Client.BodyOperationParameter("PropertyValues", PropertyValues));
-        }
-        /// <summary>
-        /// There are no comments for DeleteItems in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("DeleteItems")]
-        public static global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult> DeleteItems(this global::Microsoft.OData.Client.DataServiceQuery<global::RSAccessor.PortalAccessor.OData.V2.Model.Component> source, global::System.Collections.Generic.ICollection<string> CatalogItemPaths)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return new global::Microsoft.OData.Client.DataServiceActionQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.BulkOperationsResult>(source.Context, source.AppendRequestUri("Model.DeleteItems"), new global::Microsoft.OData.Client.BodyOperationParameter("CatalogItemPaths", CatalogItemPaths));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Upload"));
         }
         /// <summary>
         /// There are no comments for Pause in the schema.
@@ -21332,319 +21427,6 @@ namespace RSAccessor.PortalAccessor.OData.V2.Model
 
             return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Execute"));
         }
-    }
-}
-namespace RSAccessor.PortalAccessor.OData.V2.Model.V2
-{
-    /// <summary>
-    /// There are no comments for CatalogItemAccessToken in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("CatalogItemAccessToken")]
-    public partial class CatalogItemAccessToken : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// There are no comments for Property Token in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Token")]
-        public byte[] Token
-        {
-            get
-            {
-                return this._Token;
-            }
-            set
-            {
-                this.OnTokenChanging(value);
-                this._Token = value;
-                this.OnTokenChanged();
-                this.OnPropertyChanged("Token");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private byte[] _Token;
-        partial void OnTokenChanging(byte[] value);
-        partial void OnTokenChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for ServiceState in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ServiceState")]
-    public partial class ServiceState : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new ServiceState object.
-        /// </summary>
-        /// <param name="isAvailable">Initial value of IsAvailable.</param>
-        /// <param name="userHasFavorites">Initial value of UserHasFavorites.</param>
-        /// <param name="requireIntune">Initial value of RequireIntune.</param>
-        /// <param name="productType">Initial value of ProductType.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ServiceState CreateServiceState(bool isAvailable, bool userHasFavorites, bool requireIntune, global::Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions.ProductType productType)
-        {
-            ServiceState serviceState = new ServiceState();
-            serviceState.IsAvailable = isAvailable;
-            serviceState.UserHasFavorites = userHasFavorites;
-            serviceState.RequireIntune = requireIntune;
-            serviceState.ProductType = productType;
-            return serviceState;
-        }
-        /// <summary>
-        /// There are no comments for Property IsAvailable in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("IsAvailable")]
-        public bool IsAvailable
-        {
-            get
-            {
-                return this._IsAvailable;
-            }
-            set
-            {
-                this.OnIsAvailableChanging(value);
-                this._IsAvailable = value;
-                this.OnIsAvailableChanged();
-                this.OnPropertyChanged("IsAvailable");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _IsAvailable;
-        partial void OnIsAvailableChanging(bool value);
-        partial void OnIsAvailableChanged();
-        /// <summary>
-        /// There are no comments for Property RestrictedFeatures in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RestrictedFeatures")]
-        public global::System.Collections.ObjectModel.ObservableCollection<string> RestrictedFeatures
-        {
-            get
-            {
-                return this._RestrictedFeatures;
-            }
-            set
-            {
-                this.OnRestrictedFeaturesChanging(value);
-                this._RestrictedFeatures = value;
-                this.OnRestrictedFeaturesChanged();
-                this.OnPropertyChanged("RestrictedFeatures");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<string> _RestrictedFeatures = new global::System.Collections.ObjectModel.ObservableCollection<string>();
-        partial void OnRestrictedFeaturesChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
-        partial void OnRestrictedFeaturesChanged();
-        /// <summary>
-        /// There are no comments for Property AllowedSystemActions in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AllowedSystemActions")]
-        public global::System.Collections.ObjectModel.ObservableCollection<string> AllowedSystemActions
-        {
-            get
-            {
-                return this._AllowedSystemActions;
-            }
-            set
-            {
-                this.OnAllowedSystemActionsChanging(value);
-                this._AllowedSystemActions = value;
-                this.OnAllowedSystemActionsChanged();
-                this.OnPropertyChanged("AllowedSystemActions");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<string> _AllowedSystemActions = new global::System.Collections.ObjectModel.ObservableCollection<string>();
-        partial void OnAllowedSystemActionsChanging(global::System.Collections.ObjectModel.ObservableCollection<string> value);
-        partial void OnAllowedSystemActionsChanged();
-        /// <summary>
-        /// There are no comments for Property TimeZone in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("TimeZone")]
-        public string TimeZone
-        {
-            get
-            {
-                return this._TimeZone;
-            }
-            set
-            {
-                this.OnTimeZoneChanging(value);
-                this._TimeZone = value;
-                this.OnTimeZoneChanged();
-                this.OnPropertyChanged("TimeZone");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _TimeZone;
-        partial void OnTimeZoneChanging(string value);
-        partial void OnTimeZoneChanged();
-        /// <summary>
-        /// There are no comments for Property UserHasFavorites in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("UserHasFavorites")]
-        public bool UserHasFavorites
-        {
-            get
-            {
-                return this._UserHasFavorites;
-            }
-            set
-            {
-                this.OnUserHasFavoritesChanging(value);
-                this._UserHasFavorites = value;
-                this.OnUserHasFavoritesChanged();
-                this.OnPropertyChanged("UserHasFavorites");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _UserHasFavorites;
-        partial void OnUserHasFavoritesChanging(bool value);
-        partial void OnUserHasFavoritesChanged();
-        /// <summary>
-        /// There are no comments for Property AcceptLanguage in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("AcceptLanguage")]
-        public string AcceptLanguage
-        {
-            get
-            {
-                return this._AcceptLanguage;
-            }
-            set
-            {
-                this.OnAcceptLanguageChanging(value);
-                this._AcceptLanguage = value;
-                this.OnAcceptLanguageChanged();
-                this.OnPropertyChanged("AcceptLanguage");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private string _AcceptLanguage;
-        partial void OnAcceptLanguageChanging(string value);
-        partial void OnAcceptLanguageChanged();
-        /// <summary>
-        /// There are no comments for Property RequireIntune in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("RequireIntune")]
-        public bool RequireIntune
-        {
-            get
-            {
-                return this._RequireIntune;
-            }
-            set
-            {
-                this.OnRequireIntuneChanging(value);
-                this._RequireIntune = value;
-                this.OnRequireIntuneChanged();
-                this.OnPropertyChanged("RequireIntune");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private bool _RequireIntune;
-        partial void OnRequireIntuneChanging(bool value);
-        partial void OnRequireIntuneChanged();
-        /// <summary>
-        /// There are no comments for Property ProductType in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ProductType")]
-        public global::Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions.ProductType ProductType
-        {
-            get
-            {
-                return this._ProductType;
-            }
-            set
-            {
-                this.OnProductTypeChanging(value);
-                this._ProductType = value;
-                this.OnProductTypeChanged();
-                this.OnPropertyChanged("ProductType");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions.ProductType _ProductType;
-        partial void OnProductTypeChanging(global::Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions.ProductType value);
-        partial void OnProductTypeChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-}
-namespace Microsoft.ReportingServices.Portal.ODataClient.V2.Microsoft.ReportingServices.Editions
-{
-    /// <summary>
-    /// There are no comments for ProductType in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ProductType")]
-    public enum ProductType
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("None")]
-        None = 0,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("SqlServerReportingServices")]
-        SqlServerReportingServices = 1,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("PowerBiReportServer")]
-        PowerBiReportServer = 2
-    }
-}
-namespace Microsoft.ReportingServices.Portal.ODataClient.V2.PowerBIIntegration
-{
-    /// <summary>
-    /// Class containing all extension methods
-    /// </summary>
-    public static class ExtensionMethods
-    {
-        /// <summary>
-        /// There are no comments for IsEnabled in the schema.
-        /// </summary>
-        [global::Microsoft.OData.Client.OriginalNameAttribute("IsEnabled")]
-        public static global::Microsoft.OData.Client.DataServiceQuerySingle<bool> IsEnabled(this global::Microsoft.OData.Client.DataServiceQuerySingle<global::RSAccessor.PortalAccessor.OData.V2.Model.PowerBIUserInfo> source)
-        {
-            if (!source.IsComposable)
-            {
-                throw new global::System.NotSupportedException("The previous function is not composable.");
-            }
-
-            return source.CreateFunctionQuerySingle<bool>("PowerBIIntegration.IsEnabled", false);
-        }
         /// <summary>
         /// There are no comments for Logout in the schema.
         /// </summary>
@@ -21656,7 +21438,7 @@ namespace Microsoft.ReportingServices.Portal.ODataClient.V2.PowerBIIntegration
                 throw new global::System.NotSupportedException("The previous function is not composable.");
             }
 
-            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("PowerBIIntegration.Logout"));
+            return new global::Microsoft.OData.Client.DataServiceActionQuery(source.Context, source.AppendRequestUri("Model.Logout"));
         }
     }
 }

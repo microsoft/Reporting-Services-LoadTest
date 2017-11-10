@@ -109,6 +109,19 @@ namespace RSLoad
             PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, report.OriginalFileName);
         }
 
+        [TestCategory("PBIDirectQuery")]
+        [TestMethod]
+        public void UsePowerBIReportsDirectQuery()
+        {
+            string report = ContentManager.GetNextCatalogItem("PowerBIReportDirectQuery");
+
+            Container context = this.ContentManager.PortalAccessorV1.CreateContext();
+            ICredentials executionCredentails = GetExecutionCredentails();
+
+            var pbiReport = context.CatalogItemByPath(report).GetValue() as PowerBIReport;
+            PowerBIClient.SimulatePowerBIReportUsage(executionCredentails, pbiReport, pbiReport.Name);
+        }
+
         private ICredentials GetExecutionCredentails()
         {
             ICredentials executionCredentails = CredentialCache.DefaultNetworkCredentials;

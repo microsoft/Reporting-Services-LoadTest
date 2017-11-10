@@ -1,0 +1,1 @@
+{"queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"o","Entity":"Order Details Extended"}],"Select":[{"Aggregation":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"o"}},"Property":"ExtendedPrice"}},"Function":0},"Name":"Sum(Order Details Extended.ExtendedPrice)"}]}}}]}}],"modelId":"1072196752"}

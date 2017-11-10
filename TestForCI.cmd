@@ -1,1 +1,1 @@
-vstest.console.exe /logger:Appveyor src\RSLoad\bin\debug\RSLoad.dll /Settings:RSLoadTest.testsettings /TestCaseFilter:"TestCategory!=LongDuration&TestCategory!=MinutesDuration&TestCategory!=PBI&TestCategory!=DependsOnDatasource"
+vstest.console.exe /logger:Appveyor src\RSLoad\bin\debug\RSLoad.dll /Settings:RSLoadTest.testsettings /TestCaseFilter:"TestCategory!=LongDuration&TestCategory!=MinutesDuration&TestCategory!=PBI&TestCategory!=DependsOnDatasource&TestCategory!=PBIDirectQuery"

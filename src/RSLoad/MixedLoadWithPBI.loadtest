@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LoadTest Name="MixedLoadWithPBI" Description="" Owner="" storage="d:\git\reporting-services-loadtest\src\rsload\mixedloadwithpbi.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="RS Portal_Classic load " Id="fa1f30a7-6143-4db4-a317-c61b18d0a97f" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+<LoadTest Name="MixedLoadWithPBI" Description="" Owner="" storage="e:\reporting-services-loadtest\src\rsload\mixedloadwithpbi.loadtest" Priority="2147483647" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="RS Portal_Classic load " Id="fa1f30a7-6143-4db4-a317-c61b18d0a97f" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Scenarios>
     <Scenario Name="PowerBI_Reports" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
       <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
       <LoadProfile Pattern="Step" InitialUsers="20" MaxUsers="500" StepUsers="10" StepDuration="900" StepRampTime="0" />
       <TestMix>
-        <TestProfile Name="UsePowerBIReportsEmbeddedReuseModel" Path="bin\debug\rsload.dll" Id="78953d39-c69d-0c9e-2601-1fef9ea8926a" Percentage="34" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-        <TestProfile Name="UsePowerBIReportsEmbeddedStreamNewModel" Path="bin\debug\rsload.dll" Id="5d79ed0b-4372-43e2-bfc2-30387c73a685" Percentage="33" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-        <TestProfile Name="UseLiveConnectPBIReports" Path="bin\debug\rsload.dll" Id="41d1eef1-ef30-57f1-3342-5a9ccfe9132f" Percentage="33" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReportsEmbeddedReuseModel" Path="bin\debug\rsload.dll" Id="78953d39-c69d-0c9e-2601-1fef9ea8926a" Percentage="32" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReportsEmbeddedStreamNewModel" Path="bin\debug\rsload.dll" Id="5d79ed0b-4372-43e2-bfc2-30387c73a685" Percentage="5" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UseLiveConnectPBIReports" Path="bin\debug\rsload.dll" Id="41d1eef1-ef30-57f1-3342-5a9ccfe9132f" Percentage="32" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UsePowerBIReportsDirectQuery" Path="bin\debug\rsload.dll" Id="688447a8-f830-2016-6bd9-0c2cc8a25994" Percentage="31" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
       </TestMix>
       <NetworkMix>
         <NetworkProfile Percentage="100">
@@ -93,6 +94,19 @@
         <TestProfile Name="UrlAccessSnapshotExportPDF" Path="bin\debug\rsload.dll" Id="d5957849-f365-9e25-c374-e5fb56e7495e" Percentage="19.31" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
         <TestProfile Name="UrlAccessSnapshotExportWORD" Path="bin\debug\rsload.dll" Id="7100652f-9ae5-d44f-7e31-3e32aae741e1" Percentage="0.69" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
         <TestProfile Name="FullReportRenderHTML5" Path="bin\debug\rsload.dll" Id="f19697ed-f13a-5f46-2dd2-d464b29851b8" Percentage="40.69" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      </TestMix>
+      <NetworkMix>
+        <NetworkProfile Percentage="100">
+          <Network Name="LAN" BandwidthInKbps="1000000" NetworkProfileConfigurationXml="&lt;Emulation&gt;&lt;VirtualChannel name=&quot;defaultChannel&quot;&gt;&lt;FilterList/&gt;&lt;VirtualLink instances=&quot;1&quot; name=&quot;defaultLink&quot;&gt;&lt;LinkRule dir=&quot;upstream&quot;&gt;&lt;Bandwidth&gt;&lt;Speed unit=&quot;kbps&quot;&gt;1000000&lt;/Speed&gt;&lt;/Bandwidth&gt;&lt;/LinkRule&gt;&lt;LinkRule dir=&quot;downstream&quot;&gt;&lt;Bandwidth&gt;&lt;Speed unit=&quot;kbps&quot;&gt;1000000&lt;/Speed&gt;&lt;/Bandwidth&gt;&lt;/LinkRule&gt;&lt;/VirtualLink&gt;&lt;/VirtualChannel&gt;&lt;/Emulation&gt;" />
+        </NetworkProfile>
+      </NetworkMix>
+    </Scenario>
+    <Scenario Name="LargeFiles" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="false" TestMixType="PercentageOfTestsStarted" ApplyDistributionToPacingDelay="true" MaxTestIterations="0" DisableDuringWarmup="false" DelayStartTime="0" AllowedAgents="">
+      <ThinkProfile Value="0.2" Pattern="NormalDistribution" />
+      <LoadProfile Pattern="Step" InitialUsers="2" MaxUsers="10" StepUsers="2" StepDuration="900" StepRampTime="0" />
+      <TestMix>
+        <TestProfile Name="UploadAndDeleteLargeExcelWorkbook" Path="bin\debug\rsload.dll" Id="93e24092-35de-6642-c619-e72d7b73b29b" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <TestProfile Name="UploadAndDeleteLargePbix" Path="bin\debug\rsload.dll" Id="adb48bf1-b402-9287-efb3-feed360d1f16" Percentage="50" Type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
       </TestMix>
       <NetworkMix>
         <NetworkProfile Percentage="100">
@@ -1735,8 +1749,8 @@
         <GeoLocation Location="West US" Percentage="100" />
       </LoadGeneratorLocations>
       <ContextParameters>
-        <ContextParameter Name="ReportsWeightFile" Value="RuntimeResources\Paginated\ScaleReportsWeight.xml" />
-        <ContextParameter Name="BadCombinationsFile" Value="RuntimeResources\Paginated\BadCombinations.xml" />
+        <ContextParameter Name="ReportsWeightFile" Value="ContentManager\RuntimeResources\Paginated\ScaleReportsWeight.xml" />
+        <ContextParameter Name="BadCombinationsFile" Value="ContentManager\RuntimeResources\Paginated\BadCombinations.xml" />
       </ContextParameters>
     </RunConfiguration>
   </RunConfigurations>
